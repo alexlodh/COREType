@@ -1,5 +1,14 @@
-# COREType 1.4.3 for macOS
+# COREType 1.5.0 for macOS
 
-`COREType-macOS.zip` contains the verified ad hoc signed Apple Silicon app. Unzip and open COREType.app. Original textbook figures and tables remain inline, with the saved media setting. The app and resources work offline.
+`COREType-macOS.zip` contains the ad hoc signed Apple silicon app for macOS 14 or later. `SHA256.txt` identifies the exact archive. Version 1.5.0 removes the remaining-error and completed-paragraph counts from the completion summary.
 
-Tested on macOS 26.6.2, Apple Silicon; macOS 14 or later is declared. See the project README and verification/CPU-Optimization.md for measurements, source attribution and remaining test limits. SHA256.txt identifies the exact ZIP.
+From the repository root, install for the current macOS user with:
+
+```sh
+bash scripts/install-app.sh
+open "$HOME/Applications/COREType.app"
+```
+
+The installer checks the archive checksum and app signature and preserves a replaced COREType bundle in Trash. It requires no compiler or `sudo`. When sharing directly, include the three files in this directory: `COREType-macOS.zip`, `SHA256.txt` and `install-app.sh`; recipients can run the installer with the ZIP path.
+
+See the [project README](../README.md) for GitHub access, building from source, app-specific quarantine approval, troubleshooting, updates and attribution. The bundle is not Developer ID signed or notarized. Historical native observations used Apple silicon with macOS 26.6.2; other OS versions have not been independently verified.
