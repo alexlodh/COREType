@@ -1,4 +1,6 @@
-# COREType 1.4
+# COREType 1.4.1
+
+Version 1.4.1 enlarges the clickable area of the top-right Practice, History and Settings buttons for more reliable mouse and trackpad use.
 
 A standalone, native, offline macOS typing app using Sasha's existing prepared **The Economy 2.0** excerpts. It includes 6,893 paragraphs: 3,505 Microeconomics and 3,388 Macroeconomics, organized into 20 verified chapters and 271 sections. No account, browser, network service, or third-party runtime is required.
 

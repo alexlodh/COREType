@@ -1,4 +1,4 @@
-# COREType 1.4 for macOS
+# COREType 1.4.1 for macOS
 
 `COREType-macOS.zip` contains the verified ad hoc signed Apple Silicon app. Unzip and open COREType.app. Original textbook figures and tables remain inline, with the saved media setting. The app and resources work offline.
 

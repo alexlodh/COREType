@@ -1,50 +1,50 @@
 {
   "all_app_file_bytes_match": true,
-  "app_zip_sha256": "f36d2d4ed2b567fb19bc2dcfd980f485b8bf1ecc7cb9c3dfe5097d432903eb02",
-  "checked_at_utc": "2026-10-11T15:37:00.347116+00:00",
-  "cleanup_record": "/Users/alexlodh/Documents/Codex/2026-10-11/task/COREType/work/release-cleanup-app-20261011T153700Z-81227.json",
+  "app_zip_sha256": "2c56aab382dbdc32b5a56c168dd59cc554abd3f811cf9331d1611bd01064e22d",
+  "checked_at_utc": "2026-10-11T15:51:00.695241+00:00",
+  "cleanup_record": "/Users/alexlodh/Documents/Codex/2026-10-11/task/COREType/work/release-cleanup-app-20261011T155100Z-90802.json",
   "distribution_zip_matches_output": true,
   "installed": {
-    "build": "5",
+    "build": "6",
     "bundle_identifier": "org.sasha.coretype",
-    "executable_sha256": "ae8db8ec144a9429f1fce909432475dc176e1f503b2510b659fe89ccfe987ad5",
+    "executable_sha256": "9ff3804981929b1088011961648801375ca125cb5349519201cba03d7889e65b",
     "file_count": 630,
-    "manifest_sha256": "bc589c98b6215220ac29d0d2bf62a03b149839b9df8b8a1df196a286c47f698a",
+    "manifest_sha256": "1ca63df209d085b512f71f355acd12ee4fdc101075cd1c7b654c1495244092d5",
     "path": "/Users/alexlodh/Applications/COREType.app",
     "resource_sha256": {
       "Diagram-Catalog.json": "0e7cd966cdd835de9c856fca6c3c20e2ba4357b67fc346f57cbe6f5c9c90b3e8",
       "library.json": "cd0bb0d8cd3b4ec4443df7f4144f72c19f20130569599d8d4c2431253ccbedcb"
     },
     "signature_verified_strict": true,
-    "version": "1.4"
+    "version": "1.4.1"
   },
   "normal_profile": "Preservation checked by the calling task; no profile access in this helper",
   "staging": {
-    "build": "5",
+    "build": "6",
     "bundle_identifier": "org.sasha.coretype",
-    "executable_sha256": "ae8db8ec144a9429f1fce909432475dc176e1f503b2510b659fe89ccfe987ad5",
+    "executable_sha256": "9ff3804981929b1088011961648801375ca125cb5349519201cba03d7889e65b",
     "file_count": 630,
-    "manifest_sha256": "bc589c98b6215220ac29d0d2bf62a03b149839b9df8b8a1df196a286c47f698a",
+    "manifest_sha256": "1ca63df209d085b512f71f355acd12ee4fdc101075cd1c7b654c1495244092d5",
     "path": "/private/tmp/COREType-Release/COREType.app",
     "resource_sha256": {
       "Diagram-Catalog.json": "0e7cd966cdd835de9c856fca6c3c20e2ba4357b67fc346f57cbe6f5c9c90b3e8",
       "library.json": "cd0bb0d8cd3b4ec4443df7f4144f72c19f20130569599d8d4c2431253ccbedcb"
     },
     "signature_verified_strict": true,
-    "version": "1.4"
+    "version": "1.4.1"
   },
   "zip_extracted": {
-    "build": "5",
+    "build": "6",
     "bundle_identifier": "org.sasha.coretype",
-    "executable_sha256": "ae8db8ec144a9429f1fce909432475dc176e1f503b2510b659fe89ccfe987ad5",
+    "executable_sha256": "9ff3804981929b1088011961648801375ca125cb5349519201cba03d7889e65b",
     "file_count": 630,
-    "manifest_sha256": "bc589c98b6215220ac29d0d2bf62a03b149839b9df8b8a1df196a286c47f698a",
-    "path": "/tmp/COREType-Release-Package-29jlk4vi/extracted/COREType.app",
+    "manifest_sha256": "1ca63df209d085b512f71f355acd12ee4fdc101075cd1c7b654c1495244092d5",
+    "path": "/tmp/COREType-Release-Package-kgdalfaa/extracted/COREType.app",
     "resource_sha256": {
       "Diagram-Catalog.json": "0e7cd966cdd835de9c856fca6c3c20e2ba4357b67fc346f57cbe6f5c9c90b3e8",
       "library.json": "cd0bb0d8cd3b4ec4443df7f4144f72c19f20130569599d8d4c2431253ccbedcb"
     },
     "signature_verified_strict": true,
-    "version": "1.4"
+    "version": "1.4.1"
   }
 }

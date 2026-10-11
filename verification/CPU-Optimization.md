@@ -1,5 +1,7 @@
 # COREType 1.4 CPU optimization — 11 October 2026
 
+**v1.4.1 follow-up:** the Practice, History and Settings controls now have at least 44-point rectangular hit areas. The CPU measurements below apply to the unchanged v1.4 engine and rendering paths; this small header-only follow-up has not been re-profiled.
+
 The completed measurements below cover active native input, focused ready state and an isolated AppKit renderer workload. Coverage limits are explicit; no unmeasured scenario is presented as a measured gain.
 
 ## Comparison and method
@@ -141,10 +143,10 @@ No source text/image/table is rasterized, rewritten, deleted or hidden as the pe
 
 ## Release validation
 
-The source release identifier is **v1.4.0**, version **1.4**, build **5**. `cpu-release-integrity.json` confirms strict signature verification for the staging app at `/private/tmp/COREType-Release/COREType.app`, installed app at `/Users/alexlodh/Applications/COREType.app`, and ZIP-extracted copy. All 630 app-file bytes match across the three copies, including the unchanged library/catalogue hashes.
+The CPU comparison is from **v1.4.0**, version **1.4**, build **5**. Follow-up release **v1.4.1**, build **6**, expands the top-right Practice, History and Settings button hit areas. It changes no typing, metrics, or renderer code; the prior three-run CPU comparison remains the v1.4.0 measurement. The updated staging, installed and ZIP-extracted copies are checked in the same release integrity record.
 
-- Executable SHA256: `ae8db8ec144a9429f1fce909432475dc176e1f503b2510b659fe89ccfe987ad5`.
-- Application ZIP SHA256: `f36d2d4ed2b567fb19bc2dcfd980f485b8bf1ecc7cb9c3dfe5097d432903eb02`.
+- v1.4.1 executable SHA256: `9ff3804981929b1088011961648801375ca125cb5349519201cba03d7889e65b`.
+- v1.4.1 application ZIP SHA256: `2c56aab382dbdc32b5a56c168dd59cc554abd3f811cf9331d1611bd01064e22d`.
 - Normal profile and installed-app launch/history verification: `cpu-profile-preservation.json`.
 
 Release packaging excludes compiler caches and personal state. Superseded generated bundles/packages are moved to recoverable Trash, with the release helper's exact cleanup record referenced in `cpu-release-integrity.json`. Existing historical verification files remain identifiable as historical evidence. The Git release tag identifies the final source commit without embedding a self-referential commit hash in this report; the final remote push record is supplied with the release outputs.

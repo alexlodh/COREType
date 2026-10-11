@@ -15,7 +15,14 @@ struct ContentView: View {
                     Spacer()
                     navButton("Practice", symbol: "keyboard", page: "practice")
                     navButton("History", symbol: "chart.xyaxis.line", page: "history")
-                    Button { model.pause(); model.showingSettings = true } label: { Image(systemName: "slider.horizontal.3").frame(width: 28, height: 28) }.buttonStyle(.plain).help("Settings · ⌘,")
+                    Button { model.pause(); model.showingSettings = true } label: {
+                        Image(systemName: "slider.horizontal.3")
+                            .frame(width: 44, height: 44)
+                            .contentShape(Rectangle())
+                    }
+                    .buttonStyle(.plain)
+                    .accessibilityLabel("Settings")
+                    .help("Settings · ⌘,")
                 }.padding(.bottom, 27)
                 if let notice = model.notice {
                     HStack { Image(systemName: "exclamationmark.circle"); Text(notice).font(Typography.font(size: 13)); Spacer(); Button("Dismiss") { model.notice = nil }.buttonStyle(.plain) }
@@ -35,9 +42,16 @@ struct ContentView: View {
         .sheet(isPresented: $model.showingInfo) { InfoView(model: model) }
     }
     func navButton(_ title: String, symbol: String, page: String) -> some View {
-        Button { model.navigate(page) } label: { Label(title, systemImage: symbol).font(Typography.font(size: 13, weight: .medium)).padding(.horizontal, 12).padding(.vertical, 9)
+        Button { model.navigate(page) } label: {
+            Label(title, systemImage: symbol)
+                .font(Typography.font(size: 13, weight: .medium))
+                .padding(.horizontal, 12)
+                .frame(minHeight: 44)
                 .background(model.page == page ? Palette.panel : .clear, in: RoundedRectangle(cornerRadius: 8))
-        }.buttonStyle(.plain).foregroundStyle(model.page == page ? Palette.accent : Palette.muted)
+                .contentShape(Rectangle())
+        }
+        .buttonStyle(.plain)
+        .foregroundStyle(model.page == page ? Palette.accent : Palette.muted)
     }
 }
 
