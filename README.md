@@ -1,6 +1,6 @@
-# COREType 1.4.3
+# COREType 1.5.0
 
-Version 1.4.3 adds individual paragraph selection under each expandable section in the left scope browser. Version 1.4.2 added Previous paragraph navigation; version 1.4.1 enlarged the top-right Practice, History and Settings click targets.
+Version 1.5.0 simplifies the passage completion summary by removing the remaining-errors and completed-paragraph counts. Version 1.4.3 adds individual paragraph selection under each expandable section in the left scope browser. Version 1.4.2 added Previous paragraph navigation; version 1.4.1 enlarged the top-right Practice, History and Settings click targets.
 
 A standalone, native, offline macOS typing app using Sasha's existing prepared **The Economy 2.0** excerpts. It includes 6,893 paragraphs: 3,505 Microeconomics and 3,388 Macroeconomics, organized into 20 verified chapters and 271 sections. No account, browser, network service, or third-party runtime is required.
 
@@ -44,7 +44,6 @@ Five characters count as one standard word, including spaces and punctuation. Pa
 | Error rate | Incorrect character attempts ÷ all character attempts × 100 |
 | Mistakes | Incorrect character attempts, including those later corrected |
 | Corrections | Incorrect characters removed with Backspace |
-| Remaining errors | Wrong characters still in the typed text, including completed timed paragraphs |
 
 Backspace does not count as a character attempt. WPM can be lower than raw speed after corrections. Completing the final character ends a passage test, even if it is incorrect. Completed timed paragraphs cannot be backspaced into; their statistics remain accumulated. Extremely short tests can produce unstable speed estimates. These definitions are explicit and do not claim exact numerical parity with every Monkeytype mode.
 

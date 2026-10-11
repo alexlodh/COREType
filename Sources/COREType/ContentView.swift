@@ -225,8 +225,8 @@ struct PracticeView: View {
                     HStack(alignment: .center) {
                         VStack(alignment: .leading, spacing: 6) {
                             Label(engine.finishReason ?? "Complete", systemImage: "checkmark.circle.fill").font(Typography.font(size: 17, weight: .medium)).foregroundStyle(Palette.green)
-                            Text("\(model.metrics.correctCharacters) correct characters · \(model.metrics.corrected) corrections · \(model.metrics.uncorrected) remaining errors").font(Typography.font(size: 11)).foregroundStyle(Palette.muted)
-                            Text(String(format: "Error rate %.1f%% · %d paragraphs completed", model.metrics.errorRate, engine.completedParagraphs)).font(Typography.font(size: 11)).foregroundStyle(Palette.muted)
+                            Text("\(model.metrics.correctCharacters) correct characters · \(model.metrics.corrected) corrections").font(Typography.font(size: 11)).foregroundStyle(Palette.muted)
+                            Text(String(format: "Error rate %.1f%%", model.metrics.errorRate)).font(Typography.font(size: 11)).foregroundStyle(Palette.muted)
                         }
                         Spacer()
                         Button("View history") { model.navigate("history") }.buttonStyle(.plain).foregroundStyle(Palette.accent)
@@ -404,7 +404,7 @@ struct InfoView: View {
                     Text("Textbook figures and tables").font(Typography.font(size: 14, weight: .semibold)).foregroundStyle(Palette.accent)
                     Text("Referenced figures and tables appear with the passage in the typing area. Scroll to read them while practising. Show or hide them in Settings; the choice is saved on this Mac. Captions and credits come from the original textbook.").font(Typography.font(size: 13))
                     Text("Metrics").font(Typography.font(size: 14, weight: .semibold)).foregroundStyle(Palette.accent)
-                    Text("WPM = retained correct characters ÷ 5 ÷ active minutes.\nRaw WPM = all character attempts ÷ 5 ÷ active minutes, including corrected or repeated characters.\nAccuracy = correct character attempts ÷ all character attempts.\nError rate = incorrect character attempts ÷ all character attempts.\nMistakes count incorrect attempts, even when corrected. Corrections count incorrect characters removed with Backspace. Remaining errors count wrong characters still in the typed text.\nSpaces and punctuation count as characters. Backspace is not a character attempt. Paused time is excluded. Very short tests can produce unstable speed estimates.").font(Typography.font(size: 13)).lineSpacing(5)
+                    Text("WPM = retained correct characters ÷ 5 ÷ active minutes.\nRaw WPM = all character attempts ÷ 5 ÷ active minutes, including corrected or repeated characters.\nAccuracy = correct character attempts ÷ all character attempts.\nError rate = incorrect character attempts ÷ all character attempts.\nMistakes count incorrect attempts, even when corrected. Corrections count incorrect characters removed with Backspace.\nSpaces and punctuation count as characters. Backspace is not a character attempt. Paused time is excluded. Very short tests can produce unstable speed estimates.").font(Typography.font(size: 13)).lineSpacing(5)
                     Text("About the excerpts").font(Typography.font(size: 14, weight: .semibold)).foregroundStyle(Palette.accent)
                     Text("The prepared collection excludes front matter, glossaries, references, and equation-heavy material. Some LaTeX notation, exercises, and extension prose remain. Some long source paragraphs were split during preparation. Imported text, order, and verified section metadata are preserved.").font(Typography.font(size: 13))
                     Text(model.attribution).font(Typography.font(size: 11)).foregroundStyle(Palette.muted).textSelection(.enabled)
