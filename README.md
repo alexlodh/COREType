@@ -2,6 +2,12 @@
 
 COREType is an independent, native macOS app for offline typing practice with **The Economy 2.0** by CORE Econ. It includes 6,893 prepared paragraph excerpts across 20 chapters and 271 sections, with relevant original textbook figures and tables alongside the text.
 
+## Use COREType in your browser
+
+**[Open the public browser version](https://coretype-practice.sashalodh.chatgpt.site)** to practice without downloading or installing a Mac app. It includes the same prepared library and textbook assets, reading selection, passage and timed modes, ordered/random navigation, history, replay and CSV export.
+
+The browser version requires an internet connection to load. Settings and history stay in that browser's local storage and are separate from the Mac app; they do not sync between browsers or devices. Clearing the site's browser data removes saved history. Use CSV export to keep a copy.
+
 ## Requirements
 
 - The prebuilt ZIP requires an **Apple silicon Mac** (M1 or later) and **macOS 14 or later**.
