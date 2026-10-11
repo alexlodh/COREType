@@ -1,0 +1,22 @@
+[0/1] Planning build
+Building for debugging...
+[0/3] Write swift-version--1AB21518FC5DEDBE.txt
+Build of product 'CoreChecks' complete! (0.11s)
+warning: '--build-system native' has been deprecated and will be removed in a future release; please report an issue at https://github.com/swiftlang/swift-package-manager/issues if you are unable to adopt the default build system.
+warning: '--build-system native' has been deprecated and will be removed in a future release; please report an issue at https://github.com/swiftlang/swift-package-manager/issues if you are unable to adopt the default build system.
+PASS metric calculation and corrected mistakes
+PASS uncorrected errors and completion lock
+PASS precise timer completion
+PASS pause, interruption, and resume
+PASS timed paragraph continuation
+PASS punctuation equivalence and source preservation
+PASS Unicode and word backspace
+PASS repeat resets statistics
+PASS real-library chapter mapping, search, and filtering
+PASS ordered, random, singleton, and empty scopes
+PASS longest complete passage
+PASS settings/history persistence and corrupt data
+PASS source-proven diagram matching and book isolation
+PASS local diagram assets and invalid-path rejection
+PASS real diagram catalogue and offline resources
+15 checks, 31836 assertions, 0 failures

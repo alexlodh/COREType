@@ -1,0 +1,117 @@
+{
+  "paragraphs": 6893,
+  "bookCounts": {
+    "microeconomics": 3505,
+    "macroeconomics": 3388
+  },
+  "chapterCount": 20,
+  "sectionCount": 271,
+  "unmappedParagraphs": 0,
+  "mismatchedSectionNumbers": 0,
+  "textsExactlyMatchPool": true,
+  "originalLibrarySHA256": "a895bcf7bffc8865b5eb27312722785ec18b9fde8c0e90cdbc4b167100205879",
+  "importedLibrarySHA256": "cd0bb0d8cd3b4ec4443df7f4144f72c19f20130569599d8d4c2431253ccbedcb",
+  "chapterTitles": [
+    {
+      "book": "microeconomics",
+      "unit": 1,
+      "title": "Prosperity, inequality, and planetary limits"
+    },
+    {
+      "book": "microeconomics",
+      "unit": 2,
+      "title": "Technology and incentives"
+    },
+    {
+      "book": "microeconomics",
+      "unit": 3,
+      "title": "Doing the best you can: Scarcity, wellbeing, and working hours"
+    },
+    {
+      "book": "microeconomics",
+      "unit": 4,
+      "title": "Strategic interactions and social dilemmas"
+    },
+    {
+      "book": "microeconomics",
+      "unit": 5,
+      "title": "The rules of the game: Who gets what and why"
+    },
+    {
+      "book": "microeconomics",
+      "unit": 6,
+      "title": "The firm and its employees"
+    },
+    {
+      "book": "microeconomics",
+      "unit": 7,
+      "title": "The firm and its customers"
+    },
+    {
+      "book": "microeconomics",
+      "unit": 8,
+      "title": "Supply and demand: Markets with many buyers and sellers"
+    },
+    {
+      "book": "microeconomics",
+      "unit": 9,
+      "title": "Lenders and borrowers and differences in wealth"
+    },
+    {
+      "book": "microeconomics",
+      "unit": 10,
+      "title": "Market successes and failures: The societal effects of private decisions"
+    },
+    {
+      "book": "macroeconomics",
+      "unit": 1,
+      "title": "The supply side of the macroeconomy: Unemployment and real wages"
+    },
+    {
+      "book": "macroeconomics",
+      "unit": 2,
+      "title": "Unemployment, wages, and inequality: Supply-side policies and institutions"
+    },
+    {
+      "book": "macroeconomics",
+      "unit": 3,
+      "title": "Aggregate demand and the multiplier model"
+    },
+    {
+      "book": "macroeconomics",
+      "unit": 4,
+      "title": "Inflation and unemployment"
+    },
+    {
+      "book": "macroeconomics",
+      "unit": 5,
+      "title": "Macroeconomic policy: Inflation and unemployment"
+    },
+    {
+      "book": "macroeconomics",
+      "unit": 6,
+      "title": "The financial sector: Debt, money, and financial markets"
+    },
+    {
+      "book": "macroeconomics",
+      "unit": 7,
+      "title": "Macroeconomic policy in the global economy"
+    },
+    {
+      "book": "macroeconomics",
+      "unit": 8,
+      "title": "Economic dynamics: Financial and environmental crises"
+    },
+    {
+      "book": "macroeconomics",
+      "unit": 9,
+      "title": "Uneven development on a global scale"
+    },
+    {
+      "book": "macroeconomics",
+      "unit": 10,
+      "title": "Government as economic actor: Economics, politics, and public policy"
+    }
+  ],
+  "sourceWork": "/Users/alexlodh/Documents/Codex/2026-10-09/referenced-chatgpt-conversation-this-is-an/work"
+}

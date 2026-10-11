@@ -1,0 +1,20 @@
+{
+  "date": "2026-10-11",
+  "appVersion": "1.1",
+  "installedApp": "/Users/alexlodh/Applications/COREType.app",
+  "stagingApp": "/tmp/COREType-Release/COREType.app",
+  "sourceProject": "/Users/alexlodh/Documents/Codex/2026-10-11/task/COREType",
+  "strictAdHocSignatureValid": true,
+  "resourceBytesMatchSource": true,
+  "diagramAssetsVerified": 525,
+  "librarySHA256": "cd0bb0d8cd3b4ec4443df7f4144f72c19f20130569599d8d4c2431253ccbedcb",
+  "preparedPoolTextsUnchanged": true,
+  "coreChecks": 15,
+  "assertions": 31836,
+  "failures": 0,
+  "font": "ArialMT / Arial-BoldMT",
+  "aptosInstalled": false,
+  "nativeCSVExportVerified": true,
+  "nativeHistoryReplayVerified": true,
+  "normalProfileUntouchedByUITests": true
+}

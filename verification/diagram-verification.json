@@ -1,0 +1,49 @@
+{
+  "checked": "2026-10-11",
+  "checks": {
+    "offlineReimportCatalogueSHA256Unchanged": true,
+    "allSourceFilesMatchPreservedCopy": true,
+    "allCachedAssetHashesMatchAudit": true,
+    "numberedSkylineAndHistoricalDocumentExcluded": true,
+    "secondarySatelliteImageryExcluded": true,
+    "microeconMultiFigureRangeMatched": true,
+    "macroeconNumericRangeMatched": true,
+    "explicitBookDisambiguation": true,
+    "chapterCrossReferenceRetained": true,
+    "sameNumberDifferentBookIsolation": true,
+    "exactSourceSlidePanelsSupported": true,
+    "cachedTamperingRejected": true,
+    "remoteSVGReferenceRejected": true,
+    "relativeSVGReferenceRejected": true,
+    "scriptRejected": true,
+    "eventHandlerRejected": true,
+    "foreignObjectRejected": true,
+    "cssImportRejected": true,
+    "cssExternalUrlRejected": true,
+    "internalSVGReferencesAccepted": true
+  },
+  "checkCount": 20,
+  "failures": 0,
+  "visuallyInspectedOriginalJPGs": {
+    "Diagrams/macroeconomics/figure-05-15.jpg": "Original economic chart, including source tool screenshots where provided",
+    "Diagrams/macroeconomics/figure-05-16-a.jpg": "Original economic chart, including source tool screenshots where provided",
+    "Diagrams/macroeconomics/figure-05-16-b.jpg": "Original economic chart, including source tool screenshots where provided",
+    "Diagrams/macroeconomics/figure-05-17.jpg": "Original economic chart, including source tool screenshots where provided",
+    "Diagrams/macroeconomics/figure-09-28-b.jpg": "Original economic chart, including source tool screenshots where provided",
+    "Diagrams/macroeconomics/figure-extension-09-05-a.jpg": "Original economic chart, including source tool screenshots where provided",
+    "Diagrams/microeconomics/figure-07-05.jpg": "Brand ownership organization diagram",
+    "Diagrams/microeconomics/figure-extension-02-01-b.jpg": "Original economic chart, including source tool screenshots where provided"
+  },
+  "visuallyConfirmedExclusions": {
+    "figure-05-01.jpg": "Decorative illustration of historical document",
+    "figure-09-01.jpg": "Skyline photographs",
+    "figure-08-25-b.png": "Satellite imagery"
+  },
+  "sourceCreditAudit": "No adjacent or slideshow-external source credit blocks found. Non-source figure-source children were only chart controls; all substantive source paragraphs preserved.",
+  "limitations": [
+    "Slideshow figures use the original static summary image. Two exact source slide panels referenced by number are also retained.",
+    "HTML-only table figures are excluded rather than recreated.",
+    "Original math notation remains in source captions and passages.",
+    "Source JPG charts are included unchanged, including their original tool controls and source branding."
+  ]
+}

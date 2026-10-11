@@ -1,0 +1,23 @@
+{
+  "rows": 1,
+  "columns": [
+    "date",
+    "book",
+    "section",
+    "passage_id",
+    "mode",
+    "status",
+    "seconds",
+    "wpm",
+    "raw_wpm",
+    "accuracy",
+    "error_rate",
+    "attempts",
+    "mistakes",
+    "corrected",
+    "uncorrected"
+  ],
+  "passage": "CORE Micro U01 S01 P006",
+  "savedMetricsMatchCSV": true,
+  "syntheticTyping": true
+}

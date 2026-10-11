@@ -1,0 +1,53 @@
+{
+  "version": 1,
+  "passageCount": 6893,
+  "librarySHA256": "cd0bb0d8cd3b4ec4443df7f4144f72c19f20130569599d8d4c2431253ccbedcb",
+  "textsExactlyMatchPreparedPool": true,
+  "sourceHTMLFiles": 291,
+  "numberedCandidates": 1101,
+  "selectedDiagrams": 515,
+  "bundledAssets": 525,
+  "assetBytes": 36263690,
+  "assetsByExtension": {
+    ".svg": 517,
+    ".jpg": 8
+  },
+  "passagesWithNumericFigureReferences": 1142,
+  "passagesWithDiagrams": 1044,
+  "passageFigureAssociations": 1191,
+  "explicitCrossBookReferences": {
+    "CORE Macro U01 S09 P014": [
+      "microeconomics-4.2b"
+    ],
+    "CORE Macro U08 S11 P003": [
+      "microeconomics-1.2b"
+    ],
+    "CORE Macro U09 S07 P004": [
+      "microeconomics-1.19"
+    ],
+    "CORE Macro U09 S11 P025": [
+      "microeconomics-1.3"
+    ],
+    "CORE Macro U10 S02 P030": [
+      "microeconomics-1.1"
+    ],
+    "CORE Macro U10 S03 P014": [
+      "microeconomics-5.29"
+    ],
+    "CORE Macro U10 S04 P055": [
+      "microeconomics-5.28"
+    ],
+    "CORE Macro U10 S04 P061": [
+      "microeconomics-5.28"
+    ]
+  },
+  "matchingPolicy": "Explicit figure numbers; passage book unless another book is named immediately after the reference. Exact caption numbers or exact source panel identifiers; unsuffixed references expand only to actual captioned subfigures. Animation sequences use unchanged original summary images. Tables with no original static image, photographs and insufficient classification evidence are excluded.",
+  "licence": "CC BY-NC-ND 4.0; original assets and source captions unchanged",
+  "allBundledAssetsSelfContained": true,
+  "catalogueSHA256": "e861b2a0c1270f60a9ca4914052d10e051798e13f98e06591287c537885d30a2",
+  "unresolvedReferenceReasons": {
+    "HTML table or figure with no original static image asset": 130,
+    "Illustrated historical document, not a diagram": 1,
+    "Shanghai skyline photographs, not diagrams": 1
+  }
+}

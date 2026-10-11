@@ -1,0 +1,23 @@
+The CORE Econ Team, The Economy 2.0: Microeconomics, version 2.0.0.
+Copyright CORE Economics Education 2023.
+Official book: https://books.core-econ.org/the-economy/microeconomics/0-3-contents.html
+Copyright: https://books.core-econ.org/the-economy/microeconomics/0-2-copyright.html
+
+The CORE Econ Team, The Economy 2.0: Macroeconomics, version 2.0.0.
+Copyright CORE Economics Education 2026.
+Official book: https://books.core-econ.org/the-economy/macroeconomics/0-3-contents.html
+Copyright: https://books.core-econ.org/the-economy/macroeconomics/0-2-copyright.html
+
+Both books are licensed under CC BY-NC-ND 4.0:
+https://creativecommons.org/licenses/by-nc-nd/4.0/
+Use for noncommercial practice and keep this attribution with the pool.
+The text consists of source excerpts with mechanical format conversion:
+HTML controls removed, whitespace flattened, wrapping and footnote markers
+removed, and fancy quotation marks/dashes standardised for keyboard entry.
+Paragraphs are extracted or divided at sentence boundaries without rewriting.
+Technical format changes are permitted; distribution of adaptations is not.
+Licence: https://creativecommons.org/licenses/by-nc-nd/4.0/legalcode.en
+CORE terms: https://www.core-econ.org/terms-of-use/
+No endorsement by CORE Econ or Monkeytype is implied. Material is supplied as-is.
+
+COREType uses the prepared excerpts unchanged. This is an independent offline practice app.

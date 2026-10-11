@@ -1,0 +1,1348 @@
+{
+  "microeconomics": [
+    {
+      "file": "0-2-copyright.html",
+      "title": "Copyright"
+    },
+    {
+      "file": "0-4-preface.html",
+      "title": "Preface"
+    },
+    {
+      "file": "0-5-note-to-instructors.html",
+      "title": "How to cite The Economy 2.0"
+    },
+    {
+      "file": "0-6-contributors.html",
+      "title": "Authorship and production"
+    },
+    {
+      "file": "0-7-features-list.html",
+      "title": "List of features"
+    },
+    {
+      "file": "0-8-intro-to-extensions.html",
+      "title": "Introduction to mathematical extensions"
+    },
+    {
+      "file": "50-02-glossary.html",
+      "title": "Glossary"
+    },
+    {
+      "file": "01-prosperity-inequality-01-ibn-battuta.html",
+      "title": "1.1 Ibn Battuta’s fourteenth-century travels in a flat world"
+    },
+    {
+      "file": "01-prosperity-inequality-02-historys-hockey-stick.html",
+      "title": "1.2 History’s hockey stick"
+    },
+    {
+      "file": "01-prosperity-inequality-03-climate-change.html",
+      "title": "1.3 Another hockey stick: Climate change"
+    },
+    {
+      "file": "01-prosperity-inequality-04-income-inequality.html",
+      "title": "1.4 Inequality in global income"
+    },
+    {
+      "file": "01-prosperity-inequality-05-technological-revolution.html",
+      "title": "1.5 The continuous technological revolution"
+    },
+    {
+      "file": "01-prosperity-inequality-06-production-function.html",
+      "title": "1.6 Explaining the flat part of the hockey stick: Production functions and the diminishing average product of labour"
+    },
+    {
+      "file": "01-prosperity-inequality-07-malthusian-trap.html",
+      "title": "1.7 Explaining the flat part of the hockey stick: The Malthusian trap, population, and the average product of labour"
+    },
+    {
+      "file": "01-prosperity-inequality-08-capitalist-institutions.html",
+      "title": "1.8 Capitalist institutions"
+    },
+    {
+      "file": "01-prosperity-inequality-09-structural-transformation.html",
+      "title": "1.9 Structural transformation: From farm to firm"
+    },
+    {
+      "file": "01-prosperity-inequality-10-capitalism-causation.html",
+      "title": "1.10 Capitalism, causation, and history’s hockey stick"
+    },
+    {
+      "file": "01-prosperity-inequality-11-british-colonization-india.html",
+      "title": "1.11 Application: Did the British colonization of India reduce Indian living standards?"
+    },
+    {
+      "file": "01-prosperity-inequality-12-capitalism-varieties.html",
+      "title": "1.12 Varieties of capitalism: Institutions, government, and politics"
+    },
+    {
+      "file": "01-prosperity-inequality-13-economics-biosphere.html",
+      "title": "1.13 Economics, the economy, and the biosphere"
+    },
+    {
+      "file": "01-prosperity-inequality-14-summary.html",
+      "title": "1.14 Summary"
+    },
+    {
+      "file": "01-prosperity-inequality-15-references.html",
+      "title": "1.15 References"
+    },
+    {
+      "file": "02-technology-incentives-01-kutesmart-tailoring.html",
+      "title": "2.1 Kutesmart automates personalized tailoring"
+    },
+    {
+      "file": "02-technology-incentives-02-economic-decisions.html",
+      "title": "2.2 Economic decisions: Opportunity costs, economic rents, and incentives"
+    },
+    {
+      "file": "02-technology-incentives-03-comparative-advantage.html",
+      "title": "2.3 Comparative advantage, specialization, and markets"
+    },
+    {
+      "file": "02-technology-incentives-04-firms-technology-production.html",
+      "title": "2.4 Firms, technology, and production"
+    },
+    {
+      "file": "02-technology-incentives-05-technology-costs.html",
+      "title": "2.5 Modelling a dynamic economy: Technology and costs"
+    },
+    {
+      "file": "02-technology-incentives-06-innovation-profit.html",
+      "title": "2.6 Modelling a dynamic economy: Innovation and profit"
+    },
+    {
+      "file": "02-technology-incentives-07-industrial-revolution-technologies.html",
+      "title": "2.7 Cheap coal, expensive labour: The Industrial Revolution in Britain and incentives for new technologies"
+    },
+    {
+      "file": "02-technology-incentives-08-economic-models.html",
+      "title": "2.8 Economic models: How to see more by looking at less"
+    },
+    {
+      "file": "02-technology-incentives-09-industrial-revolution-colonies.html",
+      "title": "2.9 Markets, cheap calories, and cotton: The colonies, slavery, and the Industrial Revolution in Britain"
+    },
+    {
+      "file": "02-technology-incentives-10-malthusian-trap.html",
+      "title": "2.10 Growth: Escaping the Malthusian trap"
+    },
+    {
+      "file": "02-technology-incentives-11-capitalism-climate-change.html",
+      "title": "2.11 Capitalism + carbon = hockey stick growth + climate change"
+    },
+    {
+      "file": "02-technology-incentives-12-how-good-is-the-model.html",
+      "title": "2.12 How good is the model? Economists, historians, and the Industrial Revolution"
+    },
+    {
+      "file": "02-technology-incentives-13-summary.html",
+      "title": "2.13 Summary"
+    },
+    {
+      "file": "02-technology-incentives-14-references.html",
+      "title": "2.14 References"
+    },
+    {
+      "file": "03-scarcity-wellbeing-01-work-fewer-hours.html",
+      "title": "3.1 Would you work fewer hours if your hourly wage doubled?"
+    },
+    {
+      "file": "03-scarcity-wellbeing-02-choice-and-scarcity.html",
+      "title": "3.2 A problem of choice and scarcity"
+    },
+    {
+      "file": "03-scarcity-wellbeing-03-goods-and-preferences.html",
+      "title": "3.3 Goods and preferences"
+    },
+    {
+      "file": "03-scarcity-wellbeing-04-feasible-set.html",
+      "title": "3.4 The feasible set"
+    },
+    {
+      "file": "03-scarcity-wellbeing-05-decision-making-scarcity.html",
+      "title": "3.5 Decision-making and scarcity"
+    },
+    {
+      "file": "03-scarcity-wellbeing-06-hours-technological-progress.html",
+      "title": "3.6 Hours of work and technological progress"
+    },
+    {
+      "file": "03-scarcity-wellbeing-07-income-substitution-effects.html",
+      "title": "3.7 Income and substitution effects on hours of work and free time"
+    },
+    {
+      "file": "03-scarcity-wellbeing-08-a-good-model.html",
+      "title": "3.8 Is this a good model?"
+    },
+    {
+      "file": "03-scarcity-wellbeing-09-changes-over-time.html",
+      "title": "3.9 Explaining our working hours: Changes over time"
+    },
+    {
+      "file": "03-scarcity-wellbeing-10-hours-free-time-inequality.html",
+      "title": "3.10 Application: Work hours, free time, and inequality"
+    },
+    {
+      "file": "03-scarcity-wellbeing-11-gender-working-time.html",
+      "title": "3.11 Explaining our working hours: Gender and working time"
+    },
+    {
+      "file": "03-scarcity-wellbeing-12-differences-between-countries.html",
+      "title": "3.12 Explaining our working hours: Differences between countries"
+    },
+    {
+      "file": "03-scarcity-wellbeing-13-summary.html",
+      "title": "3.13 Summary"
+    },
+    {
+      "file": "03-scarcity-wellbeing-14-references.html",
+      "title": "3.14 References"
+    },
+    {
+      "file": "04-strategic-interactions-01-climate-negotiations.html",
+      "title": "4.1 Climate negotiations: Conflicts and common interests"
+    },
+    {
+      "file": "04-strategic-interactions-02-game-theory.html",
+      "title": "4.2 Social interactions: Game theory"
+    },
+    {
+      "file": "04-strategic-interactions-03-nash-equilibrium.html",
+      "title": "4.3 Best responses in the rice–cassava game: Nash equilibrium"
+    },
+    {
+      "file": "04-strategic-interactions-04-dominant-strategy-equilibrium.html",
+      "title": "4.4 Dominant strategy equilibrium and the prisoners’ dilemma"
+    },
+    {
+      "file": "04-strategic-interactions-05-pareto-criterion.html",
+      "title": "4.5 Evaluating outcomes: The Pareto criterion"
+    },
+    {
+      "file": "04-strategic-interactions-06-public-good-games.html",
+      "title": "4.6 Public good games and cooperation"
+    },
+    {
+      "file": "04-strategic-interactions-07-social-preferences.html",
+      "title": "4.7 Social preferences: Altruism"
+    },
+    {
+      "file": "04-strategic-interactions-08-repeated-interaction.html",
+      "title": "4.8 Repeated interaction: Social norms, reciprocity, and peer punishment in public good games"
+    },
+    {
+      "file": "04-strategic-interactions-09-using-experiments.html",
+      "title": "4.9 Using experiments to study economic behaviour"
+    },
+    {
+      "file": "04-strategic-interactions-10-cooperation-negotiation-conflicts.html",
+      "title": "4.10 Cooperation, negotiation, and conflicts of interest"
+    },
+    {
+      "file": "04-strategic-interactions-11-ultimatum-game.html",
+      "title": "4.11 The ultimatum game: Dividing a pie (or leaving it on the table)"
+    },
+    {
+      "file": "04-strategic-interactions-12-experimental-results.html",
+      "title": "4.12 Fair farmers, self-interested students? Experimental results of the ultimatum game"
+    },
+    {
+      "file": "04-strategic-interactions-13-coordination-games.html",
+      "title": "4.13 Coordination games and conflicts of interest"
+    },
+    {
+      "file": "04-strategic-interactions-14-modelling-climate-change.html",
+      "title": "4.14 Modelling the global climate change problem"
+    },
+    {
+      "file": "04-strategic-interactions-15-summary.html",
+      "title": "4.15 Summary"
+    },
+    {
+      "file": "04-strategic-interactions-16-references.html",
+      "title": "4.16 References"
+    },
+    {
+      "file": "05-the-rules-of-the-game-01-pirate-economics.html",
+      "title": "5.1 Pirate economics"
+    },
+    {
+      "file": "05-the-rules-of-the-game-02-institutions-and-power.html",
+      "title": "5.2 Institutions and power"
+    },
+    {
+      "file": "05-the-rules-of-the-game-03-evaluating-institutions-outcomes.html",
+      "title": "5.3 Evaluating institutions and outcomes: Fairness"
+    },
+    {
+      "file": "05-the-rules-of-the-game-04-technology-and-preferences.html",
+      "title": "5.4 Setting up a model: Technology and preferences"
+    },
+    {
+      "file": "05-the-rules-of-the-game-05-independent-farmer.html",
+      "title": "5.5 Institutions, and the case of the independent farmer"
+    },
+    {
+      "file": "05-the-rules-of-the-game-06-forced-labour.html",
+      "title": "5.6 Case 1: Forced labour"
+    },
+    {
+      "file": "05-the-rules-of-the-game-07-take-it-or-leave-it.html",
+      "title": "5.7 Case 2: A take-it-or-leave-it contract"
+    },
+    {
+      "file": "05-the-rules-of-the-game-08-bargaining-in-democracy.html",
+      "title": "5.8 Case 3: Bargaining in a democracy"
+    },
+    {
+      "file": "05-the-rules-of-the-game-09-pareto-efficient-sharing.html",
+      "title": "5.9 Case 3 continued: Negotiating to a Pareto-efficient sharing of the surplus"
+    },
+    {
+      "file": "05-the-rules-of-the-game-10-impact-efficiency-fairness.html",
+      "title": "5.10 Lessons on the impact of institutions on efficiency and fairness"
+    },
+    {
+      "file": "05-the-rules-of-the-game-11-distribution-of-income.html",
+      "title": "5.11 The distribution of income: Endowments, technology, and institutions"
+    },
+    {
+      "file": "05-the-rules-of-the-game-12-measuring-economic-inequality.html",
+      "title": "5.12 Measuring economic inequality"
+    },
+    {
+      "file": "05-the-rules-of-the-game-13-redistribute-surplus-raise-efficiency.html",
+      "title": "5.13 Application: A policy to redistribute the surplus and raise efficiency"
+    },
+    {
+      "file": "05-the-rules-of-the-game-14-conflicts-and-bargaining.html",
+      "title": "5.14 Application: Conflicts of interest and bargaining over wages, pollution, and jobs"
+    },
+    {
+      "file": "05-the-rules-of-the-game-15-summary.html",
+      "title": "5.15 Summary"
+    },
+    {
+      "file": "05-the-rules-of-the-game-16-references.html",
+      "title": "5.16 References"
+    },
+    {
+      "file": "06-firm-and-employees-01-exploding-tyres.html",
+      "title": "6.1 Exploding tyres: The mystery unravelled"
+    },
+    {
+      "file": "06-firm-and-employees-02-firm-structure.html",
+      "title": "6.2 The structure of the firm: Owners, managers, and workers"
+    },
+    {
+      "file": "06-firm-and-employees-03-separation-ownership-control.html",
+      "title": "6.3 Other people’s money: The separation of ownership and control"
+    },
+    {
+      "file": "06-firm-and-employees-04-finding-jobs.html",
+      "title": "6.4 Finding jobs and filling vacancies"
+    },
+    {
+      "file": "06-firm-and-employees-05-reservation-wage-curve.html",
+      "title": "6.5 Managing hiring and quitting: The reservation wage curve"
+    },
+    {
+      "file": "06-firm-and-employees-06-contracts-principals-agents.html",
+      "title": "6.6 Getting the work done: Contracts, principals, and agents"
+    },
+    {
+      "file": "06-firm-and-employees-07-job-loss-cost.html",
+      "title": "6.7 Employment rents: The cost of job loss"
+    },
+    {
+      "file": "06-firm-and-employees-08-rents-reservation-wages.html",
+      "title": "6.8 Counting the cost of job loss: Rents and reservation wages"
+    },
+    {
+      "file": "06-firm-and-employees-09-labour-discipline-model.html",
+      "title": "6.9 Getting employees to work hard: The labour discipline model"
+    },
+    {
+      "file": "06-firm-and-employees-10-wage-setting-model.html",
+      "title": "6.10 Combining recruitment and labour discipline: The wage-setting model"
+    },
+    {
+      "file": "06-firm-and-employees-11-wages-employment-unemployment.html",
+      "title": "6.11 Putting the wage-setting model to work: Wages, employment, and the rate of unemployment"
+    },
+    {
+      "file": "06-firm-and-employees-12-employers-exercise-power.html",
+      "title": "6.12 How employers exercise power"
+    },
+    {
+      "file": "06-firm-and-employees-13-minimum-wage.html",
+      "title": "6.13 Application: The minimum wage"
+    },
+    {
+      "file": "06-firm-and-employees-14-business-organization.html",
+      "title": "6.14 Application: Another kind of business organization"
+    },
+    {
+      "file": "06-firm-and-employees-15-summary.html",
+      "title": "6.15 Summary"
+    },
+    {
+      "file": "06-firm-and-employees-16-references.html",
+      "title": "6.16 References"
+    },
+    {
+      "file": "07-firm-and-customers-01-winning-brands.html",
+      "title": "7.1 Winning brands"
+    },
+    {
+      "file": "07-firm-and-customers-02-breakfast-cereal.html",
+      "title": "7.2 Breakfast cereal: Choosing a price"
+    },
+    {
+      "file": "07-firm-and-customers-03-large-scale-production.html",
+      "title": "7.3 Economies of scale and the cost advantages of large-scale production"
+    },
+    {
+      "file": "07-firm-and-customers-04-beautiful-cars.html",
+      "title": "7.4 Production and costs: The cost function for Beautiful Cars"
+    },
+    {
+      "file": "07-firm-and-customers-05-demand-elasticity-revenue.html",
+      "title": "7.5 Demand, elasticity, and revenue"
+    },
+    {
+      "file": "07-firm-and-customers-06-maximize-profit.html",
+      "title": "7.6 Setting price and quantity to maximize profit"
+    },
+    {
+      "file": "07-firm-and-customers-07-divided-surplus.html",
+      "title": "7.7 Gains from trade: The surplus and how it is divided"
+    },
+    {
+      "file": "07-firm-and-customers-08-price-setting-competition-market.html",
+      "title": "7.8 Price setting, competition, and the market"
+    },
+    {
+      "file": "07-firm-and-customers-09-firms-differentiate-products.html",
+      "title": "7.9 How firms differentiate their products"
+    },
+    {
+      "file": "07-firm-and-customers-10-strategic-price-setting.html",
+      "title": "7.10 Markets with few firms: Strategic price setting"
+    },
+    {
+      "file": "07-firm-and-customers-11-decreasing-long-run-costs.html",
+      "title": "7.11 Firms and markets with decreasing long-run average costs"
+    },
+    {
+      "file": "07-firm-and-customers-12-influencing-market-power.html",
+      "title": "7.12 Influencing market power, and competition policy"
+    },
+    {
+      "file": "07-firm-and-customers-13-summary.html",
+      "title": "7.13 Summary"
+    },
+    {
+      "file": "07-firm-and-customers-14-references.html",
+      "title": "7.14 References"
+    },
+    {
+      "file": "08-supply-demand-01-american-civil-war.html",
+      "title": "8.1 Supply and demand: Markets with many buyers and sellers"
+    },
+    {
+      "file": "08-supply-demand-02-buying-and-selling.html",
+      "title": "8.2 Buying and selling: Demand, supply, and the market-clearing price"
+    },
+    {
+      "file": "08-supply-demand-03-competitive-equilibrium-price-taking.html",
+      "title": "8.3 Competitive equilibrium and price-taking"
+    },
+    {
+      "file": "08-supply-demand-04-firms-in-competitive-equilibrium.html",
+      "title": "8.4 Firms in competitive equilibrium"
+    },
+    {
+      "file": "08-supply-demand-05-gains-from-trade.html",
+      "title": "8.5 Gains from trade in competitive equilibrium: Allocation and distribution"
+    },
+    {
+      "file": "08-supply-demand-06-changes-in-supply-demand.html",
+      "title": "8.6 Changes in supply and demand"
+    },
+    {
+      "file": "08-supply-demand-07-equilibria.html",
+      "title": "8.7 Short-run and long-run equilibria"
+    },
+    {
+      "file": "08-supply-demand-08-market-dynamics.html",
+      "title": "8.8 Application: Market dynamics in the oil market"
+    },
+    {
+      "file": "08-supply-demand-09-how-competition-works.html",
+      "title": "8.9 How competition works: Transforming a cartel coordination game into a competitive prisoners’ dilemma"
+    },
+    {
+      "file": "08-supply-demand-10-supply-demand-competitive-equilibrium.html",
+      "title": "8.10 Supply, demand, and competitive equilibrium: Is this a good model?"
+    },
+    {
+      "file": "08-supply-demand-11-information-about-prices.html",
+      "title": "8.11 Application: Why information about prices matters"
+    },
+    {
+      "file": "08-supply-demand-12-effect-of-tax.html",
+      "title": "8.12 The effect of a tax"
+    },
+    {
+      "file": "08-supply-demand-13-price-controls.html",
+      "title": "8.13 Price controls"
+    },
+    {
+      "file": "08-supply-demand-14-summary.html",
+      "title": "8.14 Summary"
+    },
+    {
+      "file": "08-supply-demand-15-references.html",
+      "title": "8.15 References"
+    },
+    {
+      "file": "09-lenders-borrowers-01-chambar-moneylenders.html",
+      "title": "9.1 The importance of Chambar moneylenders"
+    },
+    {
+      "file": "09-lenders-borrowers-02-income-and-wealth.html",
+      "title": "9.2 Income and wealth"
+    },
+    {
+      "file": "09-lenders-borrowers-03-bringing-consumption-forward.html",
+      "title": "9.3 Borrowing: Bringing consumption forward in time to the present"
+    },
+    {
+      "file": "09-lenders-borrowers-04-reasons-to-borrow.html",
+      "title": "9.4 Reasons to borrow: The value of spending now"
+    },
+    {
+      "file": "09-lenders-borrowers-05-discounting-external-effects.html",
+      "title": "9.5 Application: Discounting, external effects, and the future of the planet"
+    },
+    {
+      "file": "09-lenders-borrowers-06-lending-and-storing.html",
+      "title": "9.6 Lending and storing: Moving consumption to the future"
+    },
+    {
+      "file": "09-lenders-borrowers-07-investing-consumption.html",
+      "title": "9.7 Investing: Another way to move consumption to the future"
+    },
+    {
+      "file": "09-lenders-borrowers-08-conflicts-over-gains.html",
+      "title": "9.8 Conflicts over the gains made possible by borrowing and lending"
+    },
+    {
+      "file": "09-lenders-borrowers-09-principal-agent-problem.html",
+      "title": "9.9 Borrowers and lenders: A principal–agent problem"
+    },
+    {
+      "file": "09-lenders-borrowers-10-inequality-credit-markets.html",
+      "title": "9.10 Inequality: Lenders, borrowers, and those excluded from credit markets"
+    },
+    {
+      "file": "09-lenders-borrowers-11-good-model.html",
+      "title": "9.11 How good is the model?"
+    },
+    {
+      "file": "09-lenders-borrowers-12-poverty-trap.html",
+      "title": "9.12 A poverty trap for those with limited wealth"
+    },
+    {
+      "file": "09-lenders-borrowers-13-reduce-risk-exposure.html",
+      "title": "9.13 Application: Policies to reduce risk exposure of less well off people"
+    },
+    {
+      "file": "09-lenders-borrowers-14-summary.html",
+      "title": "9.14 Summary"
+    },
+    {
+      "file": "09-lenders-borrowers-15-references.html",
+      "title": "9.15 References"
+    },
+    {
+      "file": "10-market-successes-failures-01-bananas-fish-cancer.html",
+      "title": "10.1 Bananas, fish, and cancer"
+    },
+    {
+      "file": "10-market-successes-failures-02-pollution-effects.html",
+      "title": "10.2 The external effects of pollution: Private and social costs and benefits"
+    },
+    {
+      "file": "10-market-successes-failures-03-bargaining-property-rights.html",
+      "title": "10.3 Solving the problem: Private bargaining and property rights"
+    },
+    {
+      "file": "10-market-successes-failures-04-regulation-taxation-compensation.html",
+      "title": "10.4 Solving the problem: Regulation, taxation, and compensation"
+    },
+    {
+      "file": "10-market-successes-failures-05-examples-diagnoses.html",
+      "title": "10.5 External effects: More examples and diagnoses"
+    },
+    {
+      "file": "10-market-successes-failures-06-radio-broadcasting.html",
+      "title": "10.6 Public goods, non-rivalry, and excludability: A model of radio broadcasting"
+    },
+    {
+      "file": "10-market-successes-failures-07-open-access-shared-resources.html",
+      "title": "10.7 Public goods and bads, open access, and shared resources"
+    },
+    {
+      "file": "10-market-successes-failures-08-principal-agent-relationships.html",
+      "title": "10.8 Asymmetric information: Principal–agent relationships, hidden actions, and incomplete contracts"
+    },
+    {
+      "file": "10-market-successes-failures-09-insurance-credit-markets.html",
+      "title": "10.9 Hidden actions and risk: Market failure in insurance and credit markets"
+    },
+    {
+      "file": "10-market-successes-failures-10-hidden-attributes.html",
+      "title": "10.10 Asymmetric information: Hidden attributes and adverse selection"
+    },
+    {
+      "file": "10-market-successes-failures-11-market-limits.html",
+      "title": "10.11 The limits of markets"
+    },
+    {
+      "file": "10-market-successes-failures-12-summary.html",
+      "title": "10.12 Summary"
+    },
+    {
+      "file": "10-market-successes-failures-13-references.html",
+      "title": "10.13 References"
+    },
+    {
+      "file": "50-01-looking-forward.html",
+      "title": "Looking forward to economics after The Economy 2.0"
+    },
+    {
+      "file": "50-03-bibliography.html",
+      "title": "Bibliography"
+    },
+    {
+      "file": "50-04-copyright-acknowledgements.html",
+      "title": "Copyright acknowledgements"
+    },
+    {
+      "file": "50-05-index.html",
+      "title": "Index"
+    },
+    {
+      "file": "transcript-piketty-and-heckman_why-economics-needs-data.html",
+      "title": "Thomas Piketty and James Heckman: Why economics needs data",
+      "supplement": true
+    },
+    {
+      "file": "transcript-bob-allen_why-britain-industrialised-when-others-did-not.html",
+      "title": "Bob Allen: Why the Industrial Revolution first happened in Britain",
+      "supplement": true
+    },
+    {
+      "file": "transcript-suresh-naidu_why-some-countries-grew-rich.html",
+      "title": "Suresh Naidu: What produced the real wage hockey stick",
+      "supplement": true
+    },
+    {
+      "file": "transcript-juliet-schor_why-do-we-work-so-hard.html",
+      "title": "Juliet Schor: Why do we work so hard?",
+      "supplement": true
+    },
+    {
+      "file": "transcript-juan-camilo-cardenas_invisible-hands-working-together.html",
+      "title": "Juan Camilo Cárdenas: Cooperative behaviour in experiments",
+      "supplement": true
+    },
+    {
+      "file": "transcript-anna-vitali_how-important-is-information-in-the-labour-market.html",
+      "title": "In our ‘Economist in Action’ video, Anna Vitali discusses ‘How important is the information in the labour market?’",
+      "supplement": true
+    },
+    {
+      "file": "transcript-arin-dube_the-impact-of-a-minimum-wage.html",
+      "title": "Arin Dube: The impact of a minimum wage",
+      "supplement": true
+    },
+    {
+      "file": "transcript-kathryn-graddy_fishing-for-perfect-competition.html",
+      "title": "Kathryn Graddy: Fishing for perfect competition",
+      "supplement": true
+    },
+    {
+      "file": "transcript-alvin-roth_matching-markets.html",
+      "title": "Alvin Roth: How matching markets work",
+      "supplement": true
+    }
+  ],
+  "macroeconomics": [
+    {
+      "file": "0-2-copyright.html",
+      "title": "Copyright"
+    },
+    {
+      "file": "0-4-preface.html",
+      "title": "Preface"
+    },
+    {
+      "file": "0-5-note-to-instructors.html",
+      "title": "How to cite The Economy 2.0"
+    },
+    {
+      "file": "0-6-contributors.html",
+      "title": "Authorship and production"
+    },
+    {
+      "file": "0-7-features-list.html",
+      "title": "List of features"
+    },
+    {
+      "file": "0-8-intro-to-extensions.html",
+      "title": "Introduction to mathematical extensions"
+    },
+    {
+      "file": "50-02-glossary.html",
+      "title": "Glossary"
+    },
+    {
+      "file": "01-supply-side-macroeconomy-01-jobs-wages.html",
+      "title": "1.1 Family fortunes: Jobs, wages, and the global macroeconomy"
+    },
+    {
+      "file": "01-supply-side-macroeconomy-02-the-whole-economy.html",
+      "title": "1.2 The economy as a whole"
+    },
+    {
+      "file": "01-supply-side-macroeconomy-03-output-employment-inactivity.html",
+      "title": "1.3 Measuring the macroeconomy: Output, employment, unemployment, and inactivity"
+    },
+    {
+      "file": "01-supply-side-macroeconomy-04-prices-wages.html",
+      "title": "1.4 Measuring the macroeconomy: Nominal wages, prices, and real wages"
+    },
+    {
+      "file": "01-supply-side-macroeconomy-05-supply-side.html",
+      "title": "1.5 The supply side of the macroeconomy"
+    },
+    {
+      "file": "01-supply-side-macroeconomy-06-wage-setting.html",
+      "title": "1.6 Wage setting and unemployment (WS curve)"
+    },
+    {
+      "file": "01-supply-side-macroeconomy-07-price-setting.html",
+      "title": "1.7 The price-setting real wage (PS curve)"
+    },
+    {
+      "file": "01-supply-side-macroeconomy-08-ws-ps-equilibrium.html",
+      "title": "1.8 Equilibrium and disequilibrium in the WS–PS model"
+    },
+    {
+      "file": "01-supply-side-macroeconomy-09-studying-the-economy.html",
+      "title": "1.9 Studying the economy as a whole: Macroeconomics"
+    },
+    {
+      "file": "01-supply-side-macroeconomy-10-summary.html",
+      "title": "1.10 Summary"
+    },
+    {
+      "file": "01-supply-side-macroeconomy-11-references.html",
+      "title": "1.11 References"
+    },
+    {
+      "file": "02-unemployment-wages-inequality-01-scarred-generation.html",
+      "title": "2.1 A scarred generation"
+    },
+    {
+      "file": "02-unemployment-wages-inequality-02-measuring-economy-inequality.html",
+      "title": "2.2 Measuring the economy: Inequality"
+    },
+    {
+      "file": "02-unemployment-wages-inequality-03-structural-unemployment.html",
+      "title": "2.3 Unemployment and inequality: WS–PS model and Lorenz curve"
+    },
+    {
+      "file": "02-unemployment-wages-inequality-04-labour-market-policies.html",
+      "title": "2.4 Labour market policies to address structural unemployment and inequality"
+    },
+    {
+      "file": "02-unemployment-wages-inequality-05-labour-unions.html",
+      "title": "2.5 Labour unions"
+    },
+    {
+      "file": "02-unemployment-wages-inequality-06-segmented-labour-markets.html",
+      "title": "2.6 Segmented labour markets"
+    },
+    {
+      "file": "02-unemployment-wages-inequality-07-taxes-ws-ps-model.html",
+      "title": "2.7 Taxes and the WS–PS model"
+    },
+    {
+      "file": "02-unemployment-wages-inequality-08-imported-materials.html",
+      "title": "2.8 Imported materials and the WS–PS model"
+    },
+    {
+      "file": "02-unemployment-wages-inequality-09-inequality-increase-us.html",
+      "title": "2.9 Application: Did a decline in competition increase inequality in the US?"
+    },
+    {
+      "file": "02-unemployment-wages-inequality-10-application-labour-market-denmark.html",
+      "title": "2.10 Application: Employment security and labour market flexibility in Denmark"
+    },
+    {
+      "file": "02-unemployment-wages-inequality-11-successes-and-failures.html",
+      "title": "2.11 Successes and failures: Germany and Spain"
+    },
+    {
+      "file": "02-unemployment-wages-inequality-12-how-good-is-the-model.html",
+      "title": "2.12 How good is the model?"
+    },
+    {
+      "file": "02-unemployment-wages-inequality-13-summary.html",
+      "title": "2.13 Summary"
+    },
+    {
+      "file": "02-unemployment-wages-inequality-14-references.html",
+      "title": "2.14 References"
+    },
+    {
+      "file": "03-aggregate-demand-01-great-recession-hardship.html",
+      "title": "3.1 The ‘great recession’: Hardship at home and at work"
+    },
+    {
+      "file": "03-aggregate-demand-02-gross-domestic-product.html",
+      "title": "3.2 Measuring the aggregate economy: Gross domestic product"
+    },
+    {
+      "file": "03-aggregate-demand-03-components-of-gdp.html",
+      "title": "3.3 GDP as expenditure: The components of GDP"
+    },
+    {
+      "file": "03-aggregate-demand-04-interpreting-gdp.html",
+      "title": "3.4 Interpreting GDP"
+    },
+    {
+      "file": "03-aggregate-demand-05-growth-fluctuations.html",
+      "title": "3.5 Growth and fluctuations"
+    },
+    {
+      "file": "03-aggregate-demand-06-introducing-multiplier-model.html",
+      "title": "3.6 Introducing the multiplier model"
+    },
+    {
+      "file": "03-aggregate-demand-07-business-cycle-fluctuations.html",
+      "title": "3.7 The multiplier model: Aggregate demand shocks cause business cycle fluctuations"
+    },
+    {
+      "file": "03-aggregate-demand-08-government-net-exports.html",
+      "title": "3.8 The multiplier model: Including the government and net exports"
+    },
+    {
+      "file": "03-aggregate-demand-09-smooth-consumption.html",
+      "title": "3.9 Why is consumption relatively smooth?"
+    },
+    {
+      "file": "03-aggregate-demand-10-shocks-and-limits-to-consumption.html",
+      "title": "3.10 Shocks to households and the limits to smoothing consumption"
+    },
+    {
+      "file": "03-aggregate-demand-11-why-is-investment-volatile.html",
+      "title": "3.11 Why is investment volatile?"
+    },
+    {
+      "file": "03-aggregate-demand-12-investment-spending.html",
+      "title": "3.12 Investment spending in the multiplier model"
+    },
+    {
+      "file": "03-aggregate-demand-13-application-china-post-covid.html",
+      "title": "3.13 Application: China’s post-COVID-19 aggregate demand problem"
+    },
+    {
+      "file": "03-aggregate-demand-14-summary.html",
+      "title": "3.14 Summary"
+    },
+    {
+      "file": "03-aggregate-demand-15-references.html",
+      "title": "3.15 References"
+    },
+    {
+      "file": "04-inflation-and-employment-01-cost-of-living-crisis.html",
+      "title": "4.1 Cost of living crisis"
+    },
+    {
+      "file": "04-inflation-and-employment-02-measuring-the-economy-inflation.html",
+      "title": "4.2 Measuring the economy: Inflation"
+    },
+    {
+      "file": "04-inflation-and-employment-03-whats-wrong-with-inflation.html",
+      "title": "4.3 What’s wrong with inflation?"
+    },
+    {
+      "file": "04-inflation-and-employment-04-inflation-unemployment-conflicting-claims.html",
+      "title": "4.4 Inflation, unemployment, and conflicting claims on output"
+    },
+    {
+      "file": "04-inflation-and-employment-05-modelling-relationship-inflation-unemployment.html",
+      "title": "4.5 Modelling the relationship between inflation and unemployment"
+    },
+    {
+      "file": "04-inflation-and-employment-06-expected-inflation-shifts-phillips-curve.html",
+      "title": "4.6 Expected inflation shifts the Phillips curve"
+    },
+    {
+      "file": "04-inflation-and-employment-07-business-cycle-model-supply-side.html",
+      "title": "4.7 The business cycle model: Aggregate demand, the supply side, and inflation"
+    },
+    {
+      "file": "04-inflation-and-employment-08-business-cycle-model-shocks-inflation-expectations.html",
+      "title": "4.8 The business cycle model: Demand and supply shocks, and inflation expectations"
+    },
+    {
+      "file": "04-inflation-and-employment-09-global-oil-other-commodity-price-shocks.html",
+      "title": "4.9 Global oil and other commodity price shocks"
+    },
+    {
+      "file": "04-inflation-and-employment-10-review-causes-inflation.html",
+      "title": "4.10 A review of causes of inflation"
+    },
+    {
+      "file": "04-inflation-and-employment-11-application-inflation-after-pandemic.html",
+      "title": "4.11 Application: The return of inflation after the pandemic"
+    },
+    {
+      "file": "04-inflation-and-employment-12-summary.html",
+      "title": "4.12 Summary"
+    },
+    {
+      "file": "04-inflation-and-employment-13-references.html",
+      "title": "4.13 References"
+    },
+    {
+      "file": "05-macroeconomic-policy-01-government-popularity-inflation-unemployment.html",
+      "title": "5.1 ‘It’s the economy, stupid’: Government popularity, inflation, and unemployment"
+    },
+    {
+      "file": "05-macroeconomic-policy-02-government-fiscal-monetary-policy.html",
+      "title": "5.2 The role of government: Introducing fiscal and monetary policy"
+    },
+    {
+      "file": "05-macroeconomic-policy-03-responses-to-demand-shocks.html",
+      "title": "5.3 Fiscal and monetary policy responses to demand shocks"
+    },
+    {
+      "file": "05-macroeconomic-policy-04-policymakers-division-of-labour.html",
+      "title": "5.4 The division of labour between fiscal and monetary policymakers"
+    },
+    {
+      "file": "05-macroeconomic-policy-05-negative-supply-shock.html",
+      "title": "5.5 A negative (inflationary) supply shock and the monetary policy dilemma"
+    },
+    {
+      "file": "05-macroeconomic-policy-06-governments-and-fluctuations.html",
+      "title": "5.6 Fiscal policy: How governments can dampen fluctuations"
+    },
+    {
+      "file": "05-macroeconomic-policy-07-multiplier-and-fiscal-policy.html",
+      "title": "5.7 The size of the multiplier and the impact of fiscal policy"
+    },
+    {
+      "file": "05-macroeconomic-policy-08-government-austerity.html",
+      "title": "5.8 Government austerity policy and the paradox of thrift"
+    },
+    {
+      "file": "05-macroeconomic-policy-09-inflation-targeting.html",
+      "title": "5.9 Monetary policy and inflation targeting"
+    },
+    {
+      "file": "05-macroeconomic-policy-10-inflation-expectations.html",
+      "title": "5.10 Monetary policy and anchored inflation expectations"
+    },
+    {
+      "file": "05-macroeconomic-policy-11-application-to-russia-ukraine-war.html",
+      "title": "5.11 Application: Inflation and the monetary policy response to the Russia–Ukraine war"
+    },
+    {
+      "file": "05-macroeconomic-policy-12-investment-asset-prices.html",
+      "title": "5.12 Current costs and future benefits: Understanding investment and asset prices"
+    },
+    {
+      "file": "05-macroeconomic-policy-13-transmission-of-policy-decisions.html",
+      "title": "5.13 Transmission of monetary policy decisions to inflation: Domestic channels"
+    },
+    {
+      "file": "05-macroeconomic-policy-14-exchange-rate.html",
+      "title": "5.14 Monetary policy and the exchange rate"
+    },
+    {
+      "file": "05-macroeconomic-policy-15-uk-case-study-1950-2023.html",
+      "title": "5.15 Application: Policy responses to supply shocks—case study of the UK 1950–2023"
+    },
+    {
+      "file": "05-macroeconomic-policy-16-summary.html",
+      "title": "5.16 Summary"
+    },
+    {
+      "file": "05-macroeconomic-policy-17-references.html",
+      "title": "5.17 References"
+    },
+    {
+      "file": "06-financial-sector-01-how-do-you-live-if-you-dont-work.html",
+      "title": "6.1 How do you live if you don’t work?"
+    },
+    {
+      "file": "06-financial-sector-02-bilateral-debt.html",
+      "title": "6.2 Bilateral debt: Marco and Julia"
+    },
+    {
+      "file": "06-financial-sector-03-debt-and-financial-sector.html",
+      "title": "6.3 Debt and the financial sector: Financial intermediaries and financial markets"
+    },
+    {
+      "file": "06-financial-sector-04-introducing-a-bank.html",
+      "title": "6.4 Introducing a bank"
+    },
+    {
+      "file": "06-financial-sector-05-introducing-money.html",
+      "title": "6.5 Introducing money"
+    },
+    {
+      "file": "06-financial-sector-06-introducing-central-bank.html",
+      "title": "6.6 Introducing the central bank"
+    },
+    {
+      "file": "06-financial-sector-07-central-bank-balance-sheet-and-government.html",
+      "title": "6.7 Who really signs the banknotes? The central bank’s balance sheet and the government"
+    },
+    {
+      "file": "06-financial-sector-08-money-creation-in-modern-economy.html",
+      "title": "6.8 Money creation in a modern economy"
+    },
+    {
+      "file": "06-financial-sector-09-introducing-financial-markets.html",
+      "title": "6.9 Introducing financial markets"
+    },
+    {
+      "file": "06-financial-sector-10-businesses-capital-and-leverage.html",
+      "title": "6.10 Businesses: Capital and the magic (and risks) of leverage"
+    },
+    {
+      "file": "06-financial-sector-11-household-investments.html",
+      "title": "6.11 Household investments: Housing and financial assets"
+    },
+    {
+      "file": "06-financial-sector-12-financial-sector-overview.html",
+      "title": "6.12 The financial sector: A summary and overview"
+    },
+    {
+      "file": "06-financial-sector-13-summary.html",
+      "title": "6.13 Summary"
+    },
+    {
+      "file": "06-financial-sector-14-references.html",
+      "title": "6.14 References"
+    },
+    {
+      "file": "07-macroeconomic-policy-global-economy-01-government-spending-inflation.html",
+      "title": "7.1 Chainsaws, government spending, and inflation"
+    },
+    {
+      "file": "07-macroeconomic-policy-global-economy-02-exchange-rate-regimes-monetary-policy-inflation.html",
+      "title": "7.2 Exchange rate regimes, monetary policy, and inflation"
+    },
+    {
+      "file": "07-macroeconomic-policy-global-economy-03-flexible-exchange-rate-regime.html",
+      "title": "7.3 A flexible exchange rate regime with no stable inflation target ( FlexNIT )"
+    },
+    {
+      "file": "07-macroeconomic-policy-global-economy-04-common-currency-area.html",
+      "title": "7.4 The ultimate Fix economy: A country within a common currency area"
+    },
+    {
+      "file": "07-macroeconomic-policy-global-economy-05-exchange-rate-monetary-regimes.html",
+      "title": "7.5 Exchange rate and monetary regimes: The story so far"
+    },
+    {
+      "file": "07-macroeconomic-policy-global-economy-06-fixed-and-flexible-exchange-rate-regimes.html",
+      "title": "7.6 Fixed and flexible exchange rate regimes in practice around the world"
+    },
+    {
+      "file": "07-macroeconomic-policy-global-economy-07-exchange-rate-regimes-and-inflation-outcomes.html",
+      "title": "7.7 Exchange rate regimes and inflation outcomes in the world"
+    },
+    {
+      "file": "07-macroeconomic-policy-global-economy-08-global-financial-markets.html",
+      "title": "7.8 Global financial markets and policy interest rates"
+    },
+    {
+      "file": "07-macroeconomic-policy-global-economy-09-global-capital-mobility-interest-rates.html",
+      "title": "7.9 Implications of global capital mobility for interest rates in different monetary exchange rate regimes"
+    },
+    {
+      "file": "07-macroeconomic-policy-global-economy-10-why-some-countries-high-inflation.html",
+      "title": "7.10 Why do some countries still end up with high and volatile inflation?"
+    },
+    {
+      "file": "07-macroeconomic-policy-global-economy-11-application-quality-of-governance-and-inflation.html",
+      "title": "7.11 Application: Quality of governance and inflation"
+    },
+    {
+      "file": "07-macroeconomic-policy-global-economy-12-summary.html",
+      "title": "7.12 Summary"
+    },
+    {
+      "file": "07-macroeconomic-policy-global-economy-13-references.html",
+      "title": "7.13 References"
+    },
+    {
+      "file": "08-financial-environmental-crises-01-lehman-brothers-collapse.html",
+      "title": "8.1 Collapse of Lehman Brothers (2007–2009)"
+    },
+    {
+      "file": "08-financial-environmental-crises-02-tipping-points-instability-lock-in.html",
+      "title": "8.2 Tipping points, instability, and lock-in"
+    },
+    {
+      "file": "08-financial-environmental-crises-03-real-world-poverty-trap-application.html",
+      "title": "8.3 Application: A real-world poverty trap"
+    },
+    {
+      "file": "08-financial-environmental-crises-04-assets-price-bubbles.html",
+      "title": "8.4 Assets and price bubbles"
+    },
+    {
+      "file": "08-financial-environmental-crises-05-model-house-price-bubble.html",
+      "title": "8.5 Modelling a house price bubble and collapse"
+    },
+    {
+      "file": "08-financial-environmental-crises-06-housing-market-changes-pdc-shifts.html",
+      "title": "8.6 Structural changes in the housing market and shifts of the S-shaped PDC"
+    },
+    {
+      "file": "08-financial-environmental-crises-07-borrowing-lending-aggregate-consumption.html",
+      "title": "8.7 Housing booms and busts: Household borrowing, bank lending, and aggregate consumption"
+    },
+    {
+      "file": "08-financial-environmental-crises-08-inequality-us-housing-application.html",
+      "title": "8.8 Application: Inequality and the US housing boom and bust"
+    },
+    {
+      "file": "08-financial-environmental-crises-09-vulnerabilities-of-banks.html",
+      "title": "8.9 Leverage and interconnection: The vulnerabilities of banks"
+    },
+    {
+      "file": "08-financial-environmental-crises-10-instability-of-financial-system.html",
+      "title": "8.10 Addressing instability of the financial system"
+    },
+    {
+      "file": "08-financial-environmental-crises-11-environmental-collapse-model.html",
+      "title": "8.11 A model of environmental collapse: The disappearance of Arctic sea ice"
+    },
+    {
+      "file": "08-financial-environmental-crises-12-prudential-environmental-policies.html",
+      "title": "8.12 Prudential policies to address fundamental uncertainty about environmental tipping points"
+    },
+    {
+      "file": "08-financial-environmental-crises-13-carbon-trap-green-technologies.html",
+      "title": "8.13 Destabilizing a carbon trap to promote green technologies"
+    },
+    {
+      "file": "08-financial-environmental-crises-14-summary.html",
+      "title": "8.14 Summary"
+    },
+    {
+      "file": "08-financial-environmental-crises-15-references.html",
+      "title": "8.15 References"
+    },
+    {
+      "file": "09-uneven-development-01-chinas-economy-living-standards.html",
+      "title": "9.1 The transformation of China’s economy and living standards"
+    },
+    {
+      "file": "09-uneven-development-02-measuring-economic-growth.html",
+      "title": "9.2 Measuring economic growth: Ratio scales and growth rates"
+    },
+    {
+      "file": "09-uneven-development-03-capital-goods-and-technology.html",
+      "title": "9.3 Capital goods and technology"
+    },
+    {
+      "file": "09-uneven-development-04-capital-accumulation-growth-rate.html",
+      "title": "9.4 How much does capital accumulation contribute to the growth rate of living standards?"
+    },
+    {
+      "file": "09-uneven-development-05-investment-and-saving.html",
+      "title": "9.5 Investment and saving"
+    },
+    {
+      "file": "09-uneven-development-06-barriers-to-growth.html",
+      "title": "9.6 Barriers to growth"
+    },
+    {
+      "file": "09-uneven-development-07-institutions-and-catching-up.html",
+      "title": "9.7 Institutions (rules of the game) and catching up"
+    },
+    {
+      "file": "09-uneven-development-08-growth-stagnation-vs-rapid-growth.html",
+      "title": "9.8 How poor countries get stuck at low growth and how they can grow rapidly"
+    },
+    {
+      "file": "09-uneven-development-09-growth-transitions.html",
+      "title": "9.9 Growth transitions"
+    },
+    {
+      "file": "09-uneven-development-10-application-growth-bangladesh-pakistan.html",
+      "title": "9.10 Application: Growth in Bangladesh and Pakistan"
+    },
+    {
+      "file": "09-uneven-development-11-catch-up-growth.html",
+      "title": "9.11 Catch-up growth: A less unequal world"
+    },
+    {
+      "file": "09-uneven-development-12-planetary-limits-sustainable-growth.html",
+      "title": "9.12 Planetary limits and sustainable growth"
+    },
+    {
+      "file": "09-uneven-development-13-summary.html",
+      "title": "9.13 Summary"
+    },
+    {
+      "file": "09-uneven-development-14-references.html",
+      "title": "9.14 References"
+    },
+    {
+      "file": "10-government-as-economic-actor-01-womens-right-to-vote-usa-child-mortality-reduction.html",
+      "title": "10.1 Women’s right to vote and the reduction in child mortality in the United States"
+    },
+    {
+      "file": "10-government-as-economic-actor-02-government-as-economic-actor.html",
+      "title": "10.2 Government as an economic actor"
+    },
+    {
+      "file": "10-government-as-economic-actor-03-democracy-as-political-institution.html",
+      "title": "10.3 Democracy as a political institution"
+    },
+    {
+      "file": "10-government-as-economic-actor-04-political-preferences-and-electoral-competition.html",
+      "title": "10.4 Political preferences and electoral competition: The median voter model"
+    },
+    {
+      "file": "10-government-as-economic-actor-05-democracy-advance-and-stalling.html",
+      "title": "10.5 The advance of democracy and its stalling"
+    },
+    {
+      "file": "10-government-as-economic-actor-06-democracy-makes-a-difference.html",
+      "title": "10.6 Democracy makes a difference"
+    },
+    {
+      "file": "10-government-as-economic-actor-07-modelling-a-self-interested-political-elite.html",
+      "title": "10.7 Modelling a self-interested political elite: Rent-seeking"
+    },
+    {
+      "file": "10-government-as-economic-actor-08-political-rent-seeking.html",
+      "title": "10.8 Scope for political rent-seeking under different political systems"
+    },
+    {
+      "file": "10-government-as-economic-actor-09-political-competition-and-government-policy.html",
+      "title": "10.9 How political competition affects government policy"
+    },
+    {
+      "file": "10-government-as-economic-actor-10-political-and-economic-competition-parallels.html",
+      "title": "10.10 The parallels between political and economic competition"
+    },
+    {
+      "file": "10-government-as-economic-actor-11-unfairness-and-market-failures-democracies.html",
+      "title": "10.11 The persistence of unfairness and market failures in democracies: Why governments fail"
+    },
+    {
+      "file": "10-government-as-economic-actor-12-economic-infeasibility.html",
+      "title": "10.12 Economic infeasibility"
+    },
+    {
+      "file": "10-government-as-economic-actor-13-citizens-elected-leaders-as-principals-agents.html",
+      "title": "10.13 Citizens and elected leaders as principals and agents"
+    },
+    {
+      "file": "10-government-as-economic-actor-14-policy-matters-and-economics-works.html",
+      "title": "10.14 Policy matters and economics works: Government success"
+    },
+    {
+      "file": "10-government-as-economic-actor-15-afterword.html",
+      "title": "10.15 Afterword"
+    },
+    {
+      "file": "10-government-as-economic-actor-16-summary.html",
+      "title": "10.16 Summary"
+    },
+    {
+      "file": "10-government-as-economic-actor-17-references.html",
+      "title": "10.17 References"
+    },
+    {
+      "file": "50-01-looking-forward.html",
+      "title": "Looking forward to economics after The Economy 2.0"
+    },
+    {
+      "file": "50-03-bibliography.html",
+      "title": "Bibliography"
+    },
+    {
+      "file": "50-04-copyright-acknowledgements.html",
+      "title": "Copyright acknowledgements"
+    },
+    {
+      "file": "50-05-index.html",
+      "title": "Index"
+    },
+    {
+      "file": "transcript-john-van-reenen_what-determines-productivity.html",
+      "title": "John Van Reenen: What determines productivity?",
+      "supplement": true
+    },
+    {
+      "file": "transcript-stefanie-stantcheva_why-do-people-dislike-inflation.html",
+      "title": "In our ‘Economist in Action’ video, Stefanie Stantcheva discusses ‘Why do people dislike inflation?’",
+      "supplement": true
+    },
+    {
+      "file": "transcript-anat-admati_whats-wrong-with-banking.html",
+      "title": "Anat Admati: What's wrong with the banking system",
+      "supplement": true
+    },
+    {
+      "file": "transcript-too-big-to-fail_lessons-from-a-decade-of-financial-sector-reforms.html",
+      "title": "Claudia Buch: 'Too big to fail' and financial sector reforms",
+      "supplement": true
+    },
+    {
+      "file": "transcript-simon-johnson_how-do-good-institutions-influence-economic-growth.html",
+      "title": "In our ‘Economist in Action’ video, Simon Johnson discusses how good institutions influence economic growth.",
+      "supplement": true
+    },
+    {
+      "file": "transcript-leonard-wantchekon_how-the-slave-trade-created-mistrust-and-held-back-gdp-growth-in-west-africa.html",
+      "title": "In our ‘Economist in Action’ video, Leonard Wantchekon discusses how the slave trade created mistrust and held back GDP growth in West Africa.",
+      "supplement": true
+    },
+    {
+      "file": "transcript-mushtaq-khan_how-bangladesh-surmounted-market-failures-to-become-a-leading-garment-exporter.html",
+      "title": "In our ‘Economist in Action’ video, Mushtaq Khan explains how Bangladesh surmounted market failures to become a leading garment exporter.",
+      "supplement": true
+    },
+    {
+      "file": "transcript-esther-duflo_representation-for-women-in-india.html",
+      "title": "In our 'Economist in action' video, Esther Duflo explains what happened when it was mandated that randomly selected villages elect a woman to head their local council.",
+      "supplement": true
+    },
+    {
+      "file": "transcript-james-heckman_the-economics-of-inequality-and-childhood-education.html",
+      "title": "James Heckman explores the question of how schooling and preschool experience affects inequality.",
+      "supplement": true
+    }
+  ]
+}
