@@ -1,6 +1,6 @@
-# COREType 1.4.1
+# COREType 1.4.2
 
-Version 1.4.1 enlarges the clickable area of the top-right Practice, History and Settings buttons for more reliable mouse and trackpad use.
+Version 1.4.2 adds Previous paragraph navigation. It remembers the path through both ordered and random selections, so Next moves forward again after going back. Version 1.4.1 enlarged the clickable area of the top-right Practice, History and Settings buttons.
 
 A standalone, native, offline macOS typing app using Sasha's existing prepared **The Economy 2.0** excerpts. It includes 6,893 paragraphs: 3,505 Microeconomics and 3,388 Macroeconomics, organized into 20 verified chapters and 271 sections. No account, browser, network service, or third-party runtime is required.
 
@@ -12,7 +12,7 @@ Open `/Users/alexlodh/Applications/COREType.app` in Finder, or unzip `COREType-m
 
 - Browse Both, Micro, or Macro; search chapter and section titles by topic or number. The book tabs and search filter the browser. Checkboxes define the scope, and **Use this selection** applies it.
 - Select a whole unit with its checkbox, or expand it to choose individual sections. **Select shown** and **Clear shown** affect the visible search results only. Empty scopes display a recovery prompt.
-- **In order** follows Micro, then Macro, with unit/section/paragraph order preserved and wraparound. **Random** draws a whole paragraph from the applied scope and avoids immediate repeats when the scope has multiple paragraphs. No words are shuffled.
+- **In order** follows Micro, then Macro, with unit/section/paragraph order preserved and wraparound. **Random** draws a whole paragraph from the applied scope and avoids immediate repeats when the scope has multiple paragraphs. Previous and Next let you revisit the navigation path in either mode. No words are shuffled.
 - **Passage** completes after the entire excerpt. **Timed** starts on the first typed character and continues through complete paragraphs until the active timer expires. Presets are 15, 30, 60, and 120 seconds; custom duration accepts 1–3,600 seconds.
 - Click the passage to focus it. Correct characters brighten, errors turn red with an underline, and the amber caret follows your typing. Long passages scroll to the caret.
 - Backspace corrects a character; Option–Backspace deletes back to the preceding space. Mistakes remain counted after correction. Text is typed sequentially; arrow keys do not move the input position. Paste is disabled.

@@ -115,6 +115,27 @@ final class TypingCoreTests {
         XCTAssertEqual(picker.next(in: [scope[0]], order: .random)?.id, scope[0].id)
         XCTAssertEqual(picker.next(in: [scope[0]], order: .random)?.id, scope[0].id)
     }
+    func testPreviousPassageRestoresNavigationInBothOrders() throws {
+        let lib = try loadLibrary(); let scope = lib.scope(["microeconomics-1-1"])
+        var picker = PassagePicker()
+        let first = picker.next(in: scope, order: .ordered)!
+        let second = picker.next(in: scope, order: .ordered)!
+        let third = picker.next(in: scope, order: .ordered)!
+        XCTAssertTrue(picker.canGoPrevious(order: .ordered, in: scope))
+        XCTAssertEqual(picker.previous(in: scope, order: .ordered)?.id, second.id)
+        XCTAssertEqual(picker.previous(in: scope, order: .ordered)?.id, first.id)
+        XCTAssertEqual(picker.previous(in: scope, order: .ordered)?.id, scope.last?.id)
+        XCTAssertEqual(picker.next(in: scope, order: .ordered)?.id, first.id)
+        XCTAssertEqual(picker.next(in: scope, order: .ordered)?.id, second.id)
+        XCTAssertEqual(picker.next(in: scope, order: .ordered)?.id, third.id)
+
+        picker.reset()
+        let randomFirst = picker.next(in: scope, order: .random)!
+        let randomSecond = picker.next(in: scope, order: .random)!
+        XCTAssertNotEqual(randomFirst.id, randomSecond.id)
+        XCTAssertEqual(picker.previous(in: scope, order: .random)?.id, randomFirst.id)
+        XCTAssertEqual(picker.next(in: scope, order: .random)?.id, randomSecond.id)
+    }
     func testLongestPassageIsCompleteAndNotTruncated() throws {
         let lib = try loadLibrary(); let p = lib.passages.max { $0.text.count < $1.text.count }!
         XCTAssertTrue(p.text.count > 900)

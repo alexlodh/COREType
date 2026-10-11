@@ -72,11 +72,29 @@ public struct Library {
 public struct PassagePicker {
     public enum Order: String, Codable, CaseIterable { case ordered, random }
     public private(set) var lastID: String?
+    private var history: [String] = []
+    private var historyIndex = -1
     public init() {}
-    public mutating func reset() { lastID = nil }
-    public mutating func remember(_ passage: Passage) { lastID = passage.id }
+    public mutating func reset() { lastID = nil; history.removeAll(keepingCapacity: true); historyIndex = -1 }
+    public mutating func remember(_ passage: Passage) {
+        lastID = passage.id
+        if let index = history.lastIndex(of: passage.id) {
+            historyIndex = index
+        } else {
+            if historyIndex + 1 < history.count { history.removeSubrange((historyIndex + 1)..<history.count) }
+            history.append(passage.id); historyIndex = history.count - 1
+        }
+    }
+    public func canGoPrevious(order: Order, in passages: [Passage]) -> Bool {
+        historyIndex > 0 || (order == .ordered && passages.count > 1 && lastID != nil)
+    }
     public mutating func next(in passages: [Passage], order: Order) -> Passage? {
         guard !passages.isEmpty else { lastID = nil; return nil }
+        if historyIndex + 1 < history.count,
+           let passage = passages.first(where: { $0.id == history[historyIndex + 1] }) {
+            historyIndex += 1; lastID = passage.id
+            return passage
+        }
         let choice: Passage
         if order == .ordered {
             if let index = passages.firstIndex(where: { $0.id == lastID }) { choice = passages[(index + 1) % passages.count] }
@@ -85,7 +103,21 @@ public struct PassagePicker {
             let candidates = passages.count > 1 ? passages.filter { $0.id != lastID } : passages
             choice = candidates.randomElement()!
         }
-        lastID = choice.id
+        if historyIndex + 1 < history.count { history.removeSubrange((historyIndex + 1)..<history.count) }
+        history.append(choice.id); historyIndex = history.count - 1; lastID = choice.id
         return choice
+    }
+    public mutating func previous(in passages: [Passage], order: Order) -> Passage? {
+        guard canGoPrevious(order: order, in: passages) else { return nil }
+        if historyIndex > 0 {
+            historyIndex -= 1
+            guard let passage = passages.first(where: { $0.id == history[historyIndex] }) else { return nil }
+            lastID = passage.id
+            return passage
+        }
+        guard order == .ordered, let currentIndex = passages.firstIndex(where: { $0.id == lastID }) else { return nil }
+        let passage = passages[(currentIndex - 1 + passages.count) % passages.count]
+        history.insert(passage.id, at: 0); lastID = passage.id
+        return passage
     }
 }

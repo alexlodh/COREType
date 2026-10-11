@@ -113,6 +113,7 @@ import TypingCore
     }
     var activeCount: Int { pool.count }
     var pendingScope: Bool { selection != appliedSelection }
+    var canGoPrevious: Bool { picker.canGoPrevious(order: preferences.order, in: pool) }
     var metrics: Metrics { metricsDisplay.metrics }
     var phase: Phase { engine?.phase ?? .ready }
     func sectionIDs(for chapter: Chapter) -> Set<String> { chapterSectionIDs[chapter.id] ?? [] }
@@ -234,6 +235,11 @@ import TypingCore
         reset(to: p)
     }
     func next() { archive(reason: "Skipped"); page = "practice"; loadNext() }
+    func previous() {
+        guard canGoPrevious else { return }
+        archive(reason: "Skipped"); page = "practice"
+        if let passage = picker.previous(in: pool, order: preferences.order) { reset(to: passage) }
+    }
     func restart() {
         archive(reason: "Restarted"); page = "practice"
         if let initial { reset(to: initial) }

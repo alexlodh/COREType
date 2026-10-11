@@ -38,6 +38,7 @@ func XCTAssertThrowsError<T>(_ value: @autoclosure () throws -> T, file: StaticS
             ("deadline independence from suppressed display timers", tests.testTimedDeadlineSurvivesDisplaySuppressionAndRepeatedPauseResume),
             ("real-library chapter mapping, search, and filtering", tests.testRealLibraryMappingAndFiltering),
             ("ordered, random, singleton, and empty scopes", tests.testOrderRandomScopeAndEmptySelection),
+            ("previous and forward passage navigation", tests.testPreviousPassageRestoresNavigationInBothOrders),
             ("longest complete passage", tests.testLongestPassageIsCompleteAndNotTruncated),
             ("settings/history persistence and corrupt data", tests.testSettingsHistoryAtomicRoundTripAndCorruption),
             ("inline-media setting migration and persistent opt-out", tests.testTextbookMediaPreferenceMigratesWithoutResettingSettingsOrHistory),

@@ -2,6 +2,8 @@
 
 **v1.4.1 follow-up:** the Practice, History and Settings controls now have at least 44-point rectangular hit areas. The CPU measurements below apply to the unchanged v1.4 engine and rendering paths; this small header-only follow-up has not been re-profiled.
 
+**v1.4.2 follow-up:** Previous paragraph navigation now follows the path through ordered and random selections and supports forward navigation after going back. The CPU comparison below remains the v1.4.0 measurement; v1.4.2 changes passage navigation only.
+
 The completed measurements below cover active native input, focused ready state and an isolated AppKit renderer workload. Coverage limits are explicit; no unmeasured scenario is presented as a measured gain.
 
 ## Comparison and method
@@ -143,10 +145,10 @@ No source text/image/table is rasterized, rewritten, deleted or hidden as the pe
 
 ## Release validation
 
-The CPU comparison is from **v1.4.0**, version **1.4**, build **5**. Follow-up release **v1.4.1**, build **6**, expands the top-right Practice, History and Settings button hit areas. It changes no typing, metrics, or renderer code; the prior three-run CPU comparison remains the v1.4.0 measurement. The updated staging, installed and ZIP-extracted copies are checked in the same release integrity record.
+The CPU comparison is from **v1.4.0**, version **1.4**, build **5**. Follow-up **v1.4.1**, build **6**, expands the top-right Practice, History and Settings button hit areas. Release **v1.4.2**, build **7**, adds Previous paragraph navigation across ordered and random selections. These follow-ups change no renderer or measurement code; the prior three-run CPU comparison remains the v1.4.0 measurement. The current staging, installed and ZIP-extracted copies are checked in the release integrity record.
 
-- v1.4.1 executable SHA256: `9ff3804981929b1088011961648801375ca125cb5349519201cba03d7889e65b`.
-- v1.4.1 application ZIP SHA256: `2c56aab382dbdc32b5a56c168dd59cc554abd3f811cf9331d1611bd01064e22d`.
+- v1.4.2 executable SHA256: `1338244c38b2151d7c52fe68c5f0c14fb6c4f2ecb845fed4c31ef5a8802eeb09`.
+- v1.4.2 application ZIP SHA256: `0b258dab6ea7e23e0e9375a7650fc68d463a2c663eb0ef5de99c167e4f714681`.
 - Normal profile and installed-app launch/history verification: `cpu-profile-preservation.json`.
 
 Release packaging excludes compiler caches and personal state. Superseded generated bundles/packages are moved to recoverable Trash, with the release helper's exact cleanup record referenced in `cpu-release-integrity.json`. Existing historical verification files remain identifiable as historical evidence. The Git release tag identifies the final source commit without embedding a self-referential commit hash in this report; the final remote push record is supplied with the release outputs.

@@ -196,6 +196,14 @@ struct PracticeView: View {
                     Text("⌘R").font(Typography.font(size: 10)).foregroundStyle(Palette.muted)
                     if engine.phase == .running || engine.phase == .paused { Button(engine.phase == .paused ? "Resume" : "Pause") { model.pauseOrResume() }.buttonStyle(.plain).font(Typography.font(size: 12)).help("Escape or ⌘P") }
                     Spacer()
+                    Button { model.previous() } label: {
+                        Label("Previous paragraph", systemImage: "arrow.left")
+                            .font(Typography.font(size: 12, weight: .medium))
+                            .padding(.horizontal, 14).padding(.vertical, 11)
+                            .background(Palette.panel, in: RoundedRectangle(cornerRadius: 8))
+                    }
+                    .buttonStyle(.plain)
+                    .disabled(!model.canGoPrevious)
                     Text("⌘N").font(Typography.font(size: 10)).foregroundStyle(Palette.muted)
                     Button { model.next() } label: { Label("Next paragraph", systemImage: "arrow.right").font(Typography.font(size: 12, weight: .semibold)).padding(.horizontal, 16).padding(.vertical, 11).background(Palette.accent, in: RoundedRectangle(cornerRadius: 8)).foregroundStyle(Palette.background) }.buttonStyle(.plain)
                 }.foregroundStyle(Palette.text)
