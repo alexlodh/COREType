@@ -15,6 +15,8 @@ import TypingCore
         }
     }
     @Published var selection: Set<String> { didSet { refreshSelectedCount() } }
+    @Published var paragraphSelection: Set<String> { didSet { refreshSelectedCount() } }
+    @Published var expandedSections: Set<String> = []
     @Published var results: [TestResult] { didSet { historySummary = HistorySummary(results: results) } }
     private(set) var current: Passage?
     private(set) var engine: TypingEngine?
@@ -36,12 +38,14 @@ import TypingCore
     private(set) var currentFigures: [TextbookFigure] = []
     private(set) var historySummary = HistorySummary()
     private let sectionCounts: [String: Int]
+    private let sectionPassageIDs: [String: Set<String>]
     private let chapterSectionIDs: [String: Set<String>]
     private var passageRevision: UInt64 = 0
     private var inputRevision: UInt64 = 0
     private var mediaRevision: UInt64 = 0
     private var practiceVisible = false
     private var appliedSelection: Set<String>
+    private var appliedParagraphSelection: Set<String>
     private var pool: [Passage] = []
     private var picker = PassagePicker()
     private var initial: Passage?
@@ -62,6 +66,7 @@ import TypingCore
         catch { passages = []; loadNotice = "Could not load textbook library: \(error.localizedDescription)" }
         library = Library(passages: passages)
         sectionCounts = Dictionary(uniqueKeysWithValues: library.chapters.flatMap { $0.sections.map { ($0.id, $0.passages.count) } })
+        sectionPassageIDs = Dictionary(uniqueKeysWithValues: library.chapters.flatMap { $0.sections.map { ($0.id, Set($0.passages.map(\.id))) } })
         chapterSectionIDs = Dictionary(uniqueKeysWithValues: library.chapters.map { ($0.id, Set($0.sections.map(\.id))) })
         resourceRoot = root
         do { figureCatalogue = try JSONDecoder().decode(FigureCatalogue.self, from: Data(contentsOf: root.appendingPathComponent("Diagram-Catalog.json"))) }
@@ -82,19 +87,26 @@ import TypingCore
             }
         } else { state.preferences.selectedSections = library.sectionIDs }
         state.preferences.selectedSections.formIntersection(library.sectionIDs)
+        state.preferences.selectedPassageIDs.formIntersection(library.passageIDs)
+        for sectionID in state.preferences.selectedSections {
+            state.preferences.selectedPassageIDs.subtract(sectionPassageIDs[sectionID] ?? [])
+        }
         state.preferences.duration = min(3600, max(1, state.preferences.duration))
         state.preferences.fontSize = min(32, max(18, state.preferences.fontSize))
         preferences = state.preferences; selection = state.preferences.selectedSections
-        appliedSelection = state.preferences.selectedSections; results = state.results; notice = loadNotice
+        paragraphSelection = state.preferences.selectedPassageIDs
+        appliedSelection = state.preferences.selectedSections; appliedParagraphSelection = state.preferences.selectedPassageIDs
+        results = state.results; notice = loadNotice
         refreshSelectedCount(); refreshSearch(); historySummary = HistorySummary(results: results)
-        pool = library.scope(selection)
+        pool = library.scope(sections: selection, passages: paragraphSelection)
         let arguments = ProcessInfo.processInfo.arguments
         if testing, let flag = arguments.firstIndex(of: "--fixture"), arguments.indices.contains(flag + 1),
            let passage = library.passages.first(where: { $0.id == arguments[flag + 1] }) {
             // A repeatable native regression fixture is confined to the
             // isolated UI-testing profile and never changes normal app data.
-            selection = [passage.sectionID]; appliedSelection = selection; preferences.selectedSections = selection
-            pool = library.scope(selection); reset(to: passage)
+            selection = [passage.sectionID]; paragraphSelection = []; appliedSelection = selection; appliedParagraphSelection = []
+            preferences.selectedSections = selection; preferences.selectedPassageIDs = []
+            pool = library.scope(sections: selection, passages: paragraphSelection); reset(to: passage)
         } else { loadNext() }
         observers.append(NotificationCenter.default.addObserver(forName: NSApplication.didResignActiveNotification, object: nil, queue: .main) { [weak self] _ in
             MainActor.assumeIsolated { self?.pause() }
@@ -112,14 +124,49 @@ import TypingCore
         observers.forEach { NotificationCenter.default.removeObserver($0) }
     }
     var activeCount: Int { pool.count }
-    var pendingScope: Bool { selection != appliedSelection }
+    var pendingScope: Bool { selection != appliedSelection || paragraphSelection != appliedParagraphSelection }
     var canGoPrevious: Bool { picker.canGoPrevious(order: preferences.order, in: pool) }
     var metrics: Metrics { metricsDisplay.metrics }
     var phase: Phase { engine?.phase ?? .ready }
     func sectionIDs(for chapter: Chapter) -> Set<String> { chapterSectionIDs[chapter.id] ?? [] }
     private func refreshSelectedCount() {
         PerformanceCounters.record("selectedCountRefreshes")
-        selectedCount = selection.reduce(0) { $0 + (sectionCounts[$1] ?? 0) }
+        selectedCount = selection.reduce(0) { $0 + (sectionCounts[$1] ?? 0) } + paragraphSelection.count
+    }
+    func isParagraphSelected(_ passage: Passage) -> Bool {
+        selection.contains(passage.sectionID) || paragraphSelection.contains(passage.id)
+    }
+    func selectedPassageCount(in section: TypingCore.Section) -> Int {
+        if selection.contains(section.id) { return section.passages.count }
+        return section.passages.reduce(0) { $0 + (paragraphSelection.contains($1.id) ? 1 : 0) }
+    }
+    func selectedPassageCount(in chapter: Chapter) -> Int {
+        chapter.sections.reduce(0) { $0 + selectedPassageCount(in: $1) }
+    }
+    func toggleSection(_ section: TypingCore.Section) {
+        let passageIDs = sectionPassageIDs[section.id] ?? []
+        if selectedPassageCount(in: section) == section.passages.count {
+            selection.remove(section.id); paragraphSelection.subtract(passageIDs)
+        } else {
+            selection.insert(section.id); paragraphSelection.subtract(passageIDs)
+        }
+    }
+    func toggleParagraph(_ passage: Passage) {
+        let sectionID = passage.sectionID
+        let passageIDs = sectionPassageIDs[sectionID] ?? []
+        if isParagraphSelected(passage) {
+            if selection.remove(sectionID) != nil { paragraphSelection.formUnion(passageIDs) }
+            paragraphSelection.remove(passage.id)
+        } else {
+            paragraphSelection.insert(passage.id)
+            if paragraphSelection.intersection(passageIDs).count == passageIDs.count {
+                selection.insert(sectionID); paragraphSelection.subtract(passageIDs)
+            }
+        }
+    }
+    func toggleSectionExpansion(_ sectionID: String) {
+        if expandedSections.contains(sectionID) { expandedSections.remove(sectionID) }
+        else { expandedSections.insert(sectionID) }
     }
     private func refreshSearch() {
         PerformanceCounters.record("searchRefreshes")
@@ -192,21 +239,27 @@ import TypingCore
         }
         catch { notice = "Could not save locally: \(error.localizedDescription)" }
     }
-    func toggleSection(_ id: String) {
-        if selection.contains(id) { selection.remove(id) } else { selection.insert(id) }
-    }
     func toggleChapter(_ c: Chapter) {
         let ids = sectionIDs(for: c)
-        if ids.isSubset(of: selection) { selection.subtract(ids) } else { selection.formUnion(ids) }
+        let passageIDs = Set(c.sections.flatMap { $0.passages.map(\.id) })
+        if selectedPassageCount(in: c) == c.count {
+            selection.subtract(ids); paragraphSelection.subtract(passageIDs)
+        } else {
+            selection.formUnion(ids); paragraphSelection.subtract(passageIDs)
+        }
     }
     func selectVisible(_ enabled: Bool) {
-        let ids = Set(visibleChapters.flatMap { $0.sections.map(\.id) })
+        let sections = visibleChapters.flatMap(\.sections)
+        let ids = Set(sections.map(\.id))
+        let passageIDs = Set(sections.flatMap { $0.passages.map(\.id) })
         if enabled { selection.formUnion(ids) } else { selection.subtract(ids) }
+        paragraphSelection.subtract(passageIDs)
     }
     func applyScope() {
         archive(reason: "Scope changed")
-        appliedSelection = selection; preferences.selectedSections = selection
-        pool = library.scope(selection); picker.reset(); loadNext(); save()
+        appliedSelection = selection; appliedParagraphSelection = paragraphSelection
+        preferences.selectedSections = selection; preferences.selectedPassageIDs = paragraphSelection
+        pool = library.scope(sections: selection, passages: paragraphSelection); picker.reset(); loadNext(); save()
     }
     func configure(mode: TestMode? = nil, duration: Int? = nil, order: PassagePicker.Order? = nil, punctuation: Bool? = nil) {
         archive(reason: "Settings changed")
@@ -309,8 +362,9 @@ import TypingCore
         guard let p = library.passages.first(where: { $0.id == result.passageID }) else { return }
         archive(reason: "History replay")
         preferences.mode = result.mode; preferences.duration = result.duration
-        selection = [p.sectionID]; appliedSelection = selection; preferences.selectedSections = selection
-        pool = library.scope(selection); picker.reset(); reset(to: p); page = "practice"; save()
+        selection = [p.sectionID]; paragraphSelection = []; appliedSelection = selection; appliedParagraphSelection = []
+        preferences.selectedSections = selection; preferences.selectedPassageIDs = []
+        pool = library.scope(sections: selection, passages: paragraphSelection); picker.reset(); reset(to: p); page = "practice"; save()
     }
     func exportHistory() {
         pause()

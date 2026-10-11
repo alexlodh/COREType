@@ -93,6 +93,12 @@ final class TypingCoreTests {
         XCTAssertEqual(lib.scope(["microeconomics-1-1"]).count, 7)
         XCTAssertTrue(lib.scope([]).isEmpty)
         XCTAssertEqual(lib.scope(["macroeconomics-1-1"]).first?.book, "macroeconomics")
+        let selectedInScope = lib.passages.first { $0.sectionID == "microeconomics-1-1" }!
+        let selectedOutsideScope = lib.passages.first { $0.sectionID == "microeconomics-1-2" }!
+        let mixedScope = lib.scope(sections: ["microeconomics-1-1"], passages: [selectedInScope.id, selectedOutsideScope.id])
+        XCTAssertEqual(mixedScope.count, 8)
+        XCTAssertEqual(mixedScope.filter { $0.id == selectedInScope.id }.count, 1)
+        XCTAssertTrue(mixedScope.contains { $0.id == selectedOutsideScope.id })
         XCTAssertTrue(lib.search("inflation", book: "macroeconomics").allSatisfy { $0.book == "macroeconomics" })
         XCTAssertFalse(lib.search("Ibn Battuta").isEmpty)
         XCTAssertTrue(lib.search("no_such_topic_12345").isEmpty)
@@ -150,12 +156,14 @@ final class TypingCoreTests {
         let file = StateFile(url: directory.appendingPathComponent("state.json"))
         XCTAssertTrue(try file.load().results.isEmpty)
         var state = SavedState(); state.preferences.selectedSections = ["microeconomics-1-1"]
+        state.preferences.selectedPassageIDs = ["CORE Micro U01 S02 P001"]
         state.preferences.duration=23; state.preferences.mode = .timed; state.preferences.order = .random; state.preferences.fontSize=27
         var e = TypingEngine(text: "abcde", mode: .passage)
         for (i,c) in "abcde".enumerated() { e.type(c, at: Double(i)*15) }
         state.results = [TestResult(id: UUID(), date: Date(), passageID: "test", label: "section", book: "Microeconomics", mode: .passage, duration: 23, paragraphCount: 1, reason: "Passage complete", metrics: e.metrics(at: 60))]
         try file.save(state); let restored = try file.load()
         XCTAssertEqual(restored.preferences.selectedSections, state.preferences.selectedSections)
+        XCTAssertEqual(restored.preferences.selectedPassageIDs, state.preferences.selectedPassageIDs)
         XCTAssertEqual(restored.preferences.duration, 23); XCTAssertEqual(restored.preferences.order, .random)
         XCTAssertEqual(restored.results[0].metrics, state.results[0].metrics)
         state.preferences.selectedSections = []; try file.save(state)
@@ -173,6 +181,7 @@ final class TypingCoreTests {
 
         var preferences = Preferences()
         preferences.selectedSections = ["microeconomics-1-6", "macroeconomics-6-3"]
+        preferences.selectedPassageIDs = ["CORE Micro U01 S06 P008"]
         preferences.mode = .timed
         preferences.duration = 47
         preferences.order = .random
@@ -192,12 +201,12 @@ final class TypingCoreTests {
         let encoder = JSONEncoder()
         encoder.outputFormatting = [.sortedKeys]
 
-        // Release 1.2 stored every existing field but had no inline-media
-        // setting. Loading it must add the default without resetting a scope,
-        // custom duration, punctuation choice, or any saved result.
+        // Older releases had no inline-media or individual-paragraph selection
+        // fields. Loading them adds defaults without resetting the rest.
         var legacyObject = try JSONSerialization.jsonObject(with: encoder.encode(state)) as! [String: Any]
         var legacyPreferences = legacyObject["preferences"] as! [String: Any]
         legacyPreferences.removeValue(forKey: "showTextbookMedia")
+        legacyPreferences.removeValue(forKey: "selectedPassageIDs")
         legacyObject["preferences"] = legacyPreferences
         try FileManager.default.createDirectory(at: directory, withIntermediateDirectories: true)
         try JSONSerialization.data(withJSONObject: legacyObject, options: [.sortedKeys]).write(to: file.url)
@@ -205,6 +214,7 @@ final class TypingCoreTests {
         var restored = try file.load()
         XCTAssertTrue(restored.preferences.showTextbookMedia)
         XCTAssertEqual(restored.preferences.selectedSections, preferences.selectedSections)
+        XCTAssertTrue(restored.preferences.selectedPassageIDs.isEmpty)
         XCTAssertEqual(restored.preferences.mode, preferences.mode)
         XCTAssertEqual(restored.preferences.duration, preferences.duration)
         XCTAssertEqual(restored.preferences.order, preferences.order)
@@ -222,6 +232,7 @@ final class TypingCoreTests {
         XCTAssertEqual(try encoder.encode(optedOut.results), try encoder.encode(state.results))
         var afterPreferences = try JSONSerialization.jsonObject(with: encoder.encode(optedOut.preferences)) as! [String: Any]
         afterPreferences.removeValue(forKey: "showTextbookMedia")
+        afterPreferences.removeValue(forKey: "selectedPassageIDs")
         // JSONEncoder does not define iteration order for a Set.
         afterPreferences["selectedSections"] = optedOut.preferences.selectedSections.sorted()
         legacyPreferences["selectedSections"] = preferences.selectedSections.sorted()

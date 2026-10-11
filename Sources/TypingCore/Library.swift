@@ -37,6 +37,7 @@ public struct Library {
     public let passages: [Passage]
     public let chapters: [Chapter]
     public var sectionIDs: Set<String> { Set(passages.map(\.sectionID)) }
+    public var passageIDs: Set<String> { Set(passages.map(\.id)) }
     public init(passages: [Passage]) {
         self.passages = passages.sorted(by: Self.precedes)
         let groups = Dictionary(grouping: self.passages, by: \.chapterID)
@@ -56,6 +57,9 @@ public struct Library {
     }
     public func scope(_ selection: Set<String>) -> [Passage] {
         passages.filter { selection.contains($0.sectionID) }
+    }
+    public func scope(sections: Set<String>, passages selectedPassages: Set<String>) -> [Passage] {
+        passages.filter { sections.contains($0.sectionID) || selectedPassages.contains($0.id) }
     }
     public func search(_ query: String, book: String = "all") -> [Chapter] {
         let query = query.trimmingCharacters(in: .whitespacesAndNewlines)

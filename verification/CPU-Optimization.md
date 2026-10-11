@@ -4,6 +4,8 @@
 
 **v1.4.2 follow-up:** Previous paragraph navigation now follows the path through ordered and random selections and supports forward navigation after going back. The CPU comparison below remains the v1.4.0 measurement; v1.4.2 changes passage navigation only.
 
+**v1.4.3 follow-up:** The left scope browser can expand each section into individual paragraphs for selection. Saved paragraph choices are additive to the existing section-selection format; the CPU comparison remains the v1.4.0 measurement.
+
 The completed measurements below cover active native input, focused ready state and an isolated AppKit renderer workload. Coverage limits are explicit; no unmeasured scenario is presented as a measured gain.
 
 ## Comparison and method
@@ -145,10 +147,10 @@ No source text/image/table is rasterized, rewritten, deleted or hidden as the pe
 
 ## Release validation
 
-The CPU comparison is from **v1.4.0**, version **1.4**, build **5**. Follow-up **v1.4.1**, build **6**, expands the top-right Practice, History and Settings button hit areas. Release **v1.4.2**, build **7**, adds Previous paragraph navigation across ordered and random selections. These follow-ups change no renderer or measurement code; the prior three-run CPU comparison remains the v1.4.0 measurement. The current staging, installed and ZIP-extracted copies are checked in the release integrity record.
+The CPU comparison is from **v1.4.0**, version **1.4**, build **5**. Follow-up **v1.4.1**, build **6**, expands the top-right Practice, History and Settings button hit areas. Release **v1.4.2**, build **7**, adds Previous paragraph navigation. Release **v1.4.3**, build **8**, adds individual paragraph scope selection. These follow-ups change no renderer or measurement code; the prior three-run CPU comparison remains the v1.4.0 measurement. The current staging, installed and ZIP-extracted copies are checked in the release integrity record.
 
-- v1.4.2 executable SHA256: `1338244c38b2151d7c52fe68c5f0c14fb6c4f2ecb845fed4c31ef5a8802eeb09`.
-- v1.4.2 application ZIP SHA256: `0b258dab6ea7e23e0e9375a7650fc68d463a2c663eb0ef5de99c167e4f714681`.
+- v1.4.3 executable SHA256: `2dd05fb4112e9734ebc151f44c876fc132af923aadf03f164cb46657bf2048ca`.
+- v1.4.3 application ZIP SHA256: `b413abf76f0b9022cf4843c7bbfdc7091ca371b1c11deea554ecda262c82069c`.
 - Normal profile and installed-app launch/history verification: `cpu-profile-preservation.json`.
 
 Release packaging excludes compiler caches and personal state. Superseded generated bundles/packages are moved to recoverable Trash, with the release helper's exact cleanup record referenced in `cpu-release-integrity.json`. Existing historical verification files remain identifiable as historical evidence. The Git release tag identifies the final source commit without embedding a self-referential commit hash in this report; the final remote push record is supplied with the release outputs.

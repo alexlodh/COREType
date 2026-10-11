@@ -86,16 +86,7 @@ struct ScopeSidebar: View {
                     ForEach(model.visibleChapters) { chapter in
                         chapterRow(chapter)
                         if model.expanded.contains(chapter.id) || !model.search.isEmpty {
-                            ForEach(chapter.sections) { section in
-                                Button { model.toggleSection(section.id) } label: {
-                                    HStack(alignment: .top, spacing: 8) {
-                                        Image(systemName: model.selection.contains(section.id) ? "checkmark.square.fill" : "square").foregroundStyle(model.selection.contains(section.id) ? Palette.accent : Palette.muted).padding(.top, 2)
-                                        Text(section.title).font(Typography.font(size: 12)).fixedSize(horizontal: false, vertical: true).multilineTextAlignment(.leading)
-                                        Spacer(minLength: 1)
-                                        Text("\(section.passages.count)").font(Typography.font(size: 10)).foregroundStyle(Palette.muted).padding(.top, 2)
-                                    }.padding(.vertical, 7).padding(.leading, 24).padding(.trailing, 4).contentShape(Rectangle())
-                                }.buttonStyle(.plain).accessibilityLabel("Select section \(section.title)")
-                            }
+                            ForEach(chapter.sections) { section in sectionRow(section) }
                         }
                     }
                 }
@@ -106,14 +97,14 @@ struct ScopeSidebar: View {
                 Button { model.applyScope() } label: {
                     HStack { Text(model.pendingScope ? "Use this selection" : "Selection applied"); Spacer(); Image(systemName: model.pendingScope ? "arrow.right" : "checkmark") }.font(Typography.font(size: 12, weight: .semibold)).padding(12).background(model.pendingScope ? Palette.accent : Palette.panel, in: RoundedRectangle(cornerRadius: 8)).foregroundStyle(model.pendingScope ? Palette.background : Palette.muted)
                 }.buttonStyle(.plain).disabled(!model.pendingScope)
-                Text(model.pendingScope ? "Applying starts a new test" : "Choose chapters or individual sections").font(Typography.font(size: 10)).foregroundStyle(Palette.muted)
+                Text(model.pendingScope ? "Applying starts a new test" : "Choose chapters, sections, or paragraphs").font(Typography.font(size: 10)).foregroundStyle(Palette.muted)
             }
         }.padding(.horizontal, 20).padding(.top, 32).padding(.bottom, 20).background(Palette.sidebar)
     }
     func chapterRow(_ c: Chapter) -> some View {
-        let ids = model.sectionIDs(for: c)
-        let all = ids.isSubset(of: model.selection)
-        let some = !ids.isDisjoint(with: model.selection)
+        let selected = model.selectedPassageCount(in: c)
+        let all = selected == c.count
+        let some = selected > 0
         return HStack(alignment: .top, spacing: 8) {
             Button { model.toggleChapter(c) } label: { Image(systemName: all ? "checkmark.square.fill" : some ? "minus.square.fill" : "square").foregroundStyle(some ? Palette.accent : Palette.muted).padding(.top, 2) }.buttonStyle(.plain).accessibilityLabel("Select chapter \(c.unit) \(c.title)")
             Button {
@@ -129,6 +120,56 @@ struct ScopeSidebar: View {
                 }.contentShape(Rectangle())
             }.buttonStyle(.plain).accessibilityLabel("Expand chapter \(c.unit) \(c.title)")
         }.padding(.vertical, 12).padding(.horizontal, 8).background(Palette.panel.opacity(0.5), in: RoundedRectangle(cornerRadius: 7))
+    }
+    func sectionRow(_ section: TypingCore.Section) -> some View {
+        let selected = model.selectedPassageCount(in: section)
+        let expanded = model.expandedSections.contains(section.id)
+        let symbol = selected == 0 ? "square" : selected == section.passages.count ? "checkmark.square.fill" : "minus.square.fill"
+        let tint = selected == 0 ? Palette.muted : Palette.accent
+        return VStack(alignment: .leading, spacing: 3) {
+            HStack(spacing: 2) {
+                Button { model.toggleSection(section) } label: {
+                    HStack(alignment: .top, spacing: 8) {
+                        Image(systemName: symbol).foregroundStyle(tint).padding(.top, 2)
+                        Text(section.title).font(Typography.font(size: 12)).fixedSize(horizontal: false, vertical: true).multilineTextAlignment(.leading)
+                        Spacer(minLength: 1)
+                        Text("\(selected)/\(section.passages.count)").font(Typography.font(size: 10)).foregroundStyle(Palette.muted).padding(.top, 2)
+                    }.padding(.vertical, 7).padding(.leading, 24).padding(.trailing, 4).contentShape(Rectangle())
+                }
+                .buttonStyle(.plain)
+                .accessibilityLabel("Select section \(section.title)")
+                .accessibilityValue("\(selected) of \(section.passages.count) paragraphs selected")
+                Button { model.toggleSectionExpansion(section.id) } label: {
+                    Image(systemName: expanded ? "chevron.down" : "chevron.right")
+                        .font(Typography.font(size: 9)).foregroundStyle(Palette.muted)
+                        .frame(width: 28, height: 36).contentShape(Rectangle())
+                }
+                .buttonStyle(.plain)
+                .accessibilityLabel("\(expanded ? "Collapse" : "Expand") section \(section.title) paragraphs")
+            }
+            if expanded {
+                ForEach(section.passages) { passage in paragraphRow(passage) }
+            }
+        }
+    }
+    func paragraphRow(_ passage: Passage) -> some View {
+        let selected = model.isParagraphSelected(passage)
+        return Button { model.toggleParagraph(passage) } label: {
+            HStack(alignment: .top, spacing: 8) {
+                Image(systemName: selected ? "checkmark.square.fill" : "square")
+                    .foregroundStyle(selected ? Palette.accent : Palette.muted).padding(.top, 2)
+                VStack(alignment: .leading, spacing: 3) {
+                    Text("Paragraph \(passage.paragraph)").font(Typography.font(size: 11, weight: .medium))
+                    Text(passage.text).font(Typography.font(size: 10)).foregroundStyle(Palette.muted)
+                        .lineLimit(2).fixedSize(horizontal: false, vertical: true).multilineTextAlignment(.leading)
+                }
+                Spacer(minLength: 1)
+            }
+            .padding(.vertical, 6).padding(.leading, 49).padding(.trailing, 6).contentShape(Rectangle())
+        }
+        .buttonStyle(.plain)
+        .accessibilityLabel("Select paragraph \(passage.paragraph)")
+        .accessibilityValue(selected ? "Selected" : "Not selected")
     }
 }
 

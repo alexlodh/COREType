@@ -2,6 +2,7 @@ import Foundation
 
 public struct Preferences: Codable {
     public var selectedSections: Set<String> = []
+    public var selectedPassageIDs: Set<String> = []
     public var mode: TestMode = .passage
     public var duration = 60
     public var order: PassagePicker.Order = .ordered
@@ -12,11 +13,12 @@ public struct Preferences: Codable {
     public init() {}
 
     private enum CodingKeys: String, CodingKey {
-        case selectedSections, mode, duration, order, flexiblePunctuation, fontSize, bookFilter, showTextbookMedia
+        case selectedSections, selectedPassageIDs, mode, duration, order, flexiblePunctuation, fontSize, bookFilter, showTextbookMedia
     }
     public init(from decoder: Decoder) throws {
         let values = try decoder.container(keyedBy: CodingKeys.self)
         selectedSections = try values.decode(Set<String>.self, forKey: .selectedSections)
+        selectedPassageIDs = try values.decodeIfPresent(Set<String>.self, forKey: .selectedPassageIDs) ?? []
         mode = try values.decode(TestMode.self, forKey: .mode)
         duration = try values.decode(Int.self, forKey: .duration)
         order = try values.decode(PassagePicker.Order.self, forKey: .order)
