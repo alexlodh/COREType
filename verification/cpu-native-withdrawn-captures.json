@@ -1,0 +1,10 @@
+{
+  "optimized-ready.json": {
+    "sha256": "3309e9a518d32a83f25681b2ccfea587db6e95f306c8a8dc829f752e93607b49",
+    "reason": "Initial ready capture has unconfirmed native focus/visibility; withdrawn pending activated recheck"
+  },
+  "baseline-running.json": {
+    "sha256": "f7f02a82464c9d91ee9e66edb5846eb7ffa38930faa9a1921aa09c14a9e32a01",
+    "reason": "Initial capture may overlap a compiler workload; superseded by a fresh isolated set"
+  }
+}

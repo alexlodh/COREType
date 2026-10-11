@@ -1,0 +1,54 @@
+{
+  "cpu_convention": "100 percent is one logical core",
+  "maximum_cpu_percent": 0.00155877611034229,
+  "median_cpu_percent": 4.774469554123466e-05,
+  "method": "monotonic wall time and proc_pid_rusage RUSAGE_INFO_V0 cumulative CPU",
+  "minimum_cpu_percent": 3.4447739738061114e-05,
+  "process_scope": "explicit COREType main process only; WebKit helpers excluded",
+  "scenario": "finished",
+  "warmup_seconds": 5,
+  "windows": [
+    {
+      "average_cpu_percent": 0.00155877611034229,
+      "cpu_seconds": 0.000467642,
+      "elapsed_seconds": 30.000588083,
+      "interrupt_wakeups": 14,
+      "package_idle_wakeups": 0,
+      "physical_footprint_bytes_end": 76825608,
+      "physical_footprint_bytes_start": 61654000,
+      "resident_bytes_end": 161103872,
+      "resident_bytes_start": 144097280,
+      "run": 1,
+      "system_cpu_seconds": 0.00028124,
+      "user_cpu_seconds": 0.000186402
+    },
+    {
+      "average_cpu_percent": 4.774469554123466e-05,
+      "cpu_seconds": 1.4324e-05,
+      "elapsed_seconds": 30.001238541,
+      "interrupt_wakeups": 10,
+      "package_idle_wakeups": 1,
+      "physical_footprint_bytes_end": 76825608,
+      "physical_footprint_bytes_start": 76825608,
+      "resident_bytes_end": 161103872,
+      "resident_bytes_start": 161103872,
+      "run": 2,
+      "system_cpu_seconds": 1.0608e-05,
+      "user_cpu_seconds": 3.716e-06
+    },
+    {
+      "average_cpu_percent": 3.4447739738061114e-05,
+      "cpu_seconds": 1.0336e-05,
+      "elapsed_seconds": 30.004871375,
+      "interrupt_wakeups": 10,
+      "package_idle_wakeups": 0,
+      "physical_footprint_bytes_end": 76825608,
+      "physical_footprint_bytes_start": 76825608,
+      "resident_bytes_end": 161103872,
+      "resident_bytes_start": 161103872,
+      "run": 3,
+      "system_cpu_seconds": 7.916e-06,
+      "user_cpu_seconds": 2.42e-06
+    }
+  ]
+}

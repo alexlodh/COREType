@@ -9,25 +9,40 @@ final class InlineTextbookDocumentView: NSView {
     var onFocusTyping: () -> Void = {}
     private(set) var contentHeight: CGFloat = 0
     private let renderer = InlineTextbookRenderer()
-    private let webView: InlineTextbookWebView
+    // Keep the wrapper cheap for passages without references. Once created,
+    // retain one renderer so toggling media does not repeatedly start WebKit.
+    private var webView: InlineTextbookWebView?
     private var figures: [TextbookFigure] = []
     private var resourceRoot: URL?
+    private var renderedFigures: [TextbookFigure] = []
+    private var renderedRoot: URL?
+    private var renderedHeight: CGFloat = 0
     private var measuredWidth: CGFloat = -1
     private var documentVersion = 0
+    private var measurementRequested = false
+    private var measurementScheduled = false
+    private var measurementInFlight = false
     private var eventMonitor: Any?
 
     override init(frame frameRect: NSRect) {
+        super.init(frame: frameRect)
+        renderer.onLoad = { [weak self] in self?.requestHeightMeasurement() }
+    }
+
+    private func makeWebView() -> InlineTextbookWebView {
+        if let webView { return webView }
         let configuration = WKWebViewConfiguration()
         configuration.defaultWebpagePreferences.allowsContentJavaScript = false
         configuration.websiteDataStore = .nonPersistent()
         configuration.setURLSchemeHandler(renderer, forURLScheme: InlineTextbookRenderer.scheme)
-        webView = InlineTextbookWebView(frame: .zero, configuration: configuration)
-        super.init(frame: frameRect)
+        let webView = InlineTextbookWebView(frame: bounds, configuration: configuration)
         webView.navigationDelegate = renderer
         webView.underPageBackgroundColor = NSColor(Palette.panel)
         webView.setAccessibilityLabel("Referenced textbook figures and tables")
         addSubview(webView)
-        renderer.onLoad = { [weak self] in self?.measureHeight() }
+        self.webView = webView
+        PerformanceCounters.record("web.creations")
+        return webView
     }
 
     required init?(coder: NSCoder) { fatalError("init(coder:) is not supported") }
@@ -38,8 +53,12 @@ final class InlineTextbookDocumentView: NSView {
 
     override func viewDidMoveToWindow() {
         super.viewDidMoveToWindow()
+        updateEventMonitor()
+    }
+
+    private func updateEventMonitor() {
         if let eventMonitor { NSEvent.removeMonitor(eventMonitor); self.eventMonitor = nil }
-        guard window != nil else { return }
+        guard window != nil, !figures.isEmpty else { return }
         eventMonitor = NSEvent.addLocalMonitorForEvents(matching: [.leftMouseDown, .scrollWheel]) { [weak self] event in
             guard let self, event.window === self.window,
                   self.visibleRect.contains(self.convert(event.locationInWindow, from: nil)) else { return event }
@@ -65,10 +84,11 @@ final class InlineTextbookDocumentView: NSView {
 
     override func layout() {
         super.layout()
-        webView.frame = bounds
+        guard let webView else { return }
+        if webView.frame != bounds { webView.frame = bounds }
         if abs(bounds.width - measuredWidth) > 0.5 {
             measuredWidth = bounds.width
-            DispatchQueue.main.async { [weak self] in self?.measureHeight() }
+            requestHeightMeasurement()
         }
     }
 
@@ -76,26 +96,81 @@ final class InlineTextbookDocumentView: NSView {
         guard self.figures != figures || self.resourceRoot != resourceRoot else { return }
         self.figures = figures
         self.resourceRoot = resourceRoot
+        updateEventMonitor()
         documentVersion += 1
+        measurementRequested = false
+        guard !figures.isEmpty else {
+            // Never load an empty document. Cancel an unfinished navigation;
+            // a completed document can be reused when its media is shown again.
+            if !renderer.loaded {
+                webView?.stopLoading()
+                renderer.navigation = nil
+                renderedFigures = []
+                renderedRoot = nil
+            }
+            setContentHeight(0)
+            return
+        }
+        if renderer.loaded, renderedFigures == figures, renderedRoot == resourceRoot {
+            setContentHeight(renderedHeight)
+            requestHeightMeasurement()
+            return
+        }
+        let webView = makeWebView()
+        webView.stopLoading()
         renderer.loaded = false
+        renderer.navigation = nil
         renderer.assets.removeAll()
+        renderedFigures = figures
+        renderedRoot = resourceRoot
+        renderedHeight = 0
         measuredWidth = -1
         setContentHeight(0)
-        webView.loadHTMLString(renderer.document(figures: figures, catalogue: catalogue, root: resourceRoot), baseURL: nil)
+        PerformanceCounters.record("media.htmlLoads")
+        renderer.navigation = webView.loadHTMLString(renderer.document(figures: figures, catalogue: catalogue,
+                                                                       root: resourceRoot, version: documentVersion), baseURL: nil)
+    }
+
+    private func requestHeightMeasurement() {
+        guard renderer.loaded, bounds.width > 0, !figures.isEmpty else { return }
+        measurementRequested = true
+        guard !measurementScheduled, !measurementInFlight else { return }
+        measurementScheduled = true
+        // Width changes and navigation completion often arrive in the same
+        // layout turn. Query once after the final frame has been assigned.
+        DispatchQueue.main.async { [weak self] in
+            guard let self else { return }
+            self.measurementScheduled = false
+            self.measureHeight()
+        }
     }
 
     private func measureHeight() {
-        guard renderer.loaded, bounds.width > 0, !figures.isEmpty else { return }
+        guard measurementRequested, !measurementInFlight, renderer.loaded,
+              bounds.width > 0, !figures.isEmpty, let webView else { return }
+        measurementRequested = false
+        measurementInFlight = true
         let version = documentVersion
+        let width = bounds.width
         // This fixed app query only measures layout. Source content cannot run
         // JavaScript, and the isolated client world has no source scripts.
+        PerformanceCounters.record("media.heightQueries")
         webView.evaluateJavaScript("Math.ceil(document.getElementById('textbook').getBoundingClientRect().height)",
                                    in: nil, in: .defaultClient) { [weak self] result in
-            guard let self, self.documentVersion == version,
-                  case .success(let value) = result, let height = value as? NSNumber else { return }
-            let measured = CGFloat(height.doubleValue)
-            guard measured.isFinite, measured >= 0 else { return }
-            self.setContentHeight(measured)
+            guard let self else { return }
+            self.measurementInFlight = false
+            if self.documentVersion == version, !self.figures.isEmpty,
+               abs(self.bounds.width - width) <= 0.5,
+               case .success(let value) = result, let height = value as? NSNumber {
+                let measured = CGFloat(height.doubleValue)
+                if measured.isFinite, measured >= 0 {
+                    self.renderedHeight = measured
+                    self.setContentHeight(measured)
+                }
+            }
+            // A resize or document change while the query was in flight gets
+            // one fresh query; stale heights never alter the new document.
+            if self.measurementRequested { self.requestHeightMeasurement() }
         }
     }
 
@@ -115,9 +190,10 @@ private final class InlineTextbookRenderer: NSObject, WKURLSchemeHandler, WKNavi
     static let scheme = "coretype-inline"
     var assets: [String: URL] = [:]
     var loaded = false
+    var navigation: WKNavigation?
     var onLoad: () -> Void = {}
 
-    func document(figures: [TextbookFigure], catalogue: FigureCatalogue, root: URL) -> String {
+    func document(figures: [TextbookFigure], catalogue: FigureCatalogue, root: URL, version: Int) -> String {
         var sections: [String] = []
         for figure in figures {
             var contents: [String] = []
@@ -135,7 +211,7 @@ private final class InlineTextbookRenderer: NSObject, WKURLSchemeHandler, WKNavi
                         contents.append("<p class=\"unavailable\">This source table is unavailable.</p>")
                     }
                 } else {
-                    let key = "asset-\(assets.count).\(url.pathExtension.lowercased())"
+                    let key = "asset-\(version)-\(assets.count).\(url.pathExtension.lowercased())"
                     assets[key] = url
                     contents.append("<img alt=\"\(escape(asset.alt))\" src=\"\(Self.scheme)://asset/\(key)\">")
                 }
@@ -202,6 +278,7 @@ private final class InlineTextbookRenderer: NSObject, WKURLSchemeHandler, WKNavi
     func webView(_ webView: WKWebView, stop task: WKURLSchemeTask) {}
 
     func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
+        guard let navigation, navigation === self.navigation else { return }
         loaded = true
         onLoad()
     }

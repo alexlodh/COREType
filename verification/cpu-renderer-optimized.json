@@ -1,0 +1,54 @@
+{
+  "build_variant": "optimized",
+  "counter_scope": "all setup and active windows; CPU and latency exclude setup/warm-up",
+  "cpu_convention": "100 percent is one logical core",
+  "font_size": 23,
+  "input_events_per_second": 5,
+  "limitations": "No native window, visual drawing, caret blink, SwiftUI body evaluation, or attributed WebKit-helper CPU; renderer update latency is not end-to-end input latency",
+  "media_enabled": false,
+  "method": "unattached production AppKit renderer; monotonic wall time and cumulative getrusage CPU",
+  "metrics_refreshes_per_second": 10,
+  "passage": "CORE Macro U08 S09 P012",
+  "passage_characters": 1102,
+  "peak_resident_bytes_including_setup": 88293376,
+  "renderer_compilation": "xcrun swiftc -O; release TypingCore objects",
+  "source_sha256": {
+    "Sources/COREType/InlineTextbookView.swift": "ab7d9c21a95378ba04a88adfdc305a49270b4124587a719076c248f2e5c87d7e",
+    "Sources/COREType/TypingView.swift": "14af847b3f5bf150e8a23d9281c1d9c613914bfb28b44ef1fe28a3ac8df0dea8",
+    "Sources/TypingCore/TypingEngine.swift": "d0ec98eb9cff6d32bae13ae024b2358d67180455ffda4a23f21b097c8bf1ea83"
+  },
+  "viewport": "960x480",
+  "warmup_seconds_per_run": 2,
+  "windows": [
+    {
+      "average_cpu_percent": 0.5520728552799257,
+      "cpu_seconds": 0.165636,
+      "elapsed_seconds": 30.002561874920502,
+      "input_events": 150,
+      "maximum_renderer_update_ms": 5.1068749744445086,
+      "median_renderer_update_ms": 0.6014583632349968,
+      "p95_renderer_update_ms": 2.036291640251875,
+      "run": 1
+    },
+    {
+      "average_cpu_percent": 0.42917962642327895,
+      "cpu_seconds": 0.128774,
+      "elapsed_seconds": 30.00468616676517,
+      "input_events": 150,
+      "maximum_renderer_update_ms": 2.4123748298734426,
+      "median_renderer_update_ms": 0.5475834477692842,
+      "p95_renderer_update_ms": 1.8871249631047249,
+      "run": 2
+    },
+    {
+      "average_cpu_percent": 0.6138983917678764,
+      "cpu_seconds": 0.18419900000000006,
+      "elapsed_seconds": 30.004802499897778,
+      "input_events": 150,
+      "maximum_renderer_update_ms": 2.8503749053925276,
+      "median_renderer_update_ms": 0.7926665712147951,
+      "p95_renderer_update_ms": 2.304166555404663,
+      "run": 3
+    }
+  ]
+}

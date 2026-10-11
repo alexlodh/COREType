@@ -1,0 +1,26 @@
+{
+  "cpu_convention": "100 percent is one logical core",
+  "maximum_cpu_percent": 0.43200677797047093,
+  "median_cpu_percent": 0.43200677797047093,
+  "method": "monotonic wall time and proc_pid_rusage RUSAGE_INFO_V0 cumulative CPU",
+  "minimum_cpu_percent": 0.43200677797047093,
+  "process_scope": "explicit COREType main process only; WebKit helpers excluded",
+  "scenario": "active-native-input",
+  "warmup_seconds": 0.0,
+  "windows": [
+    {
+      "average_cpu_percent": 0.43200677797047093,
+      "cpu_seconds": 0.129624085,
+      "elapsed_seconds": 30.005104459,
+      "interrupt_wakeups": 560,
+      "package_idle_wakeups": 16,
+      "physical_footprint_bytes_end": 219890696,
+      "physical_footprint_bytes_start": 215385096,
+      "resident_bytes_end": 169754624,
+      "resident_bytes_start": 168656896,
+      "run": 1,
+      "system_cpu_seconds": 0.008328144,
+      "user_cpu_seconds": 0.121295941
+    }
+  ]
+}

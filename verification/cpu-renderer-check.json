@@ -1,0 +1,12 @@
+{
+  "build_variant": "optimized",
+  "failures": 0,
+  "operations": 1600,
+  "renderer_assertions": 58428,
+  "renderer_compilation": "xcrun swiftc -O; release TypingCore objects",
+  "source_sha256": {
+    "Sources/COREType/InlineTextbookView.swift": "ab7d9c21a95378ba04a88adfdc305a49270b4124587a719076c248f2e5c87d7e",
+    "Sources/COREType/TypingView.swift": "14af847b3f5bf150e8a23d9281c1d9c613914bfb28b44ef1fe28a3ac8df0dea8",
+    "Sources/TypingCore/TypingEngine.swift": "d0ec98eb9cff6d32bae13ae024b2358d67180455ffda4a23f21b097c8bf1ea83"
+  }
+}

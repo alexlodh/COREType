@@ -1,0 +1,9 @@
+{
+  "normal_profile_bytes_preserved": true,
+  "sha256_before_and_after": "6cf8abbcd494a4979e911e832741b7be3d7fe475a15a904afb1316aecdc5fb9f",
+  "saved_results_before_and_after": 5,
+  "normal_session_before_update": "Completed and already saved; no unfinished session",
+  "new_install_launched_via_CUA": true,
+  "history_result_count_verified_in_native_UI": 5,
+  "no_native_input_in_normal_profile": true
+}

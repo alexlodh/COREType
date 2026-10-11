@@ -1,4 +1,4 @@
-# COREType 1.3
+# COREType 1.4
 
 A standalone, native, offline macOS typing app using Sasha's existing prepared **The Economy 2.0** excerpts. It includes 6,893 paragraphs: 3,505 Microeconomics and 3,388 Macroeconomics, organized into 20 verified chapters and 271 sections. No account, browser, network service, or third-party runtime is required.
 
@@ -56,7 +56,7 @@ Settings and up to 1,000 recent results are written atomically to:
 
 No user data leaves the Mac. Source excerpts are bundled read-only and do not depend on the old workspace at runtime. Unreadable state is copied to a timestamped backup before recovery; write failures are displayed. In-progress text is not restored after quitting, but attempted sessions are recorded as interrupted. The app does not read or modify Monkeytype's browser storage.
 
-For isolated UI testing, launch with `--ui-testing`; data goes to `/tmp/COREType-UI-Testing/state.json` and does not touch the regular profile.
+For isolated UI testing, launch with `--ui-testing`; data goes to `/tmp/COREType-UI-Testing/state.json` and does not touch the regular profile. Adding `--fixture "CORE Micro U01 S06 P008"` starts that exact library passage and its section. The fixture argument is accepted only with `--ui-testing`.
 
 ## Build and verify
 
@@ -72,7 +72,15 @@ open /tmp/COREType-Release/COREType.app
 
 Build bundles under `/tmp`: this synced workspace can acquire FinderInfo metadata after signing. Copy the completed bundle into Applications and verify there with `codesign --verify --strict`. Do not alter quarantine or security settings.
 
-The dependency-free `CoreChecks` executable runs the test suite without XCTest, which is absent from this Mac's Command Line Tools. Tests cover exact metrics, corrected and uncorrected errors, deadline completion, pause/resume, timed paragraph continuation, punctuation, Unicode/backspace, repeats, complete long passages, the actual 6,893-paragraph library, chapter search/filtering, ordered/random/empty/singleton scopes, atomic settings/history persistence, migration and saved opt-out for inline media, source-proven figure matching, book isolation/explicit cross-book references, local image/table paths, schema compatibility, and source table cells/headers/spans.
+The dependency-free `CoreChecks` executable runs the test suite without XCTest, which is absent from this Mac's Command Line Tools. Tests cover exact metrics, corrected and uncorrected errors, deadline completion, pause/resume, timed paragraph continuation, punctuation, Unicode/backspace, repeats, complete long passages, the actual 6,893-paragraph library, chapter search/filtering, ordered/random/empty/singleton scopes, atomic settings/history persistence, migration and saved opt-out for inline media, source-proven figure matching, book isolation/explicit cross-book references, local image/table paths, schema compatibility, and source table cells/headers/spans. Version 1.4 adds randomized differential checks for incremental metrics, Unicode UTF-16 render ranges, repeated targets and exact deadlines, plus deterministic cosmetic-timer lifecycle checks.
+
+## CPU optimization
+
+Version 1.4 isolates tenths-of-a-second metric updates from the typing document and sidebar. The cosmetic timer runs only during visible, focused, active practice; ready, paused, finished, history and background states stop it. Timed completion uses a separate monotonic deadline and rejects input or deletion after expiry, even if a callback is delayed. Caret blinking is similarly conditional and invalidates its own rectangle.
+
+The typing document builds the attributed source passage once per passage/font change, then updates the affected character ranges. Its UTF-16 mapping preserves grapheme counts, wrong glyphs, punctuation equivalence and corrections, including emoji and combining characters. Geometry updates occur when document or viewport geometry changes. Scope counts, search results, chapter section sets, source figures and history aggregates are cached at their change boundaries. Inline WebKit creation is deferred until enabled source material exists, while the original SVGs, tables, captions, credits and shared scrolling remain.
+
+The measured comparison, native regressions and limits are recorded in [verification/CPU-Optimization.md](verification/CPU-Optimization.md). Three native 30-second runs typing the same 144 characters at a target five characters/second reduce median main-process CPU from 1.165% to 0.454% on this Mac. Three 30-second runs of the isolated, media-disabled AppKit renderer reduce median CPU from 1.640% to 0.552% and full attributed rebuilds from 453 to 3 across three fresh documents and 450 input events. Explicit layout requests fall from 906 to 33. These renderer measurements exclude native drawing, SwiftUI and WebKit-helper CPU; native process comparisons are reported separately. Renderer correctness passes 58,428 actual NSTextStorage display/attribute/caret assertions, including Unicode wrong-glyph range changes. Matched paused/finished/history CPU baselines, the additional native media/resize CPU matrix, cold-load timing, end-to-end input latency and native timer/body counters were not measured; the report distinguishes functional coverage and isolated renderer results from native CPU claims. Developer diagnostics are opt-in: `--performance-report /tmp/coretype-counters.json` collects counters and flushes them at save, pause, navigation and quit transitions. Normal launches collect no counters or diagnostic files. `scripts/measure-process.py` measures an explicitly selected COREType PID using monotonic elapsed time and cumulative macOS process CPU; 100% means one logical core. Sampling runs remain separate from steady CPU measurements.
 
 Implementation:
 
@@ -87,9 +95,9 @@ The SDK on this Mac includes a new SwiftUI `@State` macro whose plugin is suppli
 
 ## Verification and release
 
-Version 1.3 places textbook context directly in the typing document and adds the saved display setting. It removes the separate figure sheet, its controls and its pause-only state. It passed **18 core checks / 34,263 assertions** and **18 table integrity checks**, with zero failures. An independent source comparison verified all **95 table assets / 2,663 cells**. Two offline imports produced identical catalogue bytes; all 525 original images, passage associations, captions, credits and paragraph texts remain unchanged.
+Version 1.4 retains the inline textbook context and saved display setting introduced in 1.3 while reducing unnecessary clock observation, text reconstruction, layout and inactive timers. It passed **25 core checks / 253,258 assertions**, with zero failures. The source-table verifier again passed **18 table integrity checks** for all **95 assets**. The preserved independent source comparison covers **2,663 cells**. Library and catalogue hashes remain equal to the audited 1.3 release; all 525 original images, passage associations, captions, credits and paragraph texts remain unchanged. All 338 listed preserved import files also match the original SHA256 manifest. Current performance and release verification are recorded in [verification/CPU-Optimization.md](verification/CPU-Optimization.md).
 
-Current release signatures and native UI observations are recorded in `verification/UI-Verification.md`. Earlier checks also exercised typography/copy, corrected typing and completion, timed advancement, history replay and the native CSV save panel; exported values matched the saved test result. `verification/Code-Cleanup.md` describes the scoped cleanup, preserved behavior and remaining implementation constraints.
+The preserved 1.3 native UI observations are recorded in `verification/UI-Verification.md`. Earlier checks also exercised typography/copy, corrected typing and completion, timed advancement, history replay and the native CSV save panel; exported values matched the saved test result. `verification/Code-Cleanup.md` describes the 1.3 inline-media cleanup, preserved behavior and remaining implementation constraints.
 
 `verification/UI-Verification.md` describes the tested cases and limitations; screenshots and machine-readable audits are alongside it. All UI tests used the isolated testing profile. Synthetic typing verifies behavior, not human speed.
 

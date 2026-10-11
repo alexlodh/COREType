@@ -5,6 +5,7 @@ import TypingCore
 struct ContentView: View {
     @ObservedObject var model: AppModel
     var body: some View {
+        let _ = PerformanceCounters.record("contentViewBodies")
         HStack(spacing: 0) {
             ScopeSidebar(model: model).frame(width: 312)
             Rectangle().fill(.white.opacity(0.06)).frame(width: 1)
@@ -20,7 +21,7 @@ struct ContentView: View {
                     HStack { Image(systemName: "exclamationmark.circle"); Text(notice).font(Typography.font(size: 13)); Spacer(); Button("Dismiss") { model.notice = nil }.buttonStyle(.plain) }
                         .padding(12).background(Color.orange.opacity(0.12), in: RoundedRectangle(cornerRadius: 10)).padding(.bottom, 16)
                 }
-                if model.page == "practice" { PracticeView(model: model) }
+                if model.page == "practice" { PracticeView(model: model, display: model.practiceDisplay) }
                 else { HistoryView(model: model) }
                 Spacer(minLength: 12)
                 HStack {
@@ -43,6 +44,7 @@ struct ContentView: View {
 struct ScopeSidebar: View {
     @ObservedObject var model: AppModel
     var body: some View {
+        let _ = PerformanceCounters.record("sidebarBodies")
         VStack(alignment: .leading, spacing: 16) {
             HStack(spacing: 9) {
                 Image(systemName: "book.closed.fill").font(Typography.font(size: 23)).foregroundStyle(Palette.accent)
@@ -95,8 +97,7 @@ struct ScopeSidebar: View {
         }.padding(.horizontal, 20).padding(.top, 32).padding(.bottom, 20).background(Palette.sidebar)
     }
     func chapterRow(_ c: Chapter) -> some View {
-        let fullChapter = model.library.chapters.first { $0.id == c.id } ?? c
-        let ids = Set(fullChapter.sections.map(\.id))
+        let ids = model.sectionIDs(for: c)
         let all = ids.isSubset(of: model.selection)
         let some = !ids.isDisjoint(with: model.selection)
         return HStack(alignment: .top, spacing: 8) {
@@ -118,11 +119,14 @@ struct ScopeSidebar: View {
 }
 
 struct PracticeView: View {
-    @ObservedObject var model: AppModel
+    let model: AppModel
+    @ObservedObject var display: PracticeDisplay
     @ViewState private var customSeconds = "60"
     @ViewState private var customError = false
     @ViewState private var customTimer = false
     var body: some View {
+        let _ = PerformanceCounters.record("practiceBodies")
+        let snapshot = display.snapshot
         VStack(alignment: .leading, spacing: 20) {
             HStack(spacing: 16) {
                 Picker("Test mode", selection: Binding(get: { model.preferences.mode }, set: { model.configure(mode: $0) })) { Text("Passage").tag(TestMode.passage); Text("Timed").tag(TestMode.timed) }.pickerStyle(.segmented).labelsHidden().frame(width: 180)
@@ -135,14 +139,8 @@ struct PracticeView: View {
                 Spacer()
                 Picker("Paragraph order", selection: Binding(get: { model.preferences.order }, set: { model.configure(order: $0) })) { Text("In order").tag(PassagePicker.Order.ordered); Text("Random").tag(PassagePicker.Order.random) }.pickerStyle(.segmented).labelsHidden().frame(width: 180).help("Random chooses a whole paragraph from the applied scope, avoiding immediate repeats when possible.")
             }
-            if let passage = model.current, let engine = model.engine {
-                HStack(alignment: .firstTextBaseline, spacing: 12) {
-                    MetricTile(title: "WPM", value: String(format: "%.0f", model.metrics.wpm), highlighted: true)
-                    MetricTile(title: "Raw WPM", value: String(format: "%.0f", model.metrics.rawWPM))
-                    MetricTile(title: "Accuracy", value: String(format: "%.1f%%", model.metrics.accuracy))
-                    MetricTile(title: "Mistakes", value: "\(model.metrics.mistakes)")
-                    MetricTile(title: model.preferences.mode == .timed ? "Remaining" : "Elapsed", value: String(format: "%.1fs", model.preferences.mode == .timed ? max(0, Double(model.preferences.duration) - model.metrics.elapsed) : model.metrics.elapsed))
-                }.padding(.vertical, 5)
+            if let passage = snapshot.passage, let engine = snapshot.engine {
+                PracticeMetricsView(display: model.metricsDisplay, mode: model.preferences.mode, duration: model.preferences.duration)
                 VStack(alignment: .leading, spacing: 0) {
                     HStack(alignment: .top) {
                         VStack(alignment: .leading, spacing: 7) {
@@ -155,16 +153,20 @@ struct PracticeView: View {
                         }
                     }.padding(.horizontal, 28).padding(.top, 24).padding(.bottom, 15)
                     Rectangle().fill(.white.opacity(0.05)).frame(height: 1).padding(.horizontal, 28)
-                    TypingSurface(model: model).frame(minHeight: 195, maxHeight: .infinity)
+                    TypingSurface(model: model, engine: engine, passageRevision: snapshot.passageRevision,
+                                  inputRevision: snapshot.inputRevision, fontSize: model.preferences.fontSize,
+                                  figures: snapshot.figures, mediaRevision: snapshot.mediaRevision,
+                                  showTextbookMedia: model.preferences.showTextbookMedia,
+                                  focusToken: snapshot.focusToken, page: model.page).frame(minHeight: 195, maxHeight: .infinity)
                     HStack {
-                        Circle().fill(model.phase == .finished ? Palette.green : model.focused ? Palette.accent : Palette.muted).frame(width: 6, height: 6)
+                        Circle().fill(engine.phase == .finished ? Palette.green : snapshot.focused ? Palette.accent : Palette.muted).frame(width: 6, height: 6)
                         Text(statusText).font(Typography.font(size: 11))
                         Spacer()
                         Text("\(engine.input.count) / \(engine.target.count) characters").font(Typography.font(size: 10))
                     }.foregroundStyle(Palette.muted).padding(.horizontal, 28).padding(.vertical, 14)
                 }.background(Palette.panel, in: RoundedRectangle(cornerRadius: 9))
                 .overlay(RoundedRectangle(cornerRadius: 9).strokeBorder(.white.opacity(0.06), lineWidth: 1))
-                if model.phase == .finished {
+                if engine.phase == .finished {
                     HStack(alignment: .center) {
                         VStack(alignment: .leading, spacing: 6) {
                             Label(engine.finishReason ?? "Complete", systemImage: "checkmark.circle.fill").font(Typography.font(size: 17, weight: .medium)).foregroundStyle(Palette.green)
@@ -178,7 +180,7 @@ struct PracticeView: View {
                 HStack(spacing: 18) {
                     Button { model.restart() } label: { Label("Repeat", systemImage: "arrow.counterclockwise").font(Typography.font(size: 12)) }.buttonStyle(.plain).help("Repeat the starting paragraph · ⌘R")
                     Text("⌘R").font(Typography.font(size: 10)).foregroundStyle(Palette.muted)
-                    if model.phase == .running || model.phase == .paused { Button(model.phase == .paused ? "Resume" : "Pause") { model.pauseOrResume() }.buttonStyle(.plain).font(Typography.font(size: 12)).help("Escape or ⌘P") }
+                    if engine.phase == .running || engine.phase == .paused { Button(engine.phase == .paused ? "Resume" : "Pause") { model.pauseOrResume() }.buttonStyle(.plain).font(Typography.font(size: 12)).help("Escape or ⌘P") }
                     Spacer()
                     Text("⌘N").font(Typography.font(size: 10)).foregroundStyle(Palette.muted)
                     Button { model.next() } label: { Label("Next paragraph", systemImage: "arrow.right").font(Typography.font(size: 12, weight: .semibold)).padding(.horizontal, 16).padding(.vertical, 11).background(Palette.accent, in: RoundedRectangle(cornerRadius: 8)).foregroundStyle(Palette.background) }.buttonStyle(.plain)
@@ -191,7 +193,9 @@ struct PracticeView: View {
                     Button("Select all textbooks") { model.selection = model.library.sectionIDs; model.applyScope() }.buttonStyle(.borderedProminent)
                 }.frame(maxWidth: .infinity, maxHeight: .infinity).padding(35).background(Palette.panel, in: RoundedRectangle(cornerRadius: 9))
             }
-        }.sheet(isPresented: $customTimer) {
+        }.onAppear { model.setPracticeVisible(true) }
+        .onDisappear { model.setPracticeVisible(false) }
+        .sheet(isPresented: $customTimer) {
             VStack(alignment: .leading, spacing: 18) {
                 Text("Custom duration").font(Typography.font(size: 20, weight: .semibold))
                 Text("Enter 1–3,600 seconds.").foregroundStyle(Palette.muted)
@@ -202,9 +206,9 @@ struct PracticeView: View {
         }
     }
     var statusText: String {
-        switch model.phase {
-        case .ready: return model.focused ? "Ready to type" : "Click to type · ⌘T"
-        case .running: return model.focused ? "Typing · Esc to pause" : "Click to type · ⌘T"
+        switch display.snapshot.engine?.phase ?? .ready {
+        case .ready: return display.snapshot.focused ? "Ready to type" : "Click to type · ⌘T"
+        case .running: return display.snapshot.focused ? "Typing · Esc to pause" : "Click to type · ⌘T"
         case .paused: return "Paused"
         case .finished: return "Saved · Return for next paragraph"
         }
@@ -212,6 +216,23 @@ struct PracticeView: View {
     func applyCustom() {
         guard let value = Int(customSeconds), (1...3600).contains(value) else { customError = true; return }
         model.configure(duration: value); customTimer = false
+    }
+}
+
+struct PracticeMetricsView: View {
+    @ObservedObject var display: MetricsDisplay
+    let mode: TestMode
+    let duration: Int
+    var body: some View {
+        let _ = PerformanceCounters.record("metricsBodies")
+        let metrics = display.metrics
+        HStack(alignment: .firstTextBaseline, spacing: 12) {
+            MetricTile(title: "WPM", value: String(format: "%.0f", metrics.wpm), highlighted: true)
+            MetricTile(title: "Raw WPM", value: String(format: "%.0f", metrics.rawWPM))
+            MetricTile(title: "Accuracy", value: String(format: "%.1f%%", metrics.accuracy))
+            MetricTile(title: "Mistakes", value: "\(metrics.mistakes)")
+            MetricTile(title: mode == .timed ? "Remaining" : "Elapsed", value: String(format: "%.1fs", mode == .timed ? max(0, Double(duration) - metrics.elapsed) : metrics.elapsed))
+        }.padding(.vertical, 5)
     }
 }
 
@@ -230,20 +251,20 @@ struct MetricTile: View {
 struct HistoryView: View {
     @ObservedObject var model: AppModel
     @ViewState private var showInterrupted = false
-    var completed: [TestResult] { model.results.filter(\.completed) }
+    var completed: [TestResult] { model.historySummary.completed }
     var shown: [TestResult] { showInterrupted ? model.results : completed }
     var body: some View {
         VStack(alignment: .leading, spacing: 20) {
             HStack {
                 MetricTile(title: "Completed tests", value: "\(completed.count)", highlighted: true)
-                MetricTile(title: "Average WPM", value: completed.isEmpty ? "—" : String(format: "%.0f", completed.map { $0.metrics.wpm }.reduce(0,+) / Double(completed.count)))
-                MetricTile(title: "Best WPM", value: completed.isEmpty ? "—" : String(format: "%.0f", completed.map { $0.metrics.wpm }.max() ?? 0))
+                MetricTile(title: "Average WPM", value: completed.isEmpty ? "—" : String(format: "%.0f", model.historySummary.averageWPM))
+                MetricTile(title: "Best WPM", value: completed.isEmpty ? "—" : String(format: "%.0f", model.historySummary.bestWPM))
             }
             if !completed.isEmpty {
                 VStack(alignment: .leading, spacing: 9) {
                     Text("WPM · Last \(min(25, completed.count)) completed tests").font(Typography.font(size: 10)).foregroundStyle(Palette.muted)
                     Canvas { context, size in
-                        let values = Array(completed.prefix(25).reversed()).map { $0.metrics.wpm }
+                        let values = model.historySummary.recentWPM
                         let maximum = max(20, (values.max() ?? 0) * 1.1)
                         var line = Path()
                         for (i,value) in values.enumerated() {

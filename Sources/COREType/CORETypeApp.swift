@@ -8,7 +8,7 @@ final class AppDelegate: NSObject, NSApplicationDelegate {
         NSApp.activate(ignoringOtherApps: true)
     }
     func applicationShouldTerminateAfterLastWindowClosed(_ sender: NSApplication) -> Bool { true }
-    func applicationWillTerminate(_ notification: Notification) { model?.archive(reason: "App closed"); model?.save() }
+    func applicationWillTerminate(_ notification: Notification) { model?.archive(reason: "App closed"); model?.save(); PerformanceCounters.flush() }
 }
 
 @main struct CORETypeApp: App {

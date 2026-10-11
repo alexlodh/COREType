@@ -24,6 +24,10 @@ public struct TypingEngine {
     public private(set) var phase: Phase = .ready
     public private(set) var target: [Character]
     public private(set) var input: [Character] = []
+    /// Revisions change only when the corresponding render input changes.
+    /// A new engine is a new session; consumers also key their cache by session identity.
+    public private(set) var targetRevision: UInt64 = 0
+    public private(set) var inputRevision: UInt64 = 0
     public private(set) var attempts = 0
     public private(set) var mistakes = 0
     public private(set) var corrected = 0
@@ -36,6 +40,8 @@ public struct TypingEngine {
     private var started: Double?
     private var finishedCorrect = 0
     private var finishedErrors = 0
+    private var retainedCorrect = 0
+    private var retainedErrors = 0
     public init(text: String, mode: TestMode, duration: Double = 60, flexiblePunctuation: Bool = true) {
         target = Array(text); self.mode = mode; self.duration = min(3600, max(1, duration))
         self.flexiblePunctuation = flexiblePunctuation
@@ -43,16 +49,34 @@ public struct TypingEngine {
     public func matches(_ typed: Character, _ expected: Character) -> Bool {
         if typed == expected { return true }
         guard flexiblePunctuation else { return false }
-        let groups = [Set<Character>("'‘’"), Set<Character>("\"“”"), Set<Character>("-–—"), Set<Character>(" \u{00a0}")]
-        return groups.contains { $0.contains(typed) && $0.contains(expected) }
+        let group = Self.punctuationGroup(typed)
+        return group != 0 && group == Self.punctuationGroup(expected)
+    }
+    private static func punctuationGroup(_ character: Character) -> UInt8 {
+        switch character {
+        case "'", "‘", "’": return 1
+        case "\"", "“", "”": return 2
+        case "-", "–", "—": return 3
+        case " ", "\u{00a0}": return 4
+        default: return 0
+        }
     }
     public func elapsed(at now: Double) -> Double {
         let result = accrued + (started.map { max(0, now - $0) } ?? 0)
         return mode == .timed ? min(duration, result) : result
     }
+    public func remainingDuration(at now: Double) -> Double? {
+        guard mode == .timed else { return nil }
+        return max(0, duration - elapsed(at: now))
+    }
+    /// The true monotonic deadline, independent of cosmetic timer callbacks.
+    public var deadline: Double? {
+        guard mode == .timed, phase == .running, let started else { return nil }
+        return started + max(0, duration - accrued)
+    }
     public func metrics(at now: Double) -> Metrics {
-        let correct = finishedCorrect + input.enumerated().filter { matches($0.element, target[$0.offset]) }.count
-        let errors = finishedErrors + input.count - (correct - finishedCorrect)
+        let correct = finishedCorrect + retainedCorrect
+        let errors = finishedErrors + retainedErrors
         let elapsed = elapsed(at: now)
         let minutes = elapsed / 60
         let accuracy = attempts == 0 ? 100 : Double(attempts - mistakes) / Double(attempts) * 100
@@ -67,8 +91,10 @@ public struct TypingEngine {
         guard phase == .ready || phase == .running, input.count < target.count else { return false }
         if phase == .ready { phase = .running; started = now }
         attempts += 1
-        if !matches(char, target[input.count]) { mistakes += 1 }
+        if matches(char, target[input.count]) { retainedCorrect += 1 }
+        else { mistakes += 1; retainedErrors += 1 }
         input.append(char)
+        inputRevision &+= 1
         if input.count == target.count {
             completedParagraphs += 1
             if mode == .passage { finish(at: now, reason: "Passage complete") }
@@ -78,18 +104,21 @@ public struct TypingEngine {
     }
     public mutating func advance(to text: String) {
         guard mode == .timed, phase == .running, input.count == target.count else { return }
-        let correct = input.enumerated().filter { matches($0.element, target[$0.offset]) }.count
-        finishedCorrect += correct; finishedErrors += input.count - correct
-        target = Array(text); input = []
+        finishedCorrect += retainedCorrect; finishedErrors += retainedErrors
+        retainedCorrect = 0; retainedErrors = 0
+        target = Array(text); targetRevision &+= 1
+        if !input.isEmpty { input.removeAll(keepingCapacity: true); inputRevision &+= 1 }
     }
     public mutating func backspace(word: Bool = false, at now: Double) {
         tick(at: now)
         guard phase == .running, !input.isEmpty else { return }
         repeat {
             let index = input.count - 1
-            if !matches(input[index], target[index]) { corrected += 1 }
+            if matches(input[index], target[index]) { retainedCorrect -= 1 }
+            else { retainedErrors -= 1; corrected += 1 }
             input.removeLast()
         } while word && !input.isEmpty && input.last != " "
+        inputRevision &+= 1
     }
     public mutating func tick(at now: Double) {
         if phase == .running && mode == .timed && elapsed(at: now) >= duration {

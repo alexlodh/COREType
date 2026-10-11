@@ -1,0 +1,11 @@
+{
+  "checks": {
+    "canonical-output-containment": true,
+    "source-descendant-rejected": true,
+    "normal-bundle-identity-rejected": true,
+    "identity-path-rejected": true,
+    "identity-whitespace-rejected": true
+  },
+  "failures": 0,
+  "createdBundles": 0
+}

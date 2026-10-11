@@ -1,0 +1,2718 @@
+{
+  "all_match": true,
+  "checked_at_utc": "2026-10-11T15:15:48.968897+00:00",
+  "checked_files": 338,
+  "checks": [
+    {
+      "actual_sha256": "ccf2fa736fe35260e4e9d3f81a5fdf1621c567aa5508561bbc499b96c2944560",
+      "bytes": 712472,
+      "expected_sha256": "ccf2fa736fe35260e4e9d3f81a5fdf1621c567aa5508561bbc499b96c2944560",
+      "matches": true,
+      "path": "import-source/CORE-Random-Paragraphs-Setup.zip",
+      "status": "verified"
+    },
+    {
+      "actual_sha256": "b11bd4df87161d52ec385db497e0107d8dab8edd9e304bc109d101de35ea20bf",
+      "bytes": 50855,
+      "expected_sha256": "b11bd4df87161d52ec385db497e0107d8dab8edd9e304bc109d101de35ea20bf",
+      "matches": true,
+      "path": "import-source/book_manifest.json",
+      "status": "verified"
+    },
+    {
+      "actual_sha256": "2dbf8a0583e0492fd61ee00ecfff3aae783881b8f74673f5e784ae7cac31d1d4",
+      "bytes": 1682439,
+      "expected_sha256": "2dbf8a0583e0492fd61ee00ecfff3aae783881b8f74673f5e784ae7cac31d1d4",
+      "matches": true,
+      "path": "import-source/core-monkeytype-saved-text-library-manifest.json",
+      "status": "verified"
+    },
+    {
+      "actual_sha256": "a895bcf7bffc8865b5eb27312722785ec18b9fde8c0e90cdbc4b167100205879",
+      "bytes": 2420183,
+      "expected_sha256": "a895bcf7bffc8865b5eb27312722785ec18b9fde8c0e90cdbc4b167100205879",
+      "matches": true,
+      "path": "import-source/core-monkeytype-saved-text-library.json",
+      "status": "verified"
+    },
+    {
+      "actual_sha256": "088d359f79bbf76713439e34cb989e3888ef2620dd199145faa926fd1ae14d44",
+      "bytes": 1894978,
+      "expected_sha256": "088d359f79bbf76713439e34cb989e3888ef2620dd199145faa926fd1ae14d44",
+      "matches": true,
+      "path": "import-source/paragraph_provenance.json",
+      "status": "verified"
+    },
+    {
+      "actual_sha256": "f09a1af59426f88fc825d5f3c5aee82d6bcd8b9f5e3cf0acc0bdaef2c22702b8",
+      "bytes": 2223679,
+      "expected_sha256": "f09a1af59426f88fc825d5f3c5aee82d6bcd8b9f5e3cf0acc0bdaef2c22702b8",
+      "matches": true,
+      "path": "import-source/random-setup-import/CORE-Random-Paragraph-Pool.txt",
+      "status": "verified"
+    },
+    {
+      "actual_sha256": "3751480783de92fc5bdd12f2f012f01b15338bc79c9c1248d00ac564aee05671",
+      "bytes": 5308,
+      "expected_sha256": "3751480783de92fc5bdd12f2f012f01b15338bc79c9c1248d00ac564aee05671",
+      "matches": true,
+      "path": "import-source/random-setup-import/README.txt",
+      "status": "verified"
+    },
+    {
+      "actual_sha256": "79b9a6bfbcec8b4a18b2daab8f1294ef6e37634da185a71399c07984011da874",
+      "bytes": 28003,
+      "expected_sha256": "79b9a6bfbcec8b4a18b2daab8f1294ef6e37634da185a71399c07984011da874",
+      "matches": true,
+      "path": "import-source/source/macroeconomics/0-2-copyright.html",
+      "status": "verified"
+    },
+    {
+      "actual_sha256": "7c02c2a5d86edf1de562f643d3d3699c1502d1cbea9d407afbcfeca9216e8159",
+      "bytes": 45764,
+      "expected_sha256": "7c02c2a5d86edf1de562f643d3d3699c1502d1cbea9d407afbcfeca9216e8159",
+      "matches": true,
+      "path": "import-source/source/macroeconomics/0-4-preface.html",
+      "status": "verified"
+    },
+    {
+      "actual_sha256": "3d08474406220b2f9938faf2b4d88b67968ebcedeebd44abe3f1c8a8801c3d71",
+      "bytes": 57414,
+      "expected_sha256": "3d08474406220b2f9938faf2b4d88b67968ebcedeebd44abe3f1c8a8801c3d71",
+      "matches": true,
+      "path": "import-source/source/macroeconomics/0-5-note-to-instructors.html",
+      "status": "verified"
+    },
+    {
+      "actual_sha256": "32198d98d7b54ff8868af0b2f866691b55944859ab7596f138980d89a62227d1",
+      "bytes": 46917,
+      "expected_sha256": "32198d98d7b54ff8868af0b2f866691b55944859ab7596f138980d89a62227d1",
+      "matches": true,
+      "path": "import-source/source/macroeconomics/0-6-contributors.html",
+      "status": "verified"
+    },
+    {
+      "actual_sha256": "2863ea6bedc211da90ff7d2304a3d776d6cb1a6082b2f938188969003aa7534b",
+      "bytes": 139623,
+      "expected_sha256": "2863ea6bedc211da90ff7d2304a3d776d6cb1a6082b2f938188969003aa7534b",
+      "matches": true,
+      "path": "import-source/source/macroeconomics/0-7-features-list.html",
+      "status": "verified"
+    },
+    {
+      "actual_sha256": "5ee47bc5fc22f6e9ed0a18bd27b403e8ebe66185c91aa465851358527f0d247c",
+      "bytes": 39778,
+      "expected_sha256": "5ee47bc5fc22f6e9ed0a18bd27b403e8ebe66185c91aa465851358527f0d247c",
+      "matches": true,
+      "path": "import-source/source/macroeconomics/0-8-intro-to-extensions.html",
+      "status": "verified"
+    },
+    {
+      "actual_sha256": "f0936ef5a210ac450476e3a949517d2c8cdfdff7e9875dd3e912edba265ce062",
+      "bytes": 39932,
+      "expected_sha256": "f0936ef5a210ac450476e3a949517d2c8cdfdff7e9875dd3e912edba265ce062",
+      "matches": true,
+      "path": "import-source/source/macroeconomics/01-supply-side-macroeconomy-01-jobs-wages.html",
+      "status": "verified"
+    },
+    {
+      "actual_sha256": "1201496848d77c15916105178e46683103fe592909b0989b29f9d92870442fa8",
+      "bytes": 37328,
+      "expected_sha256": "1201496848d77c15916105178e46683103fe592909b0989b29f9d92870442fa8",
+      "matches": true,
+      "path": "import-source/source/macroeconomics/01-supply-side-macroeconomy-02-the-whole-economy.html",
+      "status": "verified"
+    },
+    {
+      "actual_sha256": "41e0aac471370afe9c7a3aff6e426c0577b58938dc309bd4d641de5eaad2aae6",
+      "bytes": 54397,
+      "expected_sha256": "41e0aac471370afe9c7a3aff6e426c0577b58938dc309bd4d641de5eaad2aae6",
+      "matches": true,
+      "path": "import-source/source/macroeconomics/01-supply-side-macroeconomy-03-output-employment-inactivity.html",
+      "status": "verified"
+    },
+    {
+      "actual_sha256": "8639711cf6eeff32c282c1d7de5fc1e61db6b61dd4d67eb1005344d9f9ff16d9",
+      "bytes": 51590,
+      "expected_sha256": "8639711cf6eeff32c282c1d7de5fc1e61db6b61dd4d67eb1005344d9f9ff16d9",
+      "matches": true,
+      "path": "import-source/source/macroeconomics/01-supply-side-macroeconomy-04-prices-wages.html",
+      "status": "verified"
+    },
+    {
+      "actual_sha256": "1bc85b32553717726e33eea8876f7857a4bc5ad7c15456e7638d2915c439bca4",
+      "bytes": 65021,
+      "expected_sha256": "1bc85b32553717726e33eea8876f7857a4bc5ad7c15456e7638d2915c439bca4",
+      "matches": true,
+      "path": "import-source/source/macroeconomics/01-supply-side-macroeconomy-05-supply-side.html",
+      "status": "verified"
+    },
+    {
+      "actual_sha256": "8996456bb3778cd453f2d315fae55a52a7612e15f92b8673047c31e121fcde33",
+      "bytes": 87392,
+      "expected_sha256": "8996456bb3778cd453f2d315fae55a52a7612e15f92b8673047c31e121fcde33",
+      "matches": true,
+      "path": "import-source/source/macroeconomics/01-supply-side-macroeconomy-06-wage-setting.html",
+      "status": "verified"
+    },
+    {
+      "actual_sha256": "448b21852a1fc0216eaa9edd2f1b41be23851fedddeb28c16bf599e850ac4ff6",
+      "bytes": 62473,
+      "expected_sha256": "448b21852a1fc0216eaa9edd2f1b41be23851fedddeb28c16bf599e850ac4ff6",
+      "matches": true,
+      "path": "import-source/source/macroeconomics/01-supply-side-macroeconomy-07-price-setting.html",
+      "status": "verified"
+    },
+    {
+      "actual_sha256": "ed853c18d048077055a39186cbcbb0067e64c00e37bcacf4e9e2857ac31bac60",
+      "bytes": 53044,
+      "expected_sha256": "ed853c18d048077055a39186cbcbb0067e64c00e37bcacf4e9e2857ac31bac60",
+      "matches": true,
+      "path": "import-source/source/macroeconomics/01-supply-side-macroeconomy-08-ws-ps-equilibrium.html",
+      "status": "verified"
+    },
+    {
+      "actual_sha256": "e0b689d795b89a4de83f9ffcffd4b7ee25915b490621a63b127ddab9abdd1252",
+      "bytes": 38728,
+      "expected_sha256": "e0b689d795b89a4de83f9ffcffd4b7ee25915b490621a63b127ddab9abdd1252",
+      "matches": true,
+      "path": "import-source/source/macroeconomics/01-supply-side-macroeconomy-09-studying-the-economy.html",
+      "status": "verified"
+    },
+    {
+      "actual_sha256": "a085a20c6cbc3db4963be90bb21fe32a7db07e9a797b1d142126ce9f294cc3ac",
+      "bytes": 32255,
+      "expected_sha256": "a085a20c6cbc3db4963be90bb21fe32a7db07e9a797b1d142126ce9f294cc3ac",
+      "matches": true,
+      "path": "import-source/source/macroeconomics/01-supply-side-macroeconomy-10-summary.html",
+      "status": "verified"
+    },
+    {
+      "actual_sha256": "d7d3b1f6ae4c25d25abef2c8e621afa77b62ee5d9fdae4ae2d3a9f675b13d661",
+      "bytes": 29564,
+      "expected_sha256": "d7d3b1f6ae4c25d25abef2c8e621afa77b62ee5d9fdae4ae2d3a9f675b13d661",
+      "matches": true,
+      "path": "import-source/source/macroeconomics/01-supply-side-macroeconomy-11-references.html",
+      "status": "verified"
+    },
+    {
+      "actual_sha256": "7be7ee20c8abd4eba34a9b8d059776067a58fd0cc119e7315aaca3d7877a8f2c",
+      "bytes": 40545,
+      "expected_sha256": "7be7ee20c8abd4eba34a9b8d059776067a58fd0cc119e7315aaca3d7877a8f2c",
+      "matches": true,
+      "path": "import-source/source/macroeconomics/02-unemployment-wages-inequality-01-scarred-generation.html",
+      "status": "verified"
+    },
+    {
+      "actual_sha256": "99031b98c73b7fa515d59f349ba2c905d7f65075bea5262c54a60e5709f27f3d",
+      "bytes": 72913,
+      "expected_sha256": "99031b98c73b7fa515d59f349ba2c905d7f65075bea5262c54a60e5709f27f3d",
+      "matches": true,
+      "path": "import-source/source/macroeconomics/02-unemployment-wages-inequality-02-measuring-economy-inequality.html",
+      "status": "verified"
+    },
+    {
+      "actual_sha256": "27f03e8d35ca7e284593d14692b345bb33f71cde08ffe8e504cb83cb42fb3ee7",
+      "bytes": 65626,
+      "expected_sha256": "27f03e8d35ca7e284593d14692b345bb33f71cde08ffe8e504cb83cb42fb3ee7",
+      "matches": true,
+      "path": "import-source/source/macroeconomics/02-unemployment-wages-inequality-03-structural-unemployment.html",
+      "status": "verified"
+    },
+    {
+      "actual_sha256": "e5445e270d3cd63b524145444dd20be52e0cb4b657fa5fe906e8fb7264158f57",
+      "bytes": 80262,
+      "expected_sha256": "e5445e270d3cd63b524145444dd20be52e0cb4b657fa5fe906e8fb7264158f57",
+      "matches": true,
+      "path": "import-source/source/macroeconomics/02-unemployment-wages-inequality-04-labour-market-policies.html",
+      "status": "verified"
+    },
+    {
+      "actual_sha256": "e652381b208d65c2928bdb3d62bfc731bd896e6c8b32b97622e702036e6cc019",
+      "bytes": 59068,
+      "expected_sha256": "e652381b208d65c2928bdb3d62bfc731bd896e6c8b32b97622e702036e6cc019",
+      "matches": true,
+      "path": "import-source/source/macroeconomics/02-unemployment-wages-inequality-05-labour-unions.html",
+      "status": "verified"
+    },
+    {
+      "actual_sha256": "63e562aa3a0f625d6bc79a282a8839d0303df8c02a57cec250d3b2c6615e2d42",
+      "bytes": 52126,
+      "expected_sha256": "63e562aa3a0f625d6bc79a282a8839d0303df8c02a57cec250d3b2c6615e2d42",
+      "matches": true,
+      "path": "import-source/source/macroeconomics/02-unemployment-wages-inequality-06-segmented-labour-markets.html",
+      "status": "verified"
+    },
+    {
+      "actual_sha256": "10aeaab55ace11811f9e939f318363d5bc27586876f9b1a7b5274ce61b5024c9",
+      "bytes": 43199,
+      "expected_sha256": "10aeaab55ace11811f9e939f318363d5bc27586876f9b1a7b5274ce61b5024c9",
+      "matches": true,
+      "path": "import-source/source/macroeconomics/02-unemployment-wages-inequality-07-taxes-ws-ps-model.html",
+      "status": "verified"
+    },
+    {
+      "actual_sha256": "1a9167e47e1997e5cb3850c025e2da7a2364f9fd4641db966bf08287741e7071",
+      "bytes": 33373,
+      "expected_sha256": "1a9167e47e1997e5cb3850c025e2da7a2364f9fd4641db966bf08287741e7071",
+      "matches": true,
+      "path": "import-source/source/macroeconomics/02-unemployment-wages-inequality-08-imported-materials.html",
+      "status": "verified"
+    },
+    {
+      "actual_sha256": "ef7bd7192379637d09acf48f3fd88e90d09f85e17a50daa80d2b23702fcd1e5e",
+      "bytes": 72450,
+      "expected_sha256": "ef7bd7192379637d09acf48f3fd88e90d09f85e17a50daa80d2b23702fcd1e5e",
+      "matches": true,
+      "path": "import-source/source/macroeconomics/02-unemployment-wages-inequality-09-inequality-increase-us.html",
+      "status": "verified"
+    },
+    {
+      "actual_sha256": "fdd3d3a899951087dd9ddc1343d538ad57adfd294e5340f575750e34e6128946",
+      "bytes": 45212,
+      "expected_sha256": "fdd3d3a899951087dd9ddc1343d538ad57adfd294e5340f575750e34e6128946",
+      "matches": true,
+      "path": "import-source/source/macroeconomics/02-unemployment-wages-inequality-10-application-labour-market-denmark.html",
+      "status": "verified"
+    },
+    {
+      "actual_sha256": "e68dda430d3df5fd79d3091a62750f598f30c0beacec051c0e71fb5c1ebd8a59",
+      "bytes": 44189,
+      "expected_sha256": "e68dda430d3df5fd79d3091a62750f598f30c0beacec051c0e71fb5c1ebd8a59",
+      "matches": true,
+      "path": "import-source/source/macroeconomics/02-unemployment-wages-inequality-11-successes-and-failures.html",
+      "status": "verified"
+    },
+    {
+      "actual_sha256": "ef7cf26e551233a7eba206bf1478b8c9353e42414879167728d2e83d649e0a46",
+      "bytes": 38569,
+      "expected_sha256": "ef7cf26e551233a7eba206bf1478b8c9353e42414879167728d2e83d649e0a46",
+      "matches": true,
+      "path": "import-source/source/macroeconomics/02-unemployment-wages-inequality-12-how-good-is-the-model.html",
+      "status": "verified"
+    },
+    {
+      "actual_sha256": "8226ec43ce3fdfe5ba74493a787baba2857bebe67976399c36aa6aa97c7d5006",
+      "bytes": 31315,
+      "expected_sha256": "8226ec43ce3fdfe5ba74493a787baba2857bebe67976399c36aa6aa97c7d5006",
+      "matches": true,
+      "path": "import-source/source/macroeconomics/02-unemployment-wages-inequality-13-summary.html",
+      "status": "verified"
+    },
+    {
+      "actual_sha256": "3562705fc09dfdc8d2e39fe4a446f9dd8578da0ca7ef34601291f7669e5d23e5",
+      "bytes": 33672,
+      "expected_sha256": "3562705fc09dfdc8d2e39fe4a446f9dd8578da0ca7ef34601291f7669e5d23e5",
+      "matches": true,
+      "path": "import-source/source/macroeconomics/02-unemployment-wages-inequality-14-references.html",
+      "status": "verified"
+    },
+    {
+      "actual_sha256": "5643695b0dbb2716c70449620153659850ae302662ef1cd4197004d5047aece0",
+      "bytes": 41397,
+      "expected_sha256": "5643695b0dbb2716c70449620153659850ae302662ef1cd4197004d5047aece0",
+      "matches": true,
+      "path": "import-source/source/macroeconomics/03-aggregate-demand-01-great-recession-hardship.html",
+      "status": "verified"
+    },
+    {
+      "actual_sha256": "8a7a16535b0caa5b0f2946321d934cccd54382484bc47e315af37229c8103f44",
+      "bytes": 46401,
+      "expected_sha256": "8a7a16535b0caa5b0f2946321d934cccd54382484bc47e315af37229c8103f44",
+      "matches": true,
+      "path": "import-source/source/macroeconomics/03-aggregate-demand-02-gross-domestic-product.html",
+      "status": "verified"
+    },
+    {
+      "actual_sha256": "0a9726c39b204cbfd317389e8619206ba6c5abb25186317467f1398a461c0e45",
+      "bytes": 60049,
+      "expected_sha256": "0a9726c39b204cbfd317389e8619206ba6c5abb25186317467f1398a461c0e45",
+      "matches": true,
+      "path": "import-source/source/macroeconomics/03-aggregate-demand-03-components-of-gdp.html",
+      "status": "verified"
+    },
+    {
+      "actual_sha256": "1c4537b97b9a8d8601793a2ab119cd3981b0d12985f9862c0804e1023e7280b2",
+      "bytes": 60386,
+      "expected_sha256": "1c4537b97b9a8d8601793a2ab119cd3981b0d12985f9862c0804e1023e7280b2",
+      "matches": true,
+      "path": "import-source/source/macroeconomics/03-aggregate-demand-04-interpreting-gdp.html",
+      "status": "verified"
+    },
+    {
+      "actual_sha256": "53ae970bf4513026f1ca2310d6dc7185e58602140a688343c436747fa22433ac",
+      "bytes": 87445,
+      "expected_sha256": "53ae970bf4513026f1ca2310d6dc7185e58602140a688343c436747fa22433ac",
+      "matches": true,
+      "path": "import-source/source/macroeconomics/03-aggregate-demand-05-growth-fluctuations.html",
+      "status": "verified"
+    },
+    {
+      "actual_sha256": "ac71789625ce3abd1957eade13f0fa0d13f5c658a559e31f707870933d9c2c31",
+      "bytes": 97216,
+      "expected_sha256": "ac71789625ce3abd1957eade13f0fa0d13f5c658a559e31f707870933d9c2c31",
+      "matches": true,
+      "path": "import-source/source/macroeconomics/03-aggregate-demand-06-introducing-multiplier-model.html",
+      "status": "verified"
+    },
+    {
+      "actual_sha256": "bee6016a659e5cf566c94521de949d065f753637c6b55db18bfadcefcf578822",
+      "bytes": 89270,
+      "expected_sha256": "bee6016a659e5cf566c94521de949d065f753637c6b55db18bfadcefcf578822",
+      "matches": true,
+      "path": "import-source/source/macroeconomics/03-aggregate-demand-07-business-cycle-fluctuations.html",
+      "status": "verified"
+    },
+    {
+      "actual_sha256": "63f92e5ba5f86e3aad8ee32b1da7b611ab64c9141237429cc1dd00eae8cc3446",
+      "bytes": 64032,
+      "expected_sha256": "63f92e5ba5f86e3aad8ee32b1da7b611ab64c9141237429cc1dd00eae8cc3446",
+      "matches": true,
+      "path": "import-source/source/macroeconomics/03-aggregate-demand-08-government-net-exports.html",
+      "status": "verified"
+    },
+    {
+      "actual_sha256": "94d0dddc93e96d9706d33c4af3ab3798200849bfef84dbc8585e7661518375d0",
+      "bytes": 50867,
+      "expected_sha256": "94d0dddc93e96d9706d33c4af3ab3798200849bfef84dbc8585e7661518375d0",
+      "matches": true,
+      "path": "import-source/source/macroeconomics/03-aggregate-demand-09-smooth-consumption.html",
+      "status": "verified"
+    },
+    {
+      "actual_sha256": "afbdfd1a400f0624c6027f9f8d01c646ce952f1590911437758bacc314afe68f",
+      "bytes": 87174,
+      "expected_sha256": "afbdfd1a400f0624c6027f9f8d01c646ce952f1590911437758bacc314afe68f",
+      "matches": true,
+      "path": "import-source/source/macroeconomics/03-aggregate-demand-10-shocks-and-limits-to-consumption.html",
+      "status": "verified"
+    },
+    {
+      "actual_sha256": "c7abd96f2932b2ccedb304f990d62f88862033f807583f3f5c007d4467b77a4c",
+      "bytes": 56726,
+      "expected_sha256": "c7abd96f2932b2ccedb304f990d62f88862033f807583f3f5c007d4467b77a4c",
+      "matches": true,
+      "path": "import-source/source/macroeconomics/03-aggregate-demand-11-why-is-investment-volatile.html",
+      "status": "verified"
+    },
+    {
+      "actual_sha256": "94d75662d454204192da35796d8a4de065c9c9addeb68078701efc660e109bf5",
+      "bytes": 51226,
+      "expected_sha256": "94d75662d454204192da35796d8a4de065c9c9addeb68078701efc660e109bf5",
+      "matches": true,
+      "path": "import-source/source/macroeconomics/03-aggregate-demand-12-investment-spending.html",
+      "status": "verified"
+    },
+    {
+      "actual_sha256": "05eced04aceee6f706e0e3bcf9ae0ea58e1b2df10609af82eaf2105e05281e7e",
+      "bytes": 34736,
+      "expected_sha256": "05eced04aceee6f706e0e3bcf9ae0ea58e1b2df10609af82eaf2105e05281e7e",
+      "matches": true,
+      "path": "import-source/source/macroeconomics/03-aggregate-demand-13-application-china-post-covid.html",
+      "status": "verified"
+    },
+    {
+      "actual_sha256": "7bbe839fb252a10042971096d6b5a8beee6bdd5c33e868003fff6de00ce8e9b7",
+      "bytes": 33084,
+      "expected_sha256": "7bbe839fb252a10042971096d6b5a8beee6bdd5c33e868003fff6de00ce8e9b7",
+      "matches": true,
+      "path": "import-source/source/macroeconomics/03-aggregate-demand-14-summary.html",
+      "status": "verified"
+    },
+    {
+      "actual_sha256": "34786a60029d074555ff057fc0dff04b570585f5dca345c363c4c45e74078de9",
+      "bytes": 31963,
+      "expected_sha256": "34786a60029d074555ff057fc0dff04b570585f5dca345c363c4c45e74078de9",
+      "matches": true,
+      "path": "import-source/source/macroeconomics/03-aggregate-demand-15-references.html",
+      "status": "verified"
+    },
+    {
+      "actual_sha256": "1a6ab21b7bfbbc4563f99d6f1bbd232fc5c266146efb1adb271ced22cd7bcee6",
+      "bytes": 46195,
+      "expected_sha256": "1a6ab21b7bfbbc4563f99d6f1bbd232fc5c266146efb1adb271ced22cd7bcee6",
+      "matches": true,
+      "path": "import-source/source/macroeconomics/04-inflation-and-employment-01-cost-of-living-crisis.html",
+      "status": "verified"
+    },
+    {
+      "actual_sha256": "54ffa59b7fb9a0f5266f2dde1960639e0a1057b0f2cc6c4d8d188893551d6b44",
+      "bytes": 46842,
+      "expected_sha256": "54ffa59b7fb9a0f5266f2dde1960639e0a1057b0f2cc6c4d8d188893551d6b44",
+      "matches": true,
+      "path": "import-source/source/macroeconomics/04-inflation-and-employment-02-measuring-the-economy-inflation.html",
+      "status": "verified"
+    },
+    {
+      "actual_sha256": "3b6b5d54241c2b01abdbef7c948162f661a907ccef114a204e645c426dad4da7",
+      "bytes": 49389,
+      "expected_sha256": "3b6b5d54241c2b01abdbef7c948162f661a907ccef114a204e645c426dad4da7",
+      "matches": true,
+      "path": "import-source/source/macroeconomics/04-inflation-and-employment-03-whats-wrong-with-inflation.html",
+      "status": "verified"
+    },
+    {
+      "actual_sha256": "be0bd64c6157250bb6166d673e3df7147472001478055683e2283e0c7f7e85d5",
+      "bytes": 68841,
+      "expected_sha256": "be0bd64c6157250bb6166d673e3df7147472001478055683e2283e0c7f7e85d5",
+      "matches": true,
+      "path": "import-source/source/macroeconomics/04-inflation-and-employment-04-inflation-unemployment-conflicting-claims.html",
+      "status": "verified"
+    },
+    {
+      "actual_sha256": "fb35d5b6d336e2d63601bb303afeff10064b38abd6f0b1404741cf37077489ed",
+      "bytes": 60678,
+      "expected_sha256": "fb35d5b6d336e2d63601bb303afeff10064b38abd6f0b1404741cf37077489ed",
+      "matches": true,
+      "path": "import-source/source/macroeconomics/04-inflation-and-employment-05-modelling-relationship-inflation-unemployment.html",
+      "status": "verified"
+    },
+    {
+      "actual_sha256": "7178588df79b18c810a3e131dfc454dca0602e9db2bee84eb216157fdadb1dec",
+      "bytes": 115136,
+      "expected_sha256": "7178588df79b18c810a3e131dfc454dca0602e9db2bee84eb216157fdadb1dec",
+      "matches": true,
+      "path": "import-source/source/macroeconomics/04-inflation-and-employment-06-expected-inflation-shifts-phillips-curve.html",
+      "status": "verified"
+    },
+    {
+      "actual_sha256": "7dec8f6a7970ff612315b876dba77a770932b6bbfcab507afe5ddd0ec3158a8b",
+      "bytes": 93713,
+      "expected_sha256": "7dec8f6a7970ff612315b876dba77a770932b6bbfcab507afe5ddd0ec3158a8b",
+      "matches": true,
+      "path": "import-source/source/macroeconomics/04-inflation-and-employment-07-business-cycle-model-supply-side.html",
+      "status": "verified"
+    },
+    {
+      "actual_sha256": "1cbb5666eaf2b5418dec7d3d5638374faf0c43978fb842a1ca9ac63f97b5330a",
+      "bytes": 92764,
+      "expected_sha256": "1cbb5666eaf2b5418dec7d3d5638374faf0c43978fb842a1ca9ac63f97b5330a",
+      "matches": true,
+      "path": "import-source/source/macroeconomics/04-inflation-and-employment-08-business-cycle-model-shocks-inflation-expectations.html",
+      "status": "verified"
+    },
+    {
+      "actual_sha256": "27cea81cb676127fad735fa4dec8cbc10bdf265b00a2f4486450c2c06a0347c8",
+      "bytes": 55540,
+      "expected_sha256": "27cea81cb676127fad735fa4dec8cbc10bdf265b00a2f4486450c2c06a0347c8",
+      "matches": true,
+      "path": "import-source/source/macroeconomics/04-inflation-and-employment-09-global-oil-other-commodity-price-shocks.html",
+      "status": "verified"
+    },
+    {
+      "actual_sha256": "92ee4bab8d4b4f2f2def3fcb35d7335b769d59b0fa92383a3dfd5bd31a074fb0",
+      "bytes": 52021,
+      "expected_sha256": "92ee4bab8d4b4f2f2def3fcb35d7335b769d59b0fa92383a3dfd5bd31a074fb0",
+      "matches": true,
+      "path": "import-source/source/macroeconomics/04-inflation-and-employment-10-review-causes-inflation.html",
+      "status": "verified"
+    },
+    {
+      "actual_sha256": "fdd2d815e0eaea1dc5057e877e1c5324fa841061928da9891f3f69470c4a6dbb",
+      "bytes": 55157,
+      "expected_sha256": "fdd2d815e0eaea1dc5057e877e1c5324fa841061928da9891f3f69470c4a6dbb",
+      "matches": true,
+      "path": "import-source/source/macroeconomics/04-inflation-and-employment-11-application-inflation-after-pandemic.html",
+      "status": "verified"
+    },
+    {
+      "actual_sha256": "ee5be11b1aa3a706358954f1287b9a8c6d5dba8036cefc29550365bb4953bad1",
+      "bytes": 32574,
+      "expected_sha256": "ee5be11b1aa3a706358954f1287b9a8c6d5dba8036cefc29550365bb4953bad1",
+      "matches": true,
+      "path": "import-source/source/macroeconomics/04-inflation-and-employment-12-summary.html",
+      "status": "verified"
+    },
+    {
+      "actual_sha256": "eff8aab9675e5b3094dd3e58b533ca498b9c22fd5dbfca68aa84b286370babbb",
+      "bytes": 46161,
+      "expected_sha256": "eff8aab9675e5b3094dd3e58b533ca498b9c22fd5dbfca68aa84b286370babbb",
+      "matches": true,
+      "path": "import-source/source/macroeconomics/04-inflation-and-employment-13-references.html",
+      "status": "verified"
+    },
+    {
+      "actual_sha256": "9be46a646d272cdaf31a4840d73351ac746d4401d15a0d339563a36d8f266924",
+      "bytes": 65613,
+      "expected_sha256": "9be46a646d272cdaf31a4840d73351ac746d4401d15a0d339563a36d8f266924",
+      "matches": true,
+      "path": "import-source/source/macroeconomics/05-macroeconomic-policy-01-government-popularity-inflation-unemployment.html",
+      "status": "verified"
+    },
+    {
+      "actual_sha256": "6ea4a4a918c4f6d6d2eb8fb1af787821936f61a4dbd60c1873b8c0edb241cd1c",
+      "bytes": 48894,
+      "expected_sha256": "6ea4a4a918c4f6d6d2eb8fb1af787821936f61a4dbd60c1873b8c0edb241cd1c",
+      "matches": true,
+      "path": "import-source/source/macroeconomics/05-macroeconomic-policy-02-government-fiscal-monetary-policy.html",
+      "status": "verified"
+    },
+    {
+      "actual_sha256": "69091549032fa8718214e542339f8bce1e6986357d3cb3cd104d631a596579b3",
+      "bytes": 49966,
+      "expected_sha256": "69091549032fa8718214e542339f8bce1e6986357d3cb3cd104d631a596579b3",
+      "matches": true,
+      "path": "import-source/source/macroeconomics/05-macroeconomic-policy-03-responses-to-demand-shocks.html",
+      "status": "verified"
+    },
+    {
+      "actual_sha256": "0bb91580ceb246b62b61a8686fd1b905acf025ef8fa32a0d1c3d5455ae2c623b",
+      "bytes": 41863,
+      "expected_sha256": "0bb91580ceb246b62b61a8686fd1b905acf025ef8fa32a0d1c3d5455ae2c623b",
+      "matches": true,
+      "path": "import-source/source/macroeconomics/05-macroeconomic-policy-04-policymakers-division-of-labour.html",
+      "status": "verified"
+    },
+    {
+      "actual_sha256": "3a2bf853a518171eb04a9906637497a4ee016b3de0512b7f560870d8993a55dd",
+      "bytes": 73958,
+      "expected_sha256": "3a2bf853a518171eb04a9906637497a4ee016b3de0512b7f560870d8993a55dd",
+      "matches": true,
+      "path": "import-source/source/macroeconomics/05-macroeconomic-policy-05-negative-supply-shock.html",
+      "status": "verified"
+    },
+    {
+      "actual_sha256": "595a7c80c118a0bc6de1fad3c5148f058ef2f123be29803cacea9ebf31e8973d",
+      "bytes": 47438,
+      "expected_sha256": "595a7c80c118a0bc6de1fad3c5148f058ef2f123be29803cacea9ebf31e8973d",
+      "matches": true,
+      "path": "import-source/source/macroeconomics/05-macroeconomic-policy-06-governments-and-fluctuations.html",
+      "status": "verified"
+    },
+    {
+      "actual_sha256": "2ef41bcef07f65e7a3f6ffe86543e17748d4bb83eb122bd1160ac8ad91969ac2",
+      "bytes": 50908,
+      "expected_sha256": "2ef41bcef07f65e7a3f6ffe86543e17748d4bb83eb122bd1160ac8ad91969ac2",
+      "matches": true,
+      "path": "import-source/source/macroeconomics/05-macroeconomic-policy-07-multiplier-and-fiscal-policy.html",
+      "status": "verified"
+    },
+    {
+      "actual_sha256": "eccfc9ca20d549b38e9fe75b3dc8055bd0505ac398e22b44701b86f99406ffed",
+      "bytes": 61016,
+      "expected_sha256": "eccfc9ca20d549b38e9fe75b3dc8055bd0505ac398e22b44701b86f99406ffed",
+      "matches": true,
+      "path": "import-source/source/macroeconomics/05-macroeconomic-policy-08-government-austerity.html",
+      "status": "verified"
+    },
+    {
+      "actual_sha256": "6e37bd42f270076f54b446d0cb0654f0307d65594d4f0d8b3ba4f81c5a27ccb2",
+      "bytes": 63539,
+      "expected_sha256": "6e37bd42f270076f54b446d0cb0654f0307d65594d4f0d8b3ba4f81c5a27ccb2",
+      "matches": true,
+      "path": "import-source/source/macroeconomics/05-macroeconomic-policy-09-inflation-targeting.html",
+      "status": "verified"
+    },
+    {
+      "actual_sha256": "b4116d28188b069fd9b44ecb245fe13e5f907b4ea959f3f24cd8de62bb5d474f",
+      "bytes": 49146,
+      "expected_sha256": "b4116d28188b069fd9b44ecb245fe13e5f907b4ea959f3f24cd8de62bb5d474f",
+      "matches": true,
+      "path": "import-source/source/macroeconomics/05-macroeconomic-policy-10-inflation-expectations.html",
+      "status": "verified"
+    },
+    {
+      "actual_sha256": "902844636c8c90adb4f8141833b8ad1201464783bd60c1c68e91bcf527889b9f",
+      "bytes": 60254,
+      "expected_sha256": "902844636c8c90adb4f8141833b8ad1201464783bd60c1c68e91bcf527889b9f",
+      "matches": true,
+      "path": "import-source/source/macroeconomics/05-macroeconomic-policy-11-application-to-russia-ukraine-war.html",
+      "status": "verified"
+    },
+    {
+      "actual_sha256": "5943b3ac27538ba2bd75e35e75f8d3d9d7cbc0bf1ab1b9a5f3fb48050e7dea13",
+      "bytes": 88074,
+      "expected_sha256": "5943b3ac27538ba2bd75e35e75f8d3d9d7cbc0bf1ab1b9a5f3fb48050e7dea13",
+      "matches": true,
+      "path": "import-source/source/macroeconomics/05-macroeconomic-policy-12-investment-asset-prices.html",
+      "status": "verified"
+    },
+    {
+      "actual_sha256": "fdb6e773458a36e537c8c7551f50a4d2df4cf90eea125e5288108f119552caaa",
+      "bytes": 70707,
+      "expected_sha256": "fdb6e773458a36e537c8c7551f50a4d2df4cf90eea125e5288108f119552caaa",
+      "matches": true,
+      "path": "import-source/source/macroeconomics/05-macroeconomic-policy-13-transmission-of-policy-decisions.html",
+      "status": "verified"
+    },
+    {
+      "actual_sha256": "26f648a3f1ef8d186a50803305056a636b4a79d7a625f08d8be1c454114dcacb",
+      "bytes": 53506,
+      "expected_sha256": "26f648a3f1ef8d186a50803305056a636b4a79d7a625f08d8be1c454114dcacb",
+      "matches": true,
+      "path": "import-source/source/macroeconomics/05-macroeconomic-policy-14-exchange-rate.html",
+      "status": "verified"
+    },
+    {
+      "actual_sha256": "e18f845734d3f40b8294f914ed08343f28999b8ee7feda99947cd7943269c0ca",
+      "bytes": 106884,
+      "expected_sha256": "e18f845734d3f40b8294f914ed08343f28999b8ee7feda99947cd7943269c0ca",
+      "matches": true,
+      "path": "import-source/source/macroeconomics/05-macroeconomic-policy-15-uk-case-study-1950-2023.html",
+      "status": "verified"
+    },
+    {
+      "actual_sha256": "01d5a27bd84ba15a0798b2291a48401604443925ac4e821cedf42265066b10f7",
+      "bytes": 33928,
+      "expected_sha256": "01d5a27bd84ba15a0798b2291a48401604443925ac4e821cedf42265066b10f7",
+      "matches": true,
+      "path": "import-source/source/macroeconomics/05-macroeconomic-policy-16-summary.html",
+      "status": "verified"
+    },
+    {
+      "actual_sha256": "6906798e0c0a8e7ed0966b26930be45aaf8643ebc37f8828320577bae838cacf",
+      "bytes": 52643,
+      "expected_sha256": "6906798e0c0a8e7ed0966b26930be45aaf8643ebc37f8828320577bae838cacf",
+      "matches": true,
+      "path": "import-source/source/macroeconomics/05-macroeconomic-policy-17-references.html",
+      "status": "verified"
+    },
+    {
+      "actual_sha256": "c317b421317f208cd764557646a0378c1597c8e918a737aa6db7f7c1b373588b",
+      "bytes": 46858,
+      "expected_sha256": "c317b421317f208cd764557646a0378c1597c8e918a737aa6db7f7c1b373588b",
+      "matches": true,
+      "path": "import-source/source/macroeconomics/06-financial-sector-01-how-do-you-live-if-you-dont-work.html",
+      "status": "verified"
+    },
+    {
+      "actual_sha256": "6b8189d56116c045a47a5b0a628f8d4b5be84b9e1a18a521f4d89cb3c65a5245",
+      "bytes": 59709,
+      "expected_sha256": "6b8189d56116c045a47a5b0a628f8d4b5be84b9e1a18a521f4d89cb3c65a5245",
+      "matches": true,
+      "path": "import-source/source/macroeconomics/06-financial-sector-02-bilateral-debt.html",
+      "status": "verified"
+    },
+    {
+      "actual_sha256": "56f5db4b201380f4cc8218f8319700cb770af99ad2c85556e14d4b2881749b5d",
+      "bytes": 49712,
+      "expected_sha256": "56f5db4b201380f4cc8218f8319700cb770af99ad2c85556e14d4b2881749b5d",
+      "matches": true,
+      "path": "import-source/source/macroeconomics/06-financial-sector-03-debt-and-financial-sector.html",
+      "status": "verified"
+    },
+    {
+      "actual_sha256": "d411b41fac984b3180bcced83616b25ea70d610d0237730c65c5377ca08f62d2",
+      "bytes": 68784,
+      "expected_sha256": "d411b41fac984b3180bcced83616b25ea70d610d0237730c65c5377ca08f62d2",
+      "matches": true,
+      "path": "import-source/source/macroeconomics/06-financial-sector-04-introducing-a-bank.html",
+      "status": "verified"
+    },
+    {
+      "actual_sha256": "402418c428bbb975ea2d4e162b173b698b1d94dfbe7cb3e7c8112b6e7c23da0b",
+      "bytes": 43671,
+      "expected_sha256": "402418c428bbb975ea2d4e162b173b698b1d94dfbe7cb3e7c8112b6e7c23da0b",
+      "matches": true,
+      "path": "import-source/source/macroeconomics/06-financial-sector-05-introducing-money.html",
+      "status": "verified"
+    },
+    {
+      "actual_sha256": "4b3c01f577132effd85596574f4dbdb70d0cd6c75c07d22d17222fd6cdeaf860",
+      "bytes": 51569,
+      "expected_sha256": "4b3c01f577132effd85596574f4dbdb70d0cd6c75c07d22d17222fd6cdeaf860",
+      "matches": true,
+      "path": "import-source/source/macroeconomics/06-financial-sector-06-introducing-central-bank.html",
+      "status": "verified"
+    },
+    {
+      "actual_sha256": "8e4df9849f89dbb4f79422203953a25a6af6e724f8f1deb6a82f520f5940b77b",
+      "bytes": 64535,
+      "expected_sha256": "8e4df9849f89dbb4f79422203953a25a6af6e724f8f1deb6a82f520f5940b77b",
+      "matches": true,
+      "path": "import-source/source/macroeconomics/06-financial-sector-07-central-bank-balance-sheet-and-government.html",
+      "status": "verified"
+    },
+    {
+      "actual_sha256": "6cc30872f9d2abda44a5cbc3dc297504d06f5375e97ef5226f8f58a8c6509747",
+      "bytes": 41699,
+      "expected_sha256": "6cc30872f9d2abda44a5cbc3dc297504d06f5375e97ef5226f8f58a8c6509747",
+      "matches": true,
+      "path": "import-source/source/macroeconomics/06-financial-sector-08-money-creation-in-modern-economy.html",
+      "status": "verified"
+    },
+    {
+      "actual_sha256": "54d8b501ed2738827e88c4d1049824d72670cd832dcedf59f84485b51f90c143",
+      "bytes": 70924,
+      "expected_sha256": "54d8b501ed2738827e88c4d1049824d72670cd832dcedf59f84485b51f90c143",
+      "matches": true,
+      "path": "import-source/source/macroeconomics/06-financial-sector-09-introducing-financial-markets.html",
+      "status": "verified"
+    },
+    {
+      "actual_sha256": "1bd77ee45d78ad51be6c62d3455a34083ab7220fad4db038f86051b13da3b020",
+      "bytes": 60218,
+      "expected_sha256": "1bd77ee45d78ad51be6c62d3455a34083ab7220fad4db038f86051b13da3b020",
+      "matches": true,
+      "path": "import-source/source/macroeconomics/06-financial-sector-10-businesses-capital-and-leverage.html",
+      "status": "verified"
+    },
+    {
+      "actual_sha256": "0f9a8f1cddcee8bad54b020b81688ebc14ccd5b948338017400d3668c5873510",
+      "bytes": 94390,
+      "expected_sha256": "0f9a8f1cddcee8bad54b020b81688ebc14ccd5b948338017400d3668c5873510",
+      "matches": true,
+      "path": "import-source/source/macroeconomics/06-financial-sector-11-household-investments.html",
+      "status": "verified"
+    },
+    {
+      "actual_sha256": "cb7a004b3199c60310d226a4e0f8b519a3dfa9dbcb9f6a9ea3ab2fd401d573ef",
+      "bytes": 55769,
+      "expected_sha256": "cb7a004b3199c60310d226a4e0f8b519a3dfa9dbcb9f6a9ea3ab2fd401d573ef",
+      "matches": true,
+      "path": "import-source/source/macroeconomics/06-financial-sector-12-financial-sector-overview.html",
+      "status": "verified"
+    },
+    {
+      "actual_sha256": "d713d1bff9bceb7d372e6f6052f0111ae20911d19536e9883ce861d045f90476",
+      "bytes": 34148,
+      "expected_sha256": "d713d1bff9bceb7d372e6f6052f0111ae20911d19536e9883ce861d045f90476",
+      "matches": true,
+      "path": "import-source/source/macroeconomics/06-financial-sector-13-summary.html",
+      "status": "verified"
+    },
+    {
+      "actual_sha256": "653215b87a489656eb0628831a2802fa76d71af6cc0aa4d5f93d147a97d5cbad",
+      "bytes": 32447,
+      "expected_sha256": "653215b87a489656eb0628831a2802fa76d71af6cc0aa4d5f93d147a97d5cbad",
+      "matches": true,
+      "path": "import-source/source/macroeconomics/06-financial-sector-14-references.html",
+      "status": "verified"
+    },
+    {
+      "actual_sha256": "cf8e16f0fabe3189decf30047b6f03986c3e94de07591a9faad800181f8b2ffc",
+      "bytes": 76696,
+      "expected_sha256": "cf8e16f0fabe3189decf30047b6f03986c3e94de07591a9faad800181f8b2ffc",
+      "matches": true,
+      "path": "import-source/source/macroeconomics/07-macroeconomic-policy-global-economy-01-government-spending-inflation.html",
+      "status": "verified"
+    },
+    {
+      "actual_sha256": "9f2dab08d6f842e1e1778a05763c5243343354feea1eab10f954b524e726263f",
+      "bytes": 82357,
+      "expected_sha256": "9f2dab08d6f842e1e1778a05763c5243343354feea1eab10f954b524e726263f",
+      "matches": true,
+      "path": "import-source/source/macroeconomics/07-macroeconomic-policy-global-economy-02-exchange-rate-regimes-monetary-policy-inflation.html",
+      "status": "verified"
+    },
+    {
+      "actual_sha256": "c29f619a5a70673749df40902a249da771b2c40592b30b63277a7fd53df508a4",
+      "bytes": 142619,
+      "expected_sha256": "c29f619a5a70673749df40902a249da771b2c40592b30b63277a7fd53df508a4",
+      "matches": true,
+      "path": "import-source/source/macroeconomics/07-macroeconomic-policy-global-economy-03-flexible-exchange-rate-regime.html",
+      "status": "verified"
+    },
+    {
+      "actual_sha256": "0a85035c50879e920a570a610bf428f3e38585e9cdcad6446189d3d84133732a",
+      "bytes": 128988,
+      "expected_sha256": "0a85035c50879e920a570a610bf428f3e38585e9cdcad6446189d3d84133732a",
+      "matches": true,
+      "path": "import-source/source/macroeconomics/07-macroeconomic-policy-global-economy-04-common-currency-area.html",
+      "status": "verified"
+    },
+    {
+      "actual_sha256": "813d33cd662f4cd62aca204f1d5013b21ec7c9d67284a492ee636c5a2a1e16e5",
+      "bytes": 32213,
+      "expected_sha256": "813d33cd662f4cd62aca204f1d5013b21ec7c9d67284a492ee636c5a2a1e16e5",
+      "matches": true,
+      "path": "import-source/source/macroeconomics/07-macroeconomic-policy-global-economy-05-exchange-rate-monetary-regimes.html",
+      "status": "verified"
+    },
+    {
+      "actual_sha256": "ea73799376d72f9448fe115c468323c12239fd66dce34b17a1ea65b42353709d",
+      "bytes": 73502,
+      "expected_sha256": "ea73799376d72f9448fe115c468323c12239fd66dce34b17a1ea65b42353709d",
+      "matches": true,
+      "path": "import-source/source/macroeconomics/07-macroeconomic-policy-global-economy-06-fixed-and-flexible-exchange-rate-regimes.html",
+      "status": "verified"
+    },
+    {
+      "actual_sha256": "0b7974ada02fe330fd582cee9a63199046a4750b75e419fc51e4ee260487614e",
+      "bytes": 72763,
+      "expected_sha256": "0b7974ada02fe330fd582cee9a63199046a4750b75e419fc51e4ee260487614e",
+      "matches": true,
+      "path": "import-source/source/macroeconomics/07-macroeconomic-policy-global-economy-07-exchange-rate-regimes-and-inflation-outcomes.html",
+      "status": "verified"
+    },
+    {
+      "actual_sha256": "ef0faf5c28ab941b5e571a5070099188571c96f5291633a2160766b6f870ecb2",
+      "bytes": 58736,
+      "expected_sha256": "ef0faf5c28ab941b5e571a5070099188571c96f5291633a2160766b6f870ecb2",
+      "matches": true,
+      "path": "import-source/source/macroeconomics/07-macroeconomic-policy-global-economy-08-global-financial-markets.html",
+      "status": "verified"
+    },
+    {
+      "actual_sha256": "6f21ce16a4dae7a9fb44cc04838122b72002e8ccb3ca60d7a603441cb0b09183",
+      "bytes": 83790,
+      "expected_sha256": "6f21ce16a4dae7a9fb44cc04838122b72002e8ccb3ca60d7a603441cb0b09183",
+      "matches": true,
+      "path": "import-source/source/macroeconomics/07-macroeconomic-policy-global-economy-09-global-capital-mobility-interest-rates.html",
+      "status": "verified"
+    },
+    {
+      "actual_sha256": "548f85c39ec188fb3c513100476df21aaa409d349d06fdb76345175da8105965",
+      "bytes": 52111,
+      "expected_sha256": "548f85c39ec188fb3c513100476df21aaa409d349d06fdb76345175da8105965",
+      "matches": true,
+      "path": "import-source/source/macroeconomics/07-macroeconomic-policy-global-economy-10-why-some-countries-high-inflation.html",
+      "status": "verified"
+    },
+    {
+      "actual_sha256": "f9ddfe2bb1d28bb092f5f7e2aaeedd1f3f22e7e884e24aed58ad5d8c859fa812",
+      "bytes": 35717,
+      "expected_sha256": "f9ddfe2bb1d28bb092f5f7e2aaeedd1f3f22e7e884e24aed58ad5d8c859fa812",
+      "matches": true,
+      "path": "import-source/source/macroeconomics/07-macroeconomic-policy-global-economy-11-application-quality-of-governance-and-inflation.html",
+      "status": "verified"
+    },
+    {
+      "actual_sha256": "a6148cb57a68f8a35b3d7858e9cb9521b8909cb968727f47e0d9f0e3e3c5bd2d",
+      "bytes": 32179,
+      "expected_sha256": "a6148cb57a68f8a35b3d7858e9cb9521b8909cb968727f47e0d9f0e3e3c5bd2d",
+      "matches": true,
+      "path": "import-source/source/macroeconomics/07-macroeconomic-policy-global-economy-12-summary.html",
+      "status": "verified"
+    },
+    {
+      "actual_sha256": "d107a335f4f7b188418a57b78be8bbf1c6e44c4cafa3327c329b30ee8e072af2",
+      "bytes": 30148,
+      "expected_sha256": "d107a335f4f7b188418a57b78be8bbf1c6e44c4cafa3327c329b30ee8e072af2",
+      "matches": true,
+      "path": "import-source/source/macroeconomics/07-macroeconomic-policy-global-economy-13-references.html",
+      "status": "verified"
+    },
+    {
+      "actual_sha256": "d521cf7dd80f84158d8966bc92c40ddce11901b9d95e0aa97cea453e617cbf97",
+      "bytes": 54356,
+      "expected_sha256": "d521cf7dd80f84158d8966bc92c40ddce11901b9d95e0aa97cea453e617cbf97",
+      "matches": true,
+      "path": "import-source/source/macroeconomics/08-financial-environmental-crises-01-lehman-brothers-collapse.html",
+      "status": "verified"
+    },
+    {
+      "actual_sha256": "223e5260e14cd9b1157c9711e5b2fe45f6b514e032683bbb8933776549b66a82",
+      "bytes": 55052,
+      "expected_sha256": "223e5260e14cd9b1157c9711e5b2fe45f6b514e032683bbb8933776549b66a82",
+      "matches": true,
+      "path": "import-source/source/macroeconomics/08-financial-environmental-crises-02-tipping-points-instability-lock-in.html",
+      "status": "verified"
+    },
+    {
+      "actual_sha256": "d2f531106fa6bbc466d915af0cf67c95c203c280e5826dec2b00520a64bca053",
+      "bytes": 41586,
+      "expected_sha256": "d2f531106fa6bbc466d915af0cf67c95c203c280e5826dec2b00520a64bca053",
+      "matches": true,
+      "path": "import-source/source/macroeconomics/08-financial-environmental-crises-03-real-world-poverty-trap-application.html",
+      "status": "verified"
+    },
+    {
+      "actual_sha256": "75805e4b60c842620ca5fa58c610390cc7d16e930be918aa2b546086b91b0c54",
+      "bytes": 38080,
+      "expected_sha256": "75805e4b60c842620ca5fa58c610390cc7d16e930be918aa2b546086b91b0c54",
+      "matches": true,
+      "path": "import-source/source/macroeconomics/08-financial-environmental-crises-04-assets-price-bubbles.html",
+      "status": "verified"
+    },
+    {
+      "actual_sha256": "7091dfae1cd1107009efdb7df7b48fc355d7a2b7341651dc322838d56ffd3881",
+      "bytes": 99916,
+      "expected_sha256": "7091dfae1cd1107009efdb7df7b48fc355d7a2b7341651dc322838d56ffd3881",
+      "matches": true,
+      "path": "import-source/source/macroeconomics/08-financial-environmental-crises-05-model-house-price-bubble.html",
+      "status": "verified"
+    },
+    {
+      "actual_sha256": "14ead69defc06e21308824c862d638945c46237bdb2dface6f88d7b539053a5a",
+      "bytes": 46109,
+      "expected_sha256": "14ead69defc06e21308824c862d638945c46237bdb2dface6f88d7b539053a5a",
+      "matches": true,
+      "path": "import-source/source/macroeconomics/08-financial-environmental-crises-06-housing-market-changes-pdc-shifts.html",
+      "status": "verified"
+    },
+    {
+      "actual_sha256": "cd815538df6462c1d87bc2b0e773a7728f9c4d2aeaf5ad7f9903fd6c51bd1f05",
+      "bytes": 52078,
+      "expected_sha256": "cd815538df6462c1d87bc2b0e773a7728f9c4d2aeaf5ad7f9903fd6c51bd1f05",
+      "matches": true,
+      "path": "import-source/source/macroeconomics/08-financial-environmental-crises-07-borrowing-lending-aggregate-consumption.html",
+      "status": "verified"
+    },
+    {
+      "actual_sha256": "8a7725d35669f22726f0acbb2fb89ffa54ef18034ea35904260b30c7a6b29029",
+      "bytes": 50160,
+      "expected_sha256": "8a7725d35669f22726f0acbb2fb89ffa54ef18034ea35904260b30c7a6b29029",
+      "matches": true,
+      "path": "import-source/source/macroeconomics/08-financial-environmental-crises-08-inequality-us-housing-application.html",
+      "status": "verified"
+    },
+    {
+      "actual_sha256": "9ba4bd1777e965e5b36ee7ad0685ddd04507c2178835bd6f1cb282177031d9f2",
+      "bytes": 43019,
+      "expected_sha256": "9ba4bd1777e965e5b36ee7ad0685ddd04507c2178835bd6f1cb282177031d9f2",
+      "matches": true,
+      "path": "import-source/source/macroeconomics/08-financial-environmental-crises-09-vulnerabilities-of-banks.html",
+      "status": "verified"
+    },
+    {
+      "actual_sha256": "0c6e25ec781857a4c6722ee19b7e5d138e497f0303e6fc7587876e26ae7cb153",
+      "bytes": 53416,
+      "expected_sha256": "0c6e25ec781857a4c6722ee19b7e5d138e497f0303e6fc7587876e26ae7cb153",
+      "matches": true,
+      "path": "import-source/source/macroeconomics/08-financial-environmental-crises-10-instability-of-financial-system.html",
+      "status": "verified"
+    },
+    {
+      "actual_sha256": "2a96beedccfbdb626398ce401ea5284b917c4ca22eedf6b1b50cb1fecbe5cd5b",
+      "bytes": 65804,
+      "expected_sha256": "2a96beedccfbdb626398ce401ea5284b917c4ca22eedf6b1b50cb1fecbe5cd5b",
+      "matches": true,
+      "path": "import-source/source/macroeconomics/08-financial-environmental-crises-11-environmental-collapse-model.html",
+      "status": "verified"
+    },
+    {
+      "actual_sha256": "7c03bfe4b351aed376494540aaf67fad876f47777aa26384ff95d14df677b636",
+      "bytes": 47199,
+      "expected_sha256": "7c03bfe4b351aed376494540aaf67fad876f47777aa26384ff95d14df677b636",
+      "matches": true,
+      "path": "import-source/source/macroeconomics/08-financial-environmental-crises-12-prudential-environmental-policies.html",
+      "status": "verified"
+    },
+    {
+      "actual_sha256": "0f664faa03c380aaa01184f49df252c295c6f33817c69dc3d1a9adb66eeb37a9",
+      "bytes": 56095,
+      "expected_sha256": "0f664faa03c380aaa01184f49df252c295c6f33817c69dc3d1a9adb66eeb37a9",
+      "matches": true,
+      "path": "import-source/source/macroeconomics/08-financial-environmental-crises-13-carbon-trap-green-technologies.html",
+      "status": "verified"
+    },
+    {
+      "actual_sha256": "5720b01e8d6c63dc49506fa244202d6760dc6021f340e3f233d77feb7a05a41b",
+      "bytes": 33030,
+      "expected_sha256": "5720b01e8d6c63dc49506fa244202d6760dc6021f340e3f233d77feb7a05a41b",
+      "matches": true,
+      "path": "import-source/source/macroeconomics/08-financial-environmental-crises-14-summary.html",
+      "status": "verified"
+    },
+    {
+      "actual_sha256": "75ba9ccd30f520dfdcd0b5bc513777b7f66ad9072d0cbdb6073c6a66d15658eb",
+      "bytes": 33402,
+      "expected_sha256": "75ba9ccd30f520dfdcd0b5bc513777b7f66ad9072d0cbdb6073c6a66d15658eb",
+      "matches": true,
+      "path": "import-source/source/macroeconomics/08-financial-environmental-crises-15-references.html",
+      "status": "verified"
+    },
+    {
+      "actual_sha256": "13d03912e78c527a0cfb4dad8e5a1d399bb0fe0c620bd146aefcda2a64c25a4e",
+      "bytes": 48197,
+      "expected_sha256": "13d03912e78c527a0cfb4dad8e5a1d399bb0fe0c620bd146aefcda2a64c25a4e",
+      "matches": true,
+      "path": "import-source/source/macroeconomics/09-uneven-development-01-chinas-economy-living-standards.html",
+      "status": "verified"
+    },
+    {
+      "actual_sha256": "8d9b30f5acc9d97214a5da2611e1db763343abf17f943154975f0c336403dd7a",
+      "bytes": 46718,
+      "expected_sha256": "8d9b30f5acc9d97214a5da2611e1db763343abf17f943154975f0c336403dd7a",
+      "matches": true,
+      "path": "import-source/source/macroeconomics/09-uneven-development-02-measuring-economic-growth.html",
+      "status": "verified"
+    },
+    {
+      "actual_sha256": "096908b9c3e9bf8f76f340c841f1d3d412da8bbf57773d72ec399d50192ccaf8",
+      "bytes": 87815,
+      "expected_sha256": "096908b9c3e9bf8f76f340c841f1d3d412da8bbf57773d72ec399d50192ccaf8",
+      "matches": true,
+      "path": "import-source/source/macroeconomics/09-uneven-development-03-capital-goods-and-technology.html",
+      "status": "verified"
+    },
+    {
+      "actual_sha256": "1a205f83d9146305cd66d222c29bc0022eac9949f1e249108376a501c7c786cb",
+      "bytes": 68045,
+      "expected_sha256": "1a205f83d9146305cd66d222c29bc0022eac9949f1e249108376a501c7c786cb",
+      "matches": true,
+      "path": "import-source/source/macroeconomics/09-uneven-development-04-capital-accumulation-growth-rate.html",
+      "status": "verified"
+    },
+    {
+      "actual_sha256": "9f8d11293cb11f0413b89de93c2115cc017d04f03ea4e676a09d66efa1a618a6",
+      "bytes": 69616,
+      "expected_sha256": "9f8d11293cb11f0413b89de93c2115cc017d04f03ea4e676a09d66efa1a618a6",
+      "matches": true,
+      "path": "import-source/source/macroeconomics/09-uneven-development-05-investment-and-saving.html",
+      "status": "verified"
+    },
+    {
+      "actual_sha256": "20f5cd1c788742196527df1972ec12722621606fdd4079db5a96f2472a23311c",
+      "bytes": 47232,
+      "expected_sha256": "20f5cd1c788742196527df1972ec12722621606fdd4079db5a96f2472a23311c",
+      "matches": true,
+      "path": "import-source/source/macroeconomics/09-uneven-development-06-barriers-to-growth.html",
+      "status": "verified"
+    },
+    {
+      "actual_sha256": "d406d69e668e7d89fe5f65906ad42038d3c82dbb26591aaec777a721ad81f0eb",
+      "bytes": 61009,
+      "expected_sha256": "d406d69e668e7d89fe5f65906ad42038d3c82dbb26591aaec777a721ad81f0eb",
+      "matches": true,
+      "path": "import-source/source/macroeconomics/09-uneven-development-07-institutions-and-catching-up.html",
+      "status": "verified"
+    },
+    {
+      "actual_sha256": "c88bc36c0ddb407034b942ca1b0dbbf6c6d4c13345dd430a0cd03536fd7a52bb",
+      "bytes": 87666,
+      "expected_sha256": "c88bc36c0ddb407034b942ca1b0dbbf6c6d4c13345dd430a0cd03536fd7a52bb",
+      "matches": true,
+      "path": "import-source/source/macroeconomics/09-uneven-development-08-growth-stagnation-vs-rapid-growth.html",
+      "status": "verified"
+    },
+    {
+      "actual_sha256": "748fd62fda98f0ac7e82c00e1557832d7dd9aa75695e9c6bfe654f8156a30fae",
+      "bytes": 73436,
+      "expected_sha256": "748fd62fda98f0ac7e82c00e1557832d7dd9aa75695e9c6bfe654f8156a30fae",
+      "matches": true,
+      "path": "import-source/source/macroeconomics/09-uneven-development-09-growth-transitions.html",
+      "status": "verified"
+    },
+    {
+      "actual_sha256": "9d3ad84b2b3102c4d6e07763eaf12bef19045363d5458f9cacb3deae41c431d1",
+      "bytes": 60062,
+      "expected_sha256": "9d3ad84b2b3102c4d6e07763eaf12bef19045363d5458f9cacb3deae41c431d1",
+      "matches": true,
+      "path": "import-source/source/macroeconomics/09-uneven-development-10-application-growth-bangladesh-pakistan.html",
+      "status": "verified"
+    },
+    {
+      "actual_sha256": "2622dd6ddccdc46496040cfff5bdca210c6d5e5694e468118877ab0c6592b73a",
+      "bytes": 48616,
+      "expected_sha256": "2622dd6ddccdc46496040cfff5bdca210c6d5e5694e468118877ab0c6592b73a",
+      "matches": true,
+      "path": "import-source/source/macroeconomics/09-uneven-development-11-catch-up-growth.html",
+      "status": "verified"
+    },
+    {
+      "actual_sha256": "dac1e0d15c0aa46914a15fd26565c7cab96a3c76711cbd0a5b98fa4c8f7b8d4f",
+      "bytes": 104841,
+      "expected_sha256": "dac1e0d15c0aa46914a15fd26565c7cab96a3c76711cbd0a5b98fa4c8f7b8d4f",
+      "matches": true,
+      "path": "import-source/source/macroeconomics/09-uneven-development-12-planetary-limits-sustainable-growth.html",
+      "status": "verified"
+    },
+    {
+      "actual_sha256": "42306b88956609fea2e5603ffe918ccf9074eced349537609aed77d85b695697",
+      "bytes": 32639,
+      "expected_sha256": "42306b88956609fea2e5603ffe918ccf9074eced349537609aed77d85b695697",
+      "matches": true,
+      "path": "import-source/source/macroeconomics/09-uneven-development-13-summary.html",
+      "status": "verified"
+    },
+    {
+      "actual_sha256": "10277594e8cccafc69249cf5ce93bdeb28a61d15c634ba6f2672dd066df653ce",
+      "bytes": 70180,
+      "expected_sha256": "10277594e8cccafc69249cf5ce93bdeb28a61d15c634ba6f2672dd066df653ce",
+      "matches": true,
+      "path": "import-source/source/macroeconomics/09-uneven-development-14-references.html",
+      "status": "verified"
+    },
+    {
+      "actual_sha256": "1384fddf2c84a118fcd8826717e712053cca77f9b829bebd4b8ff2ad1c4fe57e",
+      "bytes": 41270,
+      "expected_sha256": "1384fddf2c84a118fcd8826717e712053cca77f9b829bebd4b8ff2ad1c4fe57e",
+      "matches": true,
+      "path": "import-source/source/macroeconomics/10-government-as-economic-actor-01-womens-right-to-vote-usa-child-mortality-reduction.html",
+      "status": "verified"
+    },
+    {
+      "actual_sha256": "0040aa8e6ed7b309c19b16c3fe800a4e8ac52c91b327ae98497599573b92c083",
+      "bytes": 54344,
+      "expected_sha256": "0040aa8e6ed7b309c19b16c3fe800a4e8ac52c91b327ae98497599573b92c083",
+      "matches": true,
+      "path": "import-source/source/macroeconomics/10-government-as-economic-actor-02-government-as-economic-actor.html",
+      "status": "verified"
+    },
+    {
+      "actual_sha256": "b82c9379205351a0f845bffabdb71537c0b0efb8480e4f4f378079d1976a8a62",
+      "bytes": 47165,
+      "expected_sha256": "b82c9379205351a0f845bffabdb71537c0b0efb8480e4f4f378079d1976a8a62",
+      "matches": true,
+      "path": "import-source/source/macroeconomics/10-government-as-economic-actor-03-democracy-as-political-institution.html",
+      "status": "verified"
+    },
+    {
+      "actual_sha256": "e96d7f68a83fa8e8323df68cea631c3229af574d27df108a0f831b8f3f98f428",
+      "bytes": 72276,
+      "expected_sha256": "e96d7f68a83fa8e8323df68cea631c3229af574d27df108a0f831b8f3f98f428",
+      "matches": true,
+      "path": "import-source/source/macroeconomics/10-government-as-economic-actor-04-political-preferences-and-electoral-competition.html",
+      "status": "verified"
+    },
+    {
+      "actual_sha256": "5ed697214ee362faefa24e3bbcda198d83b2b93b29525a88c2d7a5e976961338",
+      "bytes": 54051,
+      "expected_sha256": "5ed697214ee362faefa24e3bbcda198d83b2b93b29525a88c2d7a5e976961338",
+      "matches": true,
+      "path": "import-source/source/macroeconomics/10-government-as-economic-actor-05-democracy-advance-and-stalling.html",
+      "status": "verified"
+    },
+    {
+      "actual_sha256": "4a8494a32234777b56c441b8bffc6fe6b253f83d7424e0f8305c398a07fcc795",
+      "bytes": 50545,
+      "expected_sha256": "4a8494a32234777b56c441b8bffc6fe6b253f83d7424e0f8305c398a07fcc795",
+      "matches": true,
+      "path": "import-source/source/macroeconomics/10-government-as-economic-actor-06-democracy-makes-a-difference.html",
+      "status": "verified"
+    },
+    {
+      "actual_sha256": "3bf127e47dd4f693060a8951a0a2a4a407f35fa404dc2477b8731cd6079fc11d",
+      "bytes": 81192,
+      "expected_sha256": "3bf127e47dd4f693060a8951a0a2a4a407f35fa404dc2477b8731cd6079fc11d",
+      "matches": true,
+      "path": "import-source/source/macroeconomics/10-government-as-economic-actor-07-modelling-a-self-interested-political-elite.html",
+      "status": "verified"
+    },
+    {
+      "actual_sha256": "6953b9760c13a94d0d5e48991dd0ad25cd0bd40a8d486f3b5fc13a67e5d33150",
+      "bytes": 69394,
+      "expected_sha256": "6953b9760c13a94d0d5e48991dd0ad25cd0bd40a8d486f3b5fc13a67e5d33150",
+      "matches": true,
+      "path": "import-source/source/macroeconomics/10-government-as-economic-actor-08-political-rent-seeking.html",
+      "status": "verified"
+    },
+    {
+      "actual_sha256": "bd443368bec5bbb223efa0ea06c99e37a721f368cbc404bc8365d71165d0fc62",
+      "bytes": 45181,
+      "expected_sha256": "bd443368bec5bbb223efa0ea06c99e37a721f368cbc404bc8365d71165d0fc62",
+      "matches": true,
+      "path": "import-source/source/macroeconomics/10-government-as-economic-actor-09-political-competition-and-government-policy.html",
+      "status": "verified"
+    },
+    {
+      "actual_sha256": "40fd6a6a8d24e67545e3d0594871594ef17bf002a0eb39dc0c85b28672ccfc3c",
+      "bytes": 51061,
+      "expected_sha256": "40fd6a6a8d24e67545e3d0594871594ef17bf002a0eb39dc0c85b28672ccfc3c",
+      "matches": true,
+      "path": "import-source/source/macroeconomics/10-government-as-economic-actor-10-political-and-economic-competition-parallels.html",
+      "status": "verified"
+    },
+    {
+      "actual_sha256": "4308cc4e8f1d499f7b57e9f148ace015119cb8484c91b3b43f7e140af53e826f",
+      "bytes": 35462,
+      "expected_sha256": "4308cc4e8f1d499f7b57e9f148ace015119cb8484c91b3b43f7e140af53e826f",
+      "matches": true,
+      "path": "import-source/source/macroeconomics/10-government-as-economic-actor-11-unfairness-and-market-failures-democracies.html",
+      "status": "verified"
+    },
+    {
+      "actual_sha256": "ad9be311d9f2d6b77eddd9f7005f733ea4496052f2dbbbc50437e79ae2fb85b9",
+      "bytes": 54508,
+      "expected_sha256": "ad9be311d9f2d6b77eddd9f7005f733ea4496052f2dbbbc50437e79ae2fb85b9",
+      "matches": true,
+      "path": "import-source/source/macroeconomics/10-government-as-economic-actor-12-economic-infeasibility.html",
+      "status": "verified"
+    },
+    {
+      "actual_sha256": "45e4c40b773cb4db69ddb5a6a0d7de4cdb6e1dd2b157736f07ab718616622980",
+      "bytes": 59134,
+      "expected_sha256": "45e4c40b773cb4db69ddb5a6a0d7de4cdb6e1dd2b157736f07ab718616622980",
+      "matches": true,
+      "path": "import-source/source/macroeconomics/10-government-as-economic-actor-13-citizens-elected-leaders-as-principals-agents.html",
+      "status": "verified"
+    },
+    {
+      "actual_sha256": "64b12ed63d65b984ec621499eae4236b291db1919b05b57a4e68d3251337f742",
+      "bytes": 46107,
+      "expected_sha256": "64b12ed63d65b984ec621499eae4236b291db1919b05b57a4e68d3251337f742",
+      "matches": true,
+      "path": "import-source/source/macroeconomics/10-government-as-economic-actor-14-policy-matters-and-economics-works.html",
+      "status": "verified"
+    },
+    {
+      "actual_sha256": "be77ba69c1cdedf91936d015e773407a3232e91efd69e1f1165d09099c9fc708",
+      "bytes": 31653,
+      "expected_sha256": "be77ba69c1cdedf91936d015e773407a3232e91efd69e1f1165d09099c9fc708",
+      "matches": true,
+      "path": "import-source/source/macroeconomics/10-government-as-economic-actor-15-afterword.html",
+      "status": "verified"
+    },
+    {
+      "actual_sha256": "cbf3eff9042b5de110836d6bd40f27128c6f769151f22502809170117d6add69",
+      "bytes": 32730,
+      "expected_sha256": "cbf3eff9042b5de110836d6bd40f27128c6f769151f22502809170117d6add69",
+      "matches": true,
+      "path": "import-source/source/macroeconomics/10-government-as-economic-actor-16-summary.html",
+      "status": "verified"
+    },
+    {
+      "actual_sha256": "e5c17a9eb69a4f4b745074cddabf87e9606af9f366383884867036b1656d09dd",
+      "bytes": 98968,
+      "expected_sha256": "e5c17a9eb69a4f4b745074cddabf87e9606af9f366383884867036b1656d09dd",
+      "matches": true,
+      "path": "import-source/source/macroeconomics/10-government-as-economic-actor-17-references.html",
+      "status": "verified"
+    },
+    {
+      "actual_sha256": "831ba667307e3bab9679e496b5a47c1c298daf565b2ee4e174494b9c3ddf6b51",
+      "bytes": 47270,
+      "expected_sha256": "831ba667307e3bab9679e496b5a47c1c298daf565b2ee4e174494b9c3ddf6b51",
+      "matches": true,
+      "path": "import-source/source/macroeconomics/50-01-looking-forward.html",
+      "status": "verified"
+    },
+    {
+      "actual_sha256": "fe2f31c907a6d57d95b42c4f81b21d1d32f2311ae5a557e311f95ecc1275813e",
+      "bytes": 196651,
+      "expected_sha256": "fe2f31c907a6d57d95b42c4f81b21d1d32f2311ae5a557e311f95ecc1275813e",
+      "matches": true,
+      "path": "import-source/source/macroeconomics/50-02-glossary.html",
+      "status": "verified"
+    },
+    {
+      "actual_sha256": "5635a406386c1dc47cb0b8d8d02ab5ca1007ab6ee36e7a1f52c04fb02876db46",
+      "bytes": 250836,
+      "expected_sha256": "5635a406386c1dc47cb0b8d8d02ab5ca1007ab6ee36e7a1f52c04fb02876db46",
+      "matches": true,
+      "path": "import-source/source/macroeconomics/50-03-bibliography.html",
+      "status": "verified"
+    },
+    {
+      "actual_sha256": "700ddaea5d56a7623f8f255af1be102f92cbae201ac0ab17aba9e34ded4f0971",
+      "bytes": 34559,
+      "expected_sha256": "700ddaea5d56a7623f8f255af1be102f92cbae201ac0ab17aba9e34ded4f0971",
+      "matches": true,
+      "path": "import-source/source/macroeconomics/50-04-copyright-acknowledgements.html",
+      "status": "verified"
+    },
+    {
+      "actual_sha256": "3c4f7d97e50060878ce62e2e9f8503599a1a774932dfb5c547bb19a878af227f",
+      "bytes": 79552,
+      "expected_sha256": "3c4f7d97e50060878ce62e2e9f8503599a1a774932dfb5c547bb19a878af227f",
+      "matches": true,
+      "path": "import-source/source/macroeconomics/50-05-index.html",
+      "status": "verified"
+    },
+    {
+      "actual_sha256": "055415887b34b42d593a0c631c57f570074b7ad265d2e3e861b6fbd0c34ced58",
+      "bytes": 28803,
+      "expected_sha256": "055415887b34b42d593a0c631c57f570074b7ad265d2e3e861b6fbd0c34ced58",
+      "matches": true,
+      "path": "import-source/source/macroeconomics/transcript-anat-admati_whats-wrong-with-banking.html",
+      "status": "verified"
+    },
+    {
+      "actual_sha256": "8593b3889244f3617c22abd14f34096f7264895a93d62b185aca8da5564d2360",
+      "bytes": 29668,
+      "expected_sha256": "8593b3889244f3617c22abd14f34096f7264895a93d62b185aca8da5564d2360",
+      "matches": true,
+      "path": "import-source/source/macroeconomics/transcript-esther-duflo_representation-for-women-in-india.html",
+      "status": "verified"
+    },
+    {
+      "actual_sha256": "a2f407578c6c26fdb11c46e84cc0b1e9ab89c24e82dbf9d304e96fc7fc3ff229",
+      "bytes": 30501,
+      "expected_sha256": "a2f407578c6c26fdb11c46e84cc0b1e9ab89c24e82dbf9d304e96fc7fc3ff229",
+      "matches": true,
+      "path": "import-source/source/macroeconomics/transcript-james-heckman_the-economics-of-inequality-and-childhood-education.html",
+      "status": "verified"
+    },
+    {
+      "actual_sha256": "b9a208ea7e936aef002256411a149da4d6c2a97cfa38bbabf4423d701c0def3b",
+      "bytes": 29389,
+      "expected_sha256": "b9a208ea7e936aef002256411a149da4d6c2a97cfa38bbabf4423d701c0def3b",
+      "matches": true,
+      "path": "import-source/source/macroeconomics/transcript-john-van-reenen_what-determines-productivity.html",
+      "status": "verified"
+    },
+    {
+      "actual_sha256": "42c35215d42bf1cf14e98addecc7bb3d2323688e4b51d7fd0155d0c86a336506",
+      "bytes": 30857,
+      "expected_sha256": "42c35215d42bf1cf14e98addecc7bb3d2323688e4b51d7fd0155d0c86a336506",
+      "matches": true,
+      "path": "import-source/source/macroeconomics/transcript-leonard-wantchekon_how-the-slave-trade-created-mistrust-and-held-back-gdp-growth-in-west-africa.html",
+      "status": "verified"
+    },
+    {
+      "actual_sha256": "d7de5903014fb04e944c7dd8369308d15eb830615026ac997d66741c95dbbf15",
+      "bytes": 30119,
+      "expected_sha256": "d7de5903014fb04e944c7dd8369308d15eb830615026ac997d66741c95dbbf15",
+      "matches": true,
+      "path": "import-source/source/macroeconomics/transcript-mushtaq-khan_how-bangladesh-surmounted-market-failures-to-become-a-leading-garment-exporter.html",
+      "status": "verified"
+    },
+    {
+      "actual_sha256": "ac5ac8aecd1ca5e35d4d93a761104acf7c61310ab95c42cafd02ba5f971958fb",
+      "bytes": 31801,
+      "expected_sha256": "ac5ac8aecd1ca5e35d4d93a761104acf7c61310ab95c42cafd02ba5f971958fb",
+      "matches": true,
+      "path": "import-source/source/macroeconomics/transcript-simon-johnson_how-do-good-institutions-influence-economic-growth.html",
+      "status": "verified"
+    },
+    {
+      "actual_sha256": "9d651008c3336c6a23f19f56b64d1b2b559765f29d2ff37fc73d00fefb950d84",
+      "bytes": 30437,
+      "expected_sha256": "9d651008c3336c6a23f19f56b64d1b2b559765f29d2ff37fc73d00fefb950d84",
+      "matches": true,
+      "path": "import-source/source/macroeconomics/transcript-stefanie-stantcheva_why-do-people-dislike-inflation.html",
+      "status": "verified"
+    },
+    {
+      "actual_sha256": "794905927d58957627d31557924a4b8fca49e4f7f895856f7b8619f42e5cee20",
+      "bytes": 31259,
+      "expected_sha256": "794905927d58957627d31557924a4b8fca49e4f7f895856f7b8619f42e5cee20",
+      "matches": true,
+      "path": "import-source/source/macroeconomics/transcript-too-big-to-fail_lessons-from-a-decade-of-financial-sector-reforms.html",
+      "status": "verified"
+    },
+    {
+      "actual_sha256": "668eff88f7f6a8a0935e80208f7cbcdb0b8081b5681dc2baa31e3ce339773b2c",
+      "bytes": 27613,
+      "expected_sha256": "668eff88f7f6a8a0935e80208f7cbcdb0b8081b5681dc2baa31e3ce339773b2c",
+      "matches": true,
+      "path": "import-source/source/microeconomics/0-2-copyright.html",
+      "status": "verified"
+    },
+    {
+      "actual_sha256": "ebea3a1d8efd47c5637aabb14e8b4565989ca9d743418e738233aa546aa0a7ff",
+      "bytes": 44518,
+      "expected_sha256": "ebea3a1d8efd47c5637aabb14e8b4565989ca9d743418e738233aa546aa0a7ff",
+      "matches": true,
+      "path": "import-source/source/microeconomics/0-4-preface.html",
+      "status": "verified"
+    },
+    {
+      "actual_sha256": "87f7d58a0fafc2da2263dc4f53f635b501d295365244ceec6fd23892821d1452",
+      "bytes": 58228,
+      "expected_sha256": "87f7d58a0fafc2da2263dc4f53f635b501d295365244ceec6fd23892821d1452",
+      "matches": true,
+      "path": "import-source/source/microeconomics/0-5-note-to-instructors.html",
+      "status": "verified"
+    },
+    {
+      "actual_sha256": "dbd890e3a8d3d4db2238cd9dab096d9cbecb1ed030c8902a211e70f5151187a9",
+      "bytes": 47333,
+      "expected_sha256": "dbd890e3a8d3d4db2238cd9dab096d9cbecb1ed030c8902a211e70f5151187a9",
+      "matches": true,
+      "path": "import-source/source/microeconomics/0-6-contributors.html",
+      "status": "verified"
+    },
+    {
+      "actual_sha256": "169bcfbfe70cc6762b95ef5261ec78ad39b1d7ec8fb816ed08a5eb29676b3583",
+      "bytes": 133080,
+      "expected_sha256": "169bcfbfe70cc6762b95ef5261ec78ad39b1d7ec8fb816ed08a5eb29676b3583",
+      "matches": true,
+      "path": "import-source/source/microeconomics/0-7-features-list.html",
+      "status": "verified"
+    },
+    {
+      "actual_sha256": "0f0fa34142b04c5e52aa324c9ace65b0a8c4b1101c52901b960f58c5a79b3897",
+      "bytes": 41986,
+      "expected_sha256": "0f0fa34142b04c5e52aa324c9ace65b0a8c4b1101c52901b960f58c5a79b3897",
+      "matches": true,
+      "path": "import-source/source/microeconomics/0-8-intro-to-extensions.html",
+      "status": "verified"
+    },
+    {
+      "actual_sha256": "2a8a2323adaa99d9da49c84dc06f6664d06b4c8bff6cce0b24e84e5a83a7179d",
+      "bytes": 40232,
+      "expected_sha256": "2a8a2323adaa99d9da49c84dc06f6664d06b4c8bff6cce0b24e84e5a83a7179d",
+      "matches": true,
+      "path": "import-source/source/microeconomics/01-prosperity-inequality-01-ibn-battuta.html",
+      "status": "verified"
+    },
+    {
+      "actual_sha256": "de2a3d694035ad5e1263699c15aee9cd713fedc83700902a42ff0e5b4da5f589",
+      "bytes": 65749,
+      "expected_sha256": "de2a3d694035ad5e1263699c15aee9cd713fedc83700902a42ff0e5b4da5f589",
+      "matches": true,
+      "path": "import-source/source/microeconomics/01-prosperity-inequality-02-historys-hockey-stick.html",
+      "status": "verified"
+    },
+    {
+      "actual_sha256": "7f27a93d33199b5fb8f73d0220c20aa9d553078fa6b2b59194e35cb9b0291e2a",
+      "bytes": 42136,
+      "expected_sha256": "7f27a93d33199b5fb8f73d0220c20aa9d553078fa6b2b59194e35cb9b0291e2a",
+      "matches": true,
+      "path": "import-source/source/microeconomics/01-prosperity-inequality-03-climate-change.html",
+      "status": "verified"
+    },
+    {
+      "actual_sha256": "d5fe8508c73d73c82b6eaecbdd553cf5d8c7b12861fc7b0ade6994bc20aed081",
+      "bytes": 74380,
+      "expected_sha256": "d5fe8508c73d73c82b6eaecbdd553cf5d8c7b12861fc7b0ade6994bc20aed081",
+      "matches": true,
+      "path": "import-source/source/microeconomics/01-prosperity-inequality-04-income-inequality.html",
+      "status": "verified"
+    },
+    {
+      "actual_sha256": "97a544ac9862867c5875ec1310de50af36b1da148eb5ac4ce4210a249893056f",
+      "bytes": 44250,
+      "expected_sha256": "97a544ac9862867c5875ec1310de50af36b1da148eb5ac4ce4210a249893056f",
+      "matches": true,
+      "path": "import-source/source/microeconomics/01-prosperity-inequality-05-technological-revolution.html",
+      "status": "verified"
+    },
+    {
+      "actual_sha256": "79dc8d6f5cc0cb44dd36577887eefa0fdc29354255b93df3e2897f3ae31e1039",
+      "bytes": 60708,
+      "expected_sha256": "79dc8d6f5cc0cb44dd36577887eefa0fdc29354255b93df3e2897f3ae31e1039",
+      "matches": true,
+      "path": "import-source/source/microeconomics/01-prosperity-inequality-06-production-function.html",
+      "status": "verified"
+    },
+    {
+      "actual_sha256": "74d3f8eb302b853a43a345d32572fa7dd67f74aa080a57dc2295471355c4e3c6",
+      "bytes": 86505,
+      "expected_sha256": "74d3f8eb302b853a43a345d32572fa7dd67f74aa080a57dc2295471355c4e3c6",
+      "matches": true,
+      "path": "import-source/source/microeconomics/01-prosperity-inequality-07-malthusian-trap.html",
+      "status": "verified"
+    },
+    {
+      "actual_sha256": "37084df2de11c8066f76b9e525d3c65d764ccb06c4219ea021df5b55503bea29",
+      "bytes": 54799,
+      "expected_sha256": "37084df2de11c8066f76b9e525d3c65d764ccb06c4219ea021df5b55503bea29",
+      "matches": true,
+      "path": "import-source/source/microeconomics/01-prosperity-inequality-08-capitalist-institutions.html",
+      "status": "verified"
+    },
+    {
+      "actual_sha256": "2a159908e93ba2e551698dbe64b2c19b21416ac55e7d3725f20e13969871e401",
+      "bytes": 42024,
+      "expected_sha256": "2a159908e93ba2e551698dbe64b2c19b21416ac55e7d3725f20e13969871e401",
+      "matches": true,
+      "path": "import-source/source/microeconomics/01-prosperity-inequality-09-structural-transformation.html",
+      "status": "verified"
+    },
+    {
+      "actual_sha256": "9c440b7cce87c5bda4daf22b63edb5cbc9611cab98e5a2fbe3eef999c26166f6",
+      "bytes": 46150,
+      "expected_sha256": "9c440b7cce87c5bda4daf22b63edb5cbc9611cab98e5a2fbe3eef999c26166f6",
+      "matches": true,
+      "path": "import-source/source/microeconomics/01-prosperity-inequality-10-capitalism-causation.html",
+      "status": "verified"
+    },
+    {
+      "actual_sha256": "3ba8591fbd5470fbb340470ac4ef5e2973c1805bc7e7dfaf4e21b85ae2637049",
+      "bytes": 53553,
+      "expected_sha256": "3ba8591fbd5470fbb340470ac4ef5e2973c1805bc7e7dfaf4e21b85ae2637049",
+      "matches": true,
+      "path": "import-source/source/microeconomics/01-prosperity-inequality-11-british-colonization-india.html",
+      "status": "verified"
+    },
+    {
+      "actual_sha256": "c881ccbb07442b859daa4efcd447ac689c882d678a8effcf0aa13de4125675a7",
+      "bytes": 47997,
+      "expected_sha256": "c881ccbb07442b859daa4efcd447ac689c882d678a8effcf0aa13de4125675a7",
+      "matches": true,
+      "path": "import-source/source/microeconomics/01-prosperity-inequality-12-capitalism-varieties.html",
+      "status": "verified"
+    },
+    {
+      "actual_sha256": "8eb96e1464ca0ddd586e0c076add6e02539f6a3e5a577ef431efd1c88b8a82d0",
+      "bytes": 46802,
+      "expected_sha256": "8eb96e1464ca0ddd586e0c076add6e02539f6a3e5a577ef431efd1c88b8a82d0",
+      "matches": true,
+      "path": "import-source/source/microeconomics/01-prosperity-inequality-13-economics-biosphere.html",
+      "status": "verified"
+    },
+    {
+      "actual_sha256": "f8b9f07c50c1fe0d84d3f2b1806c970ebc7b34b6872e9f7434840068e1b55116",
+      "bytes": 32645,
+      "expected_sha256": "f8b9f07c50c1fe0d84d3f2b1806c970ebc7b34b6872e9f7434840068e1b55116",
+      "matches": true,
+      "path": "import-source/source/microeconomics/01-prosperity-inequality-14-summary.html",
+      "status": "verified"
+    },
+    {
+      "actual_sha256": "6f65b95ee1c77960ceff3d2f758a866682542741bff13cfac014c44bcd5bd4a2",
+      "bytes": 47860,
+      "expected_sha256": "6f65b95ee1c77960ceff3d2f758a866682542741bff13cfac014c44bcd5bd4a2",
+      "matches": true,
+      "path": "import-source/source/microeconomics/01-prosperity-inequality-15-references.html",
+      "status": "verified"
+    },
+    {
+      "actual_sha256": "0817b30d529e266c612312aaa1a4b59a6e8e899745c6968bf74f1c6810929073",
+      "bytes": 45605,
+      "expected_sha256": "0817b30d529e266c612312aaa1a4b59a6e8e899745c6968bf74f1c6810929073",
+      "matches": true,
+      "path": "import-source/source/microeconomics/02-technology-incentives-01-kutesmart-tailoring.html",
+      "status": "verified"
+    },
+    {
+      "actual_sha256": "07e7f2e42844686744d8f932aa5e3754a519961bbcddbe244994ef02a4f156cd",
+      "bytes": 47366,
+      "expected_sha256": "07e7f2e42844686744d8f932aa5e3754a519961bbcddbe244994ef02a4f156cd",
+      "matches": true,
+      "path": "import-source/source/microeconomics/02-technology-incentives-02-economic-decisions.html",
+      "status": "verified"
+    },
+    {
+      "actual_sha256": "7af6e469f80a4337e6b553d7e64c7e9d3e6fd694c41eea757e195489fbf7dcf8",
+      "bytes": 52353,
+      "expected_sha256": "7af6e469f80a4337e6b553d7e64c7e9d3e6fd694c41eea757e195489fbf7dcf8",
+      "matches": true,
+      "path": "import-source/source/microeconomics/02-technology-incentives-03-comparative-advantage.html",
+      "status": "verified"
+    },
+    {
+      "actual_sha256": "75b9953d448b44b73223d5978b663399fc01057aa7a4c3330078b88a2812d706",
+      "bytes": 73334,
+      "expected_sha256": "75b9953d448b44b73223d5978b663399fc01057aa7a4c3330078b88a2812d706",
+      "matches": true,
+      "path": "import-source/source/microeconomics/02-technology-incentives-04-firms-technology-production.html",
+      "status": "verified"
+    },
+    {
+      "actual_sha256": "16fd0378d84d3699eb9c8afa53cfc0780a319d0afcbd4de39f652cf4ca2a0f5c",
+      "bytes": 82556,
+      "expected_sha256": "16fd0378d84d3699eb9c8afa53cfc0780a319d0afcbd4de39f652cf4ca2a0f5c",
+      "matches": true,
+      "path": "import-source/source/microeconomics/02-technology-incentives-05-technology-costs.html",
+      "status": "verified"
+    },
+    {
+      "actual_sha256": "f86097d5d4182a82fef50f968a3cb4b9303726baa6eb56ef7f2be136ecb63115",
+      "bytes": 72260,
+      "expected_sha256": "f86097d5d4182a82fef50f968a3cb4b9303726baa6eb56ef7f2be136ecb63115",
+      "matches": true,
+      "path": "import-source/source/microeconomics/02-technology-incentives-06-innovation-profit.html",
+      "status": "verified"
+    },
+    {
+      "actual_sha256": "3eff2f1e72ef68aaf9dc3f0cc14787bf1436cb9aed947b8e721b21600f1dddc1",
+      "bytes": 64915,
+      "expected_sha256": "3eff2f1e72ef68aaf9dc3f0cc14787bf1436cb9aed947b8e721b21600f1dddc1",
+      "matches": true,
+      "path": "import-source/source/microeconomics/02-technology-incentives-07-industrial-revolution-technologies.html",
+      "status": "verified"
+    },
+    {
+      "actual_sha256": "fdb37be0f9a8e4f66ebc62820b60c7bbeddbc7bfd76321d7dd80d9ce5e779949",
+      "bytes": 50995,
+      "expected_sha256": "fdb37be0f9a8e4f66ebc62820b60c7bbeddbc7bfd76321d7dd80d9ce5e779949",
+      "matches": true,
+      "path": "import-source/source/microeconomics/02-technology-incentives-08-economic-models.html",
+      "status": "verified"
+    },
+    {
+      "actual_sha256": "d84086a09c084205445c85bd935da14da582881f978d86cf9861df420a68db70",
+      "bytes": 38326,
+      "expected_sha256": "d84086a09c084205445c85bd935da14da582881f978d86cf9861df420a68db70",
+      "matches": true,
+      "path": "import-source/source/microeconomics/02-technology-incentives-09-industrial-revolution-colonies.html",
+      "status": "verified"
+    },
+    {
+      "actual_sha256": "577b0edb217a4784a46b2c4e76e4c67bbfea4a4e2e3f2c8c9e48368b5f5fe93d",
+      "bytes": 69606,
+      "expected_sha256": "577b0edb217a4784a46b2c4e76e4c67bbfea4a4e2e3f2c8c9e48368b5f5fe93d",
+      "matches": true,
+      "path": "import-source/source/microeconomics/02-technology-incentives-10-malthusian-trap.html",
+      "status": "verified"
+    },
+    {
+      "actual_sha256": "365caa3974dc0b0406f79ba1680bf113916e3da03875eafdc1b8ac44967934d5",
+      "bytes": 66738,
+      "expected_sha256": "365caa3974dc0b0406f79ba1680bf113916e3da03875eafdc1b8ac44967934d5",
+      "matches": true,
+      "path": "import-source/source/microeconomics/02-technology-incentives-11-capitalism-climate-change.html",
+      "status": "verified"
+    },
+    {
+      "actual_sha256": "4cc5a8cd69ff29fe00fffd03cf48db6e5cd3b6d679a972f44eb9e38884058704",
+      "bytes": 35854,
+      "expected_sha256": "4cc5a8cd69ff29fe00fffd03cf48db6e5cd3b6d679a972f44eb9e38884058704",
+      "matches": true,
+      "path": "import-source/source/microeconomics/02-technology-incentives-12-how-good-is-the-model.html",
+      "status": "verified"
+    },
+    {
+      "actual_sha256": "c3fc84750037e51fb9fa369f5cabbafc447dbdaec4a2e0ff731e5081dc6f9ae3",
+      "bytes": 33064,
+      "expected_sha256": "c3fc84750037e51fb9fa369f5cabbafc447dbdaec4a2e0ff731e5081dc6f9ae3",
+      "matches": true,
+      "path": "import-source/source/microeconomics/02-technology-incentives-13-summary.html",
+      "status": "verified"
+    },
+    {
+      "actual_sha256": "892cc7b4ce88cb76faafa75a1cebe6ddc5d70c404bfc3df3637e5e4109da138b",
+      "bytes": 42418,
+      "expected_sha256": "892cc7b4ce88cb76faafa75a1cebe6ddc5d70c404bfc3df3637e5e4109da138b",
+      "matches": true,
+      "path": "import-source/source/microeconomics/02-technology-incentives-14-references.html",
+      "status": "verified"
+    },
+    {
+      "actual_sha256": "b90bdd1e5a65f5d6adc35063746f16edcd190528682e75d6efcba775a6043905",
+      "bytes": 48354,
+      "expected_sha256": "b90bdd1e5a65f5d6adc35063746f16edcd190528682e75d6efcba775a6043905",
+      "matches": true,
+      "path": "import-source/source/microeconomics/03-scarcity-wellbeing-01-work-fewer-hours.html",
+      "status": "verified"
+    },
+    {
+      "actual_sha256": "7b6e78fa276d011329cffff62f0535bc47b6d6892afc99106713d2bcb2940cda",
+      "bytes": 37961,
+      "expected_sha256": "7b6e78fa276d011329cffff62f0535bc47b6d6892afc99106713d2bcb2940cda",
+      "matches": true,
+      "path": "import-source/source/microeconomics/03-scarcity-wellbeing-02-choice-and-scarcity.html",
+      "status": "verified"
+    },
+    {
+      "actual_sha256": "17f26e6a24eee4aafd4906478a15ca6857375b94862ab0c06542b5d8bf8c75d3",
+      "bytes": 112333,
+      "expected_sha256": "17f26e6a24eee4aafd4906478a15ca6857375b94862ab0c06542b5d8bf8c75d3",
+      "matches": true,
+      "path": "import-source/source/microeconomics/03-scarcity-wellbeing-03-goods-and-preferences.html",
+      "status": "verified"
+    },
+    {
+      "actual_sha256": "f50fdda036e91eb9eae7419b23b48c3caba175172890f6bc0fa55fda2701a5ab",
+      "bytes": 50915,
+      "expected_sha256": "f50fdda036e91eb9eae7419b23b48c3caba175172890f6bc0fa55fda2701a5ab",
+      "matches": true,
+      "path": "import-source/source/microeconomics/03-scarcity-wellbeing-04-feasible-set.html",
+      "status": "verified"
+    },
+    {
+      "actual_sha256": "67582ee2f31f66e7f0eb1d1be190e3721b2899e3f6257f91ff589da4ea0f4a3d",
+      "bytes": 78776,
+      "expected_sha256": "67582ee2f31f66e7f0eb1d1be190e3721b2899e3f6257f91ff589da4ea0f4a3d",
+      "matches": true,
+      "path": "import-source/source/microeconomics/03-scarcity-wellbeing-05-decision-making-scarcity.html",
+      "status": "verified"
+    },
+    {
+      "actual_sha256": "c608c948850e70c9e888183afc31097af05e8079a5a45fd8417307bfdf718dff",
+      "bytes": 56476,
+      "expected_sha256": "c608c948850e70c9e888183afc31097af05e8079a5a45fd8417307bfdf718dff",
+      "matches": true,
+      "path": "import-source/source/microeconomics/03-scarcity-wellbeing-06-hours-technological-progress.html",
+      "status": "verified"
+    },
+    {
+      "actual_sha256": "ff10b779beab5f8107dc4f1a517dc2c35e5593e2b18331c7dad2388c224e642e",
+      "bytes": 105029,
+      "expected_sha256": "ff10b779beab5f8107dc4f1a517dc2c35e5593e2b18331c7dad2388c224e642e",
+      "matches": true,
+      "path": "import-source/source/microeconomics/03-scarcity-wellbeing-07-income-substitution-effects.html",
+      "status": "verified"
+    },
+    {
+      "actual_sha256": "c678efbadfb16dedc0c129a9b61a89cf7f59882a9c18d40c3e2ac16158bbb7c9",
+      "bytes": 42386,
+      "expected_sha256": "c678efbadfb16dedc0c129a9b61a89cf7f59882a9c18d40c3e2ac16158bbb7c9",
+      "matches": true,
+      "path": "import-source/source/microeconomics/03-scarcity-wellbeing-08-a-good-model.html",
+      "status": "verified"
+    },
+    {
+      "actual_sha256": "3b43547c5b691e9898ba4b3dce4c36be3a4eca5d1a4a22698d2b643ae69fa2a8",
+      "bytes": 68049,
+      "expected_sha256": "3b43547c5b691e9898ba4b3dce4c36be3a4eca5d1a4a22698d2b643ae69fa2a8",
+      "matches": true,
+      "path": "import-source/source/microeconomics/03-scarcity-wellbeing-09-changes-over-time.html",
+      "status": "verified"
+    },
+    {
+      "actual_sha256": "9e1bae69485b33092c5ea510c23221ad2769f04e222cda4744acf403f5114090",
+      "bytes": 52194,
+      "expected_sha256": "9e1bae69485b33092c5ea510c23221ad2769f04e222cda4744acf403f5114090",
+      "matches": true,
+      "path": "import-source/source/microeconomics/03-scarcity-wellbeing-10-hours-free-time-inequality.html",
+      "status": "verified"
+    },
+    {
+      "actual_sha256": "69a93cc3c1c70ac4cac1b49434db827bfeb251e38d0d5ed981bbafe6e0cba964",
+      "bytes": 84013,
+      "expected_sha256": "69a93cc3c1c70ac4cac1b49434db827bfeb251e38d0d5ed981bbafe6e0cba964",
+      "matches": true,
+      "path": "import-source/source/microeconomics/03-scarcity-wellbeing-11-gender-working-time.html",
+      "status": "verified"
+    },
+    {
+      "actual_sha256": "a43ae74f5856e3213c3a5895644e6e743b92a83bf92b7bcddaee0eff7923a98b",
+      "bytes": 55560,
+      "expected_sha256": "a43ae74f5856e3213c3a5895644e6e743b92a83bf92b7bcddaee0eff7923a98b",
+      "matches": true,
+      "path": "import-source/source/microeconomics/03-scarcity-wellbeing-12-differences-between-countries.html",
+      "status": "verified"
+    },
+    {
+      "actual_sha256": "f58c37e16b24984345a4f7f76652077e2f6090804ec6740228c6ed1a73dbd9da",
+      "bytes": 31487,
+      "expected_sha256": "f58c37e16b24984345a4f7f76652077e2f6090804ec6740228c6ed1a73dbd9da",
+      "matches": true,
+      "path": "import-source/source/microeconomics/03-scarcity-wellbeing-13-summary.html",
+      "status": "verified"
+    },
+    {
+      "actual_sha256": "25ce4bf4e4016317126bae3d3ba60a073420bb7dd74f6195e05ba67f10c2fc8e",
+      "bytes": 32761,
+      "expected_sha256": "25ce4bf4e4016317126bae3d3ba60a073420bb7dd74f6195e05ba67f10c2fc8e",
+      "matches": true,
+      "path": "import-source/source/microeconomics/03-scarcity-wellbeing-14-references.html",
+      "status": "verified"
+    },
+    {
+      "actual_sha256": "6117825d547dde1cb1d7d9eb4e064f62c40ab6df9935c4b47a4a1d4b2c65724d",
+      "bytes": 43134,
+      "expected_sha256": "6117825d547dde1cb1d7d9eb4e064f62c40ab6df9935c4b47a4a1d4b2c65724d",
+      "matches": true,
+      "path": "import-source/source/microeconomics/04-strategic-interactions-01-climate-negotiations.html",
+      "status": "verified"
+    },
+    {
+      "actual_sha256": "cddd88958e581a34c5b3f29366951df2058f36030decc869a9bf41fdadc05c1b",
+      "bytes": 43770,
+      "expected_sha256": "cddd88958e581a34c5b3f29366951df2058f36030decc869a9bf41fdadc05c1b",
+      "matches": true,
+      "path": "import-source/source/microeconomics/04-strategic-interactions-02-game-theory.html",
+      "status": "verified"
+    },
+    {
+      "actual_sha256": "6bcfb3b71c99799e855656f193fe5c7d166ed263665595520d3889bb8d60c789",
+      "bytes": 62601,
+      "expected_sha256": "6bcfb3b71c99799e855656f193fe5c7d166ed263665595520d3889bb8d60c789",
+      "matches": true,
+      "path": "import-source/source/microeconomics/04-strategic-interactions-03-nash-equilibrium.html",
+      "status": "verified"
+    },
+    {
+      "actual_sha256": "2cb60d861dccf0a4c0fed231bf5530459d166ea9efe524a38b8434e0ec19e713",
+      "bytes": 51083,
+      "expected_sha256": "2cb60d861dccf0a4c0fed231bf5530459d166ea9efe524a38b8434e0ec19e713",
+      "matches": true,
+      "path": "import-source/source/microeconomics/04-strategic-interactions-04-dominant-strategy-equilibrium.html",
+      "status": "verified"
+    },
+    {
+      "actual_sha256": "c791907303e86b24279c436882bb81ef25559b620800d382ade91d8b3fa67fdd",
+      "bytes": 63268,
+      "expected_sha256": "c791907303e86b24279c436882bb81ef25559b620800d382ade91d8b3fa67fdd",
+      "matches": true,
+      "path": "import-source/source/microeconomics/04-strategic-interactions-05-pareto-criterion.html",
+      "status": "verified"
+    },
+    {
+      "actual_sha256": "33dbe63e55233f72db9e3ecac441408aabdf567bb6d2043ba573a086334bc2eb",
+      "bytes": 48380,
+      "expected_sha256": "33dbe63e55233f72db9e3ecac441408aabdf567bb6d2043ba573a086334bc2eb",
+      "matches": true,
+      "path": "import-source/source/microeconomics/04-strategic-interactions-06-public-good-games.html",
+      "status": "verified"
+    },
+    {
+      "actual_sha256": "d5403bc1f7cf5e4786309a72e9258710219a72e9f5a6ec81a5535e5792b8f3d3",
+      "bytes": 101514,
+      "expected_sha256": "d5403bc1f7cf5e4786309a72e9258710219a72e9f5a6ec81a5535e5792b8f3d3",
+      "matches": true,
+      "path": "import-source/source/microeconomics/04-strategic-interactions-07-social-preferences.html",
+      "status": "verified"
+    },
+    {
+      "actual_sha256": "2024952473e1f24759393f625ea65ec1b5ce3e24fc1049978073f61415606dc3",
+      "bytes": 48413,
+      "expected_sha256": "2024952473e1f24759393f625ea65ec1b5ce3e24fc1049978073f61415606dc3",
+      "matches": true,
+      "path": "import-source/source/microeconomics/04-strategic-interactions-08-repeated-interaction.html",
+      "status": "verified"
+    },
+    {
+      "actual_sha256": "2f60dd5839b9ea557d7ce3b23b0a83603a13d61090b42f42d6fd2650835b0167",
+      "bytes": 47935,
+      "expected_sha256": "2f60dd5839b9ea557d7ce3b23b0a83603a13d61090b42f42d6fd2650835b0167",
+      "matches": true,
+      "path": "import-source/source/microeconomics/04-strategic-interactions-09-using-experiments.html",
+      "status": "verified"
+    },
+    {
+      "actual_sha256": "7385b3ae81625ab31402536698ef93ada882b9b5124a4fdf72f6afcdbb096002",
+      "bytes": 35876,
+      "expected_sha256": "7385b3ae81625ab31402536698ef93ada882b9b5124a4fdf72f6afcdbb096002",
+      "matches": true,
+      "path": "import-source/source/microeconomics/04-strategic-interactions-10-cooperation-negotiation-conflicts.html",
+      "status": "verified"
+    },
+    {
+      "actual_sha256": "c6c1cafa6bcbc6cdf1adc108c87099251b1e7e4d82f4178a7a758e24a0374afd",
+      "bytes": 44458,
+      "expected_sha256": "c6c1cafa6bcbc6cdf1adc108c87099251b1e7e4d82f4178a7a758e24a0374afd",
+      "matches": true,
+      "path": "import-source/source/microeconomics/04-strategic-interactions-11-ultimatum-game.html",
+      "status": "verified"
+    },
+    {
+      "actual_sha256": "782212d4162589d860acc556b861ed0885f991ef8fae157c4e1f4dfbe69e5e07",
+      "bytes": 62952,
+      "expected_sha256": "782212d4162589d860acc556b861ed0885f991ef8fae157c4e1f4dfbe69e5e07",
+      "matches": true,
+      "path": "import-source/source/microeconomics/04-strategic-interactions-12-experimental-results.html",
+      "status": "verified"
+    },
+    {
+      "actual_sha256": "b14b6a62bb7951df55b6b335fef0b5f2564a1d4876e6052b19d7dc052f3f804f",
+      "bytes": 51700,
+      "expected_sha256": "b14b6a62bb7951df55b6b335fef0b5f2564a1d4876e6052b19d7dc052f3f804f",
+      "matches": true,
+      "path": "import-source/source/microeconomics/04-strategic-interactions-13-coordination-games.html",
+      "status": "verified"
+    },
+    {
+      "actual_sha256": "e6360e77aa77659b181fed463f9cebc34b000f5eb20f397f104d89923196db1c",
+      "bytes": 52510,
+      "expected_sha256": "e6360e77aa77659b181fed463f9cebc34b000f5eb20f397f104d89923196db1c",
+      "matches": true,
+      "path": "import-source/source/microeconomics/04-strategic-interactions-14-modelling-climate-change.html",
+      "status": "verified"
+    },
+    {
+      "actual_sha256": "337da8a05cb59525f3636fcf14c8ad8e55a8630a75504593883f6f8d53906dd2",
+      "bytes": 32583,
+      "expected_sha256": "337da8a05cb59525f3636fcf14c8ad8e55a8630a75504593883f6f8d53906dd2",
+      "matches": true,
+      "path": "import-source/source/microeconomics/04-strategic-interactions-15-summary.html",
+      "status": "verified"
+    },
+    {
+      "actual_sha256": "36b6a6de23ccea6183ad4dc53140717e76601eb7b2f3c7c24887ef0a6600f302",
+      "bytes": 40985,
+      "expected_sha256": "36b6a6de23ccea6183ad4dc53140717e76601eb7b2f3c7c24887ef0a6600f302",
+      "matches": true,
+      "path": "import-source/source/microeconomics/04-strategic-interactions-16-references.html",
+      "status": "verified"
+    },
+    {
+      "actual_sha256": "b2bfcb09551c067a96ead47aa9e9693c580ef3b2240135f1232a745e367d1787",
+      "bytes": 39957,
+      "expected_sha256": "b2bfcb09551c067a96ead47aa9e9693c580ef3b2240135f1232a745e367d1787",
+      "matches": true,
+      "path": "import-source/source/microeconomics/05-the-rules-of-the-game-01-pirate-economics.html",
+      "status": "verified"
+    },
+    {
+      "actual_sha256": "5e20132be6a4ca7abcac2c741d618fabb6e328958c7ce55e9475f68b6e3887eb",
+      "bytes": 40543,
+      "expected_sha256": "5e20132be6a4ca7abcac2c741d618fabb6e328958c7ce55e9475f68b6e3887eb",
+      "matches": true,
+      "path": "import-source/source/microeconomics/05-the-rules-of-the-game-02-institutions-and-power.html",
+      "status": "verified"
+    },
+    {
+      "actual_sha256": "afe4070f94b80e544b042c3e9b3583b2e8b8b5d29f2cf239de4cb1f47912da75",
+      "bytes": 43711,
+      "expected_sha256": "afe4070f94b80e544b042c3e9b3583b2e8b8b5d29f2cf239de4cb1f47912da75",
+      "matches": true,
+      "path": "import-source/source/microeconomics/05-the-rules-of-the-game-03-evaluating-institutions-outcomes.html",
+      "status": "verified"
+    },
+    {
+      "actual_sha256": "6440f0ad942357d40f7bf5c540cd95dfabe7ae021a6696e06ed989f4338398e3",
+      "bytes": 87555,
+      "expected_sha256": "6440f0ad942357d40f7bf5c540cd95dfabe7ae021a6696e06ed989f4338398e3",
+      "matches": true,
+      "path": "import-source/source/microeconomics/05-the-rules-of-the-game-04-technology-and-preferences.html",
+      "status": "verified"
+    },
+    {
+      "actual_sha256": "654086306fcf85e1b030e106b1f413f03f24a22eaafe123056459064785abf55",
+      "bytes": 61954,
+      "expected_sha256": "654086306fcf85e1b030e106b1f413f03f24a22eaafe123056459064785abf55",
+      "matches": true,
+      "path": "import-source/source/microeconomics/05-the-rules-of-the-game-05-independent-farmer.html",
+      "status": "verified"
+    },
+    {
+      "actual_sha256": "2a5d7a5b1d275f41546d63ec154976961c361971a686a62e41f0700b5498a388",
+      "bytes": 85618,
+      "expected_sha256": "2a5d7a5b1d275f41546d63ec154976961c361971a686a62e41f0700b5498a388",
+      "matches": true,
+      "path": "import-source/source/microeconomics/05-the-rules-of-the-game-06-forced-labour.html",
+      "status": "verified"
+    },
+    {
+      "actual_sha256": "e4bf6d656372af9c1092746eaca89c3c10296fa2a682583bf3fcbbe7ea8ecfa2",
+      "bytes": 77083,
+      "expected_sha256": "e4bf6d656372af9c1092746eaca89c3c10296fa2a682583bf3fcbbe7ea8ecfa2",
+      "matches": true,
+      "path": "import-source/source/microeconomics/05-the-rules-of-the-game-07-take-it-or-leave-it.html",
+      "status": "verified"
+    },
+    {
+      "actual_sha256": "36497f0a876c2eddf86c57c79b17840dfba1b9012748a9b928a67a799293fffb",
+      "bytes": 62658,
+      "expected_sha256": "36497f0a876c2eddf86c57c79b17840dfba1b9012748a9b928a67a799293fffb",
+      "matches": true,
+      "path": "import-source/source/microeconomics/05-the-rules-of-the-game-08-bargaining-in-democracy.html",
+      "status": "verified"
+    },
+    {
+      "actual_sha256": "cfaf6242418126384377a56fe386a42b94e654dc387bef613d64a570e9266c3a",
+      "bytes": 81471,
+      "expected_sha256": "cfaf6242418126384377a56fe386a42b94e654dc387bef613d64a570e9266c3a",
+      "matches": true,
+      "path": "import-source/source/microeconomics/05-the-rules-of-the-game-09-pareto-efficient-sharing.html",
+      "status": "verified"
+    },
+    {
+      "actual_sha256": "425e537cd9a9d5ca7dbcf98aa45dda1de4ac2ca1d31d918b6c9ce2dddb4ae9c7",
+      "bytes": 33734,
+      "expected_sha256": "425e537cd9a9d5ca7dbcf98aa45dda1de4ac2ca1d31d918b6c9ce2dddb4ae9c7",
+      "matches": true,
+      "path": "import-source/source/microeconomics/05-the-rules-of-the-game-10-impact-efficiency-fairness.html",
+      "status": "verified"
+    },
+    {
+      "actual_sha256": "e428adcc7a444ab08339cb8be24327b8d198d15a741c1547779e0ec1ab3c9de0",
+      "bytes": 44228,
+      "expected_sha256": "e428adcc7a444ab08339cb8be24327b8d198d15a741c1547779e0ec1ab3c9de0",
+      "matches": true,
+      "path": "import-source/source/microeconomics/05-the-rules-of-the-game-11-distribution-of-income.html",
+      "status": "verified"
+    },
+    {
+      "actual_sha256": "6ed4f3ecc2a282a2c3496fa3a5438abaca44fb6ff0fee7894a034869db889ae3",
+      "bytes": 47297,
+      "expected_sha256": "6ed4f3ecc2a282a2c3496fa3a5438abaca44fb6ff0fee7894a034869db889ae3",
+      "matches": true,
+      "path": "import-source/source/microeconomics/05-the-rules-of-the-game-12-measuring-economic-inequality.html",
+      "status": "verified"
+    },
+    {
+      "actual_sha256": "8b7c2ab14655db0c4ba194234c9693502b0231f214976f6547af014afaca2bc0",
+      "bytes": 40447,
+      "expected_sha256": "8b7c2ab14655db0c4ba194234c9693502b0231f214976f6547af014afaca2bc0",
+      "matches": true,
+      "path": "import-source/source/microeconomics/05-the-rules-of-the-game-13-redistribute-surplus-raise-efficiency.html",
+      "status": "verified"
+    },
+    {
+      "actual_sha256": "8a63fff7add21daeea637fadf76bc1953cc9c522f8eb199eac22b2f6085da20b",
+      "bytes": 69758,
+      "expected_sha256": "8a63fff7add21daeea637fadf76bc1953cc9c522f8eb199eac22b2f6085da20b",
+      "matches": true,
+      "path": "import-source/source/microeconomics/05-the-rules-of-the-game-14-conflicts-and-bargaining.html",
+      "status": "verified"
+    },
+    {
+      "actual_sha256": "e4cab8241de6aec468800bbd5bc0955ad7dd24952fa659404425183bd992dab1",
+      "bytes": 32440,
+      "expected_sha256": "e4cab8241de6aec468800bbd5bc0955ad7dd24952fa659404425183bd992dab1",
+      "matches": true,
+      "path": "import-source/source/microeconomics/05-the-rules-of-the-game-15-summary.html",
+      "status": "verified"
+    },
+    {
+      "actual_sha256": "653aee559dc2fc70bca01d3028d1bca661ab0a78ba65c16898e4f51e6b0059b8",
+      "bytes": 32031,
+      "expected_sha256": "653aee559dc2fc70bca01d3028d1bca661ab0a78ba65c16898e4f51e6b0059b8",
+      "matches": true,
+      "path": "import-source/source/microeconomics/05-the-rules-of-the-game-16-references.html",
+      "status": "verified"
+    },
+    {
+      "actual_sha256": "72a6893c6854906db61722abefbbcae238f8a57f51c4c8ab0b454e5772dc0127",
+      "bytes": 47810,
+      "expected_sha256": "72a6893c6854906db61722abefbbcae238f8a57f51c4c8ab0b454e5772dc0127",
+      "matches": true,
+      "path": "import-source/source/microeconomics/06-firm-and-employees-01-exploding-tyres.html",
+      "status": "verified"
+    },
+    {
+      "actual_sha256": "ed4ab14f6854c8ecd62c9618578dd44f044f07cbc03d0bac6b44dc0170b6ba8d",
+      "bytes": 51596,
+      "expected_sha256": "ed4ab14f6854c8ecd62c9618578dd44f044f07cbc03d0bac6b44dc0170b6ba8d",
+      "matches": true,
+      "path": "import-source/source/microeconomics/06-firm-and-employees-02-firm-structure.html",
+      "status": "verified"
+    },
+    {
+      "actual_sha256": "87e5e89cc5907405f942321a103b5a39625a074c4867996065e751c095556c03",
+      "bytes": 38504,
+      "expected_sha256": "87e5e89cc5907405f942321a103b5a39625a074c4867996065e751c095556c03",
+      "matches": true,
+      "path": "import-source/source/microeconomics/06-firm-and-employees-03-separation-ownership-control.html",
+      "status": "verified"
+    },
+    {
+      "actual_sha256": "22432f3b80c3def7e20320b3e7f37b0a5b8db184cf011211f138f36ce0c2dbcc",
+      "bytes": 48341,
+      "expected_sha256": "22432f3b80c3def7e20320b3e7f37b0a5b8db184cf011211f138f36ce0c2dbcc",
+      "matches": true,
+      "path": "import-source/source/microeconomics/06-firm-and-employees-04-finding-jobs.html",
+      "status": "verified"
+    },
+    {
+      "actual_sha256": "ab5b38b595a6192ab015816b63b0a17a7f3b06039acff54b35699f3f527d2158",
+      "bytes": 64383,
+      "expected_sha256": "ab5b38b595a6192ab015816b63b0a17a7f3b06039acff54b35699f3f527d2158",
+      "matches": true,
+      "path": "import-source/source/microeconomics/06-firm-and-employees-05-reservation-wage-curve.html",
+      "status": "verified"
+    },
+    {
+      "actual_sha256": "f15d66783496ec3d90c8580180731cf25d761b0567335f7baf2b339bfe65488c",
+      "bytes": 38665,
+      "expected_sha256": "f15d66783496ec3d90c8580180731cf25d761b0567335f7baf2b339bfe65488c",
+      "matches": true,
+      "path": "import-source/source/microeconomics/06-firm-and-employees-06-contracts-principals-agents.html",
+      "status": "verified"
+    },
+    {
+      "actual_sha256": "33eccb4f1c02b028b1d2f4c26ac39f83f8f5d7224fe087faf048b63ec65fc548",
+      "bytes": 52885,
+      "expected_sha256": "33eccb4f1c02b028b1d2f4c26ac39f83f8f5d7224fe087faf048b63ec65fc548",
+      "matches": true,
+      "path": "import-source/source/microeconomics/06-firm-and-employees-07-job-loss-cost.html",
+      "status": "verified"
+    },
+    {
+      "actual_sha256": "920d1b3e07ace6d119e1bf5931c97c4be0061c09c87c704f19d3fd1699e11a72",
+      "bytes": 56087,
+      "expected_sha256": "920d1b3e07ace6d119e1bf5931c97c4be0061c09c87c704f19d3fd1699e11a72",
+      "matches": true,
+      "path": "import-source/source/microeconomics/06-firm-and-employees-08-rents-reservation-wages.html",
+      "status": "verified"
+    },
+    {
+      "actual_sha256": "f5d57b3e769d75f61766df40dc09179c787a87164b19d2e1f1d10bc6066e3612",
+      "bytes": 55046,
+      "expected_sha256": "f5d57b3e769d75f61766df40dc09179c787a87164b19d2e1f1d10bc6066e3612",
+      "matches": true,
+      "path": "import-source/source/microeconomics/06-firm-and-employees-09-labour-discipline-model.html",
+      "status": "verified"
+    },
+    {
+      "actual_sha256": "356e2279586e602d52e009d84b7db531276a145d275f74c2d6f7ed94e7987e55",
+      "bytes": 87908,
+      "expected_sha256": "356e2279586e602d52e009d84b7db531276a145d275f74c2d6f7ed94e7987e55",
+      "matches": true,
+      "path": "import-source/source/microeconomics/06-firm-and-employees-10-wage-setting-model.html",
+      "status": "verified"
+    },
+    {
+      "actual_sha256": "2cc37cf69c6f0269bbcb77c6954751081f01f1d8cdf2d2d62b7ff69a6d2a7aff",
+      "bytes": 51470,
+      "expected_sha256": "2cc37cf69c6f0269bbcb77c6954751081f01f1d8cdf2d2d62b7ff69a6d2a7aff",
+      "matches": true,
+      "path": "import-source/source/microeconomics/06-firm-and-employees-11-wages-employment-unemployment.html",
+      "status": "verified"
+    },
+    {
+      "actual_sha256": "d88afb30e6bb043a9c91257f53bd5a2ce88e97eb23fa394c1c472f13db868c9e",
+      "bytes": 33181,
+      "expected_sha256": "d88afb30e6bb043a9c91257f53bd5a2ce88e97eb23fa394c1c472f13db868c9e",
+      "matches": true,
+      "path": "import-source/source/microeconomics/06-firm-and-employees-12-employers-exercise-power.html",
+      "status": "verified"
+    },
+    {
+      "actual_sha256": "1b3190a3b8eea0eae9483f5a27b437e9e2b75889ecc6d8e009f76da16f21d393",
+      "bytes": 48534,
+      "expected_sha256": "1b3190a3b8eea0eae9483f5a27b437e9e2b75889ecc6d8e009f76da16f21d393",
+      "matches": true,
+      "path": "import-source/source/microeconomics/06-firm-and-employees-13-minimum-wage.html",
+      "status": "verified"
+    },
+    {
+      "actual_sha256": "30dbd7f68e4930c0d6deedfc15fa26dd235daba9d4ca4e343fb6000b39da0ebe",
+      "bytes": 40176,
+      "expected_sha256": "30dbd7f68e4930c0d6deedfc15fa26dd235daba9d4ca4e343fb6000b39da0ebe",
+      "matches": true,
+      "path": "import-source/source/microeconomics/06-firm-and-employees-14-business-organization.html",
+      "status": "verified"
+    },
+    {
+      "actual_sha256": "4b82741ddfab33871cb3029d4693ae2a488c4280350bb851c2ff5a9bc21bc4c6",
+      "bytes": 32689,
+      "expected_sha256": "4b82741ddfab33871cb3029d4693ae2a488c4280350bb851c2ff5a9bc21bc4c6",
+      "matches": true,
+      "path": "import-source/source/microeconomics/06-firm-and-employees-15-summary.html",
+      "status": "verified"
+    },
+    {
+      "actual_sha256": "30a7e0e0c2d3b0a5654e26d0d5c881fc19ab9ee68269b0becec7191432558972",
+      "bytes": 51742,
+      "expected_sha256": "30a7e0e0c2d3b0a5654e26d0d5c881fc19ab9ee68269b0becec7191432558972",
+      "matches": true,
+      "path": "import-source/source/microeconomics/06-firm-and-employees-16-references.html",
+      "status": "verified"
+    },
+    {
+      "actual_sha256": "5374db79cfccf527c86bedafdc31fca94216ede66d902545d9ae97d7bd3865a4",
+      "bytes": 40016,
+      "expected_sha256": "5374db79cfccf527c86bedafdc31fca94216ede66d902545d9ae97d7bd3865a4",
+      "matches": true,
+      "path": "import-source/source/microeconomics/07-firm-and-customers-01-winning-brands.html",
+      "status": "verified"
+    },
+    {
+      "actual_sha256": "c4399f45b740c6b7399a5e5721d1939062359f4a52aa31f7fd6d14f74c69186a",
+      "bytes": 112715,
+      "expected_sha256": "c4399f45b740c6b7399a5e5721d1939062359f4a52aa31f7fd6d14f74c69186a",
+      "matches": true,
+      "path": "import-source/source/microeconomics/07-firm-and-customers-02-breakfast-cereal.html",
+      "status": "verified"
+    },
+    {
+      "actual_sha256": "aeda928a056dd45283287220f4f3301b5d11677aeeaf4ba6b3c57dfd917efb0f",
+      "bytes": 51884,
+      "expected_sha256": "aeda928a056dd45283287220f4f3301b5d11677aeeaf4ba6b3c57dfd917efb0f",
+      "matches": true,
+      "path": "import-source/source/microeconomics/07-firm-and-customers-03-large-scale-production.html",
+      "status": "verified"
+    },
+    {
+      "actual_sha256": "dcaaf0a0b0d71a0e48ad5fadf6589c38d2a80240ce3b9acb1db1cd8a0e374ed7",
+      "bytes": 79721,
+      "expected_sha256": "dcaaf0a0b0d71a0e48ad5fadf6589c38d2a80240ce3b9acb1db1cd8a0e374ed7",
+      "matches": true,
+      "path": "import-source/source/microeconomics/07-firm-and-customers-04-beautiful-cars.html",
+      "status": "verified"
+    },
+    {
+      "actual_sha256": "c4707d02632e62769ba1d66027e80f791523230bed794f28abeee15f8cfe404a",
+      "bytes": 80766,
+      "expected_sha256": "c4707d02632e62769ba1d66027e80f791523230bed794f28abeee15f8cfe404a",
+      "matches": true,
+      "path": "import-source/source/microeconomics/07-firm-and-customers-05-demand-elasticity-revenue.html",
+      "status": "verified"
+    },
+    {
+      "actual_sha256": "02dda1d221e9b4feb40986116b92fdebba5b9b15bf3e61468b225d8a7b251fd1",
+      "bytes": 116706,
+      "expected_sha256": "02dda1d221e9b4feb40986116b92fdebba5b9b15bf3e61468b225d8a7b251fd1",
+      "matches": true,
+      "path": "import-source/source/microeconomics/07-firm-and-customers-06-maximize-profit.html",
+      "status": "verified"
+    },
+    {
+      "actual_sha256": "b2a7c6c4ab6012da56165c32cf442e6e207ed7e8a422a3247d78f13f9a8a6a90",
+      "bytes": 73565,
+      "expected_sha256": "b2a7c6c4ab6012da56165c32cf442e6e207ed7e8a422a3247d78f13f9a8a6a90",
+      "matches": true,
+      "path": "import-source/source/microeconomics/07-firm-and-customers-07-divided-surplus.html",
+      "status": "verified"
+    },
+    {
+      "actual_sha256": "9ff9d6a788759656d21db8f04f28161fa92776cb79a254a147c0a87ab5ce63da",
+      "bytes": 49929,
+      "expected_sha256": "9ff9d6a788759656d21db8f04f28161fa92776cb79a254a147c0a87ab5ce63da",
+      "matches": true,
+      "path": "import-source/source/microeconomics/07-firm-and-customers-08-price-setting-competition-market.html",
+      "status": "verified"
+    },
+    {
+      "actual_sha256": "954d6dd42da52ce3466f9aa998d814f831a40cf8e624580610ac873d4be2e1e2",
+      "bytes": 36100,
+      "expected_sha256": "954d6dd42da52ce3466f9aa998d814f831a40cf8e624580610ac873d4be2e1e2",
+      "matches": true,
+      "path": "import-source/source/microeconomics/07-firm-and-customers-09-firms-differentiate-products.html",
+      "status": "verified"
+    },
+    {
+      "actual_sha256": "cbbad3d595b7b43952c1935a52daf03227832af90bd7c5a37b2c447a96120f21",
+      "bytes": 49893,
+      "expected_sha256": "cbbad3d595b7b43952c1935a52daf03227832af90bd7c5a37b2c447a96120f21",
+      "matches": true,
+      "path": "import-source/source/microeconomics/07-firm-and-customers-10-strategic-price-setting.html",
+      "status": "verified"
+    },
+    {
+      "actual_sha256": "5df44464e5cbd737ea821a2f27c546a4b034cb7ff85e1936f960aa345474a314",
+      "bytes": 36763,
+      "expected_sha256": "5df44464e5cbd737ea821a2f27c546a4b034cb7ff85e1936f960aa345474a314",
+      "matches": true,
+      "path": "import-source/source/microeconomics/07-firm-and-customers-11-decreasing-long-run-costs.html",
+      "status": "verified"
+    },
+    {
+      "actual_sha256": "8c85d5bbd4dfa54b04e1abde24531ff0dc0a675b924427b6e7a316770667240a",
+      "bytes": 40439,
+      "expected_sha256": "8c85d5bbd4dfa54b04e1abde24531ff0dc0a675b924427b6e7a316770667240a",
+      "matches": true,
+      "path": "import-source/source/microeconomics/07-firm-and-customers-12-influencing-market-power.html",
+      "status": "verified"
+    },
+    {
+      "actual_sha256": "5099263cdcc645de91807d10923d959120b4590717808e4712c06cd97282e32d",
+      "bytes": 33286,
+      "expected_sha256": "5099263cdcc645de91807d10923d959120b4590717808e4712c06cd97282e32d",
+      "matches": true,
+      "path": "import-source/source/microeconomics/07-firm-and-customers-13-summary.html",
+      "status": "verified"
+    },
+    {
+      "actual_sha256": "3ee5b4543d2637f6e0b284ae1824df18efe8e9738f76bdb26a358caa5d714ade",
+      "bytes": 38623,
+      "expected_sha256": "3ee5b4543d2637f6e0b284ae1824df18efe8e9738f76bdb26a358caa5d714ade",
+      "matches": true,
+      "path": "import-source/source/microeconomics/07-firm-and-customers-14-references.html",
+      "status": "verified"
+    },
+    {
+      "actual_sha256": "ea09f05eb4815e2822f0ab1a725390b14e48ac032c779095a0344ae0f13bdecd",
+      "bytes": 44746,
+      "expected_sha256": "ea09f05eb4815e2822f0ab1a725390b14e48ac032c779095a0344ae0f13bdecd",
+      "matches": true,
+      "path": "import-source/source/microeconomics/08-supply-demand-01-american-civil-war.html",
+      "status": "verified"
+    },
+    {
+      "actual_sha256": "7c7fe24b772964ed863f281a4c96e6ed543f4ee84688f2bdb3172fa5a62c897c",
+      "bytes": 68275,
+      "expected_sha256": "7c7fe24b772964ed863f281a4c96e6ed543f4ee84688f2bdb3172fa5a62c897c",
+      "matches": true,
+      "path": "import-source/source/microeconomics/08-supply-demand-02-buying-and-selling.html",
+      "status": "verified"
+    },
+    {
+      "actual_sha256": "5816a6a7dea57ea41b222fea1c7d91892a81f5800e58f3e2048282775140be22",
+      "bytes": 60795,
+      "expected_sha256": "5816a6a7dea57ea41b222fea1c7d91892a81f5800e58f3e2048282775140be22",
+      "matches": true,
+      "path": "import-source/source/microeconomics/08-supply-demand-03-competitive-equilibrium-price-taking.html",
+      "status": "verified"
+    },
+    {
+      "actual_sha256": "a8975b863f665360549226b9d5e9ee36b820575af1e047248d599dded0a90e25",
+      "bytes": 97301,
+      "expected_sha256": "a8975b863f665360549226b9d5e9ee36b820575af1e047248d599dded0a90e25",
+      "matches": true,
+      "path": "import-source/source/microeconomics/08-supply-demand-04-firms-in-competitive-equilibrium.html",
+      "status": "verified"
+    },
+    {
+      "actual_sha256": "ac6115f51c5fd182cd5be819aa0e73c76349c8dfa3870b0eb2fe09a72a63ad67",
+      "bytes": 79567,
+      "expected_sha256": "ac6115f51c5fd182cd5be819aa0e73c76349c8dfa3870b0eb2fe09a72a63ad67",
+      "matches": true,
+      "path": "import-source/source/microeconomics/08-supply-demand-05-gains-from-trade.html",
+      "status": "verified"
+    },
+    {
+      "actual_sha256": "6e64b2efd441b8b6b89c80caa3af883fb08063d47c17e8759b5def5fdb8f5007",
+      "bytes": 97922,
+      "expected_sha256": "6e64b2efd441b8b6b89c80caa3af883fb08063d47c17e8759b5def5fdb8f5007",
+      "matches": true,
+      "path": "import-source/source/microeconomics/08-supply-demand-06-changes-in-supply-demand.html",
+      "status": "verified"
+    },
+    {
+      "actual_sha256": "4af9136365d0d09b7e0dbf5fda214238a8673b20e44f2a3784f36eccdc32087f",
+      "bytes": 61116,
+      "expected_sha256": "4af9136365d0d09b7e0dbf5fda214238a8673b20e44f2a3784f36eccdc32087f",
+      "matches": true,
+      "path": "import-source/source/microeconomics/08-supply-demand-07-equilibria.html",
+      "status": "verified"
+    },
+    {
+      "actual_sha256": "630999244a6ae65355595433c0fdee1868e382a60c774f63a263c196d57d9e48",
+      "bytes": 58042,
+      "expected_sha256": "630999244a6ae65355595433c0fdee1868e382a60c774f63a263c196d57d9e48",
+      "matches": true,
+      "path": "import-source/source/microeconomics/08-supply-demand-08-market-dynamics.html",
+      "status": "verified"
+    },
+    {
+      "actual_sha256": "56e86b5b9655d03c0635b67aa75b0bf36929c9d9d1c1fc3c25895f26e7495813",
+      "bytes": 40833,
+      "expected_sha256": "56e86b5b9655d03c0635b67aa75b0bf36929c9d9d1c1fc3c25895f26e7495813",
+      "matches": true,
+      "path": "import-source/source/microeconomics/08-supply-demand-09-how-competition-works.html",
+      "status": "verified"
+    },
+    {
+      "actual_sha256": "78f56448e42b6776296acc96e19ec015564e95e32e1dacfcb6f7b0bbad7baf29",
+      "bytes": 54446,
+      "expected_sha256": "78f56448e42b6776296acc96e19ec015564e95e32e1dacfcb6f7b0bbad7baf29",
+      "matches": true,
+      "path": "import-source/source/microeconomics/08-supply-demand-10-supply-demand-competitive-equilibrium.html",
+      "status": "verified"
+    },
+    {
+      "actual_sha256": "1f0fb8234aeca6919b633859fbe0aac4df10efe8262d1dc4f138277d449e469d",
+      "bytes": 36280,
+      "expected_sha256": "1f0fb8234aeca6919b633859fbe0aac4df10efe8262d1dc4f138277d449e469d",
+      "matches": true,
+      "path": "import-source/source/microeconomics/08-supply-demand-11-information-about-prices.html",
+      "status": "verified"
+    },
+    {
+      "actual_sha256": "c4451a317dd1b3b3cc52dc388894721d433ea1041335c3c4b0796603c5e7b0b7",
+      "bytes": 54502,
+      "expected_sha256": "c4451a317dd1b3b3cc52dc388894721d433ea1041335c3c4b0796603c5e7b0b7",
+      "matches": true,
+      "path": "import-source/source/microeconomics/08-supply-demand-12-effect-of-tax.html",
+      "status": "verified"
+    },
+    {
+      "actual_sha256": "6edf5a8c680a31ed93e98d757b0f7ee5364950d6185dba9bc0c8d0cdcdf453cc",
+      "bytes": 59783,
+      "expected_sha256": "6edf5a8c680a31ed93e98d757b0f7ee5364950d6185dba9bc0c8d0cdcdf453cc",
+      "matches": true,
+      "path": "import-source/source/microeconomics/08-supply-demand-13-price-controls.html",
+      "status": "verified"
+    },
+    {
+      "actual_sha256": "85a8ba1cbc8b8f30b65e47d7cc83f3de1310cc2633f03e26dab53680817e9199",
+      "bytes": 31882,
+      "expected_sha256": "85a8ba1cbc8b8f30b65e47d7cc83f3de1310cc2633f03e26dab53680817e9199",
+      "matches": true,
+      "path": "import-source/source/microeconomics/08-supply-demand-14-summary.html",
+      "status": "verified"
+    },
+    {
+      "actual_sha256": "c6266a46989033710820d08c91dd73ef335f6ab42928300eaca2c03cd00d68f4",
+      "bytes": 39824,
+      "expected_sha256": "c6266a46989033710820d08c91dd73ef335f6ab42928300eaca2c03cd00d68f4",
+      "matches": true,
+      "path": "import-source/source/microeconomics/08-supply-demand-15-references.html",
+      "status": "verified"
+    },
+    {
+      "actual_sha256": "a9c65f72818a699593029d52b572122d70fbc7e89622a1ae5657182a2d1c8e9e",
+      "bytes": 37402,
+      "expected_sha256": "a9c65f72818a699593029d52b572122d70fbc7e89622a1ae5657182a2d1c8e9e",
+      "matches": true,
+      "path": "import-source/source/microeconomics/09-lenders-borrowers-01-chambar-moneylenders.html",
+      "status": "verified"
+    },
+    {
+      "actual_sha256": "20ec2c57abfdd711a240ccbf701c148d6478029d0f18baaeeea1b066d48c0e1d",
+      "bytes": 62128,
+      "expected_sha256": "20ec2c57abfdd711a240ccbf701c148d6478029d0f18baaeeea1b066d48c0e1d",
+      "matches": true,
+      "path": "import-source/source/microeconomics/09-lenders-borrowers-02-income-and-wealth.html",
+      "status": "verified"
+    },
+    {
+      "actual_sha256": "ebff5b157f7e5aadd2ce50c1bc9f07444e3564c63c0d2b7f48d362a1d9e96c77",
+      "bytes": 67446,
+      "expected_sha256": "ebff5b157f7e5aadd2ce50c1bc9f07444e3564c63c0d2b7f48d362a1d9e96c77",
+      "matches": true,
+      "path": "import-source/source/microeconomics/09-lenders-borrowers-03-bringing-consumption-forward.html",
+      "status": "verified"
+    },
+    {
+      "actual_sha256": "6ccd6e06ddaf1cfcaf9b3c9eb4c1e16e4706d355e7e97afb2ba6f3908c1587ae",
+      "bytes": 94150,
+      "expected_sha256": "6ccd6e06ddaf1cfcaf9b3c9eb4c1e16e4706d355e7e97afb2ba6f3908c1587ae",
+      "matches": true,
+      "path": "import-source/source/microeconomics/09-lenders-borrowers-04-reasons-to-borrow.html",
+      "status": "verified"
+    },
+    {
+      "actual_sha256": "b651c84a6fa19e71a4a60136ce9dc92b497f7c37eaae85ec290390472586f14f",
+      "bytes": 43019,
+      "expected_sha256": "b651c84a6fa19e71a4a60136ce9dc92b497f7c37eaae85ec290390472586f14f",
+      "matches": true,
+      "path": "import-source/source/microeconomics/09-lenders-borrowers-05-discounting-external-effects.html",
+      "status": "verified"
+    },
+    {
+      "actual_sha256": "314710c0d5c6215230643040ee8489b6802028c641f6816d95326aec1672c2b0",
+      "bytes": 62138,
+      "expected_sha256": "314710c0d5c6215230643040ee8489b6802028c641f6816d95326aec1672c2b0",
+      "matches": true,
+      "path": "import-source/source/microeconomics/09-lenders-borrowers-06-lending-and-storing.html",
+      "status": "verified"
+    },
+    {
+      "actual_sha256": "a985d74c616816b1acd80d06535dd21757bc579a9f7e044cf7d6f306db1ae63c",
+      "bytes": 87410,
+      "expected_sha256": "a985d74c616816b1acd80d06535dd21757bc579a9f7e044cf7d6f306db1ae63c",
+      "matches": true,
+      "path": "import-source/source/microeconomics/09-lenders-borrowers-07-investing-consumption.html",
+      "status": "verified"
+    },
+    {
+      "actual_sha256": "2013daf0dad5d679e82bb5bae3e683d2936e38dfdb3dd5e421339c270dac2541",
+      "bytes": 46340,
+      "expected_sha256": "2013daf0dad5d679e82bb5bae3e683d2936e38dfdb3dd5e421339c270dac2541",
+      "matches": true,
+      "path": "import-source/source/microeconomics/09-lenders-borrowers-08-conflicts-over-gains.html",
+      "status": "verified"
+    },
+    {
+      "actual_sha256": "7b4d3063711c7d2860a2fd1bff4af4db2f3fd28b89a01057f214a64258a43f90",
+      "bytes": 68964,
+      "expected_sha256": "7b4d3063711c7d2860a2fd1bff4af4db2f3fd28b89a01057f214a64258a43f90",
+      "matches": true,
+      "path": "import-source/source/microeconomics/09-lenders-borrowers-09-principal-agent-problem.html",
+      "status": "verified"
+    },
+    {
+      "actual_sha256": "88fda303f54c104115b4c5b2550f54493ff832f792d3707f83065096066ae55f",
+      "bytes": 41884,
+      "expected_sha256": "88fda303f54c104115b4c5b2550f54493ff832f792d3707f83065096066ae55f",
+      "matches": true,
+      "path": "import-source/source/microeconomics/09-lenders-borrowers-10-inequality-credit-markets.html",
+      "status": "verified"
+    },
+    {
+      "actual_sha256": "3fafc149edecb15a7bbde3061da8bda06288894b4befcb8e3b72d60ee6b81a98",
+      "bytes": 41478,
+      "expected_sha256": "3fafc149edecb15a7bbde3061da8bda06288894b4befcb8e3b72d60ee6b81a98",
+      "matches": true,
+      "path": "import-source/source/microeconomics/09-lenders-borrowers-11-good-model.html",
+      "status": "verified"
+    },
+    {
+      "actual_sha256": "cf841d0664208d98f0ee07cda313dec94c244a6d6ff7a99c6178927da8af6093",
+      "bytes": 40402,
+      "expected_sha256": "cf841d0664208d98f0ee07cda313dec94c244a6d6ff7a99c6178927da8af6093",
+      "matches": true,
+      "path": "import-source/source/microeconomics/09-lenders-borrowers-12-poverty-trap.html",
+      "status": "verified"
+    },
+    {
+      "actual_sha256": "446f2759837cfe88e84769efcf7134cd9cda69f3d3ec240ad3a1dd7a3e7ffdba",
+      "bytes": 39688,
+      "expected_sha256": "446f2759837cfe88e84769efcf7134cd9cda69f3d3ec240ad3a1dd7a3e7ffdba",
+      "matches": true,
+      "path": "import-source/source/microeconomics/09-lenders-borrowers-13-reduce-risk-exposure.html",
+      "status": "verified"
+    },
+    {
+      "actual_sha256": "76fb4e11b461bbf93752c16e5d51bd2fe8ce7b087c0c6bfb00b3df604a340776",
+      "bytes": 32897,
+      "expected_sha256": "76fb4e11b461bbf93752c16e5d51bd2fe8ce7b087c0c6bfb00b3df604a340776",
+      "matches": true,
+      "path": "import-source/source/microeconomics/09-lenders-borrowers-14-summary.html",
+      "status": "verified"
+    },
+    {
+      "actual_sha256": "2a4109f9f22c1ac536f5c2aa90cf8d29d3dc54f5d43e78deeccd30571e96c0ba",
+      "bytes": 37845,
+      "expected_sha256": "2a4109f9f22c1ac536f5c2aa90cf8d29d3dc54f5d43e78deeccd30571e96c0ba",
+      "matches": true,
+      "path": "import-source/source/microeconomics/09-lenders-borrowers-15-references.html",
+      "status": "verified"
+    },
+    {
+      "actual_sha256": "00b15fdc14825c341fcbf0a8412f2827c5b27b425d6dcd3de2694ab40efee062",
+      "bytes": 44475,
+      "expected_sha256": "00b15fdc14825c341fcbf0a8412f2827c5b27b425d6dcd3de2694ab40efee062",
+      "matches": true,
+      "path": "import-source/source/microeconomics/10-market-successes-failures-01-bananas-fish-cancer.html",
+      "status": "verified"
+    },
+    {
+      "actual_sha256": "126b7fe127ee727b9da240fc16a95be4ddd4d078d716249e4ef0db6e06b58a50",
+      "bytes": 79407,
+      "expected_sha256": "126b7fe127ee727b9da240fc16a95be4ddd4d078d716249e4ef0db6e06b58a50",
+      "matches": true,
+      "path": "import-source/source/microeconomics/10-market-successes-failures-02-pollution-effects.html",
+      "status": "verified"
+    },
+    {
+      "actual_sha256": "058605e647a5d124237a225c31ec978477c2d619661b9883534ba6b092ac562e",
+      "bytes": 68097,
+      "expected_sha256": "058605e647a5d124237a225c31ec978477c2d619661b9883534ba6b092ac562e",
+      "matches": true,
+      "path": "import-source/source/microeconomics/10-market-successes-failures-03-bargaining-property-rights.html",
+      "status": "verified"
+    },
+    {
+      "actual_sha256": "985749d24f0c1c27665ee19ee2f6a4b2cc6636a754ae504f87d06942177ea00a",
+      "bytes": 71399,
+      "expected_sha256": "985749d24f0c1c27665ee19ee2f6a4b2cc6636a754ae504f87d06942177ea00a",
+      "matches": true,
+      "path": "import-source/source/microeconomics/10-market-successes-failures-04-regulation-taxation-compensation.html",
+      "status": "verified"
+    },
+    {
+      "actual_sha256": "e321f9a4a387837dcfed90d0e166b1ec646b2c67f1c4bbfb040bdd49f58bb4dd",
+      "bytes": 62677,
+      "expected_sha256": "e321f9a4a387837dcfed90d0e166b1ec646b2c67f1c4bbfb040bdd49f58bb4dd",
+      "matches": true,
+      "path": "import-source/source/microeconomics/10-market-successes-failures-05-examples-diagnoses.html",
+      "status": "verified"
+    },
+    {
+      "actual_sha256": "3c5609c9cc88c930c5d0bab5df5ab75962e152c538cbb36c6f43f36f469cbbd7",
+      "bytes": 49345,
+      "expected_sha256": "3c5609c9cc88c930c5d0bab5df5ab75962e152c538cbb36c6f43f36f469cbbd7",
+      "matches": true,
+      "path": "import-source/source/microeconomics/10-market-successes-failures-06-radio-broadcasting.html",
+      "status": "verified"
+    },
+    {
+      "actual_sha256": "e0f335851d113d40dc3e164eb3910fa79aa6765a70a8f79e911aeaf944c847f6",
+      "bytes": 51773,
+      "expected_sha256": "e0f335851d113d40dc3e164eb3910fa79aa6765a70a8f79e911aeaf944c847f6",
+      "matches": true,
+      "path": "import-source/source/microeconomics/10-market-successes-failures-07-open-access-shared-resources.html",
+      "status": "verified"
+    },
+    {
+      "actual_sha256": "ad70dc01dfb58b4b653b31ca07d070cb78cb6670e517ce991e0614b369bb7073",
+      "bytes": 38725,
+      "expected_sha256": "ad70dc01dfb58b4b653b31ca07d070cb78cb6670e517ce991e0614b369bb7073",
+      "matches": true,
+      "path": "import-source/source/microeconomics/10-market-successes-failures-08-principal-agent-relationships.html",
+      "status": "verified"
+    },
+    {
+      "actual_sha256": "1f7880e447231e5ffc7f0ad3c98814399648279bc3cc7aff09438b15d3416538",
+      "bytes": 40011,
+      "expected_sha256": "1f7880e447231e5ffc7f0ad3c98814399648279bc3cc7aff09438b15d3416538",
+      "matches": true,
+      "path": "import-source/source/microeconomics/10-market-successes-failures-09-insurance-credit-markets.html",
+      "status": "verified"
+    },
+    {
+      "actual_sha256": "096799213f81a9aa0be1d70d89546302e8325d7fc557247a5cdc040f0d30815b",
+      "bytes": 47696,
+      "expected_sha256": "096799213f81a9aa0be1d70d89546302e8325d7fc557247a5cdc040f0d30815b",
+      "matches": true,
+      "path": "import-source/source/microeconomics/10-market-successes-failures-10-hidden-attributes.html",
+      "status": "verified"
+    },
+    {
+      "actual_sha256": "4d6cf47e708f386fc07c8025c567f961bdbd4a65615886016bdc5dd76e63cbb5",
+      "bytes": 43831,
+      "expected_sha256": "4d6cf47e708f386fc07c8025c567f961bdbd4a65615886016bdc5dd76e63cbb5",
+      "matches": true,
+      "path": "import-source/source/microeconomics/10-market-successes-failures-11-market-limits.html",
+      "status": "verified"
+    },
+    {
+      "actual_sha256": "d673ae8b5bb98fcb72767893c8a95f874fa39dc73f8a609289ad03e79545daa3",
+      "bytes": 35677,
+      "expected_sha256": "d673ae8b5bb98fcb72767893c8a95f874fa39dc73f8a609289ad03e79545daa3",
+      "matches": true,
+      "path": "import-source/source/microeconomics/10-market-successes-failures-12-summary.html",
+      "status": "verified"
+    },
+    {
+      "actual_sha256": "6abf8eb7db47097717871297bc89fa53da8125c25bb97cc6aa5daa394b93fe3b",
+      "bytes": 34043,
+      "expected_sha256": "6abf8eb7db47097717871297bc89fa53da8125c25bb97cc6aa5daa394b93fe3b",
+      "matches": true,
+      "path": "import-source/source/microeconomics/10-market-successes-failures-13-references.html",
+      "status": "verified"
+    },
+    {
+      "actual_sha256": "433b6b724c79db7a9cfb001d822c37056f97314285eda92f0c40ab4116be316b",
+      "bytes": 47693,
+      "expected_sha256": "433b6b724c79db7a9cfb001d822c37056f97314285eda92f0c40ab4116be316b",
+      "matches": true,
+      "path": "import-source/source/microeconomics/50-01-looking-forward.html",
+      "status": "verified"
+    },
+    {
+      "actual_sha256": "18b9920e5fb49dd7eb37ad8851206df57d08f7cbc3b467d03940fb952f604b66",
+      "bytes": 123877,
+      "expected_sha256": "18b9920e5fb49dd7eb37ad8851206df57d08f7cbc3b467d03940fb952f604b66",
+      "matches": true,
+      "path": "import-source/source/microeconomics/50-02-glossary.html",
+      "status": "verified"
+    },
+    {
+      "actual_sha256": "f37383b520f2e3ca7deae0b42620764a1d5192726e66c4a5eeec33ff7b71d04d",
+      "bytes": 709579,
+      "expected_sha256": "f37383b520f2e3ca7deae0b42620764a1d5192726e66c4a5eeec33ff7b71d04d",
+      "matches": true,
+      "path": "import-source/source/microeconomics/50-03-bibliography.html",
+      "status": "verified"
+    },
+    {
+      "actual_sha256": "57192cba05140b0293dc92c51a5f41081c07e3ff769a829313c63906c70b9de3",
+      "bytes": 33571,
+      "expected_sha256": "57192cba05140b0293dc92c51a5f41081c07e3ff769a829313c63906c70b9de3",
+      "matches": true,
+      "path": "import-source/source/microeconomics/50-04-copyright-acknowledgements.html",
+      "status": "verified"
+    },
+    {
+      "actual_sha256": "e3f61d496e85156906b48e095b034f612924c87ace6f6f7c0eac7ddf874c4960",
+      "bytes": 70241,
+      "expected_sha256": "e3f61d496e85156906b48e095b034f612924c87ace6f6f7c0eac7ddf874c4960",
+      "matches": true,
+      "path": "import-source/source/microeconomics/50-05-index.html",
+      "status": "verified"
+    },
+    {
+      "actual_sha256": "491162564a2a962d7856814f97b92e69527cef12cf61c48e616f550e372f85dc",
+      "bytes": 29950,
+      "expected_sha256": "491162564a2a962d7856814f97b92e69527cef12cf61c48e616f550e372f85dc",
+      "matches": true,
+      "path": "import-source/source/microeconomics/transcript-alvin-roth_matching-markets.html",
+      "status": "verified"
+    },
+    {
+      "actual_sha256": "631f9d1e3642042b433ee2d7ba6639ed2a109e3f98d2936f6c9caa960fff6765",
+      "bytes": 31309,
+      "expected_sha256": "631f9d1e3642042b433ee2d7ba6639ed2a109e3f98d2936f6c9caa960fff6765",
+      "matches": true,
+      "path": "import-source/source/microeconomics/transcript-anna-vitali_how-important-is-information-in-the-labour-market.html",
+      "status": "verified"
+    },
+    {
+      "actual_sha256": "0d1acdb40932914846810ed3c6a47d32291cca269bdc41b19f53341853ffdb15",
+      "bytes": 28733,
+      "expected_sha256": "0d1acdb40932914846810ed3c6a47d32291cca269bdc41b19f53341853ffdb15",
+      "matches": true,
+      "path": "import-source/source/microeconomics/transcript-arin-dube_the-impact-of-a-minimum-wage.html",
+      "status": "verified"
+    },
+    {
+      "actual_sha256": "bb0ed4670f8689e52faf78e1f0a5b2a1904ee9ed1748da3a79f15b01357e6401",
+      "bytes": 29375,
+      "expected_sha256": "bb0ed4670f8689e52faf78e1f0a5b2a1904ee9ed1748da3a79f15b01357e6401",
+      "matches": true,
+      "path": "import-source/source/microeconomics/transcript-bob-allen_why-britain-industrialised-when-others-did-not.html",
+      "status": "verified"
+    },
+    {
+      "actual_sha256": "b957b26b32156dcdc3d445c1e8dd524427375d48869880bd483e72b5733af2da",
+      "bytes": 29723,
+      "expected_sha256": "b957b26b32156dcdc3d445c1e8dd524427375d48869880bd483e72b5733af2da",
+      "matches": true,
+      "path": "import-source/source/microeconomics/transcript-juan-camilo-cardenas_invisible-hands-working-together.html",
+      "status": "verified"
+    },
+    {
+      "actual_sha256": "9c6f0aca89e9f38de8dfe56c1ed76cbb226c4f76c8b197f8e70baeb2db696b2d",
+      "bytes": 28802,
+      "expected_sha256": "9c6f0aca89e9f38de8dfe56c1ed76cbb226c4f76c8b197f8e70baeb2db696b2d",
+      "matches": true,
+      "path": "import-source/source/microeconomics/transcript-juliet-schor_why-do-we-work-so-hard.html",
+      "status": "verified"
+    },
+    {
+      "actual_sha256": "b4f31606ff3455960a375bce226039b1dc18ad2dae23eb43bbf015d7f7b183ba",
+      "bytes": 29782,
+      "expected_sha256": "b4f31606ff3455960a375bce226039b1dc18ad2dae23eb43bbf015d7f7b183ba",
+      "matches": true,
+      "path": "import-source/source/microeconomics/transcript-kathryn-graddy_fishing-for-perfect-competition.html",
+      "status": "verified"
+    },
+    {
+      "actual_sha256": "ff5d02028f4253d75aee13b4add8441c792275e9ecf09d1dc83e08e56c738dca",
+      "bytes": 28174,
+      "expected_sha256": "ff5d02028f4253d75aee13b4add8441c792275e9ecf09d1dc83e08e56c738dca",
+      "matches": true,
+      "path": "import-source/source/microeconomics/transcript-piketty-and-heckman_why-economics-needs-data.html",
+      "status": "verified"
+    },
+    {
+      "actual_sha256": "efe2bbe501befa5b95f0d2e51da7df514d3090a6a93eb4ca36c44f5b4a0b7aa5",
+      "bytes": 29125,
+      "expected_sha256": "efe2bbe501befa5b95f0d2e51da7df514d3090a6a93eb4ca36c44f5b4a0b7aa5",
+      "matches": true,
+      "path": "import-source/source/microeconomics/transcript-suresh-naidu_why-some-countries-grew-rich.html",
+      "status": "verified"
+    }
+  ],
+  "failures": 0,
+  "listed_files": 338,
+  "manifest": "verification/preserved-import-hashes.json",
+  "manifest_sha256": "96dd1ddce557206f8580cc76633cdbd9d1d8a4dc86ffd19650cfa23b8825ac7b",
+  "method": "SHA256 of each listed preserved import input, compared with the original committed manifest",
+  "scope": "All listed preserved import copies under import-source; external original workspace locations were not inferred or modified",
+  "total_checked_bytes": 28222242
+}
