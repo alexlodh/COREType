@@ -89,7 +89,7 @@ Version 1.1 passed 15 core checks / 31,836 assertions with zero failures. The di
 
 `verification/UI-Verification.md` describes the tested cases and limitations; screenshots and machine-readable audits are alongside it. All UI tests used the isolated testing profile. Synthetic typing verifies behavior, not human speed.
 
-The private GitHub repository, [alexlodh/COREType](https://github.com/alexlodh/COREType), includes the source, bundled diagrams, preserved imports, tests, attribution and verification. Release ZIPs contain the signed Apple Silicon app and a portable source snapshot. Build caches and personal settings/history are excluded.
+The private GitHub repository, [alexlodh/COREType](https://github.com/alexlodh/COREType), includes the source, bundled diagrams, preserved imports, tests, attribution and verification. The verified app ZIP is also tracked in `distribution/COREType-macOS.zip`. Local deliverable ZIPs contain the signed Apple Silicon app and a portable source snapshot. Build caches and personal settings/history are excluded.
 
 ## Source integrity and attribution
 
