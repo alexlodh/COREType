@@ -2,14 +2,10 @@
 
 COREType is an independent, native macOS app for offline typing practice with **The Economy 2.0** by CORE Econ. It includes 6,893 prepared paragraph excerpts across 20 chapters and 271 sections, with relevant original textbook figures and tables alongside the text.
 
-The current app version is **1.5.0**. It removes the remaining-error and completed-paragraph counts from the completion summary. Individual paragraph selection, Previous/Next navigation, timed tests and saved practice history are included.
-
 ## Requirements
 
-- The prebuilt ZIP requires an **Apple silicon Mac** (M1 or later) and **macOS 14 or later**. Intel builds have not been verified.
-- The app works offline after installation. No account, browser or external runtime is needed to use it.
-- This repository is public. Downloading the app or source requires no GitHub account or sign-in.
-- The bundle is **ad hoc signed**, not Developer ID signed or notarized. Downloaded copies may need an app-specific approval; see [Opening a downloaded app](#opening-a-downloaded-app).
+- The prebuilt ZIP requires an **Apple silicon Mac** (M1 or later) and **macOS 14 or later**.
+
 
 Existing native UI observations were made on Apple silicon with macOS 26.6.2. The declared minimum OS is not a claim that every supported OS version has been tested.
 
@@ -17,7 +13,7 @@ Existing native UI observations were made on Apple silicon with macOS 26.6.2. Th
 
 ### Download from GitHub and install the prebuilt app
 
-Open Terminal and run the following commands. They download the app, matching checksum and installer into a new folder in Downloads, then install the app. **Git, GitHub CLI, Homebrew and Xcode are not required.**
+Open Terminal and run the following commands. They download the app, matching checksum and installer into a new folder in Downloads, then install the app.
 
 ```sh
 coretype_download_dir=$(mktemp -d "$HOME/Downloads/COREType.XXXXXX") &&
