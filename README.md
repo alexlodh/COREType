@@ -18,15 +18,15 @@ Open `/Users/alexlodh/Applications/COREType.app` in Finder, or unzip `COREType-m
 - Command–R repeats the starting paragraph with fresh statistics. Command–N chooses the next paragraph. Return after completion advances. Command–1 and Command–2 switch practice/history.
 - History keeps completed and interrupted tests separately; its averages use completed tests only. A replay button practices the original starting paragraph and selects its section. Export CSV includes detailed metrics.
 
-## Interface and textbook diagrams
+## Interface and textbook figures and tables
 
 COREType uses Arial for headings, controls, metrics, help and typing text, with the platform font fallback if needed. Arial is installed on the tested Mac; Aptos is not. The dark slate palette is retained. Marketing taglines, tracked uppercase labels and redundant practice/footer text have been removed.
 
-A **Figure** or **Figures** button appears in the passage header only for diagrams explicitly referenced in that prepared excerpt. Opening it pauses a running test. The viewer shows the original diagram, caption, source credits and book name. Use the figure menu to switch diagrams, **+ / −** to zoom, **Fit** to restore the full view, and **Done** to return. Resume a paused test explicitly.
+A figure or table button appears in the passage header only for source figures explicitly referenced in that prepared excerpt. Opening it pauses a running test. The viewer shows the original diagram or table, caption, source credits and book name. Use the menu to switch figures, **+ / −** to zoom, **Fit** to restore the full view, and **Done** to return. Tables preserve the source cells, headers, row/column spans, mathematical markup and alignment. Wide or long tables scroll, and source slide sequences have panel controls. Resume a paused test explicitly.
 
-The catalogue bundles **515 diagrams / 525 original image assets** and supports **1,044 passages / 1,191 figure associations**, including eight source-proven cross-book references. The catalogue is separate from the unchanged paragraph library. Associations use qualified book/figure identifiers and actual source containers; explicit references to the other book are recorded separately. Numbered photographs, document illustrations, cover images, unreferenced images and table-only containers are excluded. For source slide sequences the complete original summary image is used; explicitly referenced subfigures retain their original panel. No replacement diagrams or rewritten captions are generated.
+The catalogue bundles **515 diagrams / 525 original images** and **128 source table panels across 87 figures**, including 70 table-only figures and 17 figures with both images and tables. It supports **1,140 passages / 1,315 figure associations**; 164 passages reference figures containing tables. Eight cross-book references have explicit source evidence. The catalogue is separate from the unchanged paragraph library. Associations use qualified book/figure identifiers and actual source containers; explicit references to the other book are recorded separately. Numbered photographs, document illustrations, cover images and unreferenced images are excluded. Image slides use the complete original summary image or an explicitly referenced source panel. Table slides retain their original before/after or exercise/answer panels. No replacement diagrams, rewritten table cells or rewritten captions are generated.
 
-SVG and raster files are bundled locally. The viewer uses macOS WebKit to display original files through a private local scheme, disables JavaScript, blocks remote navigation, and restricts image loading to that local scheme. The app does not fetch diagrams, fonts or scripts at runtime. Diagram import is a build-time task and downloads missing original assets from CORE Econ; cached assets are hash-verified. Textbook resources keep their own attribution and CC BY-NC-ND terms.
+SVG, raster files and sanitized source table HTML are bundled locally. The viewer uses macOS WebKit to display original files through a private local scheme, disables JavaScript, blocks remote navigation, and restricts image loading to that local scheme. The app does not fetch figures, tables, fonts or scripts at runtime. Figure import is a build-time task and downloads missing original assets from CORE Econ; cached assets are hash-verified. Textbook resources keep their own attribution and CC BY-NC-ND terms. Three table panels contain literal LaTeX already present in the saved source; it is retained rather than rewritten. One reference to an external ONS Table 2 has no corresponding saved table and remains unavailable. General phrases such as “the figure above” are not assigned by guesswork.
 
 ## Metric definitions
 
@@ -70,7 +70,7 @@ open /tmp/COREType-Release/COREType.app
 
 Build bundles under `/tmp`: this synced workspace can acquire FinderInfo metadata after signing. Copy the completed bundle into Applications and verify there with `codesign --verify --strict`. Do not alter quarantine or security settings.
 
-The dependency-free `CoreChecks` executable runs the test suite without XCTest, which is absent from this Mac's Command Line Tools. Tests cover exact metrics, corrected and uncorrected errors, deadline completion, pause/resume, timed paragraph continuation, punctuation, Unicode/backspace, repeats, complete long passages, the actual 6,893-paragraph library, chapter search/filtering, ordered/random/empty/singleton scopes, atomic settings/history persistence, source-proven figure matching, book isolation/explicit cross-book references, and local diagram assets.
+The dependency-free `CoreChecks` executable runs the test suite without XCTest, which is absent from this Mac's Command Line Tools. Tests cover exact metrics, corrected and uncorrected errors, deadline completion, pause/resume, timed paragraph continuation, punctuation, Unicode/backspace, repeats, complete long passages, the actual 6,893-paragraph library, chapter search/filtering, ordered/random/empty/singleton scopes, atomic settings/history persistence, source-proven figure matching, book isolation/explicit cross-book references, local image/table paths, schema compatibility, and source table cells/headers/spans.
 
 Implementation:
 
@@ -78,18 +78,18 @@ Implementation:
 - `Sources/COREType`: SwiftUI interface and AppKit keyboard/caret/scroll surface.
 - `Tests/TypingCoreTests`: repeatable core checks.
 - `scripts`: import, test, icon, and bundle build tools.
-- `verification`: build/test logs, source and diagram audits, and observed UI verification notes.
+- `verification`: build/test logs, source, diagram and table audits, and observed UI verification notes.
 - `import-source`: preserved inputs for reproducible import, including the original Monkeytype setup.
 
 The SDK on this Mac includes a new SwiftUI `@State` macro whose plugin is supplied only by Xcode. `ViewState` aliases the standard `SwiftUI.State` property wrapper to build with Command Line Tools without that plugin.
 
 ## Verification and release
 
-Version 1.1 passed 15 core checks / 31,836 assertions with zero failures. The diagram importer passed 20 additional integrity checks and an offline deterministic rerun. Native UI checks exercised the updated typography/copy, SVG viewing and zoom, source credits, multiple panels, qualified cross-book figure switching, pause/resume, corrected typing and completion, timed advancement with figure controls updating, history replay, and the native CSV save panel. Exported values were checked against the saved test result.
+Version 1.2 adds source table extraction and offline viewing. It passed 17 core checks / 34,545 assertions and 14 table integrity checks with zero failures. An independent source comparison verified all 128 table panels and 3,608 cells. The current test results, independent source-table comparison, release signatures and native UI observations are recorded in `verification/UI-Verification.md`. Earlier checks also exercised typography/copy, SVG viewing and zoom, source credits, multiple panels, qualified cross-book switching, pause/resume, corrected typing and completion, timed advancement, history replay, and the native CSV save panel; exported values matched the saved test result.
 
 `verification/UI-Verification.md` describes the tested cases and limitations; screenshots and machine-readable audits are alongside it. All UI tests used the isolated testing profile. Synthetic typing verifies behavior, not human speed.
 
-The private GitHub repository, [alexlodh/COREType](https://github.com/alexlodh/COREType), includes the source, bundled diagrams, preserved imports, tests, attribution and verification. The verified app ZIP is also tracked in `distribution/COREType-macOS.zip`. Local deliverable ZIPs contain the signed Apple Silicon app and a portable source snapshot. Build caches and personal settings/history are excluded.
+The private GitHub repository, [alexlodh/COREType](https://github.com/alexlodh/COREType), includes the source, bundled figures and tables, preserved imports, tests, attribution and verification. The verified app ZIP is also tracked in `distribution/COREType-macOS.zip`. Local deliverable ZIPs contain the signed Apple Silicon app and a portable source snapshot. Build caches and personal settings/history are excluded.
 
 ## Source integrity and attribution
 
@@ -101,15 +101,16 @@ To regenerate from the existing source workspace (read-only):
 python3 scripts/import_library.py import-source
 ```
 
-Diagram import from preserved source pages (network only for missing build-time originals):
+Figure and table import from preserved source pages (network only for missing build-time originals):
 
 ```sh
 python3 scripts/import_diagrams.py import-source
 python3 scripts/import_diagrams.py import-source --offline
+python3 scripts/import_diagrams.py import-source --verify-tables
 ```
 
-`--offline` never fetches. It requires all cached assets and verifies their stored source URLs and SHA256 hashes before rebuilding the catalogue. `verification/diagram-audit.json` contains source HTML hashes, exact figure matches, classification evidence, asset hashes, excluded references and credits.
+`--offline` never fetches. It requires all cached assets and verifies their stored source URLs and SHA256 hashes before rebuilding the catalogue. `verification/diagram-audit.json` contains source HTML hashes, exact figure matches, classification evidence, asset hashes, table cell/span integrity, excluded references and credits.
 
-The existing Monkeytype setup, ZIP files, and original source workspace remain untouched. `import-source/` preserves the original prepared pool, saved-text library, metadata/provenance, source HTML, README, and `CORE-Random-Paragraphs-Setup.zip`. `verification/preserved-import-hashes.json` records their exact bytes for reproducibility. This is the prepared excerpt collection, not the complete textbooks. Front matter, glossaries, references, and equation-heavy material are excluded; some short plain-text LaTeX notation and exercise/extension prose remain. Some long original paragraphs were already split during preparation. No new shortening, splitting, paraphrasing, or punctuation rewriting is performed by this app.
+The original Monkeytype setup ZIP and source workspace remain untouched. Superseded COREType application bundles and deliverable ZIPs are moved to Trash when replaced; the current release uses the same stable filenames. Git history remains available. `import-source/` preserves the original prepared pool, saved-text library, metadata/provenance, source HTML, README, and `CORE-Random-Paragraphs-Setup.zip`. `verification/preserved-import-hashes.json` records their exact bytes for reproducibility. This is the prepared excerpt collection, not the complete textbooks. Front matter, glossaries, references, and equation-heavy material are excluded; some short plain-text LaTeX notation and exercise/extension prose remain. Some long original paragraphs were already split during preparation. No new shortening, splitting, paraphrasing, or punctuation rewriting is performed by this app.
 
 Book attribution and CC BY-NC-ND 4.0 terms are preserved in `Attribution.txt`, available inside the app's Credits & help dialog, and in the exact `Original-Import-README.txt`. Use the textbook excerpts for noncommercial practice. No CORE Econ or Monkeytype endorsement is implied.

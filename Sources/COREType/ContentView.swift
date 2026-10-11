@@ -179,9 +179,9 @@ struct PracticeView: View {
                             Text("Paragraph \(passage.paragraph)").font(Typography.font(size: 13)).foregroundStyle(Palette.muted)
                             if !model.currentFigures.isEmpty {
                                 Button { model.showFigures() } label: {
-                                    Label(model.currentFigures.count == 1 ? "Figure \(model.currentFigures[0].number)" : "Figures (\(model.currentFigures.count))", systemImage: "chart.bar.doc.horizontal")
+                                    Label(TextbookAssetLabel.groupLabel(model.currentFigures), systemImage: "chart.bar.doc.horizontal")
                                         .font(Typography.font(size: 12))
-                                }.buttonStyle(.plain).foregroundStyle(Palette.accent).help("View diagrams referenced in this passage. Pauses the test.")
+                                }.buttonStyle(.plain).foregroundStyle(Palette.accent).help("View figures and tables referenced in this passage. Pauses the test.")
                             }
                         }
                     }.padding(.horizontal, 28).padding(.top, 24).padding(.bottom, 15)
@@ -352,8 +352,8 @@ struct InfoView: View {
                     Text("Offline typing practice using Sasha's prepared CORE Econ excerpts.").font(Typography.font(size: 13))
                     Text("6,893 paragraphs · 20 chapters · 271 sections").font(Typography.font(size: 14, weight: .semibold))
                     Text("The sidebar filters the chapter browser. Check chapters or sections and click Use this selection to change your practice scope. Random chooses within the applied scope, avoiding immediate repeats when more than one paragraph is available. In order follows book, unit, section, and paragraph order, then wraps. Timed tests continue with another complete excerpt as soon as the current one is typed.").font(Typography.font(size: 13))
-                    Text("Textbook diagrams").font(Typography.font(size: 14, weight: .semibold)).foregroundStyle(Palette.accent)
-                    Text("Use the Figure button when a passage references a diagram. It pauses the test and opens the original figure, caption and source credits. Zoom or switch figures in the viewer, then close it and resume typing.").font(Typography.font(size: 13))
+                    Text("Textbook figures and tables").font(Typography.font(size: 14, weight: .semibold)).foregroundStyle(Palette.accent)
+                    Text("The figure or table button opens locally saved source images and tables with their captions and credits, and pauses the test. Zoom, scroll, switch items or use the panel controls. Close the viewer, then click Resume to continue typing.").font(Typography.font(size: 13))
                     Text("Metrics").font(Typography.font(size: 14, weight: .semibold)).foregroundStyle(Palette.accent)
                     Text("WPM = retained correct characters ÷ 5 ÷ active minutes.\nRaw WPM = all character attempts ÷ 5 ÷ active minutes, including corrected or repeated characters.\nAccuracy = correct character attempts ÷ all character attempts.\nError rate = incorrect character attempts ÷ all character attempts.\nMistakes count incorrect attempts, even when corrected. Corrections count incorrect characters removed with Backspace. Remaining errors count wrong characters still in the typed text.\nSpaces and punctuation count as characters. Backspace is not a character attempt. Paused time is excluded. Very short tests can produce unstable speed estimates.").font(Typography.font(size: 13)).lineSpacing(5)
                     Text("About the excerpts").font(Typography.font(size: 14, weight: .semibold)).foregroundStyle(Palette.accent)

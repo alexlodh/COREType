@@ -1,0 +1,21 @@
+{
+  "checkCount": 14,
+  "failures": 0,
+  "actualSourceTablePanelsChecked": 128,
+  "checks": {
+    "allTableCellsHeadersSpansAndSourceLinksMatchActualHTML": true,
+    "allTableFilesMatchAuditHashes": true,
+    "allTableFragmentsInert": true,
+    "KnownFarmersAndGrainSourceValuesRetained": true,
+    "KnownTradeColumnSpanRetained": true,
+    "OriginalAfterLoanFrameRetained": true,
+    "OriginalLiteralLaTeXRetained": true,
+    "SyntheticSpansAndSemanticAlignmentPreserved": true,
+    "SyntheticEmphasisSubscriptSuperscriptAndBreakPreserved": true,
+    "SyntheticSourceLinkIsInertMetadata": true,
+    "SyntheticTeXScriptConvertedToLiteralText": true,
+    "SyntheticNativeMathMLRetained": true,
+    "SyntheticExecutableAndExternalResourceMarkupRemoved": true,
+    "FigureAndTableNumberNamespacesRemainDistinct": true
+  }
+}

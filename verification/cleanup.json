@@ -1,0 +1,56 @@
+{
+  "date": "2026-10-11",
+  "policy": "Superseded local COREType builds and deliverables moved to recoverable macOS Trash; original imports, Monkeytype setup, normal user data and Git history retained",
+  "items": [
+    {
+      "original": "/Users/alexlodh/Applications/COREType.app",
+      "trash": "/Users/alexlodh/.Trash/COREType 14-36-48-368.app"
+    },
+    {
+      "original": "/tmp/COREType-Release/COREType.app",
+      "trash": "/Users/alexlodh/.Trash/COREType.app"
+    },
+    {
+      "original": "/tmp/COREType-Previous-9e8a2c01-3fce-4938-9e50-bfd6b4b231f1.app",
+      "trash": "/Users/alexlodh/.Trash/COREType-Previous-9e8a2c01-3fce-4938-9e50-bfd6b4b231f1.app"
+    },
+    {
+      "original": "/Users/alexlodh/Documents/Codex/2026-10-11/task/COREType/dist/COREType.app",
+      "trash": "/Users/alexlodh/Library/Mobile Documents/.Trash/COREType.app"
+    },
+    {
+      "original": "/Users/alexlodh/Documents/Codex/2026-10-11/task/COREType/dist/COREType-macOS.zip",
+      "trash": "/Users/alexlodh/Library/Mobile Documents/.Trash/COREType-macOS.zip"
+    },
+    {
+      "original": "/Users/alexlodh/Documents/Codex/2026-10-11/task/COREType/dist/COREType-Source.zip",
+      "trash": "/Users/alexlodh/Library/Mobile Documents/.Trash/COREType-Source.zip"
+    },
+    {
+      "original": "/Users/alexlodh/Documents/Codex/2026-10-11/task/COREType/distribution/COREType-macOS.zip",
+      "trash": "/Users/alexlodh/Library/Mobile Documents/.Trash/COREType-macOS 2.zip"
+    },
+    {
+      "original": "/Users/alexlodh/Documents/Codex/2026-10-11/continue-iterating-on-coretype-a-standalone-2/outputs/COREType-macOS.zip",
+      "trash": "/Users/alexlodh/Library/Mobile Documents/.Trash/COREType-macOS 3.zip"
+    },
+    {
+      "original": "/Users/alexlodh/Documents/Codex/2026-10-11/continue-iterating-on-coretype-a-standalone-2/outputs/COREType-Source.zip",
+      "trash": "/Users/alexlodh/Library/Mobile Documents/.Trash/COREType-Source 2.zip"
+    },
+    {
+      "original": "/Users/alexlodh/Documents/Codex/2026-10-11/continue-iterating-on-coretype-a-standalone-2/outputs/COREType-README.md",
+      "trash": "/Users/alexlodh/Library/Mobile Documents/.Trash/COREType-README.md"
+    },
+    {
+      "original": "/Users/alexlodh/Documents/Codex/2026-10-11/continue-iterating-on-coretype-a-standalone-2/outputs/COREType-Verification.md",
+      "trash": "/Users/alexlodh/Library/Mobile Documents/.Trash/COREType-Verification.md"
+    },
+    {
+      "original": "/Users/alexlodh/Documents/Codex/2026-10-11/continue-iterating-on-coretype-a-standalone-2/outputs/COREType-SHA256.txt",
+      "trash": "/Users/alexlodh/Library/Mobile Documents/.Trash/COREType-SHA256.txt"
+    }
+  ],
+  "count": 12,
+  "allMovedItemsRecoverableInTrash": true
+}

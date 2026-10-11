@@ -20,9 +20,12 @@
     "foreignObjectRejected": true,
     "cssImportRejected": true,
     "cssExternalUrlRejected": true,
-    "internalSVGReferencesAccepted": true
+    "internalSVGReferencesAccepted": true,
+    "allOriginalImagesUnchangedAfterTableAddition": true,
+    "originalImagePassageMappingsPreserved": true,
+    "tableSourceFidelityChecksPassed": true
   },
-  "checkCount": 20,
+  "checkCount": 23,
   "failures": 0,
   "visuallyInspectedOriginalJPGs": {
     "Diagrams/macroeconomics/figure-05-15.jpg": "Original economic chart, including source tool screenshots where provided",
@@ -41,9 +44,12 @@
   },
   "sourceCreditAudit": "No adjacent or slideshow-external source credit blocks found. Non-source figure-source children were only chart controls; all substantive source paragraphs preserved.",
   "limitations": [
-    "Slideshow figures use the original static summary image. Two exact source slide panels referenced by number are also retained.",
-    "HTML-only table figures are excluded rather than recreated.",
-    "Original math notation remains in source captions and passages.",
-    "Source JPG charts are included unchanged, including their original tool controls and source branding."
-  ]
+    "Image slideshow figures keep their original static summary images. Source HTML table sequences retain the original frames.",
+    "Source HTML table cell text, headings, row/column spans, alignment and native math markup are retained in inert local HTML.",
+    "Original literal LaTeX remains in three table panels, as it does in some passages and captions.",
+    "Source JPG charts are included unchanged, including their original tool controls and source branding.",
+    "Explicit references to external publications not represented in saved source HTML remain unmatched and audited."
+  ],
+  "catalogueSHA256": "faa5c7db4b7bc0ae494866d7b45b30d7a31361b31971811861ecfa695f83e022",
+  "tableVerification": "table-verification.json"
 }

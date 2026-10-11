@@ -34,8 +34,10 @@ func XCTAssertThrowsError<T>(_ value: @autoclosure () throws -> T, file: StaticS
             ("longest complete passage", tests.testLongestPassageIsCompleteAndNotTruncated),
             ("settings/history persistence and corrupt data", tests.testSettingsHistoryAtomicRoundTripAndCorruption),
             ("source-proven diagram matching and book isolation", tests.testDiagramMatchingUsesProvenAssociationsAndBookIsolation),
-            ("local diagram assets and invalid-path rejection", tests.testDiagramAssetsRemainInsideLocalBundle),
-            ("real diagram catalogue and offline resources", tests.testActualDiagramCatalogueHasValidPassagesAndOfflineAssets)
+            ("local diagram/table assets and invalid-path rejection", tests.testDiagramAssetsRemainInsideLocalBundle),
+            ("real diagram catalogue and offline resources", tests.testActualDiagramCatalogueHasValidPassagesAndOfflineAssets),
+            ("table metadata and backward-compatible diagram decoding", tests.testTableMetadataAndOlderDiagramSchema),
+            ("source table cells, headers, and spans", tests.testActualTablesPreserveSourceCellsHeadersAndSpans)
         ]
         for (name, action) in cases {
             let prior = failures

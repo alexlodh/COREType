@@ -43,7 +43,7 @@ import TypingCore
         library = Library(passages: passages)
         resourceRoot = root
         do { figureCatalogue = try JSONDecoder().decode(FigureCatalogue.self, from: Data(contentsOf: root.appendingPathComponent("Diagram-Catalog.json"))) }
-        catch { figureCatalogue = FigureCatalogue(); loadNotice = "Could not load textbook diagrams: \(error.localizedDescription)" }
+        catch { figureCatalogue = FigureCatalogue(); loadNotice = "Could not load textbook figures and tables: \(error.localizedDescription)" }
         attribution = (try? String(contentsOf: root.appendingPathComponent("Attribution.txt"), encoding: .utf8)) ?? "Attribution resource is unavailable."
         let testing = ProcessInfo.processInfo.arguments.contains("--ui-testing")
         let directory = testing ? URL(fileURLWithPath: "/tmp/COREType-UI-Testing") : FileManager.default.urls(for: .applicationSupportDirectory, in: .userDomainMask)[0].appendingPathComponent("COREType")

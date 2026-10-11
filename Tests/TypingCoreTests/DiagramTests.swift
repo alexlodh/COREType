@@ -76,6 +76,150 @@ extension TypingCoreTests {
             XCTAssertNil(catalogue.assetURL(asset(path), root: root))
         }
         XCTAssertNil(catalogue.assetURL(asset("Diagrams/nested/figure.png"), root: URL(string: "https://example.org/Resources")!))
+
+        let tables = root.appendingPathComponent("Tables", isDirectory: true)
+        try manager.createDirectory(at: tables, withIntermediateDirectories: true)
+        let table = tables.appendingPathComponent("figure.html")
+        try Data("<table><tr><th>Output</th><td>855</td></tr></table>".utf8).write(to: table)
+        let outsideHTML = directory.appendingPathComponent("outside.html")
+        try Data("<html>Outside the bundled table folder</html>".utf8).write(to: outsideHTML)
+        try manager.createSymbolicLink(at: tables.appendingPathComponent("escape.html"), withDestinationURL: outsideHTML)
+        try Data("<html>Arbitrary HTML</html>".utf8).write(to: diagrams.appendingPathComponent("arbitrary.html"))
+        try Data("unsupported".utf8).write(to: tables.appendingPathComponent("figure.png"))
+        func tableAsset(_ path: String, kind: String = "table") -> FigureAsset {
+            FigureAsset(path: path, label: "Table", source: "https://example.org/source.html", kind: kind)
+        }
+        let resolvedTable = catalogue.assetURL(tableAsset("Tables/figure.html"), root: root)
+        XCTAssertTrue(resolvedTable?.isFileURL == true)
+        if let resolvedTable { XCTAssertEqual(try Data(contentsOf: resolvedTable), try Data(contentsOf: table)) }
+        XCTAssertNil(catalogue.assetURL(asset("Tables/figure.html"), root: root))
+        XCTAssertNil(catalogue.assetURL(asset("Diagrams/arbitrary.html"), root: root))
+        XCTAssertNil(catalogue.assetURL(tableAsset("Diagrams/nested/figure.png"), root: root))
+        XCTAssertNil(catalogue.assetURL(tableAsset("Tables/figure.html", kind: "html"), root: root))
+        for path in ["Tables/figure.png", "Tables/missing.html", "Tables", "Tables/../outside.html",
+                     "Tables/nested/../../outside.html", "Tables/escape.html", "Other/figure.html",
+                     outsideHTML.path, "https://example.org/figure.html"] {
+            XCTAssertNil(catalogue.assetURL(tableAsset(path), root: root))
+        }
+        // A whole resource folder must not be allowed to redirect outside the
+        // bundle, even if its child paths look valid and the files exist.
+        let linkedRoot = directory.appendingPathComponent("LinkedResources", isDirectory: true)
+        let externalAssets = directory.appendingPathComponent("ExternalAssets", isDirectory: true)
+        try manager.createDirectory(at: linkedRoot, withIntermediateDirectories: true)
+        try manager.createDirectory(at: externalAssets, withIntermediateDirectories: true)
+        try Data("external table".utf8).write(to: externalAssets.appendingPathComponent("figure.html"))
+        try Data("external image".utf8).write(to: externalAssets.appendingPathComponent("figure.png"))
+        try manager.createSymbolicLink(at: linkedRoot.appendingPathComponent("Tables"), withDestinationURL: externalAssets)
+        try manager.createSymbolicLink(at: linkedRoot.appendingPathComponent("Diagrams"), withDestinationURL: externalAssets)
+        XCTAssertNil(catalogue.assetURL(tableAsset("Tables/figure.html"), root: linkedRoot))
+        XCTAssertNil(catalogue.assetURL(asset("Diagrams/figure.png"), root: linkedRoot))
+    }
+
+    func testTableMetadataAndOlderDiagramSchema() throws {
+        let oldAsset = try JSONDecoder().decode(FigureAsset.self, from: Data(#"{"path":"Diagrams/old.png","label":"Diagram","source":"https://example.org/old.png","alt":"Original image"}"#.utf8))
+        XCTAssertEqual(oldAsset.kind, "image")
+        let oldFigure = try JSONDecoder().decode(TextbookFigure.self, from: Data(#"{"id":"microeconomics-1.1","book":"microeconomics","unit":1,"number":"1.1","caption":"Figure 1.1","source":"https://example.org/source","attribution":"","assets":[{"path":"Diagrams/old.png","label":"Diagram","source":"https://example.org/old.png","alt":""}]}"#.utf8))
+        XCTAssertEqual(oldFigure.namespace, "figure")
+        XCTAssertFalse(oldFigure.isTable)
+        let table = TextbookFigure(id: "microeconomics-table-1.1", book: "microeconomics", unit: 1,
+                                  number: "1.1", caption: "Table 1.1", source: "https://example.org/source",
+                                  assets: [FigureAsset(path: "Tables/one.html", label: "Table", source: "https://example.org/source", kind: "table")],
+                                  namespace: "table")
+        XCTAssertTrue(table.isTable)
+        XCTAssertEqual(table.namespace, "table")
+        XCTAssertNotEqual(table.id, oldFigure.id)
+        let catalogue = FigureCatalogue(diagrams: [oldFigure, table], passageFigures: ["figure": [oldFigure.id], "table": [table.id]])
+        XCTAssertEqual(catalogue.figures(for: diagramPassage(id: "figure")).map(\.namespace), ["figure"])
+        XCTAssertEqual(catalogue.figures(for: diagramPassage(id: "table")).map(\.namespace), ["table"])
+        let restored = try JSONDecoder().decode(TextbookFigure.self, from: JSONEncoder().encode(table))
+        XCTAssertEqual(restored, table)
+        XCTAssertTrue(restored.isTable)
+        let empty = TextbookFigure(id: "empty", book: "microeconomics", unit: 1, number: "1.1", caption: "Empty", source: "https://example.org/source", assets: [], namespace: "table")
+        XCTAssertFalse(empty.isTable)
+        let mixed = TextbookFigure(id: "mixed", book: "microeconomics", unit: 1, number: "1.1", caption: "Mixed", source: "https://example.org/source", assets: [oldAsset] + table.assets)
+        XCTAssertFalse(mixed.isTable)
+    }
+
+    func testActualTablesPreserveSourceCellsHeadersAndSpans() throws {
+        let root = diagramResourceRoot
+        let catalogue = try JSONDecoder().decode(FigureCatalogue.self, from: Data(contentsOf: root.appendingPathComponent("Diagram-Catalog.json")))
+        let lib = try loadLibrary()
+        let tableFigures = catalogue.diagrams.filter { $0.assets.contains { $0.kind == "table" } }
+        XCTAssertFalse(tableFigures.isEmpty)
+        if let passage = lib.passages.first(where: { $0.id == "CORE Micro U01 S06 P008" }) {
+            XCTAssertTrue(catalogue.figures(for: passage).contains { $0.id == "microeconomics-1.8a" && $0.isTable })
+        } else { XCTAssertTrue(false, "Missing known table-reference passage") }
+        if let externalTable = lib.passages.first(where: { $0.id == "CORE Macro U06 S11 P029" }) {
+            // "Table 2" here names an external ONS webpage. It must not be
+            // mapped to an unrelated numbered table in the textbook.
+            XCTAssertFalse(catalogue.figures(for: externalTable).contains { $0.namespace == "table" })
+        } else { XCTAssertTrue(false, "Missing external-table reference passage") }
+
+        func firstTableHTML(_ id: String) throws -> String? {
+            guard let figure = catalogue.diagrams.first(where: { $0.id == id }),
+                  let asset = figure.assets.first(where: { $0.kind == "table" }),
+                  let url = catalogue.assetURL(asset, root: root) else {
+                XCTAssertTrue(false, "Missing source table \(id)")
+                return nil
+            }
+            return try String(contentsOf: url, encoding: .utf8)
+        }
+        func matches(_ pattern: String, in text: String) throws -> [String] {
+            let regex = try NSRegularExpression(pattern: pattern, options: [.dotMatchesLineSeparators])
+            return regex.matches(in: text, range: NSRange(text.startIndex..., in: text)).compactMap { match in
+                Range(match.range(at: 1), in: text).map { String(text[$0]) }
+            }
+        }
+        func cells(_ row: String) throws -> [String] {
+            try matches("<(?:th|td)\\b[^>]*>(.*?)</(?:th|td)>", in: row).map {
+                $0.replacingOccurrences(of: "<[^>]+>", with: "", options: .regularExpression)
+                    .replacingOccurrences(of: "\\s+", with: " ", options: .regularExpression)
+                    .trimmingCharacters(in: .whitespacesAndNewlines)
+            }
+        }
+        if let html = try firstTableHTML("microeconomics-1.8a") {
+            let rows = try matches("<tr\\b[^>]*>(.*?)</tr>", in: html)
+            XCTAssertEqual(rows.count, 16)
+            if rows.count >= 2 {
+                XCTAssertEqual(try cells(rows[0]), ["Labour input (number of farmers)", "Grain output (kg)", "Average product of labour (kg/farmer)"])
+                XCTAssertEqual(try cells(rows[1]), ["200", "171,000", "855"])
+            }
+        }
+        if let html = try firstTableHTML("microeconomics-2.2c") {
+            let headers = try matches("(<th\\b[^>]*\\bcolspan=[\"']3[\"'][^>]*>.*?</th>)", in: html)
+            XCTAssertTrue(headers.contains { $0.contains("Complete specialization and trade") })
+        }
+        if let html = try firstTableHTML("microeconomics-8.5") {
+            let cells = try matches("(<td\\b[^>]*\\browspan=[\"']2[\"'][^>]*>.*?</td>)", in: html)
+            XCTAssertTrue(cells.contains { $0.contains("Market for a differentiated product, e.g. Cheerios") })
+            XCTAssertTrue(cells.contains { $0.contains("Market in competitive equilibrium, e.g. a second-hand textbook") })
+        }
+        if let balanceSheets = catalogue.diagrams.first(where: { $0.id == "macroeconomics-6.3a" }) {
+            XCTAssertEqual(balanceSheets.assets.count, 2)
+            if balanceSheets.assets.count == 2 {
+                for asset in balanceSheets.assets { XCTAssertEqual(asset.kind, "table") }
+                if let before = catalogue.assetURL(balanceSheets.assets[0], root: root),
+                   let after = catalogue.assetURL(balanceSheets.assets[1], root: root) {
+                    let beforeHTML = try String(contentsOf: before, encoding: .utf8)
+                    let afterHTML = try String(contentsOf: after, encoding: .utf8)
+                    XCTAssertTrue(beforeHTML.contains("Before the loan"))
+                    XCTAssertTrue(afterHTML.contains("After the loan"))
+                    XCTAssertTrue(afterHTML.contains("Loan to Julia"))
+                } else { XCTAssertTrue(false, "Missing before/after balance-sheet files") }
+            }
+        } else { XCTAssertTrue(false, "Missing source balance-sheet figure 6.3a") }
+        for figure in tableFigures {
+            XCTAssertTrue(["figure", "table"].contains(figure.namespace), figure.id)
+            for asset in figure.assets where asset.kind == "table" {
+                XCTAssertTrue(asset.path.hasPrefix("Tables/"), figure.id)
+                XCTAssertTrue(asset.path.hasSuffix(".html"), figure.id)
+                if let url = catalogue.assetURL(asset, root: root) {
+                    let html = try String(contentsOf: url, encoding: .utf8)
+                    XCTAssertTrue(html.contains("<table"), asset.path)
+                    XCTAssertFalse(html.range(of: "<script\\b|<iframe\\b|<img\\b|<link\\b|<form\\b|<[a-z][^>]*\\son[a-z]+\\s*=", options: .regularExpression) != nil, asset.path)
+                } else { XCTAssertTrue(false, "Missing bundled table \(asset.path)") }
+            }
+        }
     }
 
     func testActualDiagramCatalogueHasValidPassagesAndOfflineAssets() throws {
@@ -93,6 +237,9 @@ extension TypingCoreTests {
         if let reference = passages["CORE Micro U01 S01 P001"] {
             XCTAssertTrue(catalogue.figures(for: reference).isEmpty)
         } else { XCTAssertTrue(false, "Missing known source passage CORE Micro U01 S01 P001") }
+        if let photograph = passages["CORE Macro U09 S01 P006"] {
+            XCTAssertFalse(catalogue.figures(for: photograph).contains { $0.id == "macroeconomics-9.1" })
+        } else { XCTAssertTrue(false, "Missing known photograph-reference passage") }
         if let reference = passages["CORE Macro U10 S02 P030"] {
             let ids = catalogue.figures(for: reference).map(\.id)
             XCTAssertTrue(ids.contains("macroeconomics-10.2"))
@@ -108,6 +255,7 @@ extension TypingCoreTests {
             XCTAssertTrue(URL(string: figure.source)?.scheme == "https", figure.id)
             XCTAssertFalse(figure.assets.isEmpty, figure.id)
             for asset in figure.assets {
+                XCTAssertTrue(["image", "table"].contains(asset.kind), figure.id)
                 XCTAssertFalse(asset.label.isEmpty, figure.id)
                 XCTAssertTrue(URL(string: asset.source)?.scheme == "https", figure.id)
                 let url = catalogue.assetURL(asset, root: root)

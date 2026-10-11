@@ -1,20 +1,29 @@
 {
-  "version": 1,
+  "version": 2,
   "passageCount": 6893,
   "librarySHA256": "cd0bb0d8cd3b4ec4443df7f4144f72c19f20130569599d8d4c2431253ccbedcb",
   "textsExactlyMatchPreparedPool": true,
   "sourceHTMLFiles": 291,
   "numberedCandidates": 1101,
+  "numberedTableCandidates": 0,
+  "selectedFigures": 585,
   "selectedDiagrams": 515,
-  "bundledAssets": 525,
-  "assetBytes": 36263690,
+  "selectedTableFigures": 87,
+  "bundledAssets": 653,
+  "assetBytes": 36424330,
+  "bundledImageAssets": 525,
+  "bundledTableAssets": 128,
   "assetsByExtension": {
     ".svg": 517,
-    ".jpg": 8
+    ".jpg": 8,
+    ".html": 128
   },
-  "passagesWithNumericFigureReferences": 1142,
+  "passagesWithNumericFigureReferences": 1148,
+  "passagesWithNumericTableReferences": 1,
+  "passagesWithFigures": 1140,
   "passagesWithDiagrams": 1044,
-  "passageFigureAssociations": 1191,
+  "passagesWithTables": 164,
+  "passageFigureAssociations": 1315,
   "explicitCrossBookReferences": {
     "CORE Macro U01 S09 P014": [
       "microeconomics-4.2b"
@@ -41,13 +50,14 @@
       "microeconomics-5.28"
     ]
   },
-  "matchingPolicy": "Explicit figure numbers; passage book unless another book is named immediately after the reference. Exact caption numbers or exact source panel identifiers; unsuffixed references expand only to actual captioned subfigures. Animation sequences use unchanged original summary images. Tables with no original static image, photographs and insufficient classification evidence are excluded.",
+  "matchingPolicy": "Explicit Figure/Table namespace and numbers; passage book unless another book is named immediately after the reference. Exact caption numbers or exact source panel identifiers; unsuffixed references expand only to actual captioned subfigures. Image animations use unchanged original summary images. Source HTML tables retain cell text, headings, row/column spans, semantic alignment and native math markup without scripts or network dependencies. Source table slideshow frames retain their original before/after or exercise/answer contents. Photographs and decorative document imagery remain excluded.",
   "licence": "CC BY-NC-ND 4.0; original assets and source captions unchanged",
   "allBundledAssetsSelfContained": true,
-  "catalogueSHA256": "e861b2a0c1270f60a9ca4914052d10e051798e13f98e06591287c537885d30a2",
+  "catalogueSHA256": "faa5c7db4b7bc0ae494866d7b45b30d7a31361b31971811861ecfa695f83e022",
   "unresolvedReferenceReasons": {
-    "HTML table or figure with no original static image asset": 130,
     "Illustrated historical document, not a diagram": 1,
+    "No corresponding saved source figure": 7,
+    "No corresponding saved source table": 1,
     "Shanghai skyline photographs, not diagrams": 1
   }
 }

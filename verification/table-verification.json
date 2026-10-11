@@ -1,0 +1,44 @@
+{
+  "checkCount": 14,
+  "failures": 0,
+  "actualSourceTablePanelsChecked": 128,
+  "checks": {
+    "allTableCellsHeadersSpansAndSourceLinksMatchActualHTML": true,
+    "allTableFilesMatchAuditHashes": true,
+    "allTableFragmentsInert": true,
+    "KnownFarmersAndGrainSourceValuesRetained": true,
+    "KnownTradeColumnSpanRetained": true,
+    "OriginalAfterLoanFrameRetained": true,
+    "OriginalLiteralLaTeXRetained": true,
+    "SyntheticSpansAndSemanticAlignmentPreserved": true,
+    "SyntheticEmphasisSubscriptSuperscriptAndBreakPreserved": true,
+    "SyntheticSourceLinkIsInertMetadata": true,
+    "SyntheticTeXScriptConvertedToLiteralText": true,
+    "SyntheticNativeMathMLRetained": true,
+    "SyntheticExecutableAndExternalResourceMarkupRemoved": true,
+    "FigureAndTableNumberNamespacesRemainDistinct": true
+  },
+  "checked": "2026-10-11",
+  "catalogueSHA256": "faa5c7db4b7bc0ae494866d7b45b30d7a31361b31971811861ecfa695f83e022",
+  "originalImageAssetsUnchangedFromPreviousRelease": 525,
+  "originalImagePassageMappingsPreserved": 1044,
+  "selectedTableFigures": 87,
+  "bundledTableAssets": 128,
+  "passagesWithTables": 164,
+  "tablesWithOriginalLiteralLaTeX": [
+    "Tables/macroeconomics/figure-6-14ad.html",
+    "Tables/macroeconomics/figure-7-6.html",
+    "Tables/microeconomics/figure-7-11.html"
+  ],
+  "actualNumberedTableCaptionsInSavedSource": 0,
+  "unresolvedExternalTableReference": {
+    "passage": "CORE Macro U06 S11 P029",
+    "text": "Table 2",
+    "reason": "Refers to the external UK ONS Household Debt Inequalities page; no corresponding table is in the saved textbook source"
+  },
+  "checkedCommand": "python3 scripts/import_diagrams.py import-source --verify-tables",
+  "limitations": [
+    "Source tables with literal LaTeX keep that original notation; no MathJax or network assets are fetched.",
+    "Explicit external publication Figure/Table references absent from saved textbook HTML are audited, without invented associations."
+  ]
+}

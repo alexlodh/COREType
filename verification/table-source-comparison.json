@@ -1,0 +1,18 @@
+{
+  "version": 1,
+  "method": "Independent BeautifulSoup HTML parsing of saved source and bundled fragments",
+  "parserVersion": "4.12.2",
+  "sourceRoot": "import-source/source",
+  "verified": {
+    "tableAssets": 128,
+    "rows": 779,
+    "cells": 3608,
+    "spanCells": 109,
+    "inlineFormats": 429,
+    "inertLinks": 12
+  },
+  "sourceHTMLPages": 59,
+  "catalogueSHA256": "faa5c7db4b7bc0ae494866d7b45b30d7a31361b31971811861ecfa695f83e022",
+  "errors": [],
+  "passed": true
+}
