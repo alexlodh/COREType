@@ -8,7 +8,7 @@ The current app version is **1.5.0**. It removes the remaining-error and complet
 
 - The prebuilt ZIP requires an **Apple silicon Mac** (M1 or later) and **macOS 14 or later**. Intel builds have not been verified.
 - The app works offline after installation. No account, browser or external runtime is needed to use it.
-- Downloading this private GitHub repository requires a GitHub account that has been granted repository access. Receiving a ZIP directly does not require a GitHub account.
+- This repository is public. Downloading the app or source requires no GitHub account or sign-in.
 - The bundle is **ad hoc signed**, not Developer ID signed or notarized. Downloaded copies may need an app-specific approval; see [Opening a downloaded app](#opening-a-downloaded-app).
 
 Existing native UI observations were made on Apple silicon with macOS 26.6.2. The declared minimum OS is not a claim that every supported OS version has been tested.
@@ -17,29 +17,40 @@ Existing native UI observations were made on Apple silicon with macOS 26.6.2. Th
 
 ### Download from GitHub and install the prebuilt app
 
-Install [GitHub CLI](https://cli.github.com/) and Git first. If you already use Homebrew, `brew install gh` installs GitHub CLI. If macOS prompts to install Command Line Tools when you use Git, finish that installation before cloning.
-
-Authenticate using an account with repository access, then run these commands from a directory where you want to keep the downloaded project:
+Open Terminal and run the following commands. They download the app, matching checksum and installer into a new folder in Downloads, then install the app. **Git, GitHub CLI, Homebrew and Xcode are not required.**
 
 ```sh
-gh auth login --hostname github.com --git-protocol https --web
-gh repo clone alexlodh/COREType -- --depth 1
-cd COREType
-bash scripts/install-app.sh
+coretype_download_dir=$(mktemp -d "$HOME/Downloads/COREType.XXXXXX") &&
+cd "$coretype_download_dir" &&
+curl -fL https://raw.githubusercontent.com/alexlodh/COREType/main/distribution/COREType-macOS.zip -o COREType-macOS.zip &&
+curl -fL https://raw.githubusercontent.com/alexlodh/COREType/main/distribution/SHA256.txt -o SHA256.txt &&
+curl -fL https://raw.githubusercontent.com/alexlodh/COREType/main/distribution/install-app.sh -o install-app.sh &&
+bash install-app.sh &&
 open "$HOME/Applications/COREType.app"
 ```
 
-The installer checks `distribution/SHA256.txt`, extracts a complete app bundle, checks its executable permission and code signature, and installs it into **your own** `~/Applications`. It uses the macOS tools already available on the device; it does not compile the app or require `sudo`. Its checksum check detects changes to the ZIP relative to the supplied manifest; obtain both files and the installer from a source you trust.
+The `&&` separators stop the sequence if a download or installation fails. You can also download the [app ZIP](https://raw.githubusercontent.com/alexlodh/COREType/main/distribution/COREType-macOS.zip), [checksum](https://raw.githubusercontent.com/alexlodh/COREType/main/distribution/SHA256.txt) and [installer](https://raw.githubusercontent.com/alexlodh/COREType/main/distribution/install-app.sh) individually, then follow [Install a ZIP received directly](#install-a-zip-received-directly).
+
+The installer checks the matching `SHA256.txt`, extracts a complete app bundle, checks its executable permission and code signature, and installs it into **your own** `~/Applications`. It uses the macOS tools already available on the device; it does not compile the app or require `sudo`. Its checksum check detects changes to the ZIP relative to the supplied manifest; obtain both files and the installer from a source you trust.
 
 If COREType is already installed, quit it before updating. The installer checks that the existing bundle is COREType, moves that bundle into your Trash and installs the replacement. Settings and history are stored separately from the app.
 
 To use a different writable Applications directory:
 
 ```sh
-CORETYPE_INSTALL_DIR="/path/to/Applications" bash scripts/install-app.sh
+CORETYPE_INSTALL_DIR="/path/to/Applications" bash install-app.sh
 ```
 
-Repository access errors, including `Repository not found`, require the owner to grant access to the GitHub account you used. Authentication alone does not grant access to a private repository. See the official [GitHub authentication](https://cli.github.com/manual/gh_auth_login) and [cloning](https://cli.github.com/manual/gh_repo_clone) guides.
+If you want a source checkout as well, use Git from a directory where you want to keep the project:
+
+```sh
+git clone --depth 1 https://github.com/alexlodh/COREType.git
+cd COREType
+bash scripts/install-app.sh
+open "$HOME/Applications/COREType.app"
+```
+
+If macOS prompts to install Command Line Tools when you use Git, finish that installation before cloning. The prebuilt download method above avoids that prerequisite.
 
 ### Install a ZIP received directly
 
@@ -51,7 +62,7 @@ bash install-app.sh COREType-macOS.zip
 open "$HOME/Applications/COREType.app"
 ```
 
-Use the folder where you saved the files if it is different from Downloads. The sender can share these files without giving access to the repository.
+Use the folder where you saved the files if it is different from Downloads. These are also available through the public download links above.
 
 ### Build and install from source
 
@@ -61,7 +72,7 @@ Building requires Apple's Command Line Tools (or Xcode), Swift and Python 3. To 
 xcode-select --install
 ```
 
-Wait for that installation to finish. Clone the repository using the GitHub commands above if you have not already done so. From the repository root, quit any running COREType app and run:
+Wait for that installation to finish. Clone the repository using the `git clone` commands above if you have not already done so. From the repository root, quit any running COREType app and run:
 
 ```sh
 swift --version
@@ -107,7 +118,7 @@ bash scripts/install-app.sh
 open "$HOME/Applications/COREType.app"
 ```
 
-If you built from source, rerun the source build command after pulling instead. For a directly shared ZIP, obtain the new ZIP and matching checksum from the sender and rerun the installer.
+If you built from source, rerun the source build command after pulling instead. For a prebuilt download, quit COREType and repeat the download-and-install commands above. For a directly shared ZIP, obtain the new ZIP and matching checksum from the sender and rerun the installer.
 
 To uninstall, quit COREType and move `~/Applications/COREType.app` to Trash in Finder. Deleting the app leaves your history and preferences available for a later reinstall. To remove those too, separately move `~/Library/Application Support/COREType` to Trash.
 
@@ -184,7 +195,11 @@ Build the app ZIP and refresh its checksum:
 bash scripts/package-app.sh
 ```
 
-Packaging builds into a temporary directory, archives the complete app with macOS `ditto`, extracts it again and verifies its signature, executable and bundle metadata before updating `distribution/COREType-macOS.zip`, `distribution/SHA256.txt` and a copy of `install-app.sh`. It packages the current source version; the included installer supports Apple silicon. Upload/share those three files together. Future Developer ID distribution requires a signing certificate and Apple's notarization workflow; an ad hoc signature does not provide that approval.
+Packaging builds into a temporary directory, archives the complete app with macOS `ditto`, extracts it again and verifies its signature, executable and bundle metadata before updating `distribution/COREType-macOS.zip`, `distribution/SHA256.txt` and a copy of `install-app.sh`. It packages the current source version; the included installer supports Apple silicon. Upload/share those three files together. This script currently produces an ad hoc signed app.
+
+### Release signing and notarization
+
+Making the repository public does not change macOS signing or Gatekeeper approval. For future releases, use a **Developer ID Application** certificate, enable the hardened runtime and secure timestamp, submit the signed app to Apple's notary service, then staple the accepted ticket before creating the final ZIP. The [COREType notarization guide](docs/NOTARIZATION.md) covers enrollment, certificate setup and commands for this project's existing build workflow. The current download has not completed that process.
 
 Compiler and SwiftPM caches stay inside `.build`. `scripts/swift-env.sh` uses the native SwiftPM backend for compatibility with the recorded Command Line Tools setup. Its build-process sandbox flag affects SwiftPM compilation, not macOS app security. `ViewState` aliases `SwiftUI.State` to support toolchains where the newer `@State` macro plugin is supplied only with Xcode.
 
