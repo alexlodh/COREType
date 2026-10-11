@@ -56,8 +56,10 @@ public struct FigureCatalogue: Codable {
     public let diagrams: [TextbookFigure]
     public let passageFigures: [String: [String]]
     public let explicitCrossBookReferences: [String: [String]]
+    private let figuresByID: [String: TextbookFigure]
     public init(diagrams: [TextbookFigure] = [], passageFigures: [String: [String]] = [:], explicitCrossBookReferences: [String: [String]] = [:]) {
         self.diagrams = diagrams; self.passageFigures = passageFigures; self.explicitCrossBookReferences = explicitCrossBookReferences
+        figuresByID = Dictionary(diagrams.map { ($0.id, $0) }, uniquingKeysWith: { first, _ in first })
     }
     enum CodingKeys: String, CodingKey { case diagrams, passageFigures, explicitCrossBookReferences }
     public init(from decoder: Decoder) throws {
@@ -65,6 +67,7 @@ public struct FigureCatalogue: Codable {
         diagrams = try values.decode([TextbookFigure].self, forKey: .diagrams)
         passageFigures = try values.decode([String: [String]].self, forKey: .passageFigures)
         explicitCrossBookReferences = try values.decodeIfPresent([String: [String]].self, forKey: .explicitCrossBookReferences) ?? [:]
+        figuresByID = Dictionary(diagrams.map { ($0.id, $0) }, uniquingKeysWith: { first, _ in first })
     }
     public func figures(for passage: Passage) -> [TextbookFigure] {
         let references = passageFigures[passage.id] ?? []
@@ -72,10 +75,11 @@ public struct FigureCatalogue: Codable {
         return references.compactMap { id in
             guard seen.insert(id).inserted else { return nil }
             // A cross-book association requires explicit evidence in the imported catalogue.
-            return diagrams.first { $0.id == id && ($0.book == passage.book || (explicitCrossBookReferences[passage.id] ?? []).contains(id)) }
+            guard let figure = figuresByID[id], figure.book == passage.book || (explicitCrossBookReferences[passage.id] ?? []).contains(id) else { return nil }
+            return figure
         }
     }
-    /// Only the corresponding local image or table resource is allowed in the viewer.
+    /// Only the corresponding local image or table resource is allowed in the typing document.
     public func assetURL(_ asset: FigureAsset, root: URL) -> URL? {
         let folder: String
         let extensions: Set<String>

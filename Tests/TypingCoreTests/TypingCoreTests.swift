@@ -142,4 +142,75 @@ final class TypingCoreTests {
         try Data("invalid".utf8).write(to: file.url)
         XCTAssertThrowsError(try file.load())
     }
+
+    func testTextbookMediaPreferenceMigratesWithoutResettingSettingsOrHistory() throws {
+        XCTAssertTrue(Preferences().showTextbookMedia)
+        let directory = FileManager.default.temporaryDirectory.appendingPathComponent("COREType-preference-migration-\(UUID().uuidString)")
+        defer { try? FileManager.default.removeItem(at: directory) }
+        let file = StateFile(url: directory.appendingPathComponent("state.json"))
+        XCTAssertTrue(try file.load().preferences.showTextbookMedia)
+
+        var preferences = Preferences()
+        preferences.selectedSections = ["microeconomics-1-6", "macroeconomics-6-3"]
+        preferences.mode = .timed
+        preferences.duration = 47
+        preferences.order = .random
+        preferences.flexiblePunctuation = false
+        preferences.fontSize = 29
+        preferences.bookFilter = "macroeconomics"
+        var engine = TypingEngine(text: "abcde", mode: .passage)
+        engine.type("x", at: 0)
+        engine.backspace(at: 1)
+        for (index, character) in "abcde".enumerated() { engine.type(character, at: Double(index) * 15 + 2) }
+        let result = TestResult(id: UUID(uuidString: "11335577-2244-6688-AAAA-BBCCDDEEFF00")!,
+                                date: Date(timeIntervalSince1970: 1_793_318_400),
+                                passageID: "CORE Micro U01 S06 P008", label: "1.6 A model of production",
+                                book: "Microeconomics", mode: .passage, duration: 47,
+                                paragraphCount: 1, reason: "Passage complete", metrics: engine.metrics(at: 62))
+        let state = SavedState(preferences: preferences, results: [result])
+        let encoder = JSONEncoder()
+        encoder.outputFormatting = [.sortedKeys]
+
+        // Release 1.2 stored every existing field but had no inline-media
+        // setting. Loading it must add the default without resetting a scope,
+        // custom duration, punctuation choice, or any saved result.
+        var legacyObject = try JSONSerialization.jsonObject(with: encoder.encode(state)) as! [String: Any]
+        var legacyPreferences = legacyObject["preferences"] as! [String: Any]
+        legacyPreferences.removeValue(forKey: "showTextbookMedia")
+        legacyObject["preferences"] = legacyPreferences
+        try FileManager.default.createDirectory(at: directory, withIntermediateDirectories: true)
+        try JSONSerialization.data(withJSONObject: legacyObject, options: [.sortedKeys]).write(to: file.url)
+
+        var restored = try file.load()
+        XCTAssertTrue(restored.preferences.showTextbookMedia)
+        XCTAssertEqual(restored.preferences.selectedSections, preferences.selectedSections)
+        XCTAssertEqual(restored.preferences.mode, preferences.mode)
+        XCTAssertEqual(restored.preferences.duration, preferences.duration)
+        XCTAssertEqual(restored.preferences.order, preferences.order)
+        XCTAssertEqual(restored.preferences.flexiblePunctuation, preferences.flexiblePunctuation)
+        XCTAssertEqual(restored.preferences.fontSize, preferences.fontSize)
+        XCTAssertEqual(restored.preferences.bookFilter, preferences.bookFilter)
+        XCTAssertEqual(try encoder.encode(restored.results), try encoder.encode(state.results))
+
+        // The user's opt-out survives a disk round trip and affects only its
+        // preference field; history, including corrected mistakes, is exact.
+        restored.preferences.showTextbookMedia = false
+        try file.save(restored)
+        let optedOut = try file.load()
+        XCTAssertFalse(optedOut.preferences.showTextbookMedia)
+        XCTAssertEqual(try encoder.encode(optedOut.results), try encoder.encode(state.results))
+        var afterPreferences = try JSONSerialization.jsonObject(with: encoder.encode(optedOut.preferences)) as! [String: Any]
+        afterPreferences.removeValue(forKey: "showTextbookMedia")
+        // JSONEncoder does not define iteration order for a Set.
+        afterPreferences["selectedSections"] = optedOut.preferences.selectedSections.sorted()
+        legacyPreferences["selectedSections"] = preferences.selectedSections.sorted()
+        XCTAssertEqual(try JSONSerialization.data(withJSONObject: afterPreferences, options: [.sortedKeys]),
+                       try JSONSerialization.data(withJSONObject: legacyPreferences, options: [.sortedKeys]))
+
+        // Invalid present values remain errors, rather than silently restoring
+        // defaults and discarding the user's saved state.
+        legacyPreferences["showTextbookMedia"] = "off"
+        legacyObject["preferences"] = legacyPreferences
+        XCTAssertThrowsError(try JSONDecoder().decode(SavedState.self, from: JSONSerialization.data(withJSONObject: legacyObject)))
+    }
 }

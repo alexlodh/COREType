@@ -22,7 +22,6 @@ import TypingCore
     @Published var notice: String?
     @Published var showingSettings = false
     @Published var showingInfo = false
-    @Published var showingFigures = false
     private var appliedSelection: Set<String>
     private var pool: [Passage] = []
     private var picker = PassagePicker()
@@ -72,9 +71,6 @@ import TypingCore
         observers.append(NotificationCenter.default.addObserver(forName: NSApplication.didResignActiveNotification, object: nil, queue: .main) { [weak self] _ in
             Task { @MainActor in self?.pause() }
         })
-        observers.append(NotificationCenter.default.addObserver(forName: NSApplication.willTerminateNotification, object: nil, queue: .main) { [weak self] _ in
-            Task { @MainActor in self?.archive(reason: "App closed"); self?.save() }
-        })
     }
     var selectedCount: Int { library.scope(selection).count }
     var activeCount: Int { pool.count }
@@ -83,7 +79,6 @@ import TypingCore
     var metrics: Metrics { engine?.metrics(at: now) ?? Metrics(elapsed: 0, wpm: 0, rawWPM: 0, accuracy: 100, errorRate: 0, attempts: 0, mistakes: 0, corrected: 0, uncorrected: 0, correctCharacters: 0) }
     var phase: Phase { engine?.phase ?? .ready }
     var currentFigures: [TextbookFigure] { current.map { figureCatalogue.figures(for: $0) } ?? [] }
-    func showFigures() { pause(); showingFigures = true }
     func save() {
         guard persistenceEnabled else { return }
         do { try stateFile.save(SavedState(preferences: preferences, results: Array(results.prefix(1000)))) }
@@ -117,6 +112,7 @@ import TypingCore
     }
     func bookFilter(_ value: String) { preferences.bookFilter = value; save() }
     func fontSize(_ value: Double) { preferences.fontSize = value; save() }
+    func showTextbookMedia(_ enabled: Bool) { preferences.showTextbookMedia = enabled; save() }
     func reset(to passage: Passage) {
         picker.remember(passage)
         current = passage; initial = passage
@@ -136,7 +132,7 @@ import TypingCore
     }
     func focus() { focusToken += 1 }
     func type(_ text: String) {
-        guard page == "practice", !showingFigures, engine != nil else { return }
+        guard page == "practice", engine != nil else { return }
         now = ProcessInfo.processInfo.systemUptime
         for char in text where !char.isNewline && !char.unicodeScalars.contains(where: { CharacterSet.controlCharacters.contains($0) }) {
             let more = engine!.type(char, at: now)
@@ -157,7 +153,6 @@ import TypingCore
     }
     func pause() { now = ProcessInfo.processInfo.systemUptime; engine?.pause(at: now); saveFinished() }
     func pauseOrResume() {
-        guard !showingFigures else { return }
         now = ProcessInfo.processInfo.systemUptime
         if phase == .paused { engine?.resume(at: now); focus() } else { pause() }
     }

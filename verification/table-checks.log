@@ -1,7 +1,7 @@
 {
-  "checkCount": 14,
+  "checkCount": 18,
   "failures": 0,
-  "actualSourceTablePanelsChecked": 128,
+  "actualSourceTablePanelsChecked": 95,
   "checks": {
     "allTableCellsHeadersSpansAndSourceLinksMatchActualHTML": true,
     "allTableFilesMatchAuditHashes": true,
@@ -10,6 +10,10 @@
     "KnownTradeColumnSpanRetained": true,
     "OriginalAfterLoanFrameRetained": true,
     "OriginalLiteralLaTeXRetained": true,
+    "OriginalSourceSummaryTablesSelectedWithoutRepeatedSteps": true,
+    "CompleteOriginalLeverageFrameSelectedWithSourceEvidence": true,
+    "SourceSummaryInconsistencyPreservedAndAudited": true,
+    "NoSupersededGeneratedTableFilesRemain": true,
     "SyntheticSpansAndSemanticAlignmentPreserved": true,
     "SyntheticEmphasisSubscriptSuperscriptAndBreakPreserved": true,
     "SyntheticSourceLinkIsInertMetadata": true,

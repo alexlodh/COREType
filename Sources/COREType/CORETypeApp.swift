@@ -29,9 +29,9 @@ final class AppDelegate: NSObject, NSApplicationDelegate {
         .commands {
             CommandGroup(replacing: .newItem) {}
             CommandMenu("Practice") {
-                Button("Repeat test") { model.restart() }.keyboardShortcut("r").disabled(model.showingFigures)
-                Button("Next paragraph") { model.next() }.keyboardShortcut("n").disabled(model.showingFigures)
-                Button("Pause / Resume") { model.pauseOrResume() }.keyboardShortcut("p").disabled(model.showingFigures)
+                Button("Repeat test") { model.restart() }.keyboardShortcut("r")
+                Button("Next paragraph") { model.next() }.keyboardShortcut("n")
+                Button("Pause / Resume") { model.pauseOrResume() }.keyboardShortcut("p")
                 Divider()
                 Button("Show practice") { model.navigate("practice") }.keyboardShortcut("1")
                 Button("Show history") { model.navigate("history") }.keyboardShortcut("2")

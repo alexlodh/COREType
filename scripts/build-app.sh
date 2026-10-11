@@ -3,7 +3,12 @@ set -euo pipefail
 cd "$(dirname "$0")/.."
 bash scripts/swift-env.sh build --product COREType -c release
 binary_dir=$(bash scripts/swift-env.sh build -c release --show-bin-path)
-app="${CORETYPE_APP_OUTPUT:-$PWD/dist/COREType.app}"
+output="${CORETYPE_APP_OUTPUT:-$PWD/dist/COREType.app}"
+# Assemble the complete bundle in a fresh local directory. Never overlay an
+# older release: removed source files and resources must not survive a rebuild.
+staging=$(mktemp -d /tmp/COREType-Build.XXXXXX)
+trap 'rm -rf "$staging"' EXIT
+app="$staging/COREType.app"
 mkdir -p "$app/Contents/MacOS" "$app/Contents/Resources"
 cp "$binary_dir/COREType" "$app/Contents/MacOS/COREType"
 cp -R Sources/COREType/Resources/. "$app/Contents/Resources/"
@@ -21,8 +26,8 @@ cat > "$app/Contents/Info.plist" <<'PLIST'
 <key>CFBundleExecutable</key><string>COREType</string>
 <key>CFBundleIconFile</key><string>COREType</string>
 <key>CFBundlePackageType</key><string>APPL</string>
-<key>CFBundleShortVersionString</key><string>1.2</string>
-<key>CFBundleVersion</key><string>3</string>
+<key>CFBundleShortVersionString</key><string>1.3</string>
+<key>CFBundleVersion</key><string>4</string>
 <key>LSMinimumSystemVersion</key><string>14.0</string>
 <key>NSHighResolutionCapable</key><true/>
 <key>NSPrincipalClass</key><string>NSApplication</string>
@@ -46,4 +51,31 @@ for path in paths:
 PY
 codesign --force --sign - "$app"
 codesign --verify --strict "$app"
-printf '\nBuilt: %s\n' "$app"
+# Preserve the previous generated app until the replacement is fully verified.
+# A misconfigured output must never trash an unrelated file or application.
+if [[ -e "$output" ]]; then
+    python3 - "$output" <<'PY'
+from pathlib import Path
+import plistlib
+import sys
+
+output = Path(sys.argv[1])
+if output.is_symlink() or not output.is_dir():
+    raise SystemExit('Refusing to replace a non-directory or symlink app output: ' + str(output))
+try:
+    info = plistlib.loads((output / 'Contents/Info.plist').read_bytes())
+except (OSError, plistlib.InvalidFileException) as error:
+    raise SystemExit('Refusing to replace an unrecognized app output: ' + str(error))
+if info.get('CFBundleIdentifier') != 'org.sasha.coretype':
+    raise SystemExit('Refusing to replace an app that is not COREType: ' + str(output))
+PY
+    xcrun swiftc -module-cache-path .build/modules scripts/trash-items.swift -o .build/TrashItems
+    mkdir -p work
+    cleanup_record="work/build-cleanup-$(date +%Y%m%d-%H%M%S)-$$.json"
+    .build/TrashItems "$output" > "$cleanup_record"
+    printf 'Previous bundle moved to Trash: %s\n' "$cleanup_record"
+fi
+mkdir -p "$(dirname "$output")"
+mv "$app" "$output"
+codesign --verify --strict "$output"
+printf '\nBuilt: %s\n' "$output"

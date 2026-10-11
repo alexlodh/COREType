@@ -9,14 +9,14 @@
   "selectedFigures": 585,
   "selectedDiagrams": 515,
   "selectedTableFigures": 87,
-  "bundledAssets": 653,
-  "assetBytes": 36424330,
+  "bundledAssets": 620,
+  "assetBytes": 36386606,
   "bundledImageAssets": 525,
-  "bundledTableAssets": 128,
+  "bundledTableAssets": 95,
   "assetsByExtension": {
     ".svg": 517,
     ".jpg": 8,
-    ".html": 128
+    ".html": 95
   },
   "passagesWithNumericFigureReferences": 1148,
   "passagesWithNumericTableReferences": 1,
@@ -50,10 +50,10 @@
       "microeconomics-5.28"
     ]
   },
-  "matchingPolicy": "Explicit Figure/Table namespace and numbers; passage book unless another book is named immediately after the reference. Exact caption numbers or exact source panel identifiers; unsuffixed references expand only to actual captioned subfigures. Image animations use unchanged original summary images. Source HTML tables retain cell text, headings, row/column spans, semantic alignment and native math markup without scripts or network dependencies. Source table slideshow frames retain their original before/after or exercise/answer contents. Photographs and decorative document imagery remain excluded.",
+  "matchingPolicy": "Explicit Figure/Table namespace and numbers; passage book unless another book is named immediately after the reference. Exact caption numbers or exact source panel identifiers; unsuffixed references expand only to actual captioned subfigures. Image animations use unchanged original summary images. Source HTML tables retain cell text, headings, row/column spans, semantic alignment and native math markup without scripts or network dependencies. Repeated source table slideshow steps use the source-authored static summary; the complete final leverage table and distinct before/after or exercise/answer tables are retained with recorded source evidence. Photographs and decorative document imagery remain excluded.",
   "licence": "CC BY-NC-ND 4.0; original assets and source captions unchanged",
   "allBundledAssetsSelfContained": true,
-  "catalogueSHA256": "faa5c7db4b7bc0ae494866d7b45b30d7a31361b31971811861ecfa695f83e022",
+  "catalogueSHA256": "0e7cd966cdd835de9c856fca6c3c20e2ba4357b67fc346f57cbe6f5c9c90b3e8",
   "unresolvedReferenceReasons": {
     "Illustrated historical document, not a diagram": 1,
     "No corresponding saved source figure": 7,

@@ -8,7 +8,23 @@ public struct Preferences: Codable {
     public var flexiblePunctuation = true
     public var fontSize = 23.0
     public var bookFilter = "all"
+    public var showTextbookMedia = true
     public init() {}
+
+    private enum CodingKeys: String, CodingKey {
+        case selectedSections, mode, duration, order, flexiblePunctuation, fontSize, bookFilter, showTextbookMedia
+    }
+    public init(from decoder: Decoder) throws {
+        let values = try decoder.container(keyedBy: CodingKeys.self)
+        selectedSections = try values.decode(Set<String>.self, forKey: .selectedSections)
+        mode = try values.decode(TestMode.self, forKey: .mode)
+        duration = try values.decode(Int.self, forKey: .duration)
+        order = try values.decode(PassagePicker.Order.self, forKey: .order)
+        flexiblePunctuation = try values.decode(Bool.self, forKey: .flexiblePunctuation)
+        fontSize = try values.decode(Double.self, forKey: .fontSize)
+        bookFilter = try values.decode(String.self, forKey: .bookFilter)
+        showTextbookMedia = try values.decodeIfPresent(Bool.self, forKey: .showTextbookMedia) ?? true
+    }
 }
 public struct TestResult: Codable, Identifiable {
     public let id: UUID

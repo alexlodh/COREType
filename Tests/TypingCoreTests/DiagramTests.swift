@@ -33,12 +33,12 @@ extension TypingCoreTests {
         ], explicitCrossBookReferences: ["explicit-macro-passage": [micro.id]])
 
         // An explicit same-book cross-chapter reference is valid. Duplicate and
-        // unknown identifiers must not add panels, and another book is excluded.
+        // unknown identifiers must not add figures, and another book is excluded.
         XCTAssertEqual(catalogue.figures(for: p).map(\.id), [micro.id, crossChapter.id])
         XCTAssertEqual(catalogue.figures(for: diagramPassage(id: "macro-passage", book: "macroeconomics")).map(\.id), [macro.id])
         XCTAssertEqual(catalogue.figures(for: diagramPassage(id: "explicit-macro-passage", book: "macroeconomics")).map(\.id), [macro.id, micro.id])
         // Text that happens to contain a figure number is insufficient: only
-        // source-proven passage associations enable the viewer.
+        // source-proven passage associations enable the accompanying media.
         XCTAssertTrue(catalogue.figures(for: diagramPassage(id: "unmapped-passage")).isEmpty)
         XCTAssertTrue(FigureCatalogue().figures(for: p).isEmpty)
 

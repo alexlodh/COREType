@@ -4,15 +4,15 @@
   "parserVersion": "4.12.2",
   "sourceRoot": "import-source/source",
   "verified": {
-    "tableAssets": 128,
-    "rows": 779,
-    "cells": 3608,
-    "spanCells": 109,
-    "inlineFormats": 429,
+    "tableAssets": 95,
+    "rows": 618,
+    "cells": 2663,
+    "spanCells": 96,
+    "inlineFormats": 361,
     "inertLinks": 12
   },
   "sourceHTMLPages": 59,
-  "catalogueSHA256": "faa5c7db4b7bc0ae494866d7b45b30d7a31361b31971811861ecfa695f83e022",
+  "catalogueSHA256": "0e7cd966cdd835de9c856fca6c3c20e2ba4357b67fc346f57cbe6f5c9c90b3e8",
   "errors": [],
   "passed": true
 }

@@ -33,6 +33,7 @@ func XCTAssertThrowsError<T>(_ value: @autoclosure () throws -> T, file: StaticS
             ("ordered, random, singleton, and empty scopes", tests.testOrderRandomScopeAndEmptySelection),
             ("longest complete passage", tests.testLongestPassageIsCompleteAndNotTruncated),
             ("settings/history persistence and corrupt data", tests.testSettingsHistoryAtomicRoundTripAndCorruption),
+            ("inline-media setting migration and persistent opt-out", tests.testTextbookMediaPreferenceMigratesWithoutResettingSettingsOrHistory),
             ("source-proven diagram matching and book isolation", tests.testDiagramMatchingUsesProvenAssociationsAndBookIsolation),
             ("local diagram/table assets and invalid-path rejection", tests.testDiagramAssetsRemainInsideLocalBundle),
             ("real diagram catalogue and offline resources", tests.testActualDiagramCatalogueHasValidPassagesAndOfflineAssets),

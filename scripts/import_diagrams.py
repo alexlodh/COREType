@@ -1,10 +1,11 @@
 #!/usr/bin/env python3
-"""Bundle unchanged source diagrams for explicit figure references in the passage pool.
+"""Bundle original source diagrams and tables explicitly referenced by passages.
 
 Uses the saved HTML and the audited library, never edits either. curl performs
 build-time downloads; no network access is needed by the installed app. Reusing
 already downloaded assets permits a completely offline audit with --offline.
-Only original static figure images are selected, not slideshow reconstructions.
+Original static images and source-authored table summaries are preferred over
+repeated slideshow steps. Distinct before/after and exercise/answer tables remain.
 """
 import argparse
 from collections import Counter, defaultdict
@@ -16,6 +17,7 @@ import json
 from pathlib import Path
 import re
 import subprocess
+import uuid
 import xml.etree.ElementTree as ET
 
 BOOKS = ('microeconomics', 'macroeconomics')
@@ -91,6 +93,21 @@ TABLE_FRAME_GROUPS = {
     ('macroeconomics', '6.20b'): ('figure-6-20a', 'figure-6-20b'),
     ('macroeconomics', '6.20d'): ('figure-6-20c', 'figure-6-20d'),
     ('macroeconomics', '6.20f'): ('figure-6-20e', 'figure-6-20f'),
+}
+
+# These saved source slides contain explicit static summaries. Keep the source's
+# own table instead of presenting repeated instructional animation steps inline.
+# The leverage summary is intentionally incomplete; its final source frame fills
+# the blank cells without changing any earlier nonempty cell.
+STATIC_TABLE_FRAMES = {
+    ('microeconomics', '2.5'): 'figure-2-5',
+    ('microeconomics', '2.9'): 'figure-2-9',
+    ('microeconomics', '2.10'): 'figure-2-10',
+    ('microeconomics', '3.4'): 'figure-3-4',
+    ('microeconomics', '3.10'): 'figure-3-10',
+    ('microeconomics', '3.21'): 'figure-3-21',
+    ('microeconomics', '3.22'): 'figure-3-22',
+    ('macroeconomics', '6.14a'): 'figure-6-14ae',
 }
 
 SAFE_TABLE_TAGS = {
@@ -178,17 +195,54 @@ def source_table_assets(figure, book, page, number, namespace='figure'):
     if not own_tables:
         return []
     frames = [figure]
+    selection = dict(policy='Original numbered source table',
+                     selectedSourceIdentifiers=[figure.attrs.get('id', '')])
     parent = figure.parent
     if parent and parent.has_class('slides'):
         siblings = [n for n in parent.children if isinstance(n, Node) and n.has_class('figure')]
+        by_id = {n.attrs.get('id'): n for n in siblings}
         grouped = TABLE_FRAME_GROUPS.get((book, number))
-        if grouped:
-            by_id = {n.attrs.get('id'): n for n in siblings}
+        static = STATIC_TABLE_FRAMES.get((book, number))
+        if static:
+            assert static in by_id, (book, number, static)
+            frames = [by_id[static]]
+            selected_table = next(n for n in frames[0].descendants() if n.tag == 'table')
+            if book == 'microeconomics':
+                assert frames[0].has_class('summary'), (book, number, static)
+                selection = dict(policy='Source-authored static summary table',
+                                 selectedSourceIdentifiers=[static],
+                                 sourceSummaryClass=frames[0].attrs['class'])
+                if number == '3.22':
+                    summary_cells = table_summary(selected_table)['cellText']
+                    animation_cells = [table_summary(next(n for n in frame.descendants() if n.tag == 'table'))['cellText']
+                                       for frame in siblings if frame is not frames[0]]
+                    assert summary_cells[24] == '10' and all(cells[24] == '12' for cells in animation_cells)
+                    selection['sourceInconsistency'] = dict(
+                        field='Household paid-work cell', summaryValue='10', animationValue='12',
+                        policy='Retain the original static summary unchanged; do not correct source values')
+            else:
+                completed = table_summary(selected_table)['cellText']
+                earlier_tables = [next(n for n in frame.descendants() if n.tag == 'table')
+                                  for frame in siblings if frame is not frames[0]]
+                earlier = [table_summary(table)['cellText'] for table in earlier_tables]
+                assert all(len(cells) == len(completed) and all(not cell or cell == completed[i]
+                           for i, cell in enumerate(cells)) for cells in earlier)
+                assert any(not cell for cells in earlier for cell in cells) and all(completed)
+                selection = dict(policy='Complete original final leverage table',
+                                 selectedSourceIdentifiers=[static],
+                                 precedingSourceIdentifiers=[frame.attrs['id'] for frame in siblings if frame is not frames[0]],
+                                 sourceSummaryClass=figure.attrs['class'],
+                                 completionEvidence='Final source frame fills preceding blank cells; every preceding nonempty cell is unchanged')
+        elif grouped:
             assert all(id_ in by_id for id_ in grouped), (book, number, grouped)
             frames = [by_id[id_] for id_ in grouped]
+            selection = dict(policy='Distinct original before/after or exercise/answer tables',
+                             selectedSourceIdentifiers=list(grouped))
         elif sum(bool(n.find_class('caption')) for n in siblings) == 1:
             # A single numbered figure with a source slideshow table sequence.
             frames = [n for n in siblings if any(t.tag == 'table' for t in n.descendants())]
+            selection = dict(policy='Original source table sequence',
+                             selectedSourceIdentifiers=[frame.attrs.get('id', '') for frame in frames])
     assets = []
     for frame in frames:
         tables = ([frame] if frame.tag == 'table' else []) + [n for n in frame.descendants() if n.tag == 'table']
@@ -210,10 +264,34 @@ def source_table_assets(figure, book, page, number, namespace='figure'):
             assets.append(dict(path='Tables/' + book + '/' + filename, kind='table',
                                source=PAGE_ORIGIN + book + '/' + page + '#' + id_,
                                alt=table.text(), html=fragment + '\n', sourceIdentifier=id_,
+                               sourceFrameClass=frame.attrs.get('class', ''), selectionEvidence=selection,
                                sourceTableSemanticSHA256=hashlib.sha256(safe_table_html(table).encode()).hexdigest(),
                                summary=before,
                                explanatoryText=[n.text() for n in explanation_nodes]))
     return assets
+
+
+def trash_obsolete_tables(project, resources, expected_assets, selected_paths):
+    """Remove only unchanged prior generated tables, recoverably in macOS Trash."""
+    stale = sorted(path for path in (resources / 'Tables').rglob('*.html')
+                   if path.relative_to(resources).as_posix() not in selected_paths)
+    if not stale:
+        return
+    for path in stale:
+        previous = expected_assets.get(path.relative_to(resources).as_posix())
+        if path.is_symlink() or not previous or previous.get('kind') != 'table' or sha(path) != previous['sha256']:
+            raise ValueError('Refusing to remove an unrecognized or modified table resource: ' + str(path))
+    module_cache = project / '.build/modules'
+    module_cache.mkdir(parents=True, exist_ok=True)
+    helper = project / '.build/TrashItems'
+    subprocess.run(['xcrun', 'swiftc', '-module-cache-path', str(module_cache),
+                    str(project / 'scripts/trash-items.swift'), '-o', str(helper)], check=True)
+    result = subprocess.run([str(helper), *(str(path) for path in stale)], check=True, text=True, capture_output=True)
+    moved = json.loads(result.stdout)
+    assert len(moved) == len(stale), 'Not every superseded table reached Trash'
+    cleanup = project / 'work' / ('import-table-cleanup-' + str(uuid.uuid4()) + '.json')
+    cleanup.parent.mkdir(exist_ok=True)
+    cleanup.write_text(json.dumps(moved, indent=2) + '\n')
 
 
 class Node:
@@ -572,6 +650,25 @@ def verify_tables(project, source_work):
     after = fragment('macroeconomics-6.3a', 1)
     checks['OriginalAfterLoanFrameRetained'] = 'After the loan' in after and 'Loan to Julia' in after
     checks['OriginalLiteralLaTeXRetained'] = r'\(X-M\)' in fragment('macroeconomics-7.6') and r'\frac' in fragment('microeconomics-7.11')
+    selection_by_id = {row['id']: row for row in audit['classifications'] if row.get('tableSelection')}
+    checks['OriginalSourceSummaryTablesSelectedWithoutRepeatedSteps'] = all(
+        [asset['path'] for asset in by_id[book + '-' + number]['assets'] if asset['kind'] == 'table']
+        == ['Tables/' + book + '/' + source_id + '.html']
+        and 'summary' in selection_by_id[book + '-' + number]['tableSelection']['sourceSummaryClass'].split()
+        for (book, number), source_id in STATIC_TABLE_FRAMES.items() if book == 'microeconomics')
+    leverage = selection_by_id['macroeconomics-6.14a']['tableSelection']
+    checks['CompleteOriginalLeverageFrameSelectedWithSourceEvidence'] = (
+        [asset['path'] for asset in by_id['macroeconomics-6.14a']['assets'] if asset['kind'] == 'table']
+        == ['Tables/macroeconomics/figure-6-14ae.html']
+        and leverage['selectedSourceIdentifiers'] == ['figure-6-14ae']
+        and bool(leverage['completionEvidence']))
+    inconsistency = selection_by_id['microeconomics-3.22']['tableSelection']['sourceInconsistency']
+    checks['SourceSummaryInconsistencyPreservedAndAudited'] = (
+        inconsistency['summaryValue'] == '10' and inconsistency['animationValue'] == '12'
+        and '10' in fragment('microeconomics-3.22'))
+    selected_table_paths = {asset['path'] for figure in catalogue['diagrams'] for asset in figure['assets'] if asset['kind'] == 'table'}
+    bundled_table_paths = {path.relative_to(resources).as_posix() for path in (resources / 'Tables').rglob('*.html')}
+    checks['NoSupersededGeneratedTableFilesRemain'] = bundled_table_paths == selected_table_paths
     synthetic = DOM()
     synthetic.feed('<table class="data-align-right"><tr><th colspan="3" rowspan="2">Heading</th>'
                    '<td class="align-center" style="text-align:center; width:33%; background:url(https://bad.invalid/x)">'
@@ -713,13 +810,15 @@ def main():
         classifications.append(dict(id=figure_id, source=row['source'], caption=row['caption'],
                                     rationale=rationale, sourceIdentifier=row['sourceIdentifier'],
                                     assetNames=[i['filename'] for i in images],
-                                    tableAssets=[t['path'] for t in table_assets]))
+                                    tableAssets=[t['path'] for t in table_assets],
+                                    tableSelection=table_assets[0]['selectionEvidence'] if table_assets else None))
         for image in row['images']:
             if image['filename'] in EXCLUDED_ASSETS:
                 excluded_secondary.append(dict(figure=figure_id, source=image['source'],
                                                 reason=EXCLUDED_ASSETS[image['filename']]))
     assets += [dict(path=t['path'], source=t['source'], sha256=t['sha256'], bytes=t['bytes'],
                     kind='table', selfContained=True) for t in table_audits.values()]
+    trash_obsolete_tables(project, resources, expected_assets, set(table_audits))
     catalogue = dict(version=2, diagrams=diagrams, passageFigures=mappings,
                      explicitCrossBookReferences=explicit_crossbook,
                      licence='CC BY-NC-ND 4.0',
@@ -744,7 +843,7 @@ def main():
                  passagesWithTables=sum(bool(table_ids.intersection(ids)) for ids in mappings.values()),
                  passageFigureAssociations=sum(map(len, mappings.values())),
                  explicitCrossBookReferences=explicit_crossbook,
-                 matchingPolicy='Explicit Figure/Table namespace and numbers; passage book unless another book is named immediately after the reference. Exact caption numbers or exact source panel identifiers; unsuffixed references expand only to actual captioned subfigures. Image animations use unchanged original summary images. Source HTML tables retain cell text, headings, row/column spans, semantic alignment and native math markup without scripts or network dependencies. Source table slideshow frames retain their original before/after or exercise/answer contents. Photographs and decorative document imagery remain excluded.',
+                 matchingPolicy='Explicit Figure/Table namespace and numbers; passage book unless another book is named immediately after the reference. Exact caption numbers or exact source panel identifiers; unsuffixed references expand only to actual captioned subfigures. Image animations use unchanged original summary images. Source HTML tables retain cell text, headings, row/column spans, semantic alignment and native math markup without scripts or network dependencies. Repeated source table slideshow steps use the source-authored static summary; the complete final leverage table and distinct before/after or exercise/answer tables are retained with recorded source evidence. Photographs and decorative document imagery remain excluded.',
                  licence='CC BY-NC-ND 4.0; original assets and source captions unchanged',
                  allBundledAssetsSelfContained=True, catalogueSHA256=sha(catalogue_path),
                  sourceFiles=html_sources, assets=assets, tableSources=list(table_audits.values()),

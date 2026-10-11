@@ -1,7 +1,12 @@
-[0/1] Planning build
+Another instance of SwiftPM (PID: 34022) is already running using '/Users/alexlodh/Documents/Codex/2026-10-11/task/COREType/.build', waiting until that process has finished execution...[0/1] Planning build
 Building for debugging...
-[0/3] Write swift-version--1AB21518FC5DEDBE.txt
-Build of product 'CoreChecks' complete! (0.12s)
+[0/5] Write sources
+[2/5] Write swift-version--1AB21518FC5DEDBE.txt
+[4/7] Emitting module TypingCore
+[5/7] Compiling TypingCore Figures.swift
+[6/9] Compiling CoreChecks DiagramTests.swift
+[7/9] Emitting module CoreChecks
+Build of product 'CoreChecks' complete! (0.74s)
 warning: '--build-system native' has been deprecated and will be removed in a future release; please report an issue at https://github.com/swiftlang/swift-package-manager/issues if you are unable to adopt the default build system.
 warning: '--build-system native' has been deprecated and will be removed in a future release; please report an issue at https://github.com/swiftlang/swift-package-manager/issues if you are unable to adopt the default build system.
 PASS metric calculation and corrected mistakes
@@ -16,9 +21,10 @@ PASS real-library chapter mapping, search, and filtering
 PASS ordered, random, singleton, and empty scopes
 PASS longest complete passage
 PASS settings/history persistence and corrupt data
+PASS inline-media setting migration and persistent opt-out
 PASS source-proven diagram matching and book isolation
 PASS local diagram/table assets and invalid-path rejection
 PASS real diagram catalogue and offline resources
 PASS table metadata and backward-compatible diagram decoding
 PASS source table cells, headers, and spans
-17 checks, 34545 assertions, 0 failures
+18 checks, 34263 assertions, 0 failures

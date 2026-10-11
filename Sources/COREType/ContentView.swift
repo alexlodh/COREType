@@ -2,30 +2,6 @@ import AppKit
 import SwiftUI
 import TypingCore
 
-// Use the property wrapper through an alias; the SDK's new @State macro needs
-// an Xcode-only plugin that is absent from Command Line Tools.
-typealias ViewState<Value> = SwiftUI.State<Value>
-
-enum Typography {
-    static func font(size: CGFloat, weight: Font.Weight = .regular) -> Font {
-        .custom(weight == .semibold || weight == .bold ? "Arial-BoldMT" : "ArialMT", size: size)
-    }
-
-    static func passageFont(size: CGFloat) -> NSFont {
-        NSFont(name: "ArialMT", size: size) ?? NSFont.systemFont(ofSize: size)
-    }
-}
-
-enum Palette {
-    static let background = Color(red: 0.067, green: 0.09, blue: 0.11)
-    static let sidebar = Color(red: 0.087, green: 0.115, blue: 0.134)
-    static let panel = Color(red: 0.105, green: 0.136, blue: 0.153)
-    static let accent = Color(red: 0.95, green: 0.73, blue: 0.42)
-    static let text = Color(red: 0.88, green: 0.90, blue: 0.87)
-    static let muted = Color(red: 0.53, green: 0.6, blue: 0.63)
-    static let green = Color(red: 0.52, green: 0.78, blue: 0.66)
-}
-
 struct ContentView: View {
     @ObservedObject var model: AppModel
     var body: some View {
@@ -56,7 +32,6 @@ struct ContentView: View {
         .tint(Palette.accent)
         .sheet(isPresented: $model.showingSettings) { SettingsView(model: model) }
         .sheet(isPresented: $model.showingInfo) { InfoView(model: model) }
-        .sheet(isPresented: $model.showingFigures) { FigureView(model: model) }
     }
     func navButton(_ title: String, symbol: String, page: String) -> some View {
         Button { model.navigate(page) } label: { Label(title, systemImage: symbol).font(Typography.font(size: 13, weight: .medium)).padding(.horizontal, 12).padding(.vertical, 9)
@@ -177,22 +152,10 @@ struct PracticeView: View {
                         Spacer()
                         VStack(alignment: .trailing, spacing: 9) {
                             Text("Paragraph \(passage.paragraph)").font(Typography.font(size: 13)).foregroundStyle(Palette.muted)
-                            if !model.currentFigures.isEmpty {
-                                Button { model.showFigures() } label: {
-                                    Label(TextbookAssetLabel.groupLabel(model.currentFigures), systemImage: "chart.bar.doc.horizontal")
-                                        .font(Typography.font(size: 12))
-                                }.buttonStyle(.plain).foregroundStyle(Palette.accent).help("View figures and tables referenced in this passage. Pauses the test.")
-                            }
                         }
                     }.padding(.horizontal, 28).padding(.top, 24).padding(.bottom, 15)
                     Rectangle().fill(.white.opacity(0.05)).frame(height: 1).padding(.horizontal, 28)
                     TypingSurface(model: model).frame(minHeight: 195, maxHeight: .infinity)
-                        .overlay {
-                            if model.phase == .paused {
-                                VStack(spacing: 14) { Image(systemName: "pause.circle").font(Typography.font(size: 29)).foregroundStyle(Palette.accent); Text("Paused").font(Typography.font(size: 22, weight: .semibold)); Text("Timer paused").font(Typography.font(size: 12)).foregroundStyle(Palette.muted); Button("Resume") { model.pauseOrResume() }.buttonStyle(.borderedProminent) }
-                                    .frame(maxWidth: .infinity, maxHeight: .infinity).background(Palette.panel.opacity(0.97))
-                            }
-                        }
                     HStack {
                         Circle().fill(model.phase == .finished ? Palette.green : model.focused ? Palette.accent : Palette.muted).frame(width: 6, height: 6)
                         Text(statusText).font(Typography.font(size: 11))
@@ -321,6 +284,8 @@ struct SettingsView: View {
     var body: some View {
         VStack(alignment: .leading, spacing: 23) {
             HStack { Text("Settings").font(Typography.font(size: 22, weight: .semibold)); Spacer(); Button("Done") { dismiss(); model.focus() }.keyboardShortcut(.defaultAction) }
+            Toggle("Show textbook figures and tables", isOn: Binding(get: { model.preferences.showTextbookMedia }, set: { model.showTextbookMedia($0) }))
+            Text("Show referenced material with the passage as you type.").font(Typography.font(size: 13)).foregroundStyle(Palette.muted)
             Toggle("Accept equivalent keyboard punctuation", isOn: Binding(get: { model.preferences.flexiblePunctuation }, set: { model.configure(punctuation: $0) }))
             Text("Matches straight and curly quotes, and hyphens with en or em dashes. Other characters must match exactly. Source text is unchanged.").font(Typography.font(size: 13)).foregroundStyle(Palette.muted)
             HStack { Text("Passage text size"); Spacer(); Text("\(Int(model.preferences.fontSize)) pt").monospacedDigit() }
@@ -353,7 +318,7 @@ struct InfoView: View {
                     Text("6,893 paragraphs · 20 chapters · 271 sections").font(Typography.font(size: 14, weight: .semibold))
                     Text("The sidebar filters the chapter browser. Check chapters or sections and click Use this selection to change your practice scope. Random chooses within the applied scope, avoiding immediate repeats when more than one paragraph is available. In order follows book, unit, section, and paragraph order, then wraps. Timed tests continue with another complete excerpt as soon as the current one is typed.").font(Typography.font(size: 13))
                     Text("Textbook figures and tables").font(Typography.font(size: 14, weight: .semibold)).foregroundStyle(Palette.accent)
-                    Text("The figure or table button opens locally saved source images and tables with their captions and credits, and pauses the test. Zoom, scroll, switch items or use the panel controls. Close the viewer, then click Resume to continue typing.").font(Typography.font(size: 13))
+                    Text("Referenced figures and tables appear with the passage in the typing area. Scroll to read them while practising. Show or hide them in Settings; the choice is saved on this Mac. Captions and credits come from the original textbook.").font(Typography.font(size: 13))
                     Text("Metrics").font(Typography.font(size: 14, weight: .semibold)).foregroundStyle(Palette.accent)
                     Text("WPM = retained correct characters ÷ 5 ÷ active minutes.\nRaw WPM = all character attempts ÷ 5 ÷ active minutes, including corrected or repeated characters.\nAccuracy = correct character attempts ÷ all character attempts.\nError rate = incorrect character attempts ÷ all character attempts.\nMistakes count incorrect attempts, even when corrected. Corrections count incorrect characters removed with Backspace. Remaining errors count wrong characters still in the typed text.\nSpaces and punctuation count as characters. Backspace is not a character attempt. Paused time is excluded. Very short tests can produce unstable speed estimates.").font(Typography.font(size: 13)).lineSpacing(5)
                     Text("About the excerpts").font(Typography.font(size: 14, weight: .semibold)).foregroundStyle(Palette.accent)

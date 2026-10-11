@@ -3275,44 +3275,9 @@
       "attribution": "",
       "assets": [
         {
-          "path": "Tables/macroeconomics/figure-6-14a.html",
-          "kind": "table",
-          "label": "Table 1",
-          "source": "https://books.core-econ.org/the-economy/macroeconomics/06-financial-sector-10-businesses-capital-and-leverage.html#figure-6-14a",
-          "alt": "Assumptions: return on capital ( r K ) = 10%; interest rate on debt ( r D ) = 5% Equity ( E ) Debt ( D ) E D 100 0 100 50 100 100 100 300 100 900 100 1,900"
-        },
-        {
-          "path": "Tables/macroeconomics/figure-6-14aa.html",
-          "kind": "table",
-          "label": "Table 2",
-          "source": "https://books.core-econ.org/the-economy/macroeconomics/06-financial-sector-10-businesses-capital-and-leverage.html#figure-6-14aa",
-          "alt": "Assumptions: return on capital ( r K ) = 10%; interest rate on debt ( r D ) = 5% Equity ( E ) Debt ( D ) E D 100 0 100 50 100 100 100 300 100 900 100 1,900"
-        },
-        {
-          "path": "Tables/macroeconomics/figure-6-14ab.html",
-          "kind": "table",
-          "label": "Table 3",
-          "source": "https://books.core-econ.org/the-economy/macroeconomics/06-financial-sector-10-businesses-capital-and-leverage.html#figure-6-14ab",
-          "alt": "Assumptions: return on capital ( r K ) = 10%; interest rate on debt ( r D ) = 5% Equity ( E ) Debt ( D ) Capital ( K ) E D K = D + E 100 0 100 100 50 150 100 100 200 100 300 400 100 900 1,000 100 1,900 2,000"
-        },
-        {
-          "path": "Tables/macroeconomics/figure-6-14ac.html",
-          "kind": "table",
-          "label": "Table 4",
-          "source": "https://books.core-econ.org/the-economy/macroeconomics/06-financial-sector-10-businesses-capital-and-leverage.html#figure-6-14ac",
-          "alt": "Assumptions: return on capital ( r K ) = 10%; interest rate on debt ( r D ) = 5% Equity ( E ) Debt ( D ) Capital ( K ) Leverage ( L , %) E D K = D + E L = D/K 100 0 100 0% 100 50 150 33% 100 100 200 50% 100 300 400 75% 100 900 1,000 90% 100 1,900 2,000 95%"
-        },
-        {
-          "path": "Tables/macroeconomics/figure-6-14ad.html",
-          "kind": "table",
-          "label": "Table 5",
-          "source": "https://books.core-econ.org/the-economy/macroeconomics/06-financial-sector-10-businesses-capital-and-leverage.html#figure-6-14ad",
-          "alt": "Assumptions: return on capital ( r K ) = 10%; interest rate on debt ( r D ) = 5% Equity ( E ) Debt ( D ) Capital ( K ) Leverage ( L , %) Operating profits (before interest) (PBI) Interest payments (IP) Profit after interest (PAI) E D K = D + E L = D/K PBI = r K × K IP = r D × D PAI = PBI – IP 100 0 100 0% 10 0 10 100 50 150 33% 15 2.5 12.5 100 100 200 50% 20 5 15 100 300 400 75% 40 15 25 100 900 1,000 90% 100 45 55 100 1,900 2,000 95% 200 95 105"
-        },
-        {
           "path": "Tables/macroeconomics/figure-6-14ae.html",
           "kind": "table",
-          "label": "Table 6",
+          "label": "Table",
           "source": "https://books.core-econ.org/the-economy/macroeconomics/06-financial-sector-10-businesses-capital-and-leverage.html#figure-6-14ae",
           "alt": "Assumptions: return on capital ( r K ) = 10%; interest rate on debt ( r D ) = 5% Equity ( E ) Debt ( D ) Capital ( K ) Leverage ( L , %) Operating profits (before interest) (PBI) Interest payments (IP) Profit after interest (PAI) Return on equity (RoE, %) E D K = D + E L = D/K PBI = r K × K IP = r D × D PAI = PBI – IP RoE = PAI/E × 100 100 0 100 0% 10 0 10 10% 100 50 150 33% 15 2.5 12.5 12.5% 100 100 200 50% 20 5 15 15% 100 300 400 75% 40 15 25 25% 100 900 1,000 90% 100 45 55 55% 100 1,900 2,000 95% 200 95 105 105%"
         }
@@ -6733,29 +6698,8 @@
         {
           "path": "Tables/microeconomics/figure-2-10.html",
           "kind": "table",
-          "label": "Table 1",
+          "label": "Table",
           "source": "https://books.core-econ.org/the-economy/microeconomics/02-technology-incentives-06-innovation-profit.html#figure-2-10",
-          "alt": "Technology Number of workers Coal required (tons) Total cost (£) Wage £10, cost of coal £20 per ton B 4 2 80 Wage £10, cost of coal £5 per ton B 4 2 50 A 1 6 40"
-        },
-        {
-          "path": "Tables/microeconomics/figure-2-10a.html",
-          "kind": "table",
-          "label": "Table 2",
-          "source": "https://books.core-econ.org/the-economy/microeconomics/02-technology-incentives-06-innovation-profit.html#figure-2-10a",
-          "alt": "Technology Number of workers Coal required (tons) Total cost (£) Wage £10, cost of coal £20 per ton B 4 2 80"
-        },
-        {
-          "path": "Tables/microeconomics/figure-2-10b.html",
-          "kind": "table",
-          "label": "Table 3",
-          "source": "https://books.core-econ.org/the-economy/microeconomics/02-technology-incentives-06-innovation-profit.html#figure-2-10b",
-          "alt": "Technology Number of workers Coal required (tons) Total cost (£) Wage £10, cost of coal £20 per ton B 4 2 80 Wage £10, cost of coal £5 per ton B 4 2 50 A 1 6 40"
-        },
-        {
-          "path": "Tables/microeconomics/figure-2-10c.html",
-          "kind": "table",
-          "label": "Table 4",
-          "source": "https://books.core-econ.org/the-economy/microeconomics/02-technology-incentives-06-innovation-profit.html#figure-2-10c",
           "alt": "Technology Number of workers Coal required (tons) Total cost (£) Wage £10, cost of coal £20 per ton B 4 2 80 Wage £10, cost of coal £5 per ton B 4 2 50 A 1 6 40"
         }
       ]
@@ -7155,36 +7099,8 @@
         {
           "path": "Tables/microeconomics/figure-2-5.html",
           "kind": "table",
-          "label": "Table 1",
+          "label": "Table",
           "source": "https://books.core-econ.org/the-economy/microeconomics/02-technology-incentives-05-technology-costs.html#figure-2-5",
-          "alt": "Technology Number of workers Coal required (tons) A 1 6 B 4 2 C 3 7 D 5 5 E 10 1"
-        },
-        {
-          "path": "Tables/microeconomics/figure-2-5a.html",
-          "kind": "table",
-          "label": "Table 2",
-          "source": "https://books.core-econ.org/the-economy/microeconomics/02-technology-incentives-05-technology-costs.html#figure-2-5a",
-          "alt": "Technology Number of workers Coal required (tons) A 1 6 B 4 2 C 3 7 D 5 5 E 10 1"
-        },
-        {
-          "path": "Tables/microeconomics/figure-2-5b.html",
-          "kind": "table",
-          "label": "Table 3",
-          "source": "https://books.core-econ.org/the-economy/microeconomics/02-technology-incentives-05-technology-costs.html#figure-2-5b",
-          "alt": "Technology Number of workers Coal required (tons) A 1 6 B 4 2 C 3 7 D 5 5 E 10 1"
-        },
-        {
-          "path": "Tables/microeconomics/figure-2-5c.html",
-          "kind": "table",
-          "label": "Table 4",
-          "source": "https://books.core-econ.org/the-economy/microeconomics/02-technology-incentives-05-technology-costs.html#figure-2-5c",
-          "alt": "Technology Number of workers Coal required (tons) A 1 6 B 4 2 C 3 7 D 5 5 E 10 1"
-        },
-        {
-          "path": "Tables/microeconomics/figure-2-5d.html",
-          "kind": "table",
-          "label": "Table 5",
-          "source": "https://books.core-econ.org/the-economy/microeconomics/02-technology-incentives-05-technology-costs.html#figure-2-5d",
           "alt": "Technology Number of workers Coal required (tons) A 1 6 B 4 2 C 3 7 D 5 5 E 10 1"
         }
       ]
@@ -7273,30 +7189,9 @@
         {
           "path": "Tables/microeconomics/figure-2-9.html",
           "kind": "table",
-          "label": "Table 1",
+          "label": "Table",
           "source": "https://books.core-econ.org/the-economy/microeconomics/02-technology-incentives-06-innovation-profit.html#figure-2-9",
           "alt": "Technology Number of workers Coal required (tons) Total cost (£) Wage £10, cost of coal £5 per ton A 1 6 40 B 4 2 50 E 10 1 105"
-        },
-        {
-          "path": "Tables/microeconomics/figure-2-9a.html",
-          "kind": "table",
-          "label": "Table 2",
-          "source": "https://books.core-econ.org/the-economy/microeconomics/02-technology-incentives-06-innovation-profit.html#figure-2-9a",
-          "alt": "Technology Number of workers Coal required (tons) Total cost (£) Wage £10, cost of coal £5 per ton A 1 6 40 B 4 2 50 E 10 1 105"
-        },
-        {
-          "path": "Tables/microeconomics/figure-2-9b.html",
-          "kind": "table",
-          "label": "Table 3",
-          "source": "https://books.core-econ.org/the-economy/microeconomics/02-technology-incentives-06-innovation-profit.html#figure-2-9b",
-          "alt": "Technology Number of workers Coal required (tons) Total cost (£) A 1 6 40 B 4 2 50 E 10 1 105 Wage £10, cost of coal £5 per ton"
-        },
-        {
-          "path": "Tables/microeconomics/figure-2-9c.html",
-          "kind": "table",
-          "label": "Table 4",
-          "source": "https://books.core-econ.org/the-economy/microeconomics/02-technology-incentives-06-innovation-profit.html#figure-2-9c",
-          "alt": "Technology Number of workers Coal required (tons) Total cost (£) A 1 6 40 B 4 2 50 E 10 1 105 Wage £10, cost of coal £5 per ton"
         }
       ]
     },
@@ -7339,29 +7234,8 @@
         {
           "path": "Tables/microeconomics/figure-3-10.html",
           "kind": "table",
-          "label": "Table 1",
+          "label": "Table",
           "source": "https://books.core-econ.org/the-economy/microeconomics/03-scarcity-wellbeing-07-income-substitution-effects.html#figure-3-10",
-          "alt": "Days of work 0 10 20 30 40 50 60 70 Free days 70 60 50 40 30 20 10 0 Consumption ($) 0 900 1,800 2,700 3,600 4,500 5,400 6,300"
-        },
-        {
-          "path": "Tables/microeconomics/figure-3-10a.html",
-          "kind": "table",
-          "label": "Table 2",
-          "source": "https://books.core-econ.org/the-economy/microeconomics/03-scarcity-wellbeing-07-income-substitution-effects.html#figure-3-10a",
-          "alt": "Days of work 0 10 20 30 40 50 60 70 Free days 70 60 50 40 30 20 10 0 Consumption ($) 0 900 1,800 2,700 3,600 4,500 5,400 6,300"
-        },
-        {
-          "path": "Tables/microeconomics/figure-3-10b.html",
-          "kind": "table",
-          "label": "Table 3",
-          "source": "https://books.core-econ.org/the-economy/microeconomics/03-scarcity-wellbeing-07-income-substitution-effects.html#figure-3-10b",
-          "alt": "Days of work 0 10 20 30 40 50 60 70 Free days 70 60 50 40 30 20 10 0 Consumption ($) 0 900 1,800 2,700 3,600 4,500 5,400 6,300"
-        },
-        {
-          "path": "Tables/microeconomics/figure-3-10c.html",
-          "kind": "table",
-          "label": "Table 4",
-          "source": "https://books.core-econ.org/the-economy/microeconomics/03-scarcity-wellbeing-07-income-substitution-effects.html#figure-3-10c",
           "alt": "Days of work 0 10 20 30 40 50 60 70 Free days 70 60 50 40 30 20 10 0 Consumption ($) 0 900 1,800 2,700 3,600 4,500 5,400 6,300"
         }
       ]
@@ -7595,36 +7469,8 @@
         {
           "path": "Tables/microeconomics/figure-3-21.html",
           "kind": "table",
-          "label": "Table 1",
+          "label": "Table",
           "source": "https://books.core-econ.org/the-economy/microeconomics/03-scarcity-wellbeing-11-gender-working-time.html#figure-3-21",
-          "alt": "Wage Domestic work Paid work Non-working time Earnings Consumption Ana $30 7 6 11 $180 $180 Luis $30 7 6 11 $180 $180 Household 14 12 22 $360 $360"
-        },
-        {
-          "path": "Tables/microeconomics/figure-3-21a.html",
-          "kind": "table",
-          "label": "Table 2",
-          "source": "https://books.core-econ.org/the-economy/microeconomics/03-scarcity-wellbeing-11-gender-working-time.html#figure-3-21a",
-          "alt": "Wage Domestic work Paid work Non-working time Earnings Consumption Ana $30 7 6 11 $180 $180 Luis $30 7 6 11 $180 $180 Household 14 12 22 $360 $360"
-        },
-        {
-          "path": "Tables/microeconomics/figure-3-21b.html",
-          "kind": "table",
-          "label": "Table 3",
-          "source": "https://books.core-econ.org/the-economy/microeconomics/03-scarcity-wellbeing-11-gender-working-time.html#figure-3-21b",
-          "alt": "Wage Domestic work Paid work Non-working time Earnings Consumption Ana $30 7 6 11 $180 $180 Luis $30 7 6 11 $180 $180 Household 14 12 22 $360 $360"
-        },
-        {
-          "path": "Tables/microeconomics/figure-3-21c.html",
-          "kind": "table",
-          "label": "Table 4",
-          "source": "https://books.core-econ.org/the-economy/microeconomics/03-scarcity-wellbeing-11-gender-working-time.html#figure-3-21c",
-          "alt": "Wage Domestic work Paid work Non-working time Earnings Consumption Ana $30 7 6 11 $180 $180 Luis $30 7 6 11 $180 $180 Household 14 12 22 $360 $360"
-        },
-        {
-          "path": "Tables/microeconomics/figure-3-21d.html",
-          "kind": "table",
-          "label": "Table 5",
-          "source": "https://books.core-econ.org/the-economy/microeconomics/03-scarcity-wellbeing-11-gender-working-time.html#figure-3-21d",
           "alt": "Wage Domestic work Paid work Non-working time Earnings Consumption Ana $30 7 6 11 $180 $180 Luis $30 7 6 11 $180 $180 Household 14 12 22 $360 $360"
         }
       ]
@@ -7649,37 +7495,9 @@
         {
           "path": "Tables/microeconomics/figure-3-22.html",
           "kind": "table",
-          "label": "Table 1",
+          "label": "Table",
           "source": "https://books.core-econ.org/the-economy/microeconomics/03-scarcity-wellbeing-11-gender-working-time.html#figure-3-22",
           "alt": "Wage Domestic work Paid work Non- working time Earnings Consumption Ana $17 10 2 12 $34 $137 Luis $30 4 8 12 $240 $137 Household 14 10 24 $274 $274"
-        },
-        {
-          "path": "Tables/microeconomics/figure-3-22a.html",
-          "kind": "table",
-          "label": "Table 2",
-          "source": "https://books.core-econ.org/the-economy/microeconomics/03-scarcity-wellbeing-11-gender-working-time.html#figure-3-22a",
-          "alt": "Wage Domestic work Paid work Non- working time Earnings Consumption Ana $17 10 2 12 $34 $137 Luis $30 4 8 12 $240 $137 Household 14 12 24 $274 $274"
-        },
-        {
-          "path": "Tables/microeconomics/figure-3-22b.html",
-          "kind": "table",
-          "label": "Table 3",
-          "source": "https://books.core-econ.org/the-economy/microeconomics/03-scarcity-wellbeing-11-gender-working-time.html#figure-3-22b",
-          "alt": "Wage Domestic work Paid work Non- working time Earnings Consumption Ana $17 10 2 12 $34 $137 Luis $30 4 8 12 $240 $137 Household 14 12 24 $274 $274"
-        },
-        {
-          "path": "Tables/microeconomics/figure-3-22c.html",
-          "kind": "table",
-          "label": "Table 4",
-          "source": "https://books.core-econ.org/the-economy/microeconomics/03-scarcity-wellbeing-11-gender-working-time.html#figure-3-22c",
-          "alt": "Wage Domestic work Paid work Non- working time Earnings Consumption Ana $17 10 2 12 $34 $137 Luis $30 4 8 12 $240 $137 Household 14 12 24 $274 $274"
-        },
-        {
-          "path": "Tables/microeconomics/figure-3-22d.html",
-          "kind": "table",
-          "label": "Table 5",
-          "source": "https://books.core-econ.org/the-economy/microeconomics/03-scarcity-wellbeing-11-gender-working-time.html#figure-3-22d",
-          "alt": "Wage Domestic work Paid work Non- working time Earnings Consumption Ana $17 10 2 12 $34 $137 Luis $30 4 8 12 $240 $137 Household 14 12 24 $274 $274"
         }
       ]
     },
@@ -7786,57 +7604,8 @@
         {
           "path": "Tables/microeconomics/figure-3-4.html",
           "kind": "table",
-          "label": "Table 1",
+          "label": "Table",
           "source": "https://books.core-econ.org/the-economy/microeconomics/03-scarcity-wellbeing-03-goods-and-preferences.html#figure-3-4",
-          "alt": "A E F G H D Hours of free time 15 16 17 18 19 20 Consumption (€) 540 446 376 323 282 250"
-        },
-        {
-          "path": "Tables/microeconomics/figure-3-4a.html",
-          "kind": "table",
-          "label": "Table 2",
-          "source": "https://books.core-econ.org/the-economy/microeconomics/03-scarcity-wellbeing-03-goods-and-preferences.html#figure-3-4a",
-          "alt": "A E F G H D Hours of free time 15 16 17 18 19 20 Consumption (€) 540 446 376 323 282 250"
-        },
-        {
-          "path": "Tables/microeconomics/figure-3-4b.html",
-          "kind": "table",
-          "label": "Table 3",
-          "source": "https://books.core-econ.org/the-economy/microeconomics/03-scarcity-wellbeing-03-goods-and-preferences.html#figure-3-4b",
-          "alt": "A E F G H D Hours of free time 15 16 17 18 19 20 Consumption (€) 540 446 376 323 282 250"
-        },
-        {
-          "path": "Tables/microeconomics/figure-3-4c.html",
-          "kind": "table",
-          "label": "Table 4",
-          "source": "https://books.core-econ.org/the-economy/microeconomics/03-scarcity-wellbeing-03-goods-and-preferences.html#figure-3-4c",
-          "alt": "A E F G H D Hours of free time 15 16 17 18 19 20 Consumption (€) 540 446 376 323 282 250"
-        },
-        {
-          "path": "Tables/microeconomics/figure-3-4d.html",
-          "kind": "table",
-          "label": "Table 5",
-          "source": "https://books.core-econ.org/the-economy/microeconomics/03-scarcity-wellbeing-03-goods-and-preferences.html#figure-3-4d",
-          "alt": "A E F G H D Hours of free time 15 16 17 18 19 20 Consumption (€) 540 446 376 323 282 250"
-        },
-        {
-          "path": "Tables/microeconomics/figure-3-4e.html",
-          "kind": "table",
-          "label": "Table 6",
-          "source": "https://books.core-econ.org/the-economy/microeconomics/03-scarcity-wellbeing-03-goods-and-preferences.html#figure-3-4e",
-          "alt": "A E F G H D Hours of free time 15 16 17 18 19 20 Consumption (€) 540 446 376 323 282 250"
-        },
-        {
-          "path": "Tables/microeconomics/figure-3-4f.html",
-          "kind": "table",
-          "label": "Table 7",
-          "source": "https://books.core-econ.org/the-economy/microeconomics/03-scarcity-wellbeing-03-goods-and-preferences.html#figure-3-4f",
-          "alt": "A E F G H D Hours of free time 15 16 17 18 19 20 Consumption (€) 540 446 376 323 282 250"
-        },
-        {
-          "path": "Tables/microeconomics/figure-3-4g.html",
-          "kind": "table",
-          "label": "Table 8",
-          "source": "https://books.core-econ.org/the-economy/microeconomics/03-scarcity-wellbeing-03-goods-and-preferences.html#figure-3-4g",
           "alt": "A E F G H D Hours of free time 15 16 17 18 19 20 Consumption (€) 540 446 376 323 282 250"
         }
       ]

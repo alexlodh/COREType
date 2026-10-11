@@ -23,9 +23,13 @@
     "internalSVGReferencesAccepted": true,
     "allOriginalImagesUnchangedAfterTableAddition": true,
     "originalImagePassageMappingsPreserved": true,
-    "tableSourceFidelityChecksPassed": true
+    "tableSourceFidelityChecksPassed": true,
+    "allOriginalImagesUnchangedAfterInlineSelection": true,
+    "allPassageAssociationsUnchangedAfterInlineSelection": true,
+    "staticSourceTableSelectionAudited": true,
+    "noSupersededGeneratedTableAssetsRemain": true
   },
-  "checkCount": 23,
+  "checkCount": 27,
   "failures": 0,
   "visuallyInspectedOriginalJPGs": {
     "Diagrams/macroeconomics/figure-05-15.jpg": "Original economic chart, including source tool screenshots where provided",
@@ -44,12 +48,14 @@
   },
   "sourceCreditAudit": "No adjacent or slideshow-external source credit blocks found. Non-source figure-source children were only chart controls; all substantive source paragraphs preserved.",
   "limitations": [
-    "Image slideshow figures keep their original static summary images. Source HTML table sequences retain the original frames.",
+    "Image slideshow figures keep their original static summary images. Repeated table steps use source-authored static summaries; the completed final leverage table and distinct before/after or exercise/answer tables remain.",
     "Source HTML table cell text, headings, row/column spans, alignment and native math markup are retained in inert local HTML.",
-    "Original literal LaTeX remains in three table panels, as it does in some passages and captions.",
+    "Original literal LaTeX remains in 5 table assets, as it does in some passages and captions.",
+    "Microeconomics Figure 3.22 retains its original static summary value despite an audited inconsistency in the animation.",
     "Source JPG charts are included unchanged, including their original tool controls and source branding.",
     "Explicit references to external publications not represented in saved source HTML remain unmatched and audited."
   ],
-  "catalogueSHA256": "faa5c7db4b7bc0ae494866d7b45b30d7a31361b31971811861ecfa695f83e022",
-  "tableVerification": "table-verification.json"
+  "catalogueSHA256": "0e7cd966cdd835de9c856fca6c3c20e2ba4357b67fc346f57cbe6f5c9c90b3e8",
+  "tableVerification": "table-verification.json",
+  "historicalChecks": "Existing image-classification, tamper-rejection and visual-JPG checks were established in prior passes; the inline-table selection checks above were repeated on 11 October 2026."
 }

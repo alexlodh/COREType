@@ -1,7 +1,7 @@
 {
-  "checkCount": 14,
+  "checkCount": 18,
   "failures": 0,
-  "actualSourceTablePanelsChecked": 128,
+  "actualSourceTablePanelsChecked": 95,
   "checks": {
     "allTableCellsHeadersSpansAndSourceLinksMatchActualHTML": true,
     "allTableFilesMatchAuditHashes": true,
@@ -10,6 +10,10 @@
     "KnownTradeColumnSpanRetained": true,
     "OriginalAfterLoanFrameRetained": true,
     "OriginalLiteralLaTeXRetained": true,
+    "OriginalSourceSummaryTablesSelectedWithoutRepeatedSteps": true,
+    "CompleteOriginalLeverageFrameSelectedWithSourceEvidence": true,
+    "SourceSummaryInconsistencyPreservedAndAudited": true,
+    "NoSupersededGeneratedTableFilesRemain": true,
     "SyntheticSpansAndSemanticAlignmentPreserved": true,
     "SyntheticEmphasisSubscriptSuperscriptAndBreakPreserved": true,
     "SyntheticSourceLinkIsInertMetadata": true,
@@ -19,16 +23,19 @@
     "FigureAndTableNumberNamespacesRemainDistinct": true
   },
   "checked": "2026-10-11",
-  "catalogueSHA256": "faa5c7db4b7bc0ae494866d7b45b30d7a31361b31971811861ecfa695f83e022",
+  "catalogueSHA256": "0e7cd966cdd835de9c856fca6c3c20e2ba4357b67fc346f57cbe6f5c9c90b3e8",
   "originalImageAssetsUnchangedFromPreviousRelease": 525,
   "originalImagePassageMappingsPreserved": 1044,
+  "allPreviousPassageMappingsPreserved": 1140,
   "selectedTableFigures": 87,
-  "bundledTableAssets": 128,
+  "bundledTableAssets": 95,
   "passagesWithTables": 164,
   "tablesWithOriginalLiteralLaTeX": [
-    "Tables/macroeconomics/figure-6-14ad.html",
     "Tables/macroeconomics/figure-7-6.html",
-    "Tables/microeconomics/figure-7-11.html"
+    "Tables/microeconomics/figure-7-10.html",
+    "Tables/microeconomics/figure-7-11.html",
+    "Tables/microeconomics/figure-7-12.html",
+    "Tables/microeconomics/figure-7-16.html"
   ],
   "actualNumberedTableCaptionsInSavedSource": 0,
   "unresolvedExternalTableReference": {
@@ -37,8 +44,83 @@
     "reason": "Refers to the external UK ONS Household Debt Inequalities page; no corresponding table is in the saved textbook source"
   },
   "checkedCommand": "python3 scripts/import_diagrams.py import-source --verify-tables",
+  "offlineReimportCatalogueSHA256Unchanged": true,
+  "staticTableSelectionEvidence": {
+    "macroeconomics-6.14a": {
+      "policy": "Complete original final leverage table",
+      "selectedSourceIdentifiers": [
+        "figure-6-14ae"
+      ],
+      "precedingSourceIdentifiers": [
+        "figure-6-14a",
+        "figure-6-14aa",
+        "figure-6-14ab",
+        "figure-6-14ac",
+        "figure-6-14ad"
+      ],
+      "sourceSummaryClass": "figure summary figure-no-source",
+      "completionEvidence": "Final source frame fills preceding blank cells; every preceding nonempty cell is unchanged"
+    },
+    "microeconomics-2.10": {
+      "policy": "Source-authored static summary table",
+      "selectedSourceIdentifiers": [
+        "figure-2-10"
+      ],
+      "sourceSummaryClass": "figure summary figure-no-source"
+    },
+    "microeconomics-2.5": {
+      "policy": "Source-authored static summary table",
+      "selectedSourceIdentifiers": [
+        "figure-2-5"
+      ],
+      "sourceSummaryClass": "figure summary figure-no-source"
+    },
+    "microeconomics-2.9": {
+      "policy": "Source-authored static summary table",
+      "selectedSourceIdentifiers": [
+        "figure-2-9"
+      ],
+      "sourceSummaryClass": "figure summary figure-no-source"
+    },
+    "microeconomics-3.10": {
+      "policy": "Source-authored static summary table",
+      "selectedSourceIdentifiers": [
+        "figure-3-10"
+      ],
+      "sourceSummaryClass": "figure summary figure-no-source"
+    },
+    "microeconomics-3.21": {
+      "policy": "Source-authored static summary table",
+      "selectedSourceIdentifiers": [
+        "figure-3-21"
+      ],
+      "sourceSummaryClass": "figure summary figure-no-source"
+    },
+    "microeconomics-3.22": {
+      "policy": "Source-authored static summary table",
+      "selectedSourceIdentifiers": [
+        "figure-3-22"
+      ],
+      "sourceSummaryClass": "figure summary figure-no-source",
+      "sourceInconsistency": {
+        "field": "Household paid-work cell",
+        "summaryValue": "10",
+        "animationValue": "12",
+        "policy": "Retain the original static summary unchanged; do not correct source values"
+      }
+    },
+    "microeconomics-3.4": {
+      "policy": "Source-authored static summary table",
+      "selectedSourceIdentifiers": [
+        "figure-3-4"
+      ],
+      "sourceSummaryClass": "figure summary figure-no-source"
+    }
+  },
   "limitations": [
     "Source tables with literal LaTeX keep that original notation; no MathJax or network assets are fetched.",
-    "Explicit external publication Figure/Table references absent from saved textbook HTML are audited, without invented associations."
+    "Explicit external publication Figure/Table references absent from saved textbook HTML are audited, without invented associations.",
+    "Microeconomics Figure 3.22 retains the source static summary household paid-work value 10; source animation steps have an inconsistent value 12. No source value is corrected.",
+    "Repeated instructional table animation steps are omitted in favour of source-authored static summaries; distinct before/after and exercise/answer tables remain."
   ]
 }

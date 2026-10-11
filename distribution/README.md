@@ -1,6 +1,6 @@
-# COREType 1.2 for macOS
+# COREType 1.3 for macOS
 
-`COREType-macOS.zip` contains the verified ad hoc signed Apple Silicon app. Unzip and open COREType.app. The original textbook diagrams and tables and all typing data are available offline.
+`COREType-macOS.zip` contains the verified ad hoc signed Apple Silicon app. Unzip and open COREType.app. Referenced original diagrams and tables appear automatically with the passage, controlled by a saved setting. All typing and textbook resources work offline.
 
 Tested on macOS 26.6.2, Apple Silicon. The app declares macOS 14 or later, but other systems are untested. It is not notarized; do not bypass a macOS security warning.
 
